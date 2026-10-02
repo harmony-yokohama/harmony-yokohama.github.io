@@ -50,12 +50,15 @@
 
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
+.nb { display: inline-block; }
+#about .sec-head { text-align: center; justify-items: center; margin-inline: auto; }
+#about .note-line { text-align: center; border-left: 0; border-top: 3px solid var(--matcha); }
 /* 一文字だけの改行を避ける：文節で折り返し、行の長さをそろえる */
 body { word-break: auto-phrase; line-break: strict; overflow-wrap: anywhere; }
 p, li, dd, dt, summary, label, legend, h1, h2, h3, .item-name, .when { text-wrap: balance; }
 @media (max-width: 560px) {
   body { font-size: .95rem; }
-  .hero .lead { font-size: .95rem; }
+  .hero .lead { font-size: .88rem; }
   .sec-head h2 { font-size: 1.5rem; }
   .kind-body { padding: 1rem; }
   .spec { grid-template-columns: 3.2rem 1fr; }
@@ -220,9 +223,10 @@ section { padding-block: clamp(3.5rem, 8vw, 6rem); }
 
 /* event types */
 .kinds { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 1.4rem); align-items: start; }
-@media (max-width: 1000px) { .kinds { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 1100px) { .kinds { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .kinds { grid-template-columns: 1fr; } }
-.kind .lede { color: var(--ink); font-size: .93rem; }
+.kind .lede { color: var(--ink); font-size: .8rem; }
+@media (max-width: 1100px) { .kind .lede { font-size: .9rem; } }
 .kind details.more { border: 0; padding: 0; }
 .kind details.more summary { display: inline-flex; justify-content: flex-start; gap: .4em; align-items: center; font-size: .88rem; font-weight: 700; color: var(--paper); background: var(--ai); padding: .6em 1.1em; border-radius: 999px; }
 .kind details.more summary::after { font-size: 1rem; color: inherit; }
@@ -333,7 +337,7 @@ footer img { height: 28px; }
       <img class="hero-logo" src="assets/logo-vertical-dark.svg" alt="Harmony">
       <h1 class="ja catch"><span class="c1">日本にいながら</span><span class="c2">世界とつながれる</span><span class="c3">「居場所」</span></h1>
       <h1 class="en">A place in Japan where you <em>connect with the world</em></h1>
-      <p class="lead ja">横浜・鶴見のレトロ喫茶から広がる、国際交流コミュニティ</p>
+      <p class="lead ja"><span class="nb">横浜・鶴見のレトロ喫茶から広がる</span><span class="nb">国際交流コミュニティ</span></p>
       <p class="lead en">An international community based at a retro café in Tsurumi, Yokohama</p>
       <div class="cta">
         <a class="btn btn-primary" href="#events"><span class="ja">開催予定のイベント</span><span class="en">Upcoming events</span></a>
@@ -409,7 +413,7 @@ footer img { height: 28px; }
           <img src="assets/thumb-language.jpg" alt="Language Exchange: English ⇄ 日本語" loading="lazy">
           <div class="kind-body">
             <h3 class="ja">言語交換イベント</h3><h3 class="en"><span class="display">Language Exchange</span></h3>
-            <p class="lede ja">日本語と英語で、少人数でゆっくり話す定番イベント</p><p class="lede en">Our signature event: small tables, Japanese and English</p>
+            <p class="lede ja">日本語と英語で話す定番イベント</p><p class="lede en">Our signature Japanese–English event</p>
             <details class="more">
               <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
               <div class="more-body">
@@ -428,7 +432,7 @@ footer img { height: 28px; }
           <img src="assets/thumb-karaoke.jpg" alt="Karaoke Meetup" loading="lazy">
           <div class="kind-body">
             <h3 class="ja">カラオケイベント</h3><h3 class="en"><span class="display">Karaoke</span></h3>
-            <p class="lede ja">交流のあとは、みんなでカラオケ</p><p class="lede en">Chat first, then sing together</p>
+            <p class="lede ja">交流のあと、みんなでカラオケ</p><p class="lede en">Chat first, then sing together</p>
             <details class="more">
               <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
               <div class="more-body">
@@ -447,7 +451,7 @@ footer img { height: 28px; }
           <img src="assets/thumb-run.jpg" alt="Morning Run &amp; Coffee" loading="lazy">
           <div class="kind-body">
             <h3 class="ja">ラン＆コーヒーイベント</h3><h3 class="en"><span class="display">Run &amp; Coffee</span></h3>
-            <p class="lede ja">日曜の朝に走って、コーヒーで交流</p><p class="lede en">A Sunday run, then coffee and conversation</p>
+            <p class="lede ja">朝に走って、コーヒーで交流</p><p class="lede en">A Sunday run, then coffee and conversation</p>
             <details class="more">
               <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
               <div class="more-body">
@@ -468,7 +472,7 @@ footer img { height: 28px; }
           <div class="kind-body">
             <p class="badge"><span class="ja">20歳以上</span><span class="en">20+ only</span></p>
             <h3 class="ja">日本酒イベント</h3><h3 class="en"><span class="display">Sake Tasting</span></h3>
-            <p class="lede ja">日本酒を飲み比べながら交流する特別イベント</p><p class="lede en">A special evening of sake tasting and conversation</p>
+            <p class="lede ja">日本酒を飲み比べながら交流</p><p class="lede en">A special evening of sake tasting and conversation</p>
             <details class="more">
               <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
               <div class="more-body">
@@ -1026,6 +1030,23 @@ document.addEventListener("click", ev => {
 $("#f-event").addEventListener("change", updateEventNote);
 $("#signup").addEventListener("submit", submitForm);
 
+/* 日本語の文を「、」「。」で区切って、区切りごとにまとまって折り返すようにする */
+function chunkJa() {
+  const sel = "p.ja, h2.ja, h3.ja, span.ja, summary span.ja, .lede.ja, .note-line.ja, li.ja, .points p.ja";
+  document.querySelectorAll(sel).forEach(el => {
+    if (el.dataset.chunked || el.closest("select, button, .flow") ) return;
+    [...el.childNodes].forEach(n => {
+      if (n.nodeType !== 3 || !/[、。]/.test(n.nodeValue)) return;
+      const parts = n.nodeValue.split(/(?<=[、。！？])/);
+      if (parts.length < 2) return;
+      const frag = document.createDocumentFragment();
+      parts.forEach(t => { if (!t) return; const sp = document.createElement("span"); sp.className = "nb"; sp.textContent = t; frag.appendChild(sp); });
+      el.replaceChild(frag, n);
+    });
+    el.dataset.chunked = "1";
+  });
+}
+chunkJa();
 setLang(detectLang());
 loadEvents();
 </script>
