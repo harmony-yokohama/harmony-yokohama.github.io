@@ -1,0 +1,887 @@
+<!doctype html>
+<html lang="ja" data-lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="Harmony — 日本にいながら世界とつながれる「居場所」">
+<meta property="og:image" content="https://harmony-yokohama.github.io/assets/hero.jpg">
+<title>Harmony Yokohama</title>
+<meta name="description" content="日本にいながら、世界とつながれる「居場所」。横浜・鶴見のレトロ喫茶を拠点にした国際交流コミュニティ Harmony。言語交換・カラオケ・モーニングラン・日本酒の会。">
+<link rel="icon" href="assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+/* Layout: one calm reading column on ivory paper; the single bold moment is the
+   events section, set like a kissaten menu board (navy, dotted price leaders). */
+:root {
+  --paper: #FAF7F0;      /* アイボリー */
+  --paper-2: #F2ECE0;
+  --ink: #1C1C1A;        /* 墨 */
+  --ink-soft: #55524B;
+  --ai: #1F3A5F;         /* 藍 */
+  --shu: #D2553A;        /* 朱 */
+  --shu-ink: #B4452D;
+  --matcha: #6E8C45;     /* 抹茶 */
+  --board: #1F2A44;      /* ネイビー：メニューボード */
+  --board-ink: #F3EEE3;
+  --board-soft: #B9B6AE;
+  --line: #DDD5C6;
+  --on-photo: #FAF7F0;
+  --gold: #F0C987;
+  --rose: #F2A48E;
+  --shade: rgba(20, 16, 12, .62);
+  --field: #FFFFFF;
+  --ok: #4F7A33;
+  --err: #B4452D;
+
+  --f-display: "Fraunces", "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+  --f-body: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+
+  --s-1: clamp(2.3rem, 6vw, 4rem);
+  --s-2: clamp(1.6rem, 3.6vw, 2.4rem);
+  --s-3: 1.25rem;
+  --s-body: 1rem;
+  --s-small: .85rem;
+  --wrap: 68rem;
+  --radius: 6px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #14171C; --paper-2: #1B1F26; --ink: #EDE7DA; --ink-soft: #ABA597;
+    --ai: #93AED6; --shu: #E57A5E; --shu-ink: #F09A80; --matcha: #A3C189;
+    --board: #0D1220; --board-ink: #F3EEE3; --board-soft: #9A988F;
+    --line: #2C323C; --field: #1E232B; --ok: #A3C189; --err: #F09A80;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #14171C; --paper-2: #1B1F26; --ink: #EDE7DA; --ink-soft: #ABA597;
+  --ai: #93AED6; --shu: #E57A5E; --shu-ink: #F09A80; --matcha: #A3C189;
+  --board: #0D1220; --board-ink: #F3EEE3; --board-soft: #9A988F;
+  --line: #2C323C; --field: #1E232B; --ok: #A3C189; --err: #F09A80;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--f-body); font-size: var(--s-body); line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+html[data-lang="ja"] .en, html[data-lang="en"] .ja { display: none !important; }
+img { max-width: 100%; display: block; }
+a { color: var(--ai); }
+h1, h2, h3 { line-height: 1.25; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-inline: 20px; }
+:focus-visible { outline: 3px solid var(--shu); outline-offset: 2px; }
+
+.eyebrow {
+  font-family: var(--f-display); font-size: .78rem; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--shu-ink); font-weight: 600;
+}
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5em;
+  font: 700 1rem/1 var(--f-body); padding: .95em 1.5em; border-radius: 999px;
+  border: 2px solid transparent; cursor: pointer; text-decoration: none; transition: transform .15s, background .15s;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: var(--shu); color: var(--on-photo); }
+.btn-primary:hover { background: var(--shu-ink); }
+.btn-ghost { border-color: currentColor; color: inherit; background: transparent; }
+
+/* header */
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 10px; }
+.logo { height: 34px; width: auto; }
+.logo-dark { display: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .logo-light { display: none; } :root:not([data-theme="light"]) .logo-dark { display: block; } }
+:root[data-theme="dark"] .logo-light { display: none; }
+:root[data-theme="dark"] .logo-dark { display: block; }
+.top-actions { display: flex; align-items: center; gap: 10px; }
+.lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+.lang button {
+  font: 500 .8rem/1 var(--f-body); padding: .55em .9em; border: 0; background: transparent; color: var(--ink-soft); cursor: pointer;
+}
+.lang button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.top .btn { padding: .65em 1.1em; font-size: .88rem; }
+@media (max-width: 480px) { .top .btn { display: none; } }
+
+/* hero */
+.hero { position: relative; color: var(--on-photo); overflow: hidden; }
+.hero img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,16,12,.45), var(--shade) 45%, rgba(20,16,12,.88)); }
+.hero .wrap { position: relative; z-index: 1; padding-block: clamp(5rem, 12vw, 8rem) clamp(2.5rem, 6vw, 4rem); display: grid; gap: 1.1rem; }
+.hero .eyebrow { color: var(--gold); }
+.hero h1 { font-family: var(--f-display); font-size: var(--s-1); font-weight: 700; letter-spacing: -.01em; max-width: 16ch; }
+.hero h1 em { font-style: italic; font-weight: 500; color: var(--gold); }
+.hero h1.ja { font-family: var(--f-body); font-weight: 700; letter-spacing: .02em; max-width: 20ch; font-size: clamp(1.9rem, 5vw, 3.4rem); }
+.hero h1 .q { color: var(--gold); }
+.hero-logo { width: clamp(200px, 30vw, 340px); height: auto; margin-bottom: .6rem; }
+.hero .lead { max-width: 38rem; font-size: 1.05rem; opacity: .95; }
+.hero .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: .4rem; }
+.stamp {
+  position: absolute; right: clamp(16px, 5vw, 64px); top: clamp(24px, 6vw, 56px); z-index: 1;
+  width: 112px; aspect-ratio: 1; border-radius: 50%; background: var(--shu); color: var(--on-photo);
+  display: grid; place-content: center; text-align: center; line-height: 1.05; transform: rotate(-8deg);
+  box-shadow: 0 0 0 4px rgba(250,247,240,.25);
+}
+.stamp b { font-family: var(--f-body); font-size: 1.55rem; letter-spacing: .05em; }
+.stamp small { font-family: var(--f-display); font-style: italic; font-size: .78rem; }
+@media (max-width: 480px) { .stamp { width: 84px; } .stamp b { font-size: 1.15rem; } }
+
+/* sections */
+section { padding-block: clamp(3.5rem, 8vw, 6rem); }
+.sec-head { display: grid; gap: .6rem; margin-bottom: 2rem; max-width: 42rem; }
+.sec-head h2 { font-size: var(--s-2); font-weight: 700; }
+.sec-head h2 .display { font-family: var(--f-display); }
+.sec-head p { color: var(--ink-soft); }
+
+/* about */
+.about-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(1.5rem, 5vw, 4.5rem); align-items: start; }
+.strip { overflow: hidden; margin-bottom: clamp(2.5rem, 6vw, 4rem); -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
+.strip-track { display: flex; width: max-content; animation: flow 60s linear infinite; }
+.strip:hover .strip-track { animation-play-state: paused; }
+.strip-track img { width: clamp(170px, 20vw, 250px); aspect-ratio: 3/2; object-fit: cover; border-radius: var(--radius); margin-right: 12px; }
+@keyframes flow { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .strip-track { animation: none; } .strip { overflow-x: auto; } }
+@media (max-width: 800px) { .about-grid { grid-template-columns: 1fr; } }
+.points { display: grid; gap: 1.4rem; margin: 0; padding: 0; list-style: none; }
+.points li { display: grid; grid-template-columns: 1.1rem 1fr; gap: 1rem; align-items: start; }
+.points .dot { width: 1.1rem; height: 1.1rem; border-radius: 50%; margin-top: .45rem; opacity: .9; }
+.points h3 { font-size: 1.05rem; margin-bottom: .2rem; }
+.points p { color: var(--ink-soft); font-size: .95rem; }
+.note-line {
+  margin-top: 2rem; padding: 1rem 1.2rem; border-left: 3px solid var(--matcha); background: var(--paper-2);
+  font-size: .95rem;
+}
+
+/* menu board */
+.board { background: var(--board); color: var(--board-ink); }
+.board .sec-head p { color: var(--board-soft); }
+.board .eyebrow { color: var(--gold); }
+.board-frame { border: 1px solid rgba(243,238,227,.25); border-radius: 4px; padding: clamp(1.2rem, 3vw, 2.4rem); position: relative; }
+.board-frame::before { content: ""; position: absolute; inset: 6px; border: 1px solid rgba(243,238,227,.12); border-radius: 2px; pointer-events: none; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.6rem; position: relative; }
+.filters button {
+  font: 500 .85rem/1 var(--f-body); color: var(--board-ink); background: transparent;
+  border: 1px solid rgba(243,238,227,.35); border-radius: 999px; padding: .6em 1em; cursor: pointer;
+}
+.filters button[aria-pressed="true"] { background: var(--board-ink); color: var(--board); border-color: var(--board-ink); }
+.day { position: relative; padding-block: 1.1rem; border-top: 1px dashed rgba(243,238,227,.22); display: grid; grid-template-columns: 6.2rem 1fr; gap: 1.2rem; }
+.day:first-of-type { border-top: 0; }
+@media (max-width: 560px) { .day { grid-template-columns: 1fr; gap: .4rem; } }
+.date { font-family: var(--f-display); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.date .md { font-size: 1.7rem; font-weight: 700; }
+.date .dow { font-size: .8rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
+@media (max-width: 560px) { .date { display: flex; align-items: baseline; gap: .6rem; } }
+.items { display: grid; gap: 1rem; min-width: 0; }
+.item { display: grid; gap: .25rem; }
+.item-row { display: flex; align-items: baseline; gap: .6rem; min-width: 0; }
+.item-name { font-weight: 700; font-size: 1.08rem; min-width: 0; }
+.leader { flex: 1; border-bottom: 2px dotted rgba(243,238,227,.4); transform: translateY(-.3em); min-width: 1.5rem; }
+.price { font-family: var(--f-display); font-weight: 700; font-size: 1.2rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.item-meta { color: var(--board-soft); font-size: .88rem; display: flex; flex-wrap: wrap; gap: .3rem 1rem; align-items: center; }
+.item-meta .tag { color: var(--gold); }
+.item-meta .full { color: var(--rose); font-weight: 700; }
+.item-actions { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; margin-top: .35rem; }
+.join-btn {
+  font: 700 .88rem/1 var(--f-body); background: var(--shu); color: var(--on-photo); border: 0; border-radius: 999px;
+  padding: .7em 1.2em; cursor: pointer;
+}
+.join-btn:hover { background: var(--shu-ink); }
+.item-actions a { color: var(--board-soft); font-size: .82rem; }
+.board-foot { margin-top: 1.4rem; font-size: .85rem; color: var(--board-soft); position: relative; }
+.preview-flag { display: inline-block; margin-bottom: 1rem; font-size: .8rem; padding: .35em .8em; border-radius: 999px; background: rgba(240,201,135,.15); color: var(--gold); position: relative; }
+.board-empty { color: var(--board-soft); padding: 1rem 0; }
+
+/* event types */
+.kinds { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.2rem, 3vw, 2rem); }
+@media (max-width: 800px) { .kinds { grid-template-columns: 1fr; } }
+.kind { display: grid; grid-template-rows: auto 1fr; background: var(--paper-2); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.kind img { aspect-ratio: 16/9; object-fit: cover; width: 100%; }
+.kind-body { display: grid; gap: .7rem; align-content: start; padding: clamp(1rem, 2.5vw, 1.5rem); min-width: 0; }
+.kind h3 { font-size: 1.2rem; }
+.kind h3 .display { font-family: var(--f-display); font-weight: 600; }
+.kind-body > p { color: var(--ink-soft); font-size: .95rem; }
+.spec { display: grid; grid-template-columns: 4.6rem 1fr; gap: .45rem .8rem; margin: .3rem 0 0; padding-top: .9rem; border-top: 1px dashed var(--line); font-size: .9rem; }
+.spec dt { color: var(--shu-ink); font-weight: 700; }
+.spec dd { margin: 0; min-width: 0; }
+.kind-body > p.badge { justify-self: start; font-size: .78rem; font-weight: 700; color: var(--paper); background: var(--ai); padding: .3em .8em; border-radius: 999px; }
+.soon { margin-top: 1.4rem; font-size: .9rem; color: var(--matcha); font-weight: 700; }
+
+/* form */
+.form-wrap { display: grid; grid-template-columns: 1fr 1.3fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+@media (max-width: 860px) { .form-wrap { grid-template-columns: 1fr; } }
+.form-side { display: grid; gap: 1.2rem; }
+.flow { margin: 0; padding: 0; list-style: none; display: grid; gap: .9rem; counter-reset: f; }
+.flow li { counter-increment: f; display: grid; grid-template-columns: 2rem 1fr; gap: .8rem; font-size: .95rem; }
+.flow li::before { content: counter(f); font-family: var(--f-display); font-weight: 700; width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center; border: 1.5px solid var(--ai); color: var(--ai); line-height: 1; }
+form { display: grid; gap: 1.1rem; background: var(--paper-2); padding: clamp(1.2rem, 3vw, 2rem); border-radius: var(--radius); border: 1px solid var(--line); }
+.field { display: grid; gap: .35rem; min-width: 0; }
+.field label, .field legend { font-weight: 700; font-size: .9rem; }
+.req { color: var(--shu-ink); font-size: .75rem; margin-left: .3em; font-weight: 500; }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+@media (max-width: 520px) { .row2 { grid-template-columns: 1fr; } }
+input[type="text"], input[type="email"], select, textarea {
+  width: 100%; font: 400 1rem/1.5 var(--f-body); color: var(--ink); background: var(--field);
+  border: 1px solid var(--line); border-radius: 4px; padding: .7em .8em;
+}
+textarea { min-height: 5.5rem; resize: vertical; }
+fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: .35rem; }
+.choices { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; }
+.choices label, .check { font-weight: 400; display: inline-flex; gap: .5em; align-items: flex-start; font-size: .95rem; }
+.check input, .choices input { margin-top: .35em; accent-color: var(--shu); }
+.event-pick { font-size: .9rem; color: var(--ink-soft); }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form-msg { font-size: .95rem; padding: .9rem 1rem; border-radius: 4px; }
+.form-msg.ok { border: 1px solid var(--ok); color: var(--ok); }
+.form-msg.err { border: 1px solid var(--err); color: var(--err); }
+.small { font-size: var(--s-small); color: var(--ink-soft); }
+form .btn { justify-self: start; }
+form .btn[disabled] { opacity: .6; cursor: wait; }
+
+/* rules / faq */
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 4vw, 3.5rem); }
+@media (max-width: 800px) { .two { grid-template-columns: 1fr; } }
+.rules { margin: 0; padding-left: 1.2rem; display: grid; gap: .5rem; color: var(--ink-soft); }
+details { border-bottom: 1px solid var(--line); padding-block: .9rem; }
+details summary { cursor: pointer; font-weight: 700; list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
+details summary::-webkit-details-marker { display: none; }
+details summary::after { content: "+"; font-family: var(--f-display); color: var(--shu); font-size: 1.3rem; line-height: 1; }
+details[open] summary::after { content: "–"; }
+details p { margin-top: .6rem; color: var(--ink-soft); font-size: .95rem; }
+h3.minor { font-size: 1.15rem; margin-bottom: 1rem; }
+
+/* access */
+.access { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+@media (max-width: 800px) { .access { grid-template-columns: 1fr; } }
+.access img { border-radius: var(--radius); aspect-ratio: 4/3; object-fit: cover; width: 100%; }
+.access dl { display: grid; grid-template-columns: 6rem 1fr; gap: .6rem 1rem; margin: 1.2rem 0; }
+.access dt { color: var(--ink-soft); font-size: .88rem; }
+.access dd { margin: 0; }
+.host { display: flex; gap: 1rem; align-items: center; margin-top: 1.6rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
+.host img { width: 56px; height: 56px; }
+.host p { font-size: .92rem; color: var(--ink-soft); }
+
+/* instagram */
+.insta { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; margin-top: 1.2rem; }
+@media (max-width: 420px) { .insta { grid-template-columns: 1fr; } }
+.insta a { display: grid; gap: .1rem; padding: .8rem 1rem; border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; color: var(--ink); min-width: 0; }
+.insta a:hover { border-color: var(--shu); }
+.insta .lbl { font-size: .78rem; color: var(--ink-soft); letter-spacing: .04em; }
+.insta .handle { font-weight: 700; overflow-wrap: anywhere; }
+footer { border-top: 1px solid var(--line); padding-block: 2rem; font-size: .85rem; color: var(--ink-soft); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; align-items: center; }
+footer img { height: 28px; }
+</style>
+</head>
+<body>
+
+
+<header class="top">
+  <div class="wrap">
+    <a href="#top" aria-label="Harmony">
+      <img class="logo logo-light" src="assets/logo.svg" alt="Harmony">
+      <img class="logo logo-dark" src="assets/logo-dark.svg" alt="Harmony">
+    </a>
+    <div class="top-actions">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" id="lang-ja" data-set-lang="ja">日本語</button>
+        <button type="button" id="lang-en" data-set-lang="en">EN</button>
+      </div>
+      <a class="btn btn-primary" href="#events"><span class="ja">イベントを見る</span><span class="en">See events</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding:0">
+    <img class="bg" src="assets/hero.jpg" alt="">
+    <div class="wrap">
+      <img class="hero-logo" src="assets/logo-vertical-dark.svg" alt="Harmony">
+      <h1 class="ja">日本にいながら、<br>世界とつながれる<span class="q">「居場所」</span>。</h1>
+      <h1 class="en">A place in Japan where you <em>connect with the world.</em></h1>
+      <p class="lead ja">横浜・鶴見のレトロ喫茶から広がる、国際交流コミュニティ。</p>
+      <p class="lead en">An international community based at a retro café in Tsurumi, Yokohama.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#events"><span class="ja">開催予定のイベント</span><span class="en">Upcoming events</span></a>
+        <a class="btn btn-ghost" href="#about"><span class="ja">Harmonyについて</span><span class="en">About Harmony</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="strip" aria-label="Harmonyのイベントの様子">
+      <div class="strip-track">
+          <img src="assets/strip-1.jpg" alt="" loading="eager">
+          <img src="assets/strip-2.jpg" alt="" loading="eager">
+          <img src="assets/strip-3.jpg" alt="" loading="eager">
+          <img src="assets/strip-4.jpg" alt="" loading="eager">
+          <img src="assets/strip-5.jpg" alt="" loading="eager">
+          <img src="assets/strip-6.jpg" alt="" loading="eager">
+          <img src="assets/strip-7.jpg" alt="" loading="eager">
+          <img src="assets/strip-1.jpg" alt="" aria-hidden="true" loading="eager">
+          <img src="assets/strip-2.jpg" alt="" aria-hidden="true" loading="eager">
+          <img src="assets/strip-3.jpg" alt="" aria-hidden="true" loading="eager">
+          <img src="assets/strip-4.jpg" alt="" aria-hidden="true" loading="eager">
+          <img src="assets/strip-5.jpg" alt="" aria-hidden="true" loading="eager">
+          <img src="assets/strip-6.jpg" alt="" aria-hidden="true" loading="eager">
+          <img src="assets/strip-7.jpg" alt="" aria-hidden="true" loading="eager">
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="about-grid">
+        <div>
+          <div class="sec-head">
+            <p class="eyebrow">About Harmony</p>
+            <h2 class="ja">国籍も言葉も越えて、<br>つながれる場所。</h2>
+            <h2 class="en"><span class="display">A place to connect</span> across countries and languages.</h2>
+            <p class="ja">「海外の友達ができる場所を、もっと増やしたい」。そんな思いで、日本に住む人と世界中から来た人が自然に出会えるコミュニティをつくっています。</p>
+            <p class="en">We started Harmony to give more people a place to make friends from other countries. It's where people living in Japan and people from all over the world meet naturally.</p>
+          </div>
+          <p class="note-line ja">国籍・年齢・語学力は問いません。英会話教室ではないので、「新しい人と話してみたい」気持ちがあれば十分です。</p>
+<p class="note-line en">Any nationality, any age, any language level. This isn't a language class: wanting to meet new people is all you need.</p>
+        </div>
+        <ul class="points">
+            <li><span class="dot" style="background:var(--ai)"></span><div>
+              <h3 class="ja">いろんな入口がある</h3><h3 class="en">Many ways in</h3>
+              <p class="ja">話すのが好きなら言語交換、歌うならカラオケ、朝型ならラン、お酒好きなら日本酒の会。自分に合う形で参加できます。</p>
+              <p class="en">Love talking? Join a language exchange. Love music? Karaoke. Early riser? The morning run. Into sake? Our sake nights. Pick what suits you.</p>
+            </div></li>
+            <li><span class="dot" style="background:var(--shu)"></span><div>
+              <h3 class="ja">一人で来ても、輪に入れる</h3><h3 class="en">Come alone, fit right in</h3>
+              <p class="ja">参加者の多くが初参加・おひとり参加です。席は主催者が決め、トークテーマも用意しているので、初対面でも自然に話せます。</p>
+              <p class="en">Most guests come alone the first time. The host arranges the seating and brings conversation topics, so talking with strangers comes easily.</p>
+            </div></li>
+            <li><span class="dot" style="background:var(--matcha)"></span><div>
+              <h3 class="ja">その場限りで終わらない</h3><h3 class="en">Friends, not just small talk</h3>
+              <p class="ja">何度も顔を合わせるうちに、イベントの外でも会える仲間ができていきます。目指しているのは、本当の友達づくりです。</p>
+              <p class="en">Keep coming and you'll see familiar faces, and soon friends you meet outside the events too. That's what Harmony is for.</p>
+            </div></li>
+          </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="events" class="board">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Menu · 本日のおしながき</p>
+        <h2 class="ja">開催予定のイベント</h2>
+        <h2 class="en"><span class="display">Upcoming events</span></h2>
+        <p class="ja">これから1か月のイベントです。Meetupの予定がそのままここに並びます。参加したい回の「申し込む」を押してください。</p>
+        <p class="en">Events for the next month, the same ones as on our Meetup page. Tap "Join" on the one you'd like to attend.</p>
+      </div>
+      <div class="board-frame">
+        <p class="preview-flag" id="preview-flag" hidden><span class="ja">プレビュー表示：スプレッドシート接続前のサンプルです</span><span class="en">Preview: sample data until the spreadsheet is connected</span></p>
+        <div class="filters" id="filters" role="group" aria-label="Filter"></div>
+        <div id="event-list"><p class="board-empty"><span class="ja">読み込み中…</span><span class="en">Loading…</span></p></div>
+        <p class="board-foot ja">料金はすべて現金またはPayPay（クレジットカード不可）。表示価格は当日お支払いいただく合計額です（ドリンク代込み）。</p>
+        <p class="board-foot en">Cash or PayPay only (no credit cards). Prices shown are the total you pay on the day, drink included.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="kinds">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">What we do</p>
+        <h2 class="ja">Harmonyのイベント</h2>
+        <h2 class="en"><span class="display">Our events</span></h2>
+        <p class="ja">会場はすべてCafe Harmony（鶴見）。参加費は当日、現金かPayPayでお支払いください。</p>
+        <p class="en">All events are held at Cafe Harmony in Tsurumi. Pay on the day in cash or PayPay.</p>
+      </div>
+      <div class="kinds">
+        <article class="kind">
+          <img src="assets/thumb-language.jpg" alt="Language Exchange at a Retro Kissaten" loading="lazy">
+          <div class="kind-body">
+            <h3 class="ja">言語交換 @レトロ喫茶</h3><h3 class="en"><span class="display">Language Exchange</span></h3>
+            <p class="ja">Harmonyの定番イベント。4〜5人のテーブルで、日本語と英語を15分ずつ切り替えながら話します。30分ごとの席替えで、1回に9〜10人と話せます。</p>
+            <p class="en">Our signature event. Tables of 4–5, switching between Japanese and English every 15 minutes. Seats change every 30 minutes, so you'll meet 9–10 people.</p>
+            <dl class="spec">
+              <dt><span class="ja">時間</span><span class="en">When</span></dt><dd><span class="ja">主に土日 11:00–13:00（受付10:45〜）</span><span class="en">Mostly weekends, 11:00–13:00 (check-in from 10:45)</span></dd>
+              <dt><span class="ja">流れ</span><span class="en">Flow</span></dt><dd><span class="ja">受付・自己紹介シート → 3ラウンドの交流 → 終了後はみんなでご飯（任意）</span><span class="en">Check-in &amp; intro sheet → 3 rounds of tables → lunch together afterwards (optional)</span></dd>
+              <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">500円 ＋ 1ドリンク（500円）</span><span class="en">¥500 + one drink (¥500)</span></dd>
+            </dl>
+          </div>
+        </article>
+        <article class="kind">
+          <img src="assets/thumb-karaoke.jpg" alt="Karaoke Meetup" loading="lazy">
+          <div class="kind-body">
+            <h3 class="ja">言語交換＆カラオケ</h3><h3 class="en"><span class="display">Language Exchange &amp; Karaoke</span></h3>
+            <p class="ja">前半は少人数グループで言語交流、後半はみんなでカラオケ。J-POP、洋楽、アニソン、母国の歌、なんでもOKです。歌わずに聴くだけ・盛り上げるだけでも大歓迎。</p>
+            <p class="en">Small-group conversation first, then karaoke together. J-pop, English hits, anime songs, songs from home: anything goes. Listening and cheering count too.</p>
+            <dl class="spec">
+              <dt><span class="ja">時間</span><span class="en">When</span></dt><dd><span class="ja">主に土曜 14:00〜（回によって終了時間が異なります）</span><span class="en">Mostly Saturdays from 14:00 (end time varies)</span></dd>
+              <dt><span class="ja">流れ</span><span class="en">Flow</span></dt><dd><span class="ja">言語交流（席替えあり） → カラオケタイム → 集合写真</span><span class="en">Language exchange with seat changes → karaoke time → group photo</span></dd>
+              <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">2,000円</span><span class="en">¥2,000</span></dd>
+            </dl>
+          </div>
+        </article>
+        <article class="kind">
+          <img src="assets/thumb-run.jpg" alt="Morning Run &amp; Coffee" loading="lazy">
+          <div class="kind-body">
+            <h3 class="ja">モーニングラン＆コーヒー</h3><h3 class="en"><span class="display">Morning Run &amp; Coffee</span></h3>
+            <p class="ja">鶴見川沿いを3〜5km、自分のペースで走る日曜朝活。速さは関係なく、ウォーキングでもOK。走ったあとはカフェでコーヒーを飲みながら交流します。</p>
+            <p class="en">A Sunday-morning run of 3–5 km along the Tsurumi River, at your own pace. Walkers welcome. Afterwards we chat over coffee at the café.</p>
+            <dl class="spec">
+              <dt><span class="ja">時間</span><span class="en">When</span></dt><dd><span class="ja">毎週日曜 8:00–10:00（8:00 カフェ集合）</span><span class="en">Every Sunday 8:00–10:00 (meet at the café at 8:00)</span></dd>
+              <dt><span class="ja">雨の日</span><span class="en">Rain</span></dt><dd><span class="ja">ランは中止して、カフェで交流します</span><span class="en">We skip the run and meet at the café</span></dd>
+              <dt><span class="ja">持ち物</span><span class="en">Bring</span></dt><dd><span class="ja">走りやすい服と靴。荷物はカフェに置けます（シャワーはありません）</span><span class="en">Running clothes and shoes. Leave your bag at the café (no showers)</span></dd>
+              <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">500円 ＋ 1ドリンク（500円）</span><span class="en">¥500 + one drink (¥500)</span></dd>
+            </dl>
+          </div>
+        </article>
+        <article class="kind">
+          <img src="assets/thumb-sake.jpg" alt="Sake &amp; Language Exchange" loading="lazy">
+          <div class="kind-body">
+            <p class="badge"><span class="ja">20歳以上</span><span class="en">20+ only</span></p>
+            <h3 class="ja">日本酒＆言語交換</h3><h3 class="en"><span class="display">Sake &amp; Language Exchange</span></h3>
+            <p class="ja">日本酒を飲み比べながら、英語と日本語で交流する会。日本酒に詳しくなくても大丈夫、一人参加も歓迎です。</p>
+            <p class="en">Taste Japanese sake while chatting in English and Japanese. No sake knowledge needed, and solo guests are welcome.</p>
+            <dl class="spec">
+                            <dt><span class="ja">時間</span><span class="en">When</span></dt><dd>18:00–20:30</dd>
+              <dt><span class="ja">内容</span><span class="en">What</span></dt><dd><span class="ja">日本酒テイスティングと交流</span><span class="en">Sake tasting and conversation</span></dd>
+              <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">3,000円（日本酒テイスティング込み）</span><span class="en">¥3,000 (sake tasting included)</span></dd>
+            </dl>
+          </div>
+        </article>
+      </div>
+      <p class="soon ja">準備中：抹茶のイベント</p>
+      <p class="soon en">Coming soon: a matcha meetup</p>
+    </div>
+  </section>
+
+  <section id="join" style="background: var(--paper-2); border-block: 1px solid var(--line);">
+    <div class="wrap">
+      <div class="form-wrap">
+        <div class="form-side">
+          <div class="sec-head" style="margin-bottom:0">
+            <p class="eyebrow">Sign up</p>
+            <h2 class="ja">申し込みフォーム</h2>
+            <h2 class="en"><span class="display">Sign up</span></h2>
+            <p class="ja">1分で終わります。Meetupのアカウントは不要です。</p>
+            <p class="en">Takes about a minute. No Meetup account needed.</p>
+          </div>
+          <ol class="flow">
+            <li><span class="ja">このフォームから申し込む</span><span class="en">Send this form</span></li>
+            <li><span class="ja">確認メールが届く</span><span class="en">Get a confirmation email</span></li>
+            <li><span class="ja">当日、受付でお名前を伝える</span><span class="en">Tell us your name at the reception</span></li>
+            <li><span class="ja">参加費をお支払い</span><span class="en">Pay the fee</span></li>
+          </ol>
+          <p class="small ja">キャンセルは前日22時までに、確認メールへの返信でお知らせください。</p>
+          <p class="small en">If you can't come, reply to the confirmation email by 10 pm the day before.</p>
+        </div>
+
+        <form id="signup" novalidate>
+          <div class="field">
+            <label for="f-event"><span class="ja">参加するイベント</span><span class="en">Event</span><span class="req">*</span></label>
+            <select id="f-event" name="eventId" required></select>
+            <p class="event-pick" id="event-note"></p>
+          </div>
+          <div class="row2">
+            <div class="field">
+              <label for="f-name"><span class="ja">お名前（ニックネーム可）</span><span class="en">Name (nickname OK)</span><span class="req">*</span></label>
+              <input type="text" id="f-name" name="name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="f-email"><span class="ja">メールアドレス</span><span class="en">Email</span><span class="req">*</span></label>
+              <input type="email" id="f-email" name="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="row2">
+            <div class="field">
+              <label for="f-country"><span class="ja">出身国・地域</span><span class="en">Where are you from?</span></label>
+              <input type="text" id="f-country" name="country" autocomplete="country-name">
+            </div>
+            <div class="field">
+              <label for="f-age"><span class="ja">年代</span><span class="en">Age range</span></label>
+              <select id="f-age" name="ageRange">
+                <option value="">—</option>
+                <option value="18-24">18–24</option>
+                <option value="25-29">25–29</option>
+                <option value="30-39">30–39</option>
+                <option value="40-49">40–49</option>
+                <option value="50+">50+</option>
+              </select>
+            </div>
+          </div>
+          <fieldset>
+            <legend><span class="ja">話したい言語</span><span class="en">I want to practice</span></legend>
+            <div class="choices">
+              <label><input type="radio" name="practice" id="f-pr-ja" value="Japanese"><span class="ja">日本語</span><span class="en">Japanese</span></label>
+              <label><input type="radio" name="practice" id="f-pr-en" value="English"><span class="ja">英語</span><span class="en">English</span></label>
+              <label><input type="radio" name="practice" id="f-pr-both" value="Both"><span class="ja">どちらも</span><span class="en">Both</span></label>
+              <label><input type="radio" name="practice" id="f-pr-friends" value="Just friends"><span class="ja">友達づくりがメイン</span><span class="en">Just here to make friends</span></label>
+            </div>
+          </fieldset>
+          <div class="row2">
+            <fieldset>
+              <legend><span class="ja">Harmonyは初めてですか？</span><span class="en">First time at Harmony?</span></legend>
+              <div class="choices">
+                <label><input type="radio" name="firstTime" id="f-first-y" value="yes"><span class="ja">はい</span><span class="en">Yes</span></label>
+                <label><input type="radio" name="firstTime" id="f-first-n" value="no"><span class="ja">2回目以上</span><span class="en">I've been before</span></label>
+              </div>
+            </fieldset>
+            <div class="field">
+              <label for="f-source"><span class="ja">何で知りましたか？</span><span class="en">How did you hear about us?</span></label>
+              <select id="f-source" name="source">
+                <option value="">—</option>
+                <option value="Meetup">Meetup</option>
+                <option value="Instagram">Instagram</option>
+                <option value="Friend" data-ja="友達の紹介" data-en="A friend">友達の紹介</option>
+                <option value="Google" data-ja="Google検索・マップ" data-en="Google search / Maps">Google検索・マップ</option>
+                <option value="Cafe" data-ja="お店で見た" data-en="Saw it at the café">お店で見た</option>
+                <option value="Other" data-ja="その他" data-en="Other">その他</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-msg"><span class="ja">メッセージ（任意）</span><span class="en">Message (optional)</span></label>
+            <textarea id="f-msg" name="message"></textarea>
+          </div>
+          <label class="check" id="over20-wrap" hidden><input type="checkbox" id="f-over20" name="over20"><span><span class="ja">20歳以上です（お酒の出るイベントのため）</span><span class="en">I am 20 or older (this event serves alcohol)</span><span class="req">*</span></span></label>
+          <label class="check"><input type="checkbox" id="f-consent" name="consent"><span><span class="ja">入力した情報を、イベントの運営と連絡のためにHarmonyが使うことに同意します</span><span class="en">I agree that Harmony may use this information to run the event and contact me</span><span class="req">*</span></span></label>
+          <div class="hp" aria-hidden="true"><label for="f-website">Website</label><input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off"></div>
+          <div id="form-msg" class="form-msg" role="status" hidden></div>
+          <button class="btn btn-primary" type="submit" id="f-submit"><span class="ja">申し込む</span><span class="en">Sign up</span></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap two">
+      <div>
+        <div class="sec-head">
+          <p class="eyebrow">FAQ</p>
+          <h2 class="ja">よくある質問</h2>
+          <h2 class="en"><span class="display">Questions</span></h2>
+        </div>
+        <details><summary><span class="ja">英語（日本語）が話せなくても大丈夫？</span><span class="en">My English / Japanese isn't good. Is that OK?</span></summary>
+          <p class="ja">大丈夫です。初心者の方や、日本語しか話せない方もたくさん参加しています。</p>
+          <p class="en">Yes. Many guests are beginners, and some only speak Japanese.</p></details>
+        <details><summary><span class="ja">一人で参加しても浮きませんか？</span><span class="en">Can I come alone?</span></summary>
+          <p class="ja">参加者の大半がおひとりです。席は主催者が決めるので、自然に話の輪に入れます。</p>
+          <p class="en">Most people do. The host arranges the seating, so you'll be in a conversation from the start.</p></details>
+        <details><summary><span class="ja">支払い方法は？</span><span class="en">How do I pay?</span></summary>
+          <p class="ja">当日、受付で現金かPayPayでお支払いください。クレジットカードは使えません。</p>
+          <p class="en">At the reception, in cash or PayPay. Credit cards aren't accepted.</p></details>
+        <details><summary><span class="ja">Meetupから申し込むのと違いはありますか？</span><span class="en">Is this different from signing up on Meetup?</span></summary>
+          <p class="ja">同じイベントです。どちらから申し込んでも大丈夫です（二重に申し込まないようご注意ください）。</p>
+          <p class="en">It's the same event. Either way works, just don't sign up twice.</p></details>
+        <details><summary><span class="ja">遅れそう・行けなくなったときは？</span><span class="en">What if I'm late or can't come?</span></summary>
+          <p class="ja">行けなくなった場合は前日22時までに確認メールへ返信してください。言語交換は席を組んでから始めるため、遅れると参加できない場合があります。</p>
+          <p class="en">Reply to your confirmation email by 10 pm the day before. Language exchange tables are set at the start, so late arrivals may not be able to join.</p></details>
+      </div>
+      <div>
+        <h3 class="minor ja">みんなで守ること</h3>
+        <h3 class="minor en">House rules</h3>
+        <ul class="rules ja">
+          <li>営業・勧誘・MLM活動は禁止です</li>
+          <li>宗教・政治活動への勧誘は禁止です</li>
+          <li>ハラスメントや、他の参加者が不快に感じる行為は禁止です</li>
+          <li>連絡先の交換は任意です。席替えの前か、終了後にどうぞ</li>
+        </ul>
+        <ul class="rules en">
+          <li>No business, sales or MLM recruiting</li>
+          <li>No religious or political solicitation</li>
+          <li>No harassment or behavior that makes others uncomfortable</li>
+          <li>Swapping contacts is optional: before a seat change or after the event</li>
+        </ul>
+        <p class="small ja" style="margin-top:1rem">ルールを守っていただけない場合、次回以降の参加をお断りすることがあります。</p>
+        <p class="small en" style="margin-top:1rem">Guests who don't follow these rules may not be accepted at future events.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="access" style="padding-top:0">
+    <div class="wrap access">
+      <img src="assets/exterior.jpg" alt="Cafe Harmonyの外観" loading="lazy">
+      <div>
+        <div class="sec-head" style="margin-bottom:0">
+          <p class="eyebrow">Access</p>
+          <h2><span class="display" style="font-family:var(--f-display)">Cafe Harmony</span></h2>
+        </div>
+        <dl>
+          <dt><span class="ja">住所</span><span class="en">Address</span></dt>
+          <dd><span class="ja">〒230-0051 神奈川県横浜市鶴見区鶴見中央4-6-11</span><span class="en">4-6-11 Tsurumi-chuo, Tsurumi-ku, Yokohama 230-0051</span></dd>
+          <dt><span class="ja">最寄り駅</span><span class="en">Station</span></dt>
+          <dd><span class="ja">JR鶴見駅から徒歩5分</span><span class="en">5 min walk from JR Tsurumi Station</span></dd>
+          <dt><span class="ja">お支払い</span><span class="en">Payment</span></dt>
+          <dd><span class="ja">現金・PayPay</span><span class="en">Cash, PayPay</span></dd>
+        </dl>
+        <a class="btn btn-ghost" href="https://maps.app.goo.gl/UaUessisnF11j4iT9" target="_blank" rel="noopener"><span class="ja">Googleマップで開く</span><span class="en">Open in Google Maps</span></a>
+        <div class="host">
+          <img src="assets/mark.svg" alt="">
+          <p class="ja">主催：Kosei。大阪生まれ・横浜在住、10か国以上を旅してきました。鶴見の喫茶店Cafe Harmonyのマスターです。</p>
+          <p class="en">Hosted by Kosei: born in Osaka, living in Yokohama, traveled to 10+ countries, and the owner of Cafe Harmony in Tsurumi.</p>
+        </div>
+        <div class="insta">
+          <a href="https://www.instagram.com/harmony_community_/" target="_blank" rel="noopener"><span class="lbl">Instagram · <span class="ja">Harmony公式</span><span class="en">Harmony official</span></span><span class="handle">@harmony_community_</span></a>
+          <a href="https://www.instagram.com/kos_n5/" target="_blank" rel="noopener"><span class="lbl">Instagram · <span class="ja">主催 Kosei</span><span class="en">Host Kosei</span></span><span class="handle">@kos_n5</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img class="logo-light" src="assets/logo.svg" alt="Harmony">
+    <img class="logo-dark" src="assets/logo-dark.svg" alt="Harmony">
+    <span><a href="https://www.instagram.com/harmony_community_/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.meetup.com/yokohama-meetup-group-harmony/" target="_blank" rel="noopener">Meetup</a> · © Harmony</span>
+  </div>
+</footer>
+
+<script>
+/* ================================================================
+   設定：Apps Scriptを「ウェブアプリ」として公開したURLをここに貼る
+   ================================================================ */
+const API_URL = "https://script.google.com/macros/s/AKfycbzJaz5SpcfpzhapigC04ESz-leYx9uOM_rkGx_CYesB_Tg-JcPsuA7dlnKF1fX362Kq/exec";
+
+/* API_URL が空のあいだはサンプル表示（2026年10月1日時点のMeetupの予定） */
+const WINDOW_DAYS = 31; // 何日先までのイベントを表示するか
+const SAMPLE_EVENTS = [
+  { id: "event_316496653@meetup.com", type: "language", start: "2026-10-03T11:00:00+09:00", end: "2026-10-03T13:00:00+09:00", feeEn: "500 yen + One Drink Order (500 yen)", feeJa: "500円 + 1ドリンクオーダー（500円）", meetupUrl: "https://www.meetup.com/yokohama-meetup-group-harmony/events/316496653/" },
+  { id: "event_316704811@meetup.com", type: "karaoke", start: "2026-10-03T14:00:00+09:00", end: "2026-10-03T16:00:00+09:00", feeEn: "2,000 yen total", feeJa: "合計2,000円", meetupUrl: "https://www.meetup.com/yokohama-meetup-group-harmony/events/316704811/" },
+  { id: "event_316746019@meetup.com", type: "run", start: "2026-10-04T08:00:00+09:00", end: "2026-10-04T10:00:00+09:00", feeEn: "500 yen + One Drink Order (500 yen)", feeJa: "500円 + 1ドリンクオーダー（500円）", meetupUrl: "https://www.meetup.com/yokohama-meetup-group-harmony/events/316746019/" },
+  { id: "event_316746024@meetup.com", type: "run", start: "2026-10-06T07:30:00+09:00", end: "2026-10-06T08:30:00+09:00", feeEn: "500 yen + One Drink Order (500 yen)", feeJa: "500円 + 1ドリンクオーダー（500円）", meetupUrl: "https://www.meetup.com/yokohama-meetup-group-harmony/events/316746024/" },
+  { id: "event_316735585@meetup.com", type: "language", start: "2026-10-10T11:00:00+09:00", end: "2026-10-10T13:00:00+09:00", feeEn: "500 yen + One Drink Order (500 yen)", feeJa: "500円 + 1ドリンクオーダー（500円）", meetupUrl: "https://www.meetup.com/yokohama-meetup-group-harmony/events/316735585/", capacity: 30, spotsLeft: 6 },
+  { id: "event_316792603@meetup.com", type: "karaoke", start: "2026-10-10T14:00:00+09:00", end: "2026-10-10T17:00:00+09:00", feeEn: "2,000 yen total", feeJa: "合計2,000円", meetupUrl: "https://www.meetup.com/yokohama-meetup-group-harmony/events/316792603/" },
+  { id: "event_316792778@meetup.com", type: "run", start: "2026-10-11T08:00:00+09:00", end: "2026-10-11T10:00:00+09:00", feeEn: "500 yen + One Drink Order (500 yen)", feeJa: "500円 + 1ドリンクオーダー（500円）", meetupUrl: "https://www.meetup.com/yokohama-meetup-group-harmony/events/316792778/" },
+  { id: "event_316735107@meetup.com", type: "language", start: "2026-10-11T11:00:00+09:00", end: "2026-10-11T13:00:00+09:00", feeEn: "500 yen + One Drink Order (500 yen)", feeJa: "500円 + 1ドリンクオーダー（500円）", meetupUrl: "https://www.meetup.com/yokohama-meetup-group-harmony/events/316735107/" },
+  { id: "event_316775919@meetup.com", type: "language", start: "2026-10-12T11:00:00+09:00", end: "2026-10-12T13:00:00+09:00", feeEn: "500 yen + One Drink Order (500 yen)", feeJa: "500円 + 1ドリンクオーダー（500円）", meetupUrl: "https://www.meetup.com/yokohama-meetup-group-harmony/events/316775919/" },
+  { id: "event_316735594@meetup.com", type: "language", start: "2026-10-17T11:00:00+09:00", end: "2026-10-17T13:00:00+09:00", feeEn: "500 yen + One Drink Order (500 yen)", feeJa: "500円 + 1ドリンクオーダー（500円）", meetupUrl: "https://www.meetup.com/yokohama-meetup-group-harmony/events/316735594/" }
+];
+
+const TYPES = {
+  language: { ja: "言語交換 @レトロ喫茶", en: "Language Exchange", tagJa: "日本語＆英語で交流", tagEn: "Chat in Japanese & English" },
+  karaoke:  { ja: "言語交換＆カラオケ", en: "Language Exchange & Karaoke", tagJa: "カラオケ交流", tagEn: "Karaoke & chat" },
+  run:      { ja: "モーニングラン＆コーヒー", en: "Morning Run & Coffee", tagJa: "鶴見川沿い3〜5km・雨天はカフェ交流", tagEn: "3–5 km by the river · café if it rains" },
+  sake:     { ja: "日本酒＆言語交換", en: "Sake & Language Exchange", tagJa: "日本酒テイスティングと交流・20歳以上", tagEn: "Sake tasting & chat · 20+ only" },
+  matcha:   { ja: "抹茶ミートアップ", en: "Matcha Meetup", tagJa: "抹茶体験", tagEn: "Matcha experience" }
+};
+
+const MSG = {
+  ja: {
+    pick: "イベントを選んでください", name_required: "お名前を入力してください。", email_invalid: "メールアドレスの形式を確認してください。",
+    consent_required: "同意のチェックを入れてください。", over20_required: "このイベントは20歳以上の方のみ参加できます。",
+    event_not_found: "このイベントは受付を終了しました。別の日程を選んでください。", network: "送信できませんでした。通信状況を確認して、もう一度お試しください。",
+    sending: "送信中…", ok: "お申し込みありがとうございます！確認メールをお送りしました。届かない場合は迷惑メールフォルダもご確認ください。",
+    waitlist: "満席のため、キャンセル待ちで受け付けました。空きが出たらメールでご連絡します。",
+    duplicate: "このイベントにはすでにお申し込み済みです。", preview: "プレビューのため実際には送信していません（スプレッドシート接続後に有効になります）。",
+    full: "満席・キャンセル待ち", left: n => `残り${n}席`, none: "現在、受付中のイベントはありません。Meetupもご確認ください。",
+    all: "すべて", meetup: "Meetupで見る", join: "申し込む", selected: "選択中"
+  },
+  en: {
+    pick: "Choose an event", name_required: "Please enter your name.", email_invalid: "Please check your email address.",
+    consent_required: "Please tick the consent box.", over20_required: "This event is for guests aged 20 and over.",
+    event_not_found: "Sign-ups for this event have closed. Please choose another date.", network: "We couldn't send your form. Check your connection and try again.",
+    sending: "Sending…", ok: "You're signed up! We've sent a confirmation email. If you don't see it, check your spam folder.",
+    waitlist: "The event is full, so you're on the waitlist. We'll email you if a spot opens.",
+    duplicate: "You've already signed up for this event.", preview: "Preview only: nothing was sent (this starts working once the spreadsheet is connected).",
+    full: "Full · waitlist", left: n => `${n} spots left`, none: "No events are open right now. Please check our Meetup page.",
+    all: "All", meetup: "View on Meetup", join: "Join", selected: "Selected"
+  }
+};
+
+let lang = "ja";
+let events = [];
+let filter = "all";
+const $ = s => document.querySelector(s);
+
+function detectLang() {
+  try { const saved = localStorage.getItem("harmony-lang"); if (saved === "ja" || saved === "en") return saved; } catch (e) {}
+  return (navigator.language || "ja").toLowerCase().startsWith("ja") ? "ja" : "en";
+}
+function setLang(l) {
+  lang = l;
+  document.documentElement.dataset.lang = l;
+  document.documentElement.lang = l;
+  document.querySelectorAll("[data-set-lang]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.setLang === l)));
+  document.querySelectorAll("option[data-ja]").forEach(o => { o.textContent = o.dataset[l]; });
+  try { localStorage.setItem("harmony-lang", l); } catch (e) {}
+  render();
+}
+
+const fmt = (iso, opts) => new Intl.DateTimeFormat(lang === "ja" ? "ja-JP" : "en-US", { timeZone: "Asia/Tokyo", ...opts }).format(new Date(iso));
+const dayKey = iso => fmt(iso, { year: "numeric", month: "2-digit", day: "2-digit" });
+const timeRange = e => e.timeTBA ? (lang === "ja" ? "時間は近日公開" : "Time TBA") : fmt(e.start, { hour: "2-digit", minute: "2-digit", hour12: false }) + (e.end ? "–" + fmt(e.end, { hour: "2-digit", minute: "2-digit", hour12: false }) : "");
+
+/* 料金の合計（例：「500 yen + One Drink Order (500 yen)」→ 1000） */
+function totalYen(e) {
+  const s = (e.feeEn || "") + " " + (e.feeJa || "");
+  const total = s.match(/([\d,]+)\s*yen\s*total/i) || s.match(/合計\s*([\d,]+)\s*円/);
+  if (total) return Number(total[1].replace(/,/g, ""));
+  const nums = (e.feeEn || "").match(/[\d,]+(?=\s*yen)/gi) || (e.feeJa || "").match(/[\d,]+(?=\s*円)/g) || [];
+  if (!nums.length) return null;
+  return nums.slice(0, 2).reduce((a, n) => a + Number(n.replace(/,/g, "")), 0);
+}
+function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
+
+function inWindow(e) {
+  const t = new Date(e.start).getTime(), now = Date.now();
+  return t >= now - 12 * 3600e3 && t <= now + WINDOW_DAYS * 86400e3;
+}
+
+function render() {
+  const m = MSG[lang];
+  // filters
+  const kinds = [...new Set(events.map(e => e.type))];
+  $("#filters").innerHTML = kinds.length > 1
+    ? [["all", m.all], ...kinds.map(k => [k, (TYPES[k] || TYPES.language)[lang]])]
+        .map(([k, label]) => `<button type="button" data-filter="${k}" aria-pressed="${filter === k}">${esc(label)}</button>`).join("")
+    : "";
+  // list
+  const list = events.filter(e => filter === "all" || e.type === filter);
+  if (!list.length) {
+    $("#event-list").innerHTML = `<p class="board-empty">${esc(m.none)}</p>`;
+  } else {
+    const groups = [];
+    list.forEach(e => {
+      const k = dayKey(e.start);
+      let g = groups.find(x => x.k === k);
+      if (!g) groups.push(g = { k, start: e.start, items: [] });
+      g.items.push(e);
+    });
+    $("#event-list").innerHTML = groups.map(g => `
+      <div class="day">
+        <div class="date"><div class="md">${esc(fmt(g.start, { month: "numeric", day: "numeric" }))}</div><div class="dow">${esc(fmt(g.start, { weekday: lang === "ja" ? "short" : "long" }))}</div></div>
+        <div class="items">${g.items.map(itemHTML).join("")}</div>
+      </div>`).join("");
+  }
+  // select
+  const sel = $("#f-event");
+  const cur = sel.value;
+  sel.innerHTML = `<option value="">${esc(m.pick)}</option>` + events.map(e => {
+    const t = TYPES[e.type] || TYPES.language;
+    const full = e.spotsLeft === 0 ? ` (${m.full})` : "";
+    return `<option value="${esc(e.id)}">${esc(fmt(e.start, { month: "numeric", day: "numeric", weekday: "short" }))} ${esc(timeRange(e))}  ${esc(t[lang])}${esc(full)}</option>`;
+  }).join("");
+  if (events.some(e => e.id === cur)) sel.value = cur;
+  updateEventNote();
+}
+
+function itemHTML(e) {
+  const m = MSG[lang];
+  const t = TYPES[e.type] || TYPES.language;
+  const yen = totalYen(e);
+  const spots = e.spotsLeft === 0 ? `<span class="full">${esc(m.full)}</span>`
+    : (e.spotsLeft != null ? `<span>${esc(m.left(e.spotsLeft))}</span>` : "");
+  return `
+    <div class="item">
+      <div class="item-row"><span class="item-name">${esc(t[lang])}</span><span class="leader" aria-hidden="true"></span><span class="price">${yen ? "¥" + yen.toLocaleString("en-US") : ""}</span></div>
+      <div class="item-meta"><span>${esc(timeRange(e))}</span><span class="tag">${esc(lang === "ja" ? t.tagJa : t.tagEn)}</span>${spots}</div>
+      <div class="item-actions">
+        <button type="button" class="join-btn" data-join="${esc(e.id)}">${esc(m.join)}</button>
+        ${e.meetupUrl ? `<a href="${esc(e.meetupUrl)}" target="_blank" rel="noopener">${esc(m.meetup)}</a>` : ""}
+      </div>
+    </div>`;
+}
+
+function updateEventNote() {
+  const e = events.find(x => x.id === $("#f-event").value);
+  $("#over20-wrap").hidden = !(e && e.type === "sake");
+  $("#event-note").textContent = e ? [lang === "ja" ? e.feeJa : e.feeEn, e.venue].filter(Boolean).join(" · ") : "";
+}
+
+function applyWindow() {
+  const inside = events.filter(inWindow);
+  // サンプル表示は日付が過ぎていても見本として全件出す
+  if (inside.length || API_URL) events = inside;
+}
+
+async function loadEvents() {
+  if (!API_URL) {
+    events = SAMPLE_EVENTS;
+    $("#preview-flag").hidden = false;
+    applyWindow();
+    render();
+    return;
+  }
+  try {
+    const res = await fetch(API_URL + "?action=events");
+    const data = await res.json();
+    events = data.events || [];
+  } catch (err) {
+    events = [];
+  }
+  applyWindow();
+  render();
+}
+
+function showMsg(kind, text) {
+  const el = $("#form-msg");
+  el.className = "form-msg " + kind;
+  el.textContent = text;
+  el.hidden = false;
+}
+
+async function submitForm(ev) {
+  ev.preventDefault();
+  const m = MSG[lang];
+  const f = ev.target;
+  const data = {
+    eventId: f.eventId.value, name: f.name.value.trim(), email: f.email.value.trim(), country: f.country.value.trim(),
+    ageRange: f.ageRange.value, practice: (f.querySelector('input[name="practice"]:checked') || {}).value || "",
+    firstTime: (f.querySelector('input[name="firstTime"]:checked') || {}).value || "", source: f.source.value,
+    message: f.message.value.trim(), over20: f.over20.checked, consent: f.consent.checked, website: f.website.value, lang
+  };
+  const e = events.find(x => x.id === data.eventId);
+  let err = null;
+  if (!data.eventId) err = m.pick;
+  else if (!data.name) err = m.name_required;
+  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) err = m.email_invalid;
+  else if (e && e.type === "sake" && !data.over20) err = m.over20_required;
+  else if (!data.consent) err = m.consent_required;
+  if (err) { showMsg("err", err); return; }
+
+  const btn = $("#f-submit");
+  btn.disabled = true;
+  showMsg("ok", m.sending);
+  try {
+    if (!API_URL) { await new Promise(r => setTimeout(r, 500)); showMsg("ok", m.preview); return; }
+    const res = await fetch(API_URL, { method: "POST", body: JSON.stringify(data) });
+    const out = await res.json();
+    if (!out.ok) { showMsg("err", m[out.error] || m.network); return; }
+    showMsg("ok", out.status === "waitlist" ? m.waitlist : out.status === "duplicate" ? m.duplicate : m.ok);
+    f.reset();
+    updateEventNote();
+  } catch (x) {
+    showMsg("err", m.network);
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+document.addEventListener("click", ev => {
+  const l = ev.target.closest("[data-set-lang]");
+  if (l) setLang(l.dataset.setLang);
+  const fb = ev.target.closest("[data-filter]");
+  if (fb) { filter = fb.dataset.filter; render(); }
+  const jb = ev.target.closest("[data-join]");
+  if (jb) {
+    $("#f-event").value = jb.dataset.join;
+    updateEventNote();
+    $("#join").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    setTimeout(() => $("#f-name").focus({ preventScroll: true }), 400);
+  }
+});
+$("#f-event").addEventListener("change", updateEventNote);
+$("#signup").addEventListener("submit", submitForm);
+
+setLang(detectLang());
+loadEvents();
+</script>
+
+</body>
+</html>
