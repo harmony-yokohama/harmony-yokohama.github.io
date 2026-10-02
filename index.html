@@ -271,6 +271,7 @@ fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: .35rem; }
 .choices label, .check { font-weight: 400; display: inline-flex; gap: .5em; align-items: flex-start; font-size: .95rem; }
 .check input, .choices input { margin-top: .35em; accent-color: var(--shu); }
 .event-pick { font-size: .9rem; color: var(--ink-soft); }
+.check, .check span { text-wrap: wrap; }
 .reasons { display: grid; grid-template-columns: 1fr 1fr; gap: .45rem 1rem; }
 @media (max-width: 520px) { .reasons { grid-template-columns: 1fr; } }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
@@ -311,6 +312,13 @@ h3.minor { font-size: 1.15rem; margin-bottom: 1rem; }
 .insta a:hover { border-color: var(--shu); }
 .insta .lbl { font-size: .78rem; color: var(--ink-soft); letter-spacing: .04em; }
 .insta .handle { font-weight: 700; overflow-wrap: anywhere; }
+.contact { display: grid; grid-template-columns: 1fr 1.6fr; gap: clamp(1.2rem, 4vw, 3rem); align-items: start; max-width: 52rem; margin-inline: auto; padding-top: clamp(2rem, 5vw, 3rem); border-top: 1px solid var(--line); }
+@media (max-width: 700px) { .contact { grid-template-columns: 1fr; } }
+.contact-head { display: grid; gap: .5rem; }
+.contact-head h2 { font-size: 1.4rem; }
+#contact-form { padding: 1.2rem; gap: .9rem; }
+#contact-form textarea { min-height: 6rem; }
+#contact-form .btn { padding: .75em 1.4em; font-size: .92rem; }
 footer { border-top: 1px solid var(--line); padding-block: 2rem; font-size: .85rem; color: var(--ink-soft); }
 footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; align-items: center; }
 footer img { height: 28px; }
@@ -540,17 +548,17 @@ footer img { height: 28px; }
 
         <form id="signup" novalidate>
           <div class="field">
-            <label for="f-event"><span class="ja">参加するイベント</span><span class="en">Event</span><span class="req">*</span></label>
+            <label for="f-event"><span class="ja">参加するイベント<span class="req">*</span></span><span class="en">Event<span class="req">*</span></span></label>
             <select id="f-event" name="eventId" required></select>
             <p class="event-pick" id="event-note"></p>
           </div>
           <div class="row2">
             <div class="field">
-              <label for="f-name"><span class="ja">お名前（ニックネーム可）</span><span class="en">Name (nickname OK)</span><span class="req">*</span></label>
+              <label for="f-name"><span class="ja">お名前（ニックネーム可）<span class="req">*</span></span><span class="en">Name (nickname OK)<span class="req">*</span></span></label>
               <input type="text" id="f-name" name="name" autocomplete="name" required>
             </div>
             <div class="field">
-              <label for="f-email"><span class="ja">メールアドレス</span><span class="en">Email</span><span class="req">*</span></label>
+              <label for="f-email"><span class="ja">メールアドレス<span class="req">*</span></span><span class="en">Email<span class="req">*</span></span></label>
               <input type="email" id="f-email" name="email" autocomplete="email" required>
             </div>
           </div>
@@ -607,8 +615,8 @@ footer img { height: 28px; }
             <label for="f-msg"><span class="ja">メッセージ（任意）</span><span class="en">Message (optional)</span></label>
             <textarea id="f-msg" name="message"></textarea>
           </div>
-          <label class="check" id="over20-wrap" hidden><input type="checkbox" id="f-over20" name="over20"><span><span class="ja">20歳以上です（お酒の出るイベントのため）</span><span class="en">I am 20 or older (this event serves alcohol)</span><span class="req">*</span></span></label>
-          <label class="check"><input type="checkbox" id="f-consent" name="consent"><span><span class="ja">入力した情報を、イベントの運営と連絡のためにHarmonyが使うことに同意します</span><span class="en">I agree that Harmony may use this information to run the event and contact me</span><span class="req">*</span></span></label>
+          <label class="check" id="over20-wrap" hidden><input type="checkbox" id="f-over20" name="over20"><span><span class="ja">20歳以上です<span class="nb">（お酒の出るイベントのため）<span class="req">*</span></span></span><span class="en">I am 20 or older (this event serves <span class="nb">alcohol)<span class="req">*</span></span></span></span></label>
+          <label class="check"><input type="checkbox" id="f-consent" name="consent"><span><span class="ja">入力した情報を、イベントの運営と連絡のためにHarmonyが使うことに<span class="nb">同意します<span class="req">*</span></span></span><span class="en">I agree that Harmony may use this information to run the event and <span class="nb">contact me<span class="req">*</span></span></span></span></label>
           <div class="hp" aria-hidden="true"><label for="f-website">Website</label><input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off"></div>
           <div id="form-msg" class="form-msg" role="status" hidden></div>
           <button class="btn btn-primary" type="submit" id="f-submit"><span class="ja">申し込む</span><span class="en">Sign up</span></button>
@@ -688,6 +696,38 @@ footer img { height: 28px; }
           <a href="https://www.instagram.com/harmony_community_/" target="_blank" rel="noopener"><span class="lbl">Instagram · <span class="ja">Harmony公式</span><span class="en">Harmony official</span></span><span class="handle">@harmony_community_</span></a>
           <a href="https://www.instagram.com/kos_n5/" target="_blank" rel="noopener"><span class="lbl">Instagram · <span class="ja">主催 Kosei</span><span class="en">Host Kosei</span></span><span class="handle">@kos_n5</span></a>
         </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact" style="padding-top:0">
+    <div class="wrap">
+      <div class="contact">
+        <div class="contact-head">
+          <p class="eyebrow">Contact</p>
+          <h2 class="ja">お問い合わせ</h2>
+          <h2 class="en"><span class="display">Contact</span></h2>
+          <p class="small ja">ご質問やご相談はこちらからどうぞ。メールでお返事します。</p>
+          <p class="small en">Questions? Send us a message and we'll reply by email.</p>
+        </div>
+        <form id="contact-form" novalidate>
+          <div class="row2">
+            <div class="field">
+              <label for="c-name"><span class="ja">お名前</span><span class="en">Name</span></label>
+              <input type="text" id="c-name" name="cname" autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="c-email"><span class="ja">メールアドレス<span class="req">*</span></span><span class="en">Email<span class="req">*</span></span></label>
+              <input type="email" id="c-email" name="cemail" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="c-msg"><span class="ja">内容<span class="req">*</span></span><span class="en">Message<span class="req">*</span></span></label>
+            <textarea id="c-msg" name="cmessage" required></textarea>
+          </div>
+          <div class="hp" aria-hidden="true"><label for="c-website">Website</label><input type="text" id="c-website" name="cwebsite" tabindex="-1" autocomplete="off"></div>
+          <div id="contact-msg" class="form-msg" role="status" hidden></div>
+          <button class="btn btn-primary" type="submit" id="c-submit"><span class="ja">送信する</span><span class="en">Send</span></button>
+        </form>
       </div>
     </div>
   </section>
@@ -829,7 +869,7 @@ const MSG = {
     waitlist: "満席のため、キャンセル待ちで受け付けました。空きが出たらメールでご連絡します。",
     duplicate: "このイベントにはすでにお申し込み済みです。", preview: "プレビューのため実際には送信していません（スプレッドシート接続後に有効になります）。",
     full: "満席・キャンセル待ち", left: n => `残り${n}席`, none: "現在、受付中のイベントはありません。Meetupもご確認ください。",
-    all: "すべて", meetup: "Meetupで見る", join: "申し込む", selected: "選択中"
+    message_required: "お問い合わせ内容を入力してください。", contact_ok: "送信しました。メールでお返事します。", all: "すべて", meetup: "Meetupで見る", join: "申し込む", selected: "選択中"
   },
   en: {
     pick: "Choose an event", name_required: "Please enter your name.", email_invalid: "Please check your email address.",
@@ -839,7 +879,7 @@ const MSG = {
     waitlist: "The event is full, so you're on the waitlist. We'll email you if a spot opens.",
     duplicate: "You've already signed up for this event.", preview: "Preview only: nothing was sent (this starts working once the spreadsheet is connected).",
     full: "Full · waitlist", left: n => `${n} spots left`, none: "No events are open right now. Please check our Meetup page.",
-    all: "All", meetup: "View on Meetup", join: "Join", selected: "Selected"
+    message_required: "Please write your message.", contact_ok: "Sent. We'll reply by email.", all: "All", meetup: "View on Meetup", join: "Join", selected: "Selected"
   }
 };
 
@@ -1043,6 +1083,32 @@ document.addEventListener("click", ev => {
 });
 $("#f-event").addEventListener("change", updateEventNote);
 $("#signup").addEventListener("submit", submitForm);
+
+async function submitContact(ev) {
+  ev.preventDefault();
+  const m = MSG[lang];
+  const f = ev.target;
+  const box = $("#contact-msg");
+  const say = (kind, text) => { box.className = "form-msg " + kind; box.textContent = text; box.hidden = false; };
+  const data = { action: "contact", name: f.cname.value.trim(), email: f.cemail.value.trim(), message: f.cmessage.value.trim(), website: f.cwebsite.value, lang };
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) { say("err", m.email_invalid); return; }
+  if (!data.message) { say("err", m.message_required); return; }
+  const btn = $("#c-submit");
+  btn.disabled = true;
+  say("ok", m.sending);
+  try {
+    const res = await fetch(API_URL, { method: "POST", body: JSON.stringify(data) });
+    const out = await res.json();
+    if (!out.ok) { say("err", m[out.error] || m.network); return; }
+    say("ok", m.contact_ok);
+    f.reset();
+  } catch (x) {
+    say("err", m.network);
+  } finally {
+    btn.disabled = false;
+  }
+}
+$("#contact-form").addEventListener("submit", submitContact);
 
 /* 日本語の文を「、」「。」で区切って、区切りごとにまとまって折り返すようにする */
 function chunkJa() {
