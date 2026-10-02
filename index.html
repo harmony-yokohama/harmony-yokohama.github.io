@@ -190,6 +190,7 @@ section { padding-block: clamp(3.5rem, 8vw, 6rem); }
 .item-name { font-weight: 700; font-size: 1.08rem; min-width: 0; }
 .leader { flex: 1; border-bottom: 2px dotted rgba(243,238,227,.4); transform: translateY(-.3em); min-width: 1.5rem; }
 .price { font-family: var(--f-display); font-weight: 700; font-size: 1.2rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.price small { font-family: var(--f-body); font-weight: 500; font-size: .72rem; color: var(--gold); margin-left: .5em; letter-spacing: .02em; }
 .item-meta { color: var(--board-soft); font-size: .88rem; display: flex; flex-wrap: wrap; gap: .3rem 1rem; align-items: center; }
 .item-meta .tag { color: var(--gold); }
 .item-meta .full { color: var(--rose); font-weight: 700; }
@@ -393,9 +394,9 @@ footer img { height: 28px; }
       </div>
       <div class="kinds">
         <article class="kind">
-          <img src="assets/thumb-language.jpg" alt="Language Exchange at a Retro Kissaten" loading="lazy">
+          <img src="assets/thumb-language.jpg" alt="Language Exchange: English ⇄ 日本語" loading="lazy">
           <div class="kind-body">
-            <h3 class="ja">言語交換 @レトロ喫茶</h3><h3 class="en"><span class="display">Language Exchange</span></h3>
+            <h3 class="ja">言語交換イベント</h3><h3 class="en"><span class="display">Language Exchange</span></h3>
             <p class="lede ja">日本語と英語で、少人数でゆっくり話す定番イベント</p><p class="lede en">Our signature event: small tables, Japanese and English</p>
             <details class="more">
               <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
@@ -405,7 +406,7 @@ footer img { height: 28px; }
             <dl class="spec">
               <dt><span class="ja">時間</span><span class="en">When</span></dt><dd><span class="ja">主に土日 11:00–13:00（受付10:45〜）</span><span class="en">Mostly weekends, 11:00–13:00 (check-in from 10:45)</span></dd>
               <dt><span class="ja">流れ</span><span class="en">Flow</span></dt><dd><span class="ja">受付・自己紹介シート → 3ラウンドの交流 → 終了後はみんなでご飯（任意）</span><span class="en">Check-in &amp; intro sheet → 3 rounds of tables → lunch together afterwards (optional)</span></dd>
-              <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">500円 ＋ 1ドリンク（500円）</span><span class="en">¥500 + one drink (¥500)</span></dd>
+              <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">1,000円（1ドリンク込み）</span><span class="en">¥1,000 (one drink included)</span></dd>
             </dl>
               </div>
             </details>
@@ -414,7 +415,7 @@ footer img { height: 28px; }
         <article class="kind">
           <img src="assets/thumb-karaoke.jpg" alt="Karaoke Meetup" loading="lazy">
           <div class="kind-body">
-            <h3 class="ja">言語交換＆カラオケ</h3><h3 class="en"><span class="display">Language Exchange &amp; Karaoke</span></h3>
+            <h3 class="ja">カラオケイベント</h3><h3 class="en"><span class="display">Karaoke</span></h3>
             <p class="lede ja">交流のあとは、みんなでカラオケ</p><p class="lede en">Chat first, then sing together</p>
             <details class="more">
               <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
@@ -424,7 +425,7 @@ footer img { height: 28px; }
             <dl class="spec">
               <dt><span class="ja">時間</span><span class="en">When</span></dt><dd><span class="ja">主に土曜 14:00〜（回によって終了時間が異なります）</span><span class="en">Mostly Saturdays from 14:00 (end time varies)</span></dd>
               <dt><span class="ja">流れ</span><span class="en">Flow</span></dt><dd><span class="ja">言語交流（席替えあり） → カラオケタイム → 集合写真</span><span class="en">Language exchange with seat changes → karaoke time → group photo</span></dd>
-              <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">2,000円</span><span class="en">¥2,000</span></dd>
+              <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">2,000円（1ドリンク込み）</span><span class="en">¥2,000 (one drink included)</span></dd>
             </dl>
               </div>
             </details>
@@ -433,7 +434,7 @@ footer img { height: 28px; }
         <article class="kind">
           <img src="assets/thumb-run.jpg" alt="Morning Run &amp; Coffee" loading="lazy">
           <div class="kind-body">
-            <h3 class="ja">モーニングラン＆コーヒー</h3><h3 class="en"><span class="display">Morning Run &amp; Coffee</span></h3>
+            <h3 class="ja">ラン＆コーヒーイベント</h3><h3 class="en"><span class="display">Run &amp; Coffee</span></h3>
             <p class="lede ja">日曜の朝に走って、コーヒーで交流</p><p class="lede en">A Sunday run, then coffee and conversation</p>
             <details class="more">
               <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
@@ -444,7 +445,7 @@ footer img { height: 28px; }
               <dt><span class="ja">時間</span><span class="en">When</span></dt><dd><span class="ja">毎週日曜 8:00–10:00（8:00 カフェ集合）</span><span class="en">Every Sunday 8:00–10:00 (meet at the café at 8:00)</span></dd>
               <dt><span class="ja">雨の日</span><span class="en">Rain</span></dt><dd><span class="ja">ランは中止して、カフェで交流します</span><span class="en">We skip the run and meet at the café</span></dd>
               <dt><span class="ja">持ち物</span><span class="en">Bring</span></dt><dd><span class="ja">走りやすい服と靴。荷物はカフェに置けます（シャワーはありません）</span><span class="en">Running clothes and shoes. Leave your bag at the café (no showers)</span></dd>
-              <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">500円 ＋ 1ドリンク（500円）</span><span class="en">¥500 + one drink (¥500)</span></dd>
+              <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">1,000円（1ドリンク込み）</span><span class="en">¥1,000 (one drink included)</span></dd>
             </dl>
               </div>
             </details>
@@ -454,7 +455,7 @@ footer img { height: 28px; }
           <img src="assets/thumb-sake.jpg" alt="Sake &amp; Language Exchange" loading="lazy">
           <div class="kind-body">
             <p class="badge"><span class="ja">20歳以上</span><span class="en">20+ only</span></p>
-            <h3 class="ja">日本酒＆言語交換</h3><h3 class="en"><span class="display">Sake &amp; Language Exchange</span></h3>
+            <h3 class="ja">日本酒イベント</h3><h3 class="en"><span class="display">Sake Tasting</span></h3>
             <p class="lede ja">日本酒を飲み比べながら交流する特別イベント</p><p class="lede en">A special evening of sake tasting and conversation</p>
             <details class="more">
               <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
@@ -482,14 +483,14 @@ footer img { height: 28px; }
         <p class="eyebrow">Menu · 本日のおしながき</p>
         <h2 class="ja">開催予定のイベント</h2>
         <h2 class="en"><span class="display">Upcoming events</span></h2>
-        <p class="ja">これから1か月のイベントです。Meetupの予定がそのままここに並びます。参加したい回の「申し込む」を押してください。</p>
-        <p class="en">Events for the next month, the same ones as on our Meetup page. Tap "Join" on the one you'd like to attend.</p>
+        <p class="ja">これから1か月のイベントです。参加したい回の「申し込む」を押してください。</p>
+        <p class="en">Events for the next month. Tap "Join" on the one you'd like to attend.</p>
       </div>
       <div class="board-frame">
         <div class="filters" id="filters" role="group" aria-label="Filter"></div>
         <div id="event-list"><p class="board-empty"><span class="ja">読み込み中…</span><span class="en">Loading…</span></p></div>
-        <p class="board-foot ja">料金はすべて現金またはPayPay（クレジットカード不可）。表示価格は当日お支払いいただく合計額です（ドリンク代込み）。</p>
-        <p class="board-foot en">Cash or PayPay only (no credit cards). Prices shown are the total you pay on the day, drink included.</p>
+        <p class="board-foot ja">表示価格は、参加費と1ドリンクを合わせた合計額です（ドリンク込み）。お支払いは当日、現金またはPayPayで（クレジットカード不可）。</p>
+        <p class="board-foot en">Prices are the total including one drink. Pay on the day in cash or PayPay (no credit cards).</p>
       </div>
     </div>
   </section>
@@ -777,22 +778,22 @@ const SNAPSHOT = [
   "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316792807/"
  },
  {
-  "id": "manual-sake-1025",
+  "id": "event_316790242@meetup.com",
   "type": "sake",
   "start": "2026-10-25T09:00:00.000Z",
   "end": "2026-10-25T11:30:00.000Z",
   "feeEn": "3,000 yen total (sake tasting included)",
   "feeJa": "合計3,000円（日本酒テイスティング込み）",
-  "meetupUrl": "",
+  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316790242/",
   "capacity": 20
  }
 ];
 
 const TYPES = {
-  language: { ja: "言語交換 @レトロ喫茶", en: "Language Exchange", tagJa: "日本語＆英語で交流", tagEn: "Chat in Japanese & English" },
-  karaoke:  { ja: "言語交換＆カラオケ", en: "Language Exchange & Karaoke", tagJa: "カラオケ交流", tagEn: "Karaoke & chat" },
-  run:      { ja: "モーニングラン＆コーヒー", en: "Morning Run & Coffee", tagJa: "鶴見川沿い3〜5km・雨天はカフェ交流", tagEn: "3–5 km by the river · café if it rains" },
-  sake:     { ja: "日本酒＆言語交換", en: "Sake & Language Exchange", tagJa: "日本酒テイスティングと交流・20歳以上", tagEn: "Sake tasting & chat · 20+ only" },
+  language: { ja: "言語交換イベント", en: "Language Exchange", tagJa: "日本語＆英語で交流", tagEn: "Chat in Japanese & English" },
+  karaoke:  { ja: "カラオケイベント", en: "Karaoke", tagJa: "カラオケ交流", tagEn: "Karaoke & chat" },
+  run:      { ja: "ラン＆コーヒーイベント", en: "Run & Coffee", tagJa: "鶴見川沿い3〜5km・雨天はカフェ交流", tagEn: "3–5 km by the river · café if it rains" },
+  sake:     { ja: "日本酒イベント", en: "Sake Tasting", tagJa: "日本酒テイスティングと交流・20歳以上", tagEn: "Sake tasting & chat · 20+ only" },
   matcha:   { ja: "抹茶ミートアップ", en: "Matcha Meetup", tagJa: "抹茶体験", tagEn: "Matcha experience" }
 };
 
@@ -898,6 +899,11 @@ function render() {
   updateEventNote();
 }
 
+function inclLabel(e) {
+  if (e.type === "sake") return lang === "ja" ? "日本酒込み" : "sake incl.";
+  return lang === "ja" ? "ドリンク込み" : "drink incl.";
+}
+
 function itemHTML(e) {
   const m = MSG[lang];
   const t = TYPES[e.type] || TYPES.language;
@@ -906,7 +912,7 @@ function itemHTML(e) {
     : (e.spotsLeft != null ? `<span>${esc(m.left(e.spotsLeft))}</span>` : "");
   return `
     <div class="item">
-      <div class="item-row"><span class="item-name">${esc(t[lang])}${SPECIAL.includes(e.type) ? `<span class="sp-tag">${lang === "ja" ? "特別イベント" : "Special"}</span>` : ""}</span><span class="leader" aria-hidden="true"></span><span class="price">${yen ? "¥" + yen.toLocaleString("en-US") : ""}</span></div>
+      <div class="item-row"><span class="item-name">${esc(t[lang])}${SPECIAL.includes(e.type) ? `<span class="sp-tag">${lang === "ja" ? "特別イベント" : "Special"}</span>` : ""}</span><span class="leader" aria-hidden="true"></span><span class="price">${yen ? "¥" + yen.toLocaleString("en-US") : ""}${yen ? `<small>${esc(inclLabel(e))}</small>` : ""}</span></div>
       <div class="item-meta"><span>${esc(timeRange(e))}</span><span class="tag">${esc(lang === "ja" ? t.tagJa : t.tagEn)}</span>${spots}</div>
       <div class="item-actions">
         <button type="button" class="join-btn" data-join="${esc(e.id)}">${esc(m.join)}</button>
@@ -918,7 +924,8 @@ function itemHTML(e) {
 function updateEventNote() {
   const e = events.find(x => x.id === $("#f-event").value);
   $("#over20-wrap").hidden = !(e && e.type === "sake");
-  $("#event-note").textContent = e ? [lang === "ja" ? e.feeJa : e.feeEn, e.venue].filter(Boolean).join(" · ") : "";
+  const y = e ? totalYen(e) : null;
+  $("#event-note").textContent = e ? [y ? "¥" + y.toLocaleString("en-US") + (lang === "ja" ? "（" + inclLabel(e) + "）" : " (" + inclLabel(e) + ")") : "", e.venue].filter(Boolean).join(" · ") : "";
 }
 
 function applyWindow() {
