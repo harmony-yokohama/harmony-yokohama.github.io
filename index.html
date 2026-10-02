@@ -126,7 +126,9 @@ p { margin: 0; }
 .hero h1 .q { color: var(--gold); }
 .hero-logo { width: clamp(200px, 30vw, 340px); height: auto; margin-bottom: .6rem; }
 .hero .lead { max-width: 38rem; font-size: 1.05rem; opacity: .95; }
-.hero .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: .4rem; }
+.hero .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: .4rem; justify-content: center; }
+.hero .wrap { text-align: center; justify-items: center; }
+.hero h1, .hero .lead { margin-inline: auto; }
 .stamp {
   position: absolute; right: clamp(16px, 5vw, 64px); top: clamp(24px, 6vw, 56px); z-index: 1;
   width: 112px; aspect-ratio: 1; border-radius: 50%; background: var(--shu); color: var(--on-photo);
@@ -198,6 +200,16 @@ section { padding-block: clamp(3.5rem, 8vw, 6rem); }
 }
 .join-btn:hover { background: var(--shu-ink); }
 .item-actions a { color: var(--board-soft); font-size: .82rem; }
+.special { position: relative; display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(1rem, 3vw, 2rem); align-items: center; padding-bottom: 1.8rem; margin-bottom: 1.8rem; border-bottom: 1px solid rgba(243,238,227,.25); }
+@media (max-width: 700px) { .special { grid-template-columns: 1fr; } }
+.special img { border-radius: 4px; aspect-ratio: 16/9; object-fit: cover; width: 100%; }
+.special-body { display: grid; gap: .55rem; justify-items: start; min-width: 0; }
+.sp-badge { color: var(--board); background: var(--gold); font-weight: 700; font-size: .75rem; letter-spacing: .12em; padding: .35em .9em; border-radius: 999px; }
+.special h3 { font-family: var(--f-display); font-size: 1.5rem; font-weight: 700; }
+html[data-lang="ja"] .special h3 { font-family: var(--f-body); }
+.special .when { font-family: var(--f-display); font-size: 1.15rem; color: var(--gold); font-variant-numeric: tabular-nums; }
+.special p { color: var(--board-soft); font-size: .93rem; }
+.special .join-btn { font-size: 1rem; padding: .85em 1.6em; margin-top: .3rem; }
 .board-foot { margin-top: 1.4rem; font-size: .85rem; color: var(--board-soft); position: relative; }
 .preview-flag { display: inline-block; margin-bottom: 1rem; font-size: .8rem; padding: .35em .8em; border-radius: 999px; background: rgba(240,201,135,.15); color: var(--gold); position: relative; }
 .board-empty { color: var(--board-soft); padding: 1rem 0; }
@@ -307,10 +319,10 @@ footer img { height: 28px; }
     <img class="bg" src="assets/hero.jpg" alt="">
     <div class="wrap">
       <img class="hero-logo" src="assets/logo-vertical-dark.svg" alt="Harmony">
-      <h1 class="ja">日本にいながら、<br>世界とつながれる<span class="q">「居場所」</span>。</h1>
-      <h1 class="en">A place in Japan where you <em>connect with the world.</em></h1>
-      <p class="lead ja">横浜・鶴見のレトロ喫茶から広がる、国際交流コミュニティ。</p>
-      <p class="lead en">An international community based at a retro café in Tsurumi, Yokohama.</p>
+      <h1 class="ja">日本にいながら、<br>世界とつながれる<span class="q">「居場所」</span></h1>
+      <h1 class="en">A place in Japan where you <em>connect with the world</em></h1>
+      <p class="lead ja">横浜・鶴見のレトロ喫茶から広がる、国際交流コミュニティ</p>
+      <p class="lead en">An international community based at a retro café in Tsurumi, Yokohama</p>
       <div class="cta">
         <a class="btn btn-primary" href="#events"><span class="ja">開催予定のイベント</span><span class="en">Upcoming events</span></a>
         <a class="btn btn-ghost" href="#about"><span class="ja">Harmonyについて</span><span class="en">About Harmony</span></a>
@@ -382,6 +394,7 @@ footer img { height: 28px; }
       </div>
       <div class="board-frame">
         <p class="preview-flag" id="preview-flag" hidden><span class="ja">プレビュー表示：スプレッドシート接続前のサンプルです</span><span class="en">Preview: sample data until the spreadsheet is connected</span></p>
+        <div id="special"></div>
         <div class="filters" id="filters" role="group" aria-label="Filter"></div>
         <div id="event-list"><p class="board-empty"><span class="ja">読み込み中…</span><span class="en">Loading…</span></p></div>
         <p class="board-foot ja">料金はすべて現金またはPayPay（クレジットカード不可）。表示価格は当日お支払いいただく合計額です（ドリンク代込み）。</p>
@@ -448,7 +461,7 @@ footer img { height: 28px; }
             <p class="ja">日本酒を飲み比べながら、英語と日本語で交流する会。日本酒に詳しくなくても大丈夫、一人参加も歓迎です。</p>
             <p class="en">Taste Japanese sake while chatting in English and Japanese. No sake knowledge needed, and solo guests are welcome.</p>
             <dl class="spec">
-                            <dt><span class="ja">時間</span><span class="en">When</span></dt><dd>18:00–20:30</dd>
+                            <dt><span class="ja">日時</span><span class="en">When</span></dt><dd><span class="ja">10月25日（日）18:00–20:30</span><span class="en">Sunday, Oct 25, 18:00–20:30</span></dd>
               <dt><span class="ja">内容</span><span class="en">What</span></dt><dd><span class="ja">日本酒テイスティングと交流</span><span class="en">Sake tasting and conversation</span></dd>
               <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">3,000円（日本酒テイスティング込み）</span><span class="en">¥3,000 (sake tasting included)</span></dd>
             </dl>
@@ -694,6 +707,10 @@ const MSG = {
   }
 };
 
+const SPECIAL = ["sake", "matcha"];
+const SPECIAL_INFO = {
+  sake: { img: "assets/thumb-sake.jpg", ja: "日本酒を飲み比べながら、英語と日本語で交流する特別な夜。日本酒に詳しくなくても大丈夫、一人参加も歓迎です。", en: "A special evening of sake tasting and conversation in English and Japanese. No sake knowledge needed, and solo guests are welcome." }
+};
 let lang = "ja";
 let events = [];
 let filter = "all";
@@ -736,13 +753,16 @@ function inWindow(e) {
 function render() {
   const m = MSG[lang];
   // filters
-  const kinds = [...new Set(events.map(e => e.type))];
+  const specials = events.filter(e => SPECIAL.includes(e.type));
+  const regular = events.filter(e => !SPECIAL.includes(e.type));
+  $("#special").innerHTML = specials.map(specialHTML).join("");
+  const kinds = [...new Set(regular.map(e => e.type))];
   $("#filters").innerHTML = kinds.length > 1
     ? [["all", m.all], ...kinds.map(k => [k, (TYPES[k] || TYPES.language)[lang]])]
         .map(([k, label]) => `<button type="button" data-filter="${k}" aria-pressed="${filter === k}">${esc(label)}</button>`).join("")
     : "";
   // list
-  const list = events.filter(e => filter === "all" || e.type === filter);
+  const list = regular.filter(e => filter === "all" || e.type === filter);
   if (!list.length) {
     $("#event-list").innerHTML = `<p class="board-empty">${esc(m.none)}</p>`;
   } else {
@@ -769,6 +789,27 @@ function render() {
   }).join("");
   if (events.some(e => e.id === cur)) sel.value = cur;
   updateEventNote();
+}
+
+function specialHTML(e) {
+  const m = MSG[lang];
+  const t = TYPES[e.type] || TYPES.language;
+  const info = SPECIAL_INFO[e.type] || {};
+  const yen = totalYen(e);
+  const spots = e.spotsLeft === 0 ? m.full : (e.spotsLeft != null ? m.left(e.spotsLeft) : "");
+  const when = fmt(e.start, { month: "numeric", day: "numeric", weekday: "short" }) + " " + timeRange(e);
+  return `
+    <div class="special">
+      ${info.img ? `<img src="${info.img}" alt="">` : ""}
+      <div class="special-body">
+        <span class="sp-badge">${lang === "ja" ? "特別イベント" : "SPECIAL EVENT"}</span>
+        <h3>${esc(t[lang])}</h3>
+        <div class="when">${esc(when)}${yen ? " ・ ¥" + yen.toLocaleString("en-US") : ""}</div>
+        <p>${esc(info[lang] || "")}</p>
+        <div class="item-meta"><span class="tag">${esc(lang === "ja" ? t.tagJa : t.tagEn)}</span>${spots ? `<span class="${e.spotsLeft === 0 ? "full" : ""}">${esc(spots)}</span>` : ""}</div>
+        <button type="button" class="join-btn" data-join="${esc(e.id)}">${esc(m.join)}</button>
+      </div>
+    </div>`;
 }
 
 function itemHTML(e) {
