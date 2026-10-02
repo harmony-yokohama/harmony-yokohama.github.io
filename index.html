@@ -215,6 +215,7 @@ section { padding-block: clamp(3.5rem, 8vw, 6rem); }
   padding: .7em 1.2em; cursor: pointer;
 }
 .join-btn:hover { background: var(--shu-ink); }
+.join-btn.is-full, .join-btn.is-full:hover { background: transparent; color: var(--board-soft); border: 1px solid var(--board-soft); cursor: not-allowed; }
 .item-actions a { color: var(--board-soft); font-size: .82rem; }
 .sp-tag { display: inline-block; margin-left: .6em; vertical-align: middle; color: var(--board); background: var(--gold); font-weight: 700; font-size: .68rem; letter-spacing: .08em; padding: .25em .7em; border-radius: 999px; }
 .more-events { position: relative; display: flex; justify-content: center; padding-top: 1.4rem; margin-top: .4rem; border-top: 1px dashed rgba(243,238,227,.22); }
@@ -752,6 +753,7 @@ const WINDOW_DAYS = 31; // 何日先までのイベントを表示するか
 const SNAPSHOT = [
  {
   "id": "event_316496653@meetup.com",
+  "full": true,
   "type": "language",
   "start": "2026-10-03T02:00:00.000Z",
   "end": "2026-10-03T04:00:00.000Z",
@@ -868,7 +870,7 @@ const MSG = {
     sending: "送信中…", ok: "お申し込みありがとうございます！確認メールをお送りしました。届かない場合は迷惑メールフォルダもご確認ください。",
     waitlist: "満席のため、キャンセル待ちで受け付けました。空きが出たらメールでご連絡します。",
     duplicate: "このイベントにはすでにお申し込み済みです。", preview: "プレビューのため実際には送信していません（スプレッドシート接続後に有効になります）。",
-    full: "満席・キャンセル待ち", left: n => `残り${n}席`, none: "現在、受付中のイベントはありません。Meetupもご確認ください。",
+    event_full: "このイベントは満席になりました。別の日程を選んでください。", full: "満席", left: n => `残り${n}席`, none: "現在、受付中のイベントはありません。Meetupもご確認ください。",
     message_required: "お問い合わせ内容を入力してください。", contact_ok: "送信しました。メールでお返事します。", all: "すべて", meetup: "Meetupで見る", join: "申し込む", selected: "選択中"
   },
   en: {
@@ -878,7 +880,7 @@ const MSG = {
     sending: "Sending…", ok: "You're signed up! We've sent a confirmation email. If you don't see it, check your spam folder.",
     waitlist: "The event is full, so you're on the waitlist. We'll email you if a spot opens.",
     duplicate: "You've already signed up for this event.", preview: "Preview only: nothing was sent (this starts working once the spreadsheet is connected).",
-    full: "Full · waitlist", left: n => `${n} spots left`, none: "No events are open right now. Please check our Meetup page.",
+    event_full: "This event is now full. Please choose another date.", full: "Full", left: n => `${n} spots left`, none: "No events are open right now. Please check our Meetup page.",
     message_required: "Please write your message.", contact_ok: "Sent. We'll reply by email.", all: "All", meetup: "View on Meetup", join: "Join", selected: "Selected"
   }
 };
@@ -961,8 +963,9 @@ function render() {
   const cur = sel.value;
   sel.innerHTML = `<option value="">${esc(m.pick)}</option>` + events.map(e => {
     const t = TYPES[e.type] || TYPES.language;
-    const full = e.spotsLeft === 0 ? ` (${m.full})` : "";
-    return `<option value="${esc(e.id)}">${esc(fmt(e.start, { month: "numeric", day: "numeric", weekday: "short" }))} ${esc(timeRange(e))}  ${esc(t[lang])}${esc(full)}</option>`;
+    const isFull = e.full || e.spotsLeft === 0;
+    const full = isFull ? ` (${m.full})` : "";
+    return `<option value="${esc(e.id)}"${isFull ? " disabled" : ""}>${esc(fmt(e.start, { month: "numeric", day: "numeric", weekday: "short" }))} ${esc(timeRange(e))}  ${esc(t[lang])}${esc(full)}</option>`;
   }).join("");
   if (events.some(e => e.id === cur)) sel.value = cur;
   updateEventNote();
@@ -977,14 +980,15 @@ function itemHTML(e) {
   const m = MSG[lang];
   const t = TYPES[e.type] || TYPES.language;
   const yen = totalYen(e);
-  const spots = e.spotsLeft === 0 ? `<span class="full">${esc(m.full)}</span>`
+  const isFull = e.full || e.spotsLeft === 0;
+  const spots = isFull ? `<span class="full">${esc(m.full)}</span>`
     : (e.spotsLeft != null ? `<span>${esc(m.left(e.spotsLeft))}</span>` : "");
   return `
     <div class="item">
       <div class="item-row"><span class="item-name">${esc(t[lang])}${SPECIAL.includes(e.type) ? `<span class="sp-tag">${lang === "ja" ? "特別イベント" : "Special"}</span>` : ""}</span><span class="leader" aria-hidden="true"></span><span class="price">${yen ? "¥" + yen.toLocaleString("en-US") : ""}${yen ? `<small>${esc(inclLabel(e))}</small>` : ""}</span></div>
       <div class="item-meta"><span>${esc(timeRange(e))}</span><span class="tag">${esc(lang === "ja" ? t.tagJa : t.tagEn)}</span>${spots}</div>
       <div class="item-actions">
-        <button type="button" class="join-btn" data-join="${esc(e.id)}">${esc(m.join)}</button>
+        ${isFull ? `<button type="button" class="join-btn is-full" disabled>${esc(m.full)}</button>` : `<button type="button" class="join-btn" data-join="${esc(e.id)}">${esc(m.join)}</button>`}
         ${e.meetupUrl ? `<a href="${esc(e.meetupUrl)}" target="_blank" rel="noopener">${esc(m.meetup)}</a>` : ""}
       </div>
     </div>`;
@@ -1046,6 +1050,7 @@ async function submitForm(ev) {
   if (!data.eventId) err = m.pick;
   else if (!data.name) err = m.name_required;
   else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) err = m.email_invalid;
+  else if (e && (e.full || e.spotsLeft === 0)) err = m.event_full;
   else if (e && e.type === "sake" && !data.over20) err = m.over20_required;
   else if (!data.consent) err = m.consent_required;
   if (err) { showMsg("err", err); return; }
@@ -1056,7 +1061,7 @@ async function submitForm(ev) {
   try {
     const res = await fetch(API_URL, { method: "POST", body: JSON.stringify(data) });
     const out = await res.json();
-    if (!out.ok) { showMsg("err", m[out.error] || m.network); return; }
+    if (!out.ok) { showMsg("err", m[out.error] || m.network); if (out.error === "event_full") loadEvents(); return; }
     showMsg("ok", out.status === "waitlist" ? m.waitlist : out.status === "duplicate" ? m.duplicate : m.ok);
     f.reset();
     updateEventNote();
