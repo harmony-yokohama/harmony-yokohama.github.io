@@ -271,6 +271,8 @@ fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: .35rem; }
 .choices label, .check { font-weight: 400; display: inline-flex; gap: .5em; align-items: flex-start; font-size: .95rem; }
 .check input, .choices input { margin-top: .35em; accent-color: var(--shu); }
 .event-pick { font-size: .9rem; color: var(--ink-soft); }
+.reasons { display: grid; grid-template-columns: 1fr 1fr; gap: .45rem 1rem; }
+@media (max-width: 520px) { .reasons { grid-template-columns: 1fr; } }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .form-msg { font-size: .95rem; padding: .9rem 1rem; border-radius: 4px; }
 .form-msg.ok { border: 1px solid var(--ok); color: var(--ok); }
@@ -570,12 +572,14 @@ footer img { height: 28px; }
             </div>
           </div>
           <fieldset>
-            <legend><span class="ja">話したい言語</span><span class="en">I want to practice</span></legend>
-            <div class="choices">
-              <label><input type="radio" name="practice" id="f-pr-ja" value="Japanese"><span class="ja">日本語</span><span class="en">Japanese</span></label>
-              <label><input type="radio" name="practice" id="f-pr-en" value="English"><span class="ja">英語</span><span class="en">English</span></label>
-              <label><input type="radio" name="practice" id="f-pr-both" value="Both"><span class="ja">どちらも</span><span class="en">Both</span></label>
-              <label><input type="radio" name="practice" id="f-pr-friends" value="Just friends"><span class="ja">友達づくりがメイン</span><span class="en">Just here to make friends</span></label>
+            <legend><span class="ja">参加理由（複数選択可）</span><span class="en">Why are you joining? (choose any)</span></legend>
+            <div class="choices reasons">
+              <label><input type="checkbox" name="reason" id="f-r-en" value="英語を話したい"><span class="ja">英語を話したい</span><span class="en">Practice English</span></label>
+              <label><input type="checkbox" name="reason" id="f-r-ja" value="日本語を話したい"><span class="ja">日本語を話したい</span><span class="en">Practice Japanese</span></label>
+              <label><input type="checkbox" name="reason" id="f-r-intl" value="海外の友達を作りたい"><span class="ja">海外の友達を作りたい</span><span class="en">Make international friends</span></label>
+              <label><input type="checkbox" name="reason" id="f-r-jp" value="日本人の友達を作りたい"><span class="ja">日本人の友達を作りたい</span><span class="en">Make Japanese friends</span></label>
+              <label><input type="checkbox" name="reason" id="f-r-meet" value="新しい出会いを楽しみたい"><span class="ja">新しい出会いを楽しみたい</span><span class="en">Meet new people</span></label>
+              <label><input type="checkbox" name="reason" id="f-r-event" value="イベントの内容に興味がある"><span class="ja">イベントの内容に興味がある</span><span class="en">Interested in the activity</span></label>
             </div>
           </fieldset>
           <div class="row2">
@@ -993,7 +997,7 @@ async function submitForm(ev) {
   const f = ev.target;
   const data = {
     eventId: f.eventId.value, name: f.name.value.trim(), email: f.email.value.trim(), country: f.country.value.trim(),
-    ageRange: f.ageRange.value, practice: (f.querySelector('input[name="practice"]:checked') || {}).value || "",
+    ageRange: f.ageRange.value, practice: [...f.querySelectorAll('input[name="reason"]:checked')].map(i => i.value).join(" / "),
     firstTime: (f.querySelector('input[name="firstTime"]:checked') || {}).value || "", source: f.source.value,
     message: f.message.value.trim(), over20: f.over20.checked, consent: f.consent.checked, website: f.website.value, lang
   };
