@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
 <meta property="og:title" content="Harmony — 日本にいながら世界とつながれる「居場所」">
 <meta property="og:image" content="https://harmony-yokohama.github.io/assets/hero.jpg">
 <title>Harmony Yokohama</title>
@@ -46,24 +47,27 @@
   --wrap: 68rem;
   --radius: 6px;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper: #14171C; --paper-2: #1B1F26; --ink: #EDE7DA; --ink-soft: #ABA597;
-    --ai: #93AED6; --shu: #E57A5E; --shu-ink: #F09A80; --matcha: #A3C189;
-    --board: #0D1220; --board-ink: #F3EEE3; --board-soft: #9A988F;
-    --line: #2C323C; --field: #1E232B; --ok: #A3C189; --err: #F09A80;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --paper: #14171C; --paper-2: #1B1F26; --ink: #EDE7DA; --ink-soft: #ABA597;
-  --ai: #93AED6; --shu: #E57A5E; --shu-ink: #F09A80; --matcha: #A3C189;
-  --board: #0D1220; --board-ink: #F3EEE3; --board-soft: #9A988F;
-  --line: #2C323C; --field: #1E232B; --ok: #A3C189; --err: #F09A80;
-  color-scheme: dark;
-}
 
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
+/* 一文字だけの改行を避ける：文節で折り返し、行の長さをそろえる */
+body { word-break: auto-phrase; line-break: strict; overflow-wrap: anywhere; }
+p, li, dd, dt, summary, label, legend, h1, h2, h3, .item-name, .when { text-wrap: balance; }
+@media (max-width: 560px) {
+  body { font-size: .95rem; }
+  .hero .lead { font-size: .95rem; }
+  .sec-head h2 { font-size: 1.5rem; }
+  .kind-body { padding: 1rem; }
+  .spec { grid-template-columns: 3.2rem 1fr; }
+  .item-row { gap: .45rem; }
+  .item-name { font-size: 1rem; white-space: nowrap; }
+  .leader { min-width: .5rem; }
+  .price { font-size: 1.1rem; text-align: right; line-height: 1.15; }
+  .price small { display: block; margin-left: 0; }
+  .sp-tag { margin-left: .4em; padding: .2em .55em; }
+  .board-frame { padding: 1rem .9rem; }
+}
+@media (max-width: 350px) { .item-name { white-space: normal; } }
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
@@ -102,9 +106,6 @@ p { margin: 0; }
 .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 10px; }
 .logo { height: 34px; width: auto; }
 .logo-dark { display: none; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .logo-light { display: none; } :root:not([data-theme="light"]) .logo-dark { display: block; } }
-:root[data-theme="dark"] .logo-light { display: none; }
-:root[data-theme="dark"] .logo-dark { display: block; }
 .top-actions { display: flex; align-items: center; gap: 10px; }
 .lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
 .lang button {
