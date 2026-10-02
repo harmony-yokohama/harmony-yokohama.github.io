@@ -10,7 +10,7 @@
 <link rel="icon" href="assets/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho:wght@600;800&display=swap">
 <style>
 /* Layout: one calm reading column on ivory paper; the single bold moment is the
    events section, set like a kissaten menu board (navy, dotted price leaders). */
@@ -124,6 +124,17 @@ p { margin: 0; }
 .hero h1 em { font-style: italic; font-weight: 500; color: var(--gold); }
 .hero h1.ja { font-family: var(--f-body); font-weight: 700; letter-spacing: .02em; max-width: 20ch; font-size: clamp(1.9rem, 5vw, 3.4rem); }
 .hero h1 .q { color: var(--gold); }
+.hero h1.catch {
+  font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif; font-weight: 800;
+  display: grid; justify-items: center; gap: .12em; line-height: 1.2; max-width: none; letter-spacing: .06em;
+  font-size: clamp(2rem, 5.6vw, 3.7rem); text-shadow: 0 2px 18px rgba(20,16,12,.55);
+}
+.catch .c1 { font-size: .46em; font-weight: 600; letter-spacing: .34em; display: flex; align-items: center; gap: 1em; margin-bottom: .5em; padding-left: .34em; }
+.catch .c1::before, .catch .c1::after { content: ""; width: 2.6em; height: 1px; background: currentColor; opacity: .7; }
+.catch .c3 {
+  font-size: 1.5em; color: var(--gold); letter-spacing: .08em; padding-bottom: .22em; margin-top: .05em;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 14' preserveAspectRatio='none'%3E%3Cpath d='M4 9 C 60 2, 110 12, 160 6 S 250 4, 296 8' fill='none' stroke='%23D2553A' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center bottom / 78% .2em;
+}
 .hero-logo { width: clamp(200px, 30vw, 340px); height: auto; margin-bottom: .6rem; }
 .hero .lead { max-width: 38rem; font-size: 1.05rem; opacity: .95; }
 .hero .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: .4rem; justify-content: center; }
@@ -319,7 +330,7 @@ footer img { height: 28px; }
     <img class="bg" src="assets/hero.jpg" alt="">
     <div class="wrap">
       <img class="hero-logo" src="assets/logo-vertical-dark.svg" alt="Harmony">
-      <h1 class="ja">日本にいながら、<br>世界とつながれる<span class="q">「居場所」</span></h1>
+      <h1 class="ja catch"><span class="c1">日本にいながら</span><span class="c2">世界とつながれる</span><span class="c3">「居場所」</span></h1>
       <h1 class="en">A place in Japan where you <em>connect with the world</em></h1>
       <p class="lead ja">横浜・鶴見のレトロ喫茶から広がる、国際交流コミュニティ</p>
       <p class="lead en">An international community based at a retro café in Tsurumi, Yokohama</p>
