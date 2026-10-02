@@ -200,27 +200,26 @@ section { padding-block: clamp(3.5rem, 8vw, 6rem); }
 }
 .join-btn:hover { background: var(--shu-ink); }
 .item-actions a { color: var(--board-soft); font-size: .82rem; }
-.special { position: relative; display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(1rem, 3vw, 2rem); align-items: center; padding-bottom: 1.8rem; margin-bottom: 1.8rem; border-bottom: 1px solid rgba(243,238,227,.25); }
-@media (max-width: 700px) { .special { grid-template-columns: 1fr; } }
-.special img { border-radius: 4px; aspect-ratio: 16/9; object-fit: cover; width: 100%; }
-.special-body { display: grid; gap: .55rem; justify-items: start; min-width: 0; }
-.sp-badge { color: var(--board); background: var(--gold); font-weight: 700; font-size: .75rem; letter-spacing: .12em; padding: .35em .9em; border-radius: 999px; }
-.special h3 { font-family: var(--f-display); font-size: 1.5rem; font-weight: 700; }
-html[data-lang="ja"] .special h3 { font-family: var(--f-body); }
-.special .when { font-family: var(--f-display); font-size: 1.15rem; color: var(--gold); font-variant-numeric: tabular-nums; }
-.special p { color: var(--board-soft); font-size: .93rem; }
-.special .join-btn { font-size: 1rem; padding: .85em 1.6em; margin-top: .3rem; }
+.sp-tag { display: inline-block; margin-left: .6em; vertical-align: middle; color: var(--board); background: var(--gold); font-weight: 700; font-size: .68rem; letter-spacing: .08em; padding: .25em .7em; border-radius: 999px; }
 .board-foot { margin-top: 1.4rem; font-size: .85rem; color: var(--board-soft); position: relative; }
 .preview-flag { display: inline-block; margin-bottom: 1rem; font-size: .8rem; padding: .35em .8em; border-radius: 999px; background: rgba(240,201,135,.15); color: var(--gold); position: relative; }
 .board-empty { color: var(--board-soft); padding: 1rem 0; }
 
 /* event types */
-.kinds { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.2rem, 3vw, 2rem); }
-@media (max-width: 800px) { .kinds { grid-template-columns: 1fr; } }
-.kind { display: grid; grid-template-rows: auto 1fr; background: var(--paper-2); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.kinds { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 1.4rem); align-items: start; }
+@media (max-width: 1000px) { .kinds { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .kinds { grid-template-columns: 1fr; } }
+.kind .lede { color: var(--ink); font-size: .93rem; }
+.kind details.more { border: 0; padding: 0; }
+.kind details.more summary { display: inline-flex; justify-content: flex-start; gap: .4em; align-items: center; font-size: .88rem; font-weight: 700; color: var(--paper); background: var(--ai); padding: .6em 1.1em; border-radius: 999px; }
+.kind details.more summary::after { font-size: 1rem; color: inherit; }
+.kind .more-body { display: grid; gap: .7rem; margin-top: .9rem; }
+.kind .more-body > p { color: var(--ink-soft); font-size: .92rem; margin: 0; }
+.kind .spec { grid-template-columns: 3.6rem 1fr; font-size: .86rem; }
+.kind { display: grid; grid-template-rows: auto auto; background: var(--paper-2); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
 .kind img { aspect-ratio: 16/9; object-fit: cover; width: 100%; }
 .kind-body { display: grid; gap: .7rem; align-content: start; padding: clamp(1rem, 2.5vw, 1.5rem); min-width: 0; }
-.kind h3 { font-size: 1.2rem; }
+.kind h3 { font-size: 1.08rem; }
 .kind h3 .display { font-family: var(--f-display); font-weight: 600; }
 .kind-body > p { color: var(--ink-soft); font-size: .95rem; }
 .spec { display: grid; grid-template-columns: 4.6rem 1fr; gap: .45rem .8rem; margin: .3rem 0 0; padding-top: .9rem; border-top: 1px dashed var(--line); font-size: .9rem; }
@@ -383,26 +382,6 @@ footer img { height: 28px; }
     </div>
   </section>
 
-  <section id="events" class="board">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="eyebrow">Menu · 本日のおしながき</p>
-        <h2 class="ja">開催予定のイベント</h2>
-        <h2 class="en"><span class="display">Upcoming events</span></h2>
-        <p class="ja">これから1か月のイベントです。Meetupの予定がそのままここに並びます。参加したい回の「申し込む」を押してください。</p>
-        <p class="en">Events for the next month, the same ones as on our Meetup page. Tap "Join" on the one you'd like to attend.</p>
-      </div>
-      <div class="board-frame">
-        <p class="preview-flag" id="preview-flag" hidden><span class="ja">プレビュー表示：スプレッドシート接続前のサンプルです</span><span class="en">Preview: sample data until the spreadsheet is connected</span></p>
-        <div id="special"></div>
-        <div class="filters" id="filters" role="group" aria-label="Filter"></div>
-        <div id="event-list"><p class="board-empty"><span class="ja">読み込み中…</span><span class="en">Loading…</span></p></div>
-        <p class="board-foot ja">料金はすべて現金またはPayPay（クレジットカード不可）。表示価格は当日お支払いいただく合計額です（ドリンク代込み）。</p>
-        <p class="board-foot en">Cash or PayPay only (no credit cards). Prices shown are the total you pay on the day, drink included.</p>
-      </div>
-    </div>
-  </section>
-
   <section id="kinds">
     <div class="wrap">
       <div class="sec-head">
@@ -417,6 +396,10 @@ footer img { height: 28px; }
           <img src="assets/thumb-language.jpg" alt="Language Exchange at a Retro Kissaten" loading="lazy">
           <div class="kind-body">
             <h3 class="ja">言語交換 @レトロ喫茶</h3><h3 class="en"><span class="display">Language Exchange</span></h3>
+            <p class="lede ja">日本語と英語で、少人数でゆっくり話す定番イベント</p><p class="lede en">Our signature event: small tables, Japanese and English</p>
+            <details class="more">
+              <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
+              <div class="more-body">
             <p class="ja">Harmonyの定番イベント。4〜5人のテーブルで、日本語と英語を15分ずつ切り替えながら話します。30分ごとの席替えで、1回に9〜10人と話せます。</p>
             <p class="en">Our signature event. Tables of 4–5, switching between Japanese and English every 15 minutes. Seats change every 30 minutes, so you'll meet 9–10 people.</p>
             <dl class="spec">
@@ -424,12 +407,18 @@ footer img { height: 28px; }
               <dt><span class="ja">流れ</span><span class="en">Flow</span></dt><dd><span class="ja">受付・自己紹介シート → 3ラウンドの交流 → 終了後はみんなでご飯（任意）</span><span class="en">Check-in &amp; intro sheet → 3 rounds of tables → lunch together afterwards (optional)</span></dd>
               <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">500円 ＋ 1ドリンク（500円）</span><span class="en">¥500 + one drink (¥500)</span></dd>
             </dl>
+              </div>
+            </details>
           </div>
         </article>
         <article class="kind">
           <img src="assets/thumb-karaoke.jpg" alt="Karaoke Meetup" loading="lazy">
           <div class="kind-body">
             <h3 class="ja">言語交換＆カラオケ</h3><h3 class="en"><span class="display">Language Exchange &amp; Karaoke</span></h3>
+            <p class="lede ja">交流のあとは、みんなでカラオケ</p><p class="lede en">Chat first, then sing together</p>
+            <details class="more">
+              <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
+              <div class="more-body">
             <p class="ja">前半は少人数グループで言語交流、後半はみんなでカラオケ。J-POP、洋楽、アニソン、母国の歌、なんでもOKです。歌わずに聴くだけ・盛り上げるだけでも大歓迎。</p>
             <p class="en">Small-group conversation first, then karaoke together. J-pop, English hits, anime songs, songs from home: anything goes. Listening and cheering count too.</p>
             <dl class="spec">
@@ -437,12 +426,18 @@ footer img { height: 28px; }
               <dt><span class="ja">流れ</span><span class="en">Flow</span></dt><dd><span class="ja">言語交流（席替えあり） → カラオケタイム → 集合写真</span><span class="en">Language exchange with seat changes → karaoke time → group photo</span></dd>
               <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">2,000円</span><span class="en">¥2,000</span></dd>
             </dl>
+              </div>
+            </details>
           </div>
         </article>
         <article class="kind">
           <img src="assets/thumb-run.jpg" alt="Morning Run &amp; Coffee" loading="lazy">
           <div class="kind-body">
             <h3 class="ja">モーニングラン＆コーヒー</h3><h3 class="en"><span class="display">Morning Run &amp; Coffee</span></h3>
+            <p class="lede ja">日曜の朝に走って、コーヒーで交流</p><p class="lede en">A Sunday run, then coffee and conversation</p>
+            <details class="more">
+              <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
+              <div class="more-body">
             <p class="ja">鶴見川沿いを3〜5km、自分のペースで走る日曜朝活。速さは関係なく、ウォーキングでもOK。走ったあとはカフェでコーヒーを飲みながら交流します。</p>
             <p class="en">A Sunday-morning run of 3–5 km along the Tsurumi River, at your own pace. Walkers welcome. Afterwards we chat over coffee at the café.</p>
             <dl class="spec">
@@ -451,6 +446,8 @@ footer img { height: 28px; }
               <dt><span class="ja">持ち物</span><span class="en">Bring</span></dt><dd><span class="ja">走りやすい服と靴。荷物はカフェに置けます（シャワーはありません）</span><span class="en">Running clothes and shoes. Leave your bag at the café (no showers)</span></dd>
               <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">500円 ＋ 1ドリンク（500円）</span><span class="en">¥500 + one drink (¥500)</span></dd>
             </dl>
+              </div>
+            </details>
           </div>
         </article>
         <article class="kind">
@@ -458,6 +455,10 @@ footer img { height: 28px; }
           <div class="kind-body">
             <p class="badge"><span class="ja">20歳以上</span><span class="en">20+ only</span></p>
             <h3 class="ja">日本酒＆言語交換</h3><h3 class="en"><span class="display">Sake &amp; Language Exchange</span></h3>
+            <p class="lede ja">日本酒を飲み比べながら交流する特別イベント</p><p class="lede en">A special evening of sake tasting and conversation</p>
+            <details class="more">
+              <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
+              <div class="more-body">
             <p class="ja">日本酒を飲み比べながら、英語と日本語で交流する会。日本酒に詳しくなくても大丈夫、一人参加も歓迎です。</p>
             <p class="en">Taste Japanese sake while chatting in English and Japanese. No sake knowledge needed, and solo guests are welcome.</p>
             <dl class="spec">
@@ -465,6 +466,8 @@ footer img { height: 28px; }
               <dt><span class="ja">内容</span><span class="en">What</span></dt><dd><span class="ja">日本酒テイスティングと交流</span><span class="en">Sake tasting and conversation</span></dd>
               <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">3,000円（日本酒テイスティング込み）</span><span class="en">¥3,000 (sake tasting included)</span></dd>
             </dl>
+              </div>
+            </details>
           </div>
         </article>
       </div>
@@ -472,6 +475,25 @@ footer img { height: 28px; }
       <p class="soon en">Coming soon: a matcha meetup</p>
     </div>
   </section>
+
+  <section id="events" class="board">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Menu · 本日のおしながき</p>
+        <h2 class="ja">開催予定のイベント</h2>
+        <h2 class="en"><span class="display">Upcoming events</span></h2>
+        <p class="ja">これから1か月のイベントです。Meetupの予定がそのままここに並びます。参加したい回の「申し込む」を押してください。</p>
+        <p class="en">Events for the next month, the same ones as on our Meetup page. Tap "Join" on the one you'd like to attend.</p>
+      </div>
+      <div class="board-frame">
+        <div class="filters" id="filters" role="group" aria-label="Filter"></div>
+        <div id="event-list"><p class="board-empty"><span class="ja">読み込み中…</span><span class="en">Loading…</span></p></div>
+        <p class="board-foot ja">料金はすべて現金またはPayPay（クレジットカード不可）。表示価格は当日お支払いいただく合計額です（ドリンク代込み）。</p>
+        <p class="board-foot en">Cash or PayPay only (no credit cards). Prices shown are the total you pay on the day, drink included.</p>
+      </div>
+    </div>
+  </section>
+
 
   <section id="join" style="background: var(--paper-2); border-block: 1px solid var(--line);">
     <div class="wrap">
@@ -661,19 +683,109 @@ footer img { height: 28px; }
    ================================================================ */
 const API_URL = "https://script.google.com/macros/s/AKfycbzJaz5SpcfpzhapigC04ESz-leYx9uOM_rkGx_CYesB_Tg-JcPsuA7dlnKF1fX362Kq/exec";
 
-/* API_URL が空のあいだはサンプル表示（2026年10月1日時点のMeetupの予定） */
+/* 公開時点のイベント一覧。ページを開いた瞬間はこれを表示し、裏でスプシの最新データに差し替える */
 const WINDOW_DAYS = 31; // 何日先までのイベントを表示するか
-const SAMPLE_EVENTS = [
-  { id: "event_316496653@meetup.com", type: "language", start: "2026-10-03T11:00:00+09:00", end: "2026-10-03T13:00:00+09:00", feeEn: "500 yen + One Drink Order (500 yen)", feeJa: "500円 + 1ドリンクオーダー（500円）", meetupUrl: "https://www.meetup.com/yokohama-meetup-group-harmony/events/316496653/" },
-  { id: "event_316704811@meetup.com", type: "karaoke", start: "2026-10-03T14:00:00+09:00", end: "2026-10-03T16:00:00+09:00", feeEn: "2,000 yen total", feeJa: "合計2,000円", meetupUrl: "https://www.meetup.com/yokohama-meetup-group-harmony/events/316704811/" },
-  { id: "event_316746019@meetup.com", type: "run", start: "2026-10-04T08:00:00+09:00", end: "2026-10-04T10:00:00+09:00", feeEn: "500 yen + One Drink Order (500 yen)", feeJa: "500円 + 1ドリンクオーダー（500円）", meetupUrl: "https://www.meetup.com/yokohama-meetup-group-harmony/events/316746019/" },
-  { id: "event_316746024@meetup.com", type: "run", start: "2026-10-06T07:30:00+09:00", end: "2026-10-06T08:30:00+09:00", feeEn: "500 yen + One Drink Order (500 yen)", feeJa: "500円 + 1ドリンクオーダー（500円）", meetupUrl: "https://www.meetup.com/yokohama-meetup-group-harmony/events/316746024/" },
-  { id: "event_316735585@meetup.com", type: "language", start: "2026-10-10T11:00:00+09:00", end: "2026-10-10T13:00:00+09:00", feeEn: "500 yen + One Drink Order (500 yen)", feeJa: "500円 + 1ドリンクオーダー（500円）", meetupUrl: "https://www.meetup.com/yokohama-meetup-group-harmony/events/316735585/", capacity: 30, spotsLeft: 6 },
-  { id: "event_316792603@meetup.com", type: "karaoke", start: "2026-10-10T14:00:00+09:00", end: "2026-10-10T17:00:00+09:00", feeEn: "2,000 yen total", feeJa: "合計2,000円", meetupUrl: "https://www.meetup.com/yokohama-meetup-group-harmony/events/316792603/" },
-  { id: "event_316792778@meetup.com", type: "run", start: "2026-10-11T08:00:00+09:00", end: "2026-10-11T10:00:00+09:00", feeEn: "500 yen + One Drink Order (500 yen)", feeJa: "500円 + 1ドリンクオーダー（500円）", meetupUrl: "https://www.meetup.com/yokohama-meetup-group-harmony/events/316792778/" },
-  { id: "event_316735107@meetup.com", type: "language", start: "2026-10-11T11:00:00+09:00", end: "2026-10-11T13:00:00+09:00", feeEn: "500 yen + One Drink Order (500 yen)", feeJa: "500円 + 1ドリンクオーダー（500円）", meetupUrl: "https://www.meetup.com/yokohama-meetup-group-harmony/events/316735107/" },
-  { id: "event_316775919@meetup.com", type: "language", start: "2026-10-12T11:00:00+09:00", end: "2026-10-12T13:00:00+09:00", feeEn: "500 yen + One Drink Order (500 yen)", feeJa: "500円 + 1ドリンクオーダー（500円）", meetupUrl: "https://www.meetup.com/yokohama-meetup-group-harmony/events/316775919/" },
-  { id: "event_316735594@meetup.com", type: "language", start: "2026-10-17T11:00:00+09:00", end: "2026-10-17T13:00:00+09:00", feeEn: "500 yen + One Drink Order (500 yen)", feeJa: "500円 + 1ドリンクオーダー（500円）", meetupUrl: "https://www.meetup.com/yokohama-meetup-group-harmony/events/316735594/" }
+const SNAPSHOT = [
+ {
+  "id": "event_316496653@meetup.com",
+  "type": "language",
+  "start": "2026-10-03T02:00:00.000Z",
+  "end": "2026-10-03T04:00:00.000Z",
+  "feeEn": "500 yen + One Drink Order (500 yen)",
+  "feeJa": "500円 + 1ドリンクオーダー（500円）",
+  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316496653/"
+ },
+ {
+  "id": "event_316704811@meetup.com",
+  "type": "karaoke",
+  "start": "2026-10-03T05:00:00.000Z",
+  "end": "2026-10-03T07:00:00.000Z",
+  "feeEn": "500 yen + One Drink Order(500 yen)",
+  "feeJa": "500円 + 1ドリンクオーダー(500円)",
+  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316704811/"
+ },
+ {
+  "id": "event_316746019@meetup.com",
+  "type": "run",
+  "start": "2026-10-03T23:00:00.000Z",
+  "end": "2026-10-04T01:00:00.000Z",
+  "feeEn": "500 yen + One Drink Order (500 yen)",
+  "feeJa": "500円 + 1ドリンクオーダー（500円）",
+  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316746019/"
+ },
+ {
+  "id": "event_316735585@meetup.com",
+  "type": "language",
+  "start": "2026-10-10T02:00:00.000Z",
+  "end": "2026-10-10T04:00:00.000Z",
+  "feeEn": "500 yen + One Drink Order (500 yen)",
+  "feeJa": "500円 + 1ドリンクオーダー（500円）",
+  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316735585/"
+ },
+ {
+  "id": "event_316792603@meetup.com",
+  "type": "karaoke",
+  "start": "2026-10-10T05:00:00.000Z",
+  "end": "2026-10-10T08:00:00.000Z",
+  "feeEn": "1,500 yen + 1 drink (500 yen) = 2,000 yen total",
+  "feeJa": "1,500円 + 1ドリンク（500円）＝ 合計2,000円",
+  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316792603/"
+ },
+ {
+  "id": "event_316792778@meetup.com",
+  "type": "run",
+  "start": "2026-10-10T23:00:00.000Z",
+  "end": "2026-10-11T01:00:00.000Z",
+  "feeEn": "500 yen + One Drink Order (500 yen)",
+  "feeJa": "500円 + 1ドリンクオーダー（500円）",
+  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316792778/"
+ },
+ {
+  "id": "event_316735107@meetup.com",
+  "type": "language",
+  "start": "2026-10-11T02:00:00.000Z",
+  "end": "2026-10-11T04:00:00.000Z",
+  "feeEn": "500 yen + One Drink Order (500 yen)",
+  "feeJa": "500円 + 1ドリンクオーダー（500円）",
+  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316735107/"
+ },
+ {
+  "id": "event_316775919@meetup.com",
+  "type": "language",
+  "start": "2026-10-12T02:00:00.000Z",
+  "end": "2026-10-12T04:00:00.000Z",
+  "feeEn": "500 yen + One Drink Order (500 yen)",
+  "feeJa": "500円 + 1ドリンクオーダー（500円）",
+  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316775919/"
+ },
+ {
+  "id": "event_316735594@meetup.com",
+  "type": "language",
+  "start": "2026-10-17T02:00:00.000Z",
+  "end": "2026-10-17T04:00:00.000Z",
+  "feeEn": "500 yen + One Drink Order (500 yen)",
+  "feeJa": "500円 + 1ドリンクオーダー（500円）",
+  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316735594/"
+ },
+ {
+  "id": "event_316792807@meetup.com",
+  "type": "run",
+  "start": "2026-10-17T23:00:00.000Z",
+  "end": "2026-10-18T01:00:00.000Z",
+  "feeEn": "500 yen + One Drink Order (500 yen)",
+  "feeJa": "500円 + 1ドリンクオーダー（500円）",
+  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316792807/"
+ },
+ {
+  "id": "manual-sake-1025",
+  "type": "sake",
+  "start": "2026-10-25T09:00:00.000Z",
+  "end": "2026-10-25T11:30:00.000Z",
+  "feeEn": "3,000 yen total (sake tasting included)",
+  "feeJa": "合計3,000円（日本酒テイスティング込み）",
+  "meetupUrl": "",
+  "capacity": 20
+ }
 ];
 
 const TYPES = {
@@ -708,9 +820,6 @@ const MSG = {
 };
 
 const SPECIAL = ["sake", "matcha"];
-const SPECIAL_INFO = {
-  sake: { img: "assets/thumb-sake.jpg", ja: "日本酒を飲み比べながら、英語と日本語で交流する特別な夜。日本酒に詳しくなくても大丈夫、一人参加も歓迎です。", en: "A special evening of sake tasting and conversation in English and Japanese. No sake knowledge needed, and solo guests are welcome." }
-};
 let lang = "ja";
 let events = [];
 let filter = "all";
@@ -753,9 +862,7 @@ function inWindow(e) {
 function render() {
   const m = MSG[lang];
   // filters
-  const specials = events.filter(e => SPECIAL.includes(e.type));
-  const regular = events.filter(e => !SPECIAL.includes(e.type));
-  $("#special").innerHTML = specials.map(specialHTML).join("");
+  const regular = events;
   const kinds = [...new Set(regular.map(e => e.type))];
   $("#filters").innerHTML = kinds.length > 1
     ? [["all", m.all], ...kinds.map(k => [k, (TYPES[k] || TYPES.language)[lang]])]
@@ -791,27 +898,6 @@ function render() {
   updateEventNote();
 }
 
-function specialHTML(e) {
-  const m = MSG[lang];
-  const t = TYPES[e.type] || TYPES.language;
-  const info = SPECIAL_INFO[e.type] || {};
-  const yen = totalYen(e);
-  const spots = e.spotsLeft === 0 ? m.full : (e.spotsLeft != null ? m.left(e.spotsLeft) : "");
-  const when = fmt(e.start, { month: "numeric", day: "numeric", weekday: "short" }) + " " + timeRange(e);
-  return `
-    <div class="special">
-      ${info.img ? `<img src="${info.img}" alt="">` : ""}
-      <div class="special-body">
-        <span class="sp-badge">${lang === "ja" ? "特別イベント" : "SPECIAL EVENT"}</span>
-        <h3>${esc(t[lang])}</h3>
-        <div class="when">${esc(when)}${yen ? " ・ ¥" + yen.toLocaleString("en-US") : ""}</div>
-        <p>${esc(info[lang] || "")}</p>
-        <div class="item-meta"><span class="tag">${esc(lang === "ja" ? t.tagJa : t.tagEn)}</span>${spots ? `<span class="${e.spotsLeft === 0 ? "full" : ""}">${esc(spots)}</span>` : ""}</div>
-        <button type="button" class="join-btn" data-join="${esc(e.id)}">${esc(m.join)}</button>
-      </div>
-    </div>`;
-}
-
 function itemHTML(e) {
   const m = MSG[lang];
   const t = TYPES[e.type] || TYPES.language;
@@ -820,7 +906,7 @@ function itemHTML(e) {
     : (e.spotsLeft != null ? `<span>${esc(m.left(e.spotsLeft))}</span>` : "");
   return `
     <div class="item">
-      <div class="item-row"><span class="item-name">${esc(t[lang])}</span><span class="leader" aria-hidden="true"></span><span class="price">${yen ? "¥" + yen.toLocaleString("en-US") : ""}</span></div>
+      <div class="item-row"><span class="item-name">${esc(t[lang])}${SPECIAL.includes(e.type) ? `<span class="sp-tag">${lang === "ja" ? "特別イベント" : "Special"}</span>` : ""}</span><span class="leader" aria-hidden="true"></span><span class="price">${yen ? "¥" + yen.toLocaleString("en-US") : ""}</span></div>
       <div class="item-meta"><span>${esc(timeRange(e))}</span><span class="tag">${esc(lang === "ja" ? t.tagJa : t.tagEn)}</span>${spots}</div>
       <div class="item-actions">
         <button type="button" class="join-btn" data-join="${esc(e.id)}">${esc(m.join)}</button>
@@ -836,28 +922,30 @@ function updateEventNote() {
 }
 
 function applyWindow() {
-  const inside = events.filter(inWindow);
-  // サンプル表示は日付が過ぎていても見本として全件出す
-  if (inside.length || API_URL) events = inside;
+  events = events.filter(inWindow);
 }
 
 async function loadEvents() {
-  if (!API_URL) {
-    events = SAMPLE_EVENTS;
-    $("#preview-flag").hidden = false;
-    applyWindow();
-    render();
-    return;
-  }
+  // 1) まず手元のデータ（前回の読み込み結果、なければ公開時点の一覧）をすぐ表示
+  let cached = null;
+  try { cached = JSON.parse(localStorage.getItem("harmony-events") || "null"); } catch (e) {}
+  events = (cached && cached.length ? cached : SNAPSHOT);
+  applyWindow();
+  render();
+  if (!API_URL) return;
+  // 2) 裏で最新を取りにいき、届いたら差し替える
   try {
     const res = await fetch(API_URL + "?action=events");
     const data = await res.json();
-    events = data.events || [];
-  } catch (err) {
-    events = [];
-  }
-  applyWindow();
-  render();
+    if (data && data.ok) {
+      const picked = $("#f-event").value;
+      events = data.events || [];
+      try { localStorage.setItem("harmony-events", JSON.stringify(events)); } catch (e) {}
+      applyWindow();
+      render();
+      if (events.some(e => e.id === picked)) { $("#f-event").value = picked; updateEventNote(); }
+    }
+  } catch (err) { /* 通信できないときは手元の一覧のまま */ }
 }
 
 function showMsg(kind, text) {
@@ -890,7 +978,6 @@ async function submitForm(ev) {
   btn.disabled = true;
   showMsg("ok", m.sending);
   try {
-    if (!API_URL) { await new Promise(r => setTimeout(r, 500)); showMsg("ok", m.preview); return; }
     const res = await fetch(API_URL, { method: "POST", body: JSON.stringify(data) });
     const out = await res.json();
     if (!out.ok) { showMsg("err", m[out.error] || m.network); return; }
