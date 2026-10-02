@@ -217,6 +217,9 @@ section { padding-block: clamp(3.5rem, 8vw, 6rem); }
 .join-btn:hover { background: var(--shu-ink); }
 .item-actions a { color: var(--board-soft); font-size: .82rem; }
 .sp-tag { display: inline-block; margin-left: .6em; vertical-align: middle; color: var(--board); background: var(--gold); font-weight: 700; font-size: .68rem; letter-spacing: .08em; padding: .25em .7em; border-radius: 999px; }
+.more-events { position: relative; display: flex; justify-content: center; padding-top: 1.4rem; margin-top: .4rem; border-top: 1px dashed rgba(243,238,227,.22); }
+.more-btn { font: 700 .95rem/1 var(--f-body); color: var(--board-ink); background: transparent; border: 1.5px solid var(--board-ink); border-radius: 999px; padding: .85em 1.8em; cursor: pointer; }
+.more-btn:hover { background: var(--board-ink); color: var(--board); }
 .board-foot { margin-top: 1.4rem; font-size: .85rem; color: var(--board-soft); position: relative; }
 .preview-flag { display: inline-block; margin-bottom: 1rem; font-size: .8rem; padding: .35em .8em; border-radius: 999px; background: rgba(240,201,135,.15); color: var(--gold); position: relative; }
 .board-empty { color: var(--board-soft); padding: 1rem 0; }
@@ -840,6 +843,8 @@ const SPECIAL = ["sake", "matcha"];
 let lang = "ja";
 let events = [];
 let filter = "all";
+let expanded = false;      // 「さらに表示」を押したか
+const FIRST_COUNT = 10;    // 最初に見せる件数
 const $ = s => document.querySelector(s);
 
 function detectLang() {
@@ -891,7 +896,9 @@ function render() {
     $("#event-list").innerHTML = `<p class="board-empty">${esc(m.none)}</p>`;
   } else {
     const groups = [];
-    list.forEach(e => {
+    const shown = expanded ? list : list.slice(0, FIRST_COUNT);
+    const rest = list.length - shown.length;
+    shown.forEach(e => {
       const k = dayKey(e.start);
       let g = groups.find(x => x.k === k);
       if (!g) groups.push(g = { k, start: e.start, items: [] });
@@ -901,7 +908,9 @@ function render() {
       <div class="day">
         <div class="date"><div class="md">${esc(fmt(g.start, { month: "numeric", day: "numeric" }))}</div><div class="dow">${esc(fmt(g.start, { weekday: lang === "ja" ? "short" : "long" }))}</div></div>
         <div class="items">${g.items.map(itemHTML).join("")}</div>
-      </div>`).join("");
+      </div>`).join("") + (rest > 0
+        ? `<div class="more-events"><button type="button" class="more-btn" data-more="1">${lang === "ja" ? `さらに表示（あと${rest}件）` : `Show more (${rest} more)`}</button></div>`
+        : "");
   }
   // select
   const sel = $("#f-event");
@@ -1018,7 +1027,8 @@ document.addEventListener("click", ev => {
   const l = ev.target.closest("[data-set-lang]");
   if (l) setLang(l.dataset.setLang);
   const fb = ev.target.closest("[data-filter]");
-  if (fb) { filter = fb.dataset.filter; render(); }
+  if (fb) { filter = fb.dataset.filter; expanded = false; render(); }
+  if (ev.target.closest("[data-more]")) { expanded = true; render(); }
   const jb = ev.target.closest("[data-join]");
   if (jb) {
     $("#f-event").value = jb.dataset.join;
