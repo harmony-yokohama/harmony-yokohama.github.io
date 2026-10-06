@@ -498,7 +498,7 @@ h3.minor{font-size:1.3rem;border-bottom:3px solid var(--matcha);padding-bottom:.
             <dl class="spec">
               <dt><span class="ja">時間</span><span class="en">When</span></dt><dd><span class="ja">主に土曜 14:00〜（回によって終了時間が異なります）</span><span class="en">Mostly Saturdays from 14:00 (end time varies)</span></dd>
               <dt><span class="ja">流れ</span><span class="en">Flow</span></dt><dd><span class="ja">言語交流（席替えあり） → カラオケタイム → 集合写真</span><span class="en">Language exchange with seat changes → karaoke time → group photo</span></dd>
-              <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">2,000円（1ドリンク込み）</span><span class="en">¥2,000 (one drink included)</span></dd>
+              <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">1,500円（1ドリンク込み）</span><span class="en">¥1,500 (one drink included)</span></dd>
             </dl>
               </div>
             </details>
@@ -1033,6 +1033,7 @@ const timeRange = e => e.timeTBA ? (lang === "ja" ? "時間は近日公開" : "T
 
 /* 料金の合計（例：「500 yen + One Drink Order (500 yen)」→ 1000） */
 function totalYen(e) {
+  if (e.type === "karaoke") return 1500; /* カラオケは合計1,500円（ドリンク込み）で固定 */
   const s = (e.feeEn || "") + " " + (e.feeJa || "");
   const total = s.match(/([\d,]+)\s*yen\s*total/i) || s.match(/合計\s*([\d,]+)\s*円/);
   if (total) return Number(total[1].replace(/,/g, ""));
