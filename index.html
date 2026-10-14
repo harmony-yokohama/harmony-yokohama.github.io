@@ -369,6 +369,25 @@ h3.minor{font-size:1.3rem;border-bottom:3px solid var(--matcha);padding-bottom:.
 .contact.is-open .contact-open{display:none}
 @media (max-width:700px){.contact-open .btn{width:100%}}
 @media (max-width:480px){.insta a{gap:.6rem;padding:.8rem}.insta .handle{font-size:.92rem;white-space:nowrap}.insta .go{padding:.45em .8em}}
+
+/* ===== 実績 ===== */
+.record{padding-block:clamp(2.2rem,5vw,3.4rem);border-bottom:1px solid var(--line)}
+.record .wrap{display:grid;justify-items:center;gap:1.3rem;text-align:center}
+.rec-lead{font-weight:700;font-size:1.05rem;color:var(--ai);display:flex;align-items:center;gap:.9em}
+.rec-lead::before,.rec-lead::after{content:"";width:2.4em;height:2px;background:var(--shu)}
+.rec-grid{margin:0;width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.rec-grid>div{display:grid;gap:.35rem;align-content:start;padding:.4rem .6rem}
+.rec-grid>div+div{border-left:1px dashed var(--line)}
+.rec-grid dt{font-size:.88rem;font-weight:700;color:var(--ink-soft)}
+.rec-grid dd{margin:0;line-height:1;color:var(--ink);display:flex;align-items:baseline;justify-content:center;gap:.15em}
+.rec-grid dd b{font-family:var(--f-display);font-weight:700;font-size:clamp(2.6rem,6.4vw,4.2rem);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.rec-grid>div:nth-child(1) b{color:var(--ai)}.rec-grid>div:nth-child(2) b{color:var(--shu-ink)}.rec-grid>div:nth-child(3) b{color:var(--matcha)}
+.rec-grid dd small{font-size:1rem;font-weight:700}
+.rec-note{font-size:.78rem;color:var(--ink-soft)}
+@media (max-width:640px){
+  .rec-grid{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:1.4rem}
+  .rec-grid>div:nth-child(3){border-left:0}
+}
 </style></head><body>
 
 <header class="top">
@@ -400,6 +419,19 @@ h3.minor{font-size:1.3rem;border-bottom:3px solid var(--matcha);padding-bottom:.
         <a class="btn btn-primary" href="#events"><span class="ja">開催予定のイベント</span><span class="en">Upcoming events</span></a>
         <a class="btn btn-ghost" href="#about"><span class="ja">Harmonyについて</span><span class="en">About Harmony</span></a>
       </div>
+    </div>
+  </section>
+
+  <section id="record" class="record" aria-labelledby="record-title">
+    <div class="wrap">
+      <p class="rec-lead" id="record-title"><span class="ja">2026年6月のスタートから</span><span class="en">Since we started in June 2026</span></p>
+      <dl class="rec-grid">
+        <div><dt><span class="ja">開催したイベント</span><span class="en">Events held</span></dt><dd><b>28</b><small><span class="ja">回</span><span class="en">events</span></small></dd></div>
+        <div><dt><span class="ja">延べ参加者</span><span class="en">Total attendance</span></dt><dd><b>284</b><small><span class="ja">人</span><span class="en">guests</span></small></dd></div>
+        <div><dt><span class="ja">はじめて来てくれた人</span><span class="en">First-time guests</span></dt><dd><b>164</b><small><span class="ja">人</span><span class="en">people</span></small></dd></div>
+        <div><dt><span class="ja">参加のうちリピーター</span><span class="en">Visits by returning guests</span></dt><dd><b>42</b><small>%</small></dd></div>
+      </dl>
+      <p class="rec-note"><span class="ja">2026年10月11日時点</span><span class="en">As of Oct 11, 2026</span></p>
     </div>
   </section>
 
