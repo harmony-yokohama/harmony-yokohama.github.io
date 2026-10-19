@@ -4,7 +4,7 @@
 <meta property="og:title" content="Harmony — 日本にいながら世界とつながれる「居場所」">
 <meta property="og:image" content="https://harmony-yokohama.github.io/assets/hero.jpg">
 <title>Harmony Yokohama</title>
-<meta name="description" content="日本にいながら、世界とつながれる「居場所」。横浜・鶴見のレトロ喫茶を拠点にした国際交流コミュニティ Harmony。言語交換・カラオケ・モーニングラン・日本酒の会。">
+<meta name="description" content="日本にいながら、世界とつながれる「居場所」。横浜・鶴見のレトロ喫茶を拠点にした国際交流コミュニティ Harmony。言語交換・カラオケ・ボードゲーム・日本酒の会。">
 <link rel="icon" href="assets/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -385,11 +385,12 @@ h3.minor{font-size:1.3rem;border-bottom:3px solid var(--matcha);padding-bottom:.
 .rec-grid dd small{font-size:1rem;font-weight:700}
 .rec-note{font-size:.78rem;color:var(--ink-soft)}
 
-/* ボードゲーム追加：5枚を3列に */
-.kinds{grid-template-columns:repeat(3,minmax(0,1fr))}
+/* イベント紹介は4枚を4列に */
+.kinds{grid-template-columns:repeat(4,minmax(0,1fr))}
 @media (max-width:1100px){.kinds{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.kinds{grid-template-columns:1fr}}
 .kind-body>p.badge.new{background:var(--shu)}
+@media (min-width:1101px){.kind h3{font-size:clamp(1rem,1.5vw,1.25rem);white-space:nowrap}}
 </style></head><body>
 
 <header class="top">
@@ -470,8 +471,8 @@ h3.minor{font-size:1.3rem;border-bottom:3px solid var(--matcha);padding-bottom:.
         <ul class="points">
             <li><span class="dot" style="background:var(--ai)"></span><div>
               <h3 class="ja">いろんな入口がある</h3><h3 class="en">Many ways in</h3>
-              <p class="ja">話すのが好きなら<strong>言語交換</strong>、歌うなら<strong>カラオケ</strong>、朝型なら<strong>ラン</strong>、お酒好きなら<strong>日本酒の会</strong>。自分に合う形で参加できます。</p>
-              <p class="en">Love talking? Join a language exchange. Love music? Karaoke. Early riser? The morning run. Into sake? Our sake nights. Pick what suits you.</p>
+              <p class="ja">話すのが好きなら<strong>言語交換</strong>、歌うなら<strong>カラオケ</strong>、ゲーム好きなら<strong>ボードゲーム</strong>、お酒好きなら<strong>日本酒の会</strong>。自分に合う形で参加できます。</p>
+              <p class="en">Love talking? Join a language exchange. Love music? Karaoke. Into games? Board game days. Into sake? Our sake nights. Pick what suits you.</p>
             </div></li>
             <li><span class="dot" style="background:var(--shu)"></span><div>
               <h3 class="ja">一人で来ても、輪に入れる</h3><h3 class="en">Come alone, fit right in</h3>
@@ -531,26 +532,6 @@ h3.minor{font-size:1.3rem;border-bottom:3px solid var(--matcha);padding-bottom:.
               <dt><span class="ja">時間</span><span class="en">When</span></dt><dd><span class="ja">主に土曜 14:00〜（回によって終了時間が異なります）</span><span class="en">Mostly Saturdays from 14:00 (end time varies)</span></dd>
               <dt><span class="ja">流れ</span><span class="en">Flow</span></dt><dd><span class="ja">言語交流（席替えあり） → カラオケタイム → 集合写真</span><span class="en">Language exchange with seat changes → karaoke time → group photo</span></dd>
               <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">1,500円（1ドリンク込み）</span><span class="en">¥1,500 (one drink included)</span></dd>
-            </dl>
-              </div>
-            </details>
-          </div>
-        </article>
-        <article class="kind">
-          <img src="assets/thumb-run.jpg" alt="Morning Run &amp; Coffee" loading="lazy">
-          <div class="kind-body">
-            <h3 class="ja">ラン＆コーヒーイベント</h3><h3 class="en"><span class="display">Run &amp; Coffee</span></h3>
-            <ul class="tags ja"><li>#朝ラン3〜5km</li><li>#走ったらコーヒー</li><li>#毎週日曜8時</li></ul><ul class="tags en"><li>#3to5kmRun</li><li>#CoffeeAfter</li><li>#Sundays8am</li></ul>
-            <details class="more">
-              <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
-              <div class="more-body">
-            <p class="ja">鶴見川沿いを3〜5km、自分のペースで走る日曜朝活。速さは関係なく、ウォーキングでもOK。走ったあとはカフェでコーヒーを飲みながら交流します。</p>
-            <p class="en">A Sunday-morning run of 3–5 km along the Tsurumi River, at your own pace. Walkers welcome. Afterwards we chat over coffee at the café.</p>
-            <dl class="spec">
-              <dt><span class="ja">時間</span><span class="en">When</span></dt><dd><span class="ja">毎週日曜 8:00–10:00（8:00 カフェ集合）</span><span class="en">Every Sunday 8:00–10:00 (meet at the café at 8:00)</span></dd>
-              <dt><span class="ja">雨の日</span><span class="en">Rain</span></dt><dd><span class="ja">ランは中止して、カフェで交流します</span><span class="en">We skip the run and meet at the café</span></dd>
-              <dt><span class="ja">持ち物</span><span class="en">Bring</span></dt><dd><span class="ja">走りやすい服と靴。荷物はカフェに置けます（シャワーはありません）</span><span class="en">Running clothes and shoes. Leave your bag at the café (no showers)</span></dd>
-              <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">1,000円（1ドリンク込み）</span><span class="en">¥1,000 (one drink included)</span></dd>
             </dl>
               </div>
             </details>
@@ -859,20 +840,6 @@ const API_URL = "https://script.google.com/macros/s/AKfycbzJaz5SpcfpzhapigC04ESz
 const WINDOW_DAYS = 31; // 何日先までのイベントを表示するか
 const SNAPSHOT = [
  {
-  "id": "event_316792809@meetup.com",
-  "title": "🏃‍♂️Morning Run in Yokohama☕️",
-  "type": "run",
-  "start": "2026-10-24T23:00:00.000Z",
-  "end": "2026-10-25T01:00:00.000Z",
-  "feeEn": "500 yen + One Drink Order (500 yen)",
-  "feeJa": "500円 + 1ドリンクオーダー（500円）",
-  "venue": "Cafe Harmony（横浜・鶴見）",
-  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316792809/",
-  "capacity": null,
-  "spotsLeft": null,
-  "full": false
- },
- {
   "id": "event_316937630@meetup.com",
   "title": "☕ Japanese & International Language Exchange at a Retro Japanese Café 🇯🇵🌏",
   "type": "language",
@@ -929,20 +896,6 @@ const SNAPSHOT = [
   "full": false
  },
  {
-  "id": "event_316792672@meetup.com",
-  "title": "🏃‍♂️Morning Run in Yokohama☕️",
-  "type": "run",
-  "start": "2026-11-07T23:00:00.000Z",
-  "end": "2026-11-08T01:00:00.000Z",
-  "feeEn": "500 yen + One Drink Order (500 yen)",
-  "feeJa": "500円 + 1ドリンクオーダー（500円）",
-  "venue": "Cafe Harmony（横浜・鶴見）",
-  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316792672/",
-  "capacity": null,
-  "spotsLeft": null,
-  "full": false
- },
- {
   "id": "event_316995010@meetup.com",
   "title": "☕ Japanese & International Language Exchange at a Retro Japanese Café 🇯🇵🌏",
   "type": "language",
@@ -966,20 +919,6 @@ const SNAPSHOT = [
   "feeJa": "合計1,000円（1ドリンク込み）",
   "venue": "Cafe Harmony（横浜・鶴見）",
   "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/317007201/",
-  "capacity": null,
-  "spotsLeft": null,
-  "full": false
- },
- {
-  "id": "event_316792675@meetup.com",
-  "title": "🏃‍♂️Morning Run in Yokohama☕️",
-  "type": "run",
-  "start": "2026-11-14T23:00:00.000Z",
-  "end": "2026-11-15T01:00:00.000Z",
-  "feeEn": "500 yen + One Drink Order (500 yen)",
-  "feeJa": "500円 + 1ドリンクオーダー（500円）",
-  "venue": "Cafe Harmony（横浜・鶴見）",
-  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316792675/",
   "capacity": null,
   "spotsLeft": null,
   "full": false
@@ -1142,7 +1081,8 @@ function fixType(e) {
   return e;
 }
 function applyWindow() {
-  events = events.filter(inWindow).map(fixType);
+  /* ランイベントは終了したので表示しない */
+  events = events.filter(inWindow).map(fixType).filter(e => e.type !== "run");
 }
 
 async function loadEvents() {
