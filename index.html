@@ -390,6 +390,10 @@ h3.minor{font-size:1.3rem;border-bottom:3px solid var(--matcha);padding-bottom:.
 @media (max-width:1100px){.kinds{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.kinds{grid-template-columns:1fr}}
 .kind-body>p.badge.new{background:var(--shu)}
+/* 開催予定：曜日と時間を見やすく */
+.date .dow{font-size:1.02rem;font-weight:700;letter-spacing:.06em;text-transform:none;margin-top:.3rem}
+.item-meta .time{font-size:1.12rem;font-weight:700;color:var(--board-ink);font-variant-numeric:tabular-nums;letter-spacing:.02em}
+@media (max-width:560px){.date .dow{margin-top:0}}
 @media (min-width:1101px){.kind h3{font-size:clamp(1rem,1.5vw,1.25rem);white-space:nowrap}}
 </style></head><body>
 
@@ -1026,7 +1030,7 @@ function render() {
     });
     $("#event-list").innerHTML = groups.map(g => `
       <div class="day">
-        <div class="date"><div class="md">${esc(fmt(g.start, { month: "numeric", day: "numeric" }))}</div><div class="dow">${esc(fmt(g.start, { weekday: lang === "ja" ? "short" : "long" }))}</div></div>
+        <div class="date"><div class="md">${esc(fmt(g.start, { month: "numeric", day: "numeric" }))}</div><div class="dow">${esc(fmt(g.start, { weekday: "long" }))}</div></div>
         <div class="items">${g.items.map(itemHTML).join("")}</div>
       </div>`).join("") + (rest > 0
         ? `<div class="more-events"><button type="button" class="more-btn" data-more="1">${lang === "ja" ? `さらに表示（あと${rest}件）` : `Show more (${rest} more)`}</button></div>`
@@ -1060,7 +1064,7 @@ function itemHTML(e) {
   return `
     <div class="item">
       <div class="item-row"><span class="item-name">${esc(t[lang])}${SPECIAL.includes(e.type) ? `<span class="sp-tag">${lang === "ja" ? "特別イベント" : "Special"}</span>` : ""}</span><span class="leader" aria-hidden="true"></span><span class="price">${yen ? "¥" + yen.toLocaleString("en-US") : ""}${yen ? `<small>${esc(inclLabel(e))}</small>` : ""}</span></div>
-      <div class="item-meta"><span>${esc(timeRange(e))}</span><span class="tag">${esc(lang === "ja" ? t.tagJa : t.tagEn)}</span>${spots}</div>
+      <div class="item-meta"><span class="time">${esc(timeRange(e))}</span><span class="tag">${esc(lang === "ja" ? t.tagJa : t.tagEn)}</span>${spots}</div>
       <div class="item-actions">
         ${isFull ? `<button type="button" class="join-btn is-full" disabled>${esc(m.full)}</button>` : `<button type="button" class="join-btn" data-join="${esc(e.id)}">${esc(m.join)}</button>`}
         ${e.meetupUrl ? `<a href="${esc(e.meetupUrl)}" target="_blank" rel="noopener">${esc(m.meetup)}</a>` : ""}
