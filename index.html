@@ -384,6 +384,12 @@ h3.minor{font-size:1.3rem;border-bottom:3px solid var(--matcha);padding-bottom:.
 .rec-grid>div:nth-child(1) b{color:var(--ai)}.rec-grid>div:nth-child(2) b{color:var(--shu-ink)}.rec-grid>div:nth-child(3) b{color:var(--matcha)}
 .rec-grid dd small{font-size:1rem;font-weight:700}
 .rec-note{font-size:.78rem;color:var(--ink-soft)}
+
+/* ボードゲーム追加：5枚を3列に */
+.kinds{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:1100px){.kinds{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.kinds{grid-template-columns:1fr}}
+.kind-body>p.badge.new{background:var(--shu)}
 </style></head><body>
 
 <header class="top">
@@ -565,6 +571,28 @@ h3.minor{font-size:1.3rem;border-bottom:3px solid var(--matcha);padding-bottom:.
                             <dt><span class="ja">日時</span><span class="en">When</span></dt><dd><span class="ja">10月25日（日）18:00–20:30</span><span class="en">Sunday, Oct 25, 18:00–20:30</span></dd>
               <dt><span class="ja">内容</span><span class="en">What</span></dt><dd><span class="ja">日本酒テイスティングと交流</span><span class="en">Sake tasting and conversation</span></dd>
               <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">3,000円（日本酒テイスティング込み）</span><span class="en">¥3,000 (sake tasting included)</span></dd>
+            </dl>
+              </div>
+            </details>
+          </div>
+        </article>
+        <article class="kind">
+          <img src="assets/thumb-boardgame.jpg" alt="Board Games: ボードゲームで国際交流" loading="lazy">
+          <div class="kind-body">
+            <p class="badge new"><span class="ja">NEW</span><span class="en">NEW</span></p>
+            <h3 class="ja">ボードゲームイベント</h3><h3 class="en"><span class="display">Board Games</span></h3>
+            <ul class="tags ja"><li>#ボードゲームで交流</li><li>#ゲーム経験なしでOK</li><li>#ルールは日英で説明</li></ul><ul class="tags en"><li>#BoardGames</li><li>#NoExperienceNeeded</li><li>#RulesInJPandEN</li></ul>
+            <details class="more">
+              <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
+              <div class="more-body">
+            <p class="ja">英語に自信がなくても、ゲームなら自然に笑って話せます。各テーブルにホストがいて、ルールは英語と日本語で説明するので、ボードゲームが初めての方も大丈夫です。</p>
+            <p class="en">Not confident in English? Games make talking easy. Every table has a host who explains the rules in English and Japanese, so no board game experience is needed.</p>
+            <dl class="spec">
+              <dt><span class="ja">日時</span><span class="en">When</span></dt><dd><span class="ja">11月8日（日）14:30–17:00（受付14:20〜）</span><span class="en">Sunday, Nov 8, 14:30–17:00 (check-in from 14:20)</span></dd>
+              <dt><span class="ja">流れ</span><span class="en">Flow</span></dt><dd><span class="ja">受付 → テーブルごとにゲーム（席替えあり） → 最後に全員でゲーム → 集合写真 → 終了後はみんなでご飯（任意）</span><span class="en">Check-in → games at small tables (with table changes) → one big group game → group photo → dinner together afterwards (optional)</span></dd>
+              <dt><span class="ja">ゲーム</span><span class="en">Games</span></dt><dd><span class="ja">ナンジャモンジャ、ito、ジャスト・ワン、ディクシット、インサイダー、コードネーム、ドブル など（変わることがあります）</span><span class="en">Nanja Monja, ito, Just One, Dixit, Insider, Codenames, Spot It! and more (lineup may change)</span></dd>
+              <dt><span class="ja">定員</span><span class="en">Seats</span></dt><dd><span class="ja">24名（要申し込み）</span><span class="en">24 (sign-up required)</span></dd>
+              <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">1,000円（1ドリンク込み）</span><span class="en">¥1,000 (one drink included)</span></dd>
             </dl>
               </div>
             </details>
@@ -831,132 +859,6 @@ const API_URL = "https://script.google.com/macros/s/AKfycbzJaz5SpcfpzhapigC04ESz
 const WINDOW_DAYS = 31; // 何日先までのイベントを表示するか
 const SNAPSHOT = [
  {
-  "id": "event_316735585@meetup.com",
-  "title": "☕ Japanese & International Language Exchange at a Retro Japanese Café 🇯🇵🌏",
-  "type": "language",
-  "start": "2026-10-10T02:00:00.000Z",
-  "end": "2026-10-10T04:00:00.000Z",
-  "feeEn": "500 yen + One Drink Order (500 yen)",
-  "feeJa": "500円 + 1ドリンクオーダー（500円）",
-  "venue": "Cafe Harmony（横浜・鶴見）",
-  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316735585/",
-  "capacity": null,
-  "spotsLeft": null,
-  "full": false
- },
- {
-  "id": "event_316792778@meetup.com",
-  "title": "🏃‍♂️Morning Run in Yokohama☕️",
-  "type": "run",
-  "start": "2026-10-10T23:00:00.000Z",
-  "end": "2026-10-11T01:00:00.000Z",
-  "feeEn": "500 yen + One Drink Order (500 yen)",
-  "feeJa": "500円 + 1ドリンクオーダー（500円）",
-  "venue": "Cafe Harmony（横浜・鶴見）",
-  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316792778/",
-  "capacity": null,
-  "spotsLeft": null,
-  "full": false
- },
- {
-  "id": "event_316735107@meetup.com",
-  "title": "☕ Japanese & International Language Exchange at a Retro Japanese Café 🇯🇵🌏",
-  "type": "language",
-  "start": "2026-10-11T02:00:00.000Z",
-  "end": "2026-10-11T04:00:00.000Z",
-  "feeEn": "500 yen + One Drink Order (500 yen)",
-  "feeJa": "500円 + 1ドリンクオーダー（500円）",
-  "venue": "Cafe Harmony（横浜・鶴見）",
-  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316735107/",
-  "capacity": null,
-  "spotsLeft": null,
-  "full": false
- },
- {
-  "id": "event_316735594@meetup.com",
-  "title": "☕ Japanese & International Language Exchange at a Retro Japanese Café 🇯🇵🌏",
-  "type": "language",
-  "start": "2026-10-17T02:00:00.000Z",
-  "end": "2026-10-17T04:00:00.000Z",
-  "feeEn": "500 yen + One Drink Order (500 yen)",
-  "feeJa": "500円 + 1ドリンクオーダー（500円）",
-  "venue": "Cafe Harmony（横浜・鶴見）",
-  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316735594/",
-  "capacity": null,
-  "spotsLeft": null,
-  "full": false
- },
- {
-  "id": "event_316813334@meetup.com",
-  "title": "🎤 Karaoke & Language Exchange at a Retro Japanese Café 🇯🇵🌏",
-  "type": "karaoke",
-  "start": "2026-10-17T05:00:00.000Z",
-  "end": "2026-10-17T08:00:00.000Z",
-  "feeEn": "1500 yen + One Drink Order(500 yen)",
-  "feeJa": "1500円 + 1ドリンクオーダー(500円)",
-  "venue": "Cafe Harmony（横浜・鶴見）",
-  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316813334/",
-  "capacity": null,
-  "spotsLeft": null,
-  "full": false
- },
- {
-  "id": "event_316792807@meetup.com",
-  "title": "🏃‍♂️Morning Run in Yokohama☕️",
-  "type": "run",
-  "start": "2026-10-17T23:00:00.000Z",
-  "end": "2026-10-18T01:00:00.000Z",
-  "feeEn": "500 yen + One Drink Order (500 yen)",
-  "feeJa": "500円 + 1ドリンクオーダー（500円）",
-  "venue": "Cafe Harmony（横浜・鶴見）",
-  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316792807/",
-  "capacity": null,
-  "spotsLeft": null,
-  "full": false
- },
- {
-  "id": "event_316735112@meetup.com",
-  "title": "☕ Japanese & International Language Exchange at a Retro Japanese Café 🇯🇵🌏",
-  "type": "language",
-  "start": "2026-10-18T02:00:00.000Z",
-  "end": "2026-10-18T04:00:00.000Z",
-  "feeEn": "500 yen + One Drink Order (500 yen)",
-  "feeJa": "500円 + 1ドリンクオーダー（500円）",
-  "venue": "Cafe Harmony（横浜・鶴見）",
-  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316735112/",
-  "capacity": null,
-  "spotsLeft": null,
-  "full": false
- },
- {
-  "id": "event_316735057@meetup.com",
-  "title": "☕ Japanese & International Language Exchange at a Retro Japanese Café 🇯🇵🌏",
-  "type": "language",
-  "start": "2026-10-24T02:00:00.000Z",
-  "end": "2026-10-24T03:30:00.000Z",
-  "feeEn": "500 yen + One Drink Order (500 yen)",
-  "feeJa": "500円 + 1ドリンクオーダー（500円）",
-  "venue": "Cafe Harmony（横浜・鶴見）",
-  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316735057/",
-  "capacity": null,
-  "spotsLeft": null,
-  "full": false
- },
- {
-  "id": "event_316790466@meetup.com",
-  "title": "☕ Japanese & International Language Exchange at a Retro Japanese Café 🇯🇵🌏",
-  "type": "language",
-  "start": "2026-10-24T02:00:00.000Z",
-  "end": "2026-10-24T04:00:00.000Z",
-  "feeEn": "500 yen + One Drink Order (500 yen)",
-  "feeJa": "500円 + 1ドリンクオーダー（500円）",
-  "venue": "Cafe Harmony（横浜・鶴見）",
-  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316790466/",
-  "capacity": null,
-  "spotsLeft": null,
-  "full": false
- },
- {
   "id": "event_316792809@meetup.com",
   "title": "🏃‍♂️Morning Run in Yokohama☕️",
   "type": "run",
@@ -971,8 +873,22 @@ const SNAPSHOT = [
   "full": false
  },
  {
+  "id": "event_316937630@meetup.com",
+  "title": "☕ Japanese & International Language Exchange at a Retro Japanese Café 🇯🇵🌏",
+  "type": "language",
+  "start": "2026-10-25T02:00:00.000Z",
+  "end": "2026-10-25T04:00:00.000Z",
+  "feeEn": "500 yen + One Drink Order (500 yen)",
+  "feeJa": "500円 + 1ドリンクオーダー（500円）",
+  "venue": "Cafe Harmony（横浜・鶴見）",
+  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316937630/",
+  "capacity": null,
+  "spotsLeft": null,
+  "full": false
+ },
+ {
   "id": "event_316790242@meetup.com",
-  "title": "🍶Sake Tasting & Language Exchange in Yokohama｜日本酒飲み比べ×国際交流🍻",
+  "title": "🍶Japanese Sake Tasting Night – Meet Locals & Internationals 🌏",
   "type": "sake",
   "start": "2026-10-25T09:00:00.000Z",
   "end": "2026-10-25T11:30:00.000Z",
@@ -985,15 +901,85 @@ const SNAPSHOT = [
   "full": false
  },
  {
-  "id": "event_316792670@meetup.com",
-  "title": "🏃‍♂️Morning Run in Yokohama☕️",
-  "type": "run",
-  "start": "2026-10-31T23:00:00.000Z",
-  "end": "2026-11-01T01:00:00.000Z",
+  "id": "event_316937648@meetup.com",
+  "title": "☕ Japanese & International Language Exchange at a Retro Japanese Café 🇯🇵🌏",
+  "type": "language",
+  "start": "2026-10-31T02:00:00.000Z",
+  "end": "2026-10-31T04:00:00.000Z",
   "feeEn": "500 yen + One Drink Order (500 yen)",
   "feeJa": "500円 + 1ドリンクオーダー（500円）",
   "venue": "Cafe Harmony（横浜・鶴見）",
-  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316792670/",
+  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316937648/",
+  "capacity": null,
+  "spotsLeft": null,
+  "full": false
+ },
+ {
+  "id": "event_316937639@meetup.com",
+  "title": "🎤 Karaoke & Language Exchange at a Retro Japanese Café 🇯🇵🌏",
+  "type": "karaoke",
+  "start": "2026-10-31T05:00:00.000Z",
+  "end": "2026-10-31T08:00:00.000Z",
+  "feeEn": "1,500 yen total (one drink included)",
+  "feeJa": "合計1,500円（1ドリンク込み）",
+  "venue": "Cafe Harmony（横浜・鶴見）",
+  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316937639/",
+  "capacity": null,
+  "spotsLeft": null,
+  "full": false
+ },
+ {
+  "id": "event_316792672@meetup.com",
+  "title": "🏃‍♂️Morning Run in Yokohama☕️",
+  "type": "run",
+  "start": "2026-11-07T23:00:00.000Z",
+  "end": "2026-11-08T01:00:00.000Z",
+  "feeEn": "500 yen + One Drink Order (500 yen)",
+  "feeJa": "500円 + 1ドリンクオーダー（500円）",
+  "venue": "Cafe Harmony（横浜・鶴見）",
+  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316792672/",
+  "capacity": null,
+  "spotsLeft": null,
+  "full": false
+ },
+ {
+  "id": "event_316995010@meetup.com",
+  "title": "☕ Japanese & International Language Exchange at a Retro Japanese Café 🇯🇵🌏",
+  "type": "language",
+  "start": "2026-11-08T02:00:00.000Z",
+  "end": "2026-11-08T04:00:00.000Z",
+  "feeEn": "500 yen + One Drink Order (500 yen)",
+  "feeJa": "500円 + 1ドリンクオーダー（500円）",
+  "venue": "Cafe Harmony（横浜・鶴見）",
+  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316995010/",
+  "capacity": null,
+  "spotsLeft": null,
+  "full": false
+ },
+ {
+  "id": "event_317007201@meetup.com",
+  "title": "🎲 Board Games & International Exchange at a Retro Japanese Café 🇯🇵🌏",
+  "type": "boardgame",
+  "start": "2026-11-08T05:30:00.000Z",
+  "end": "2026-11-08T08:00:00.000Z",
+  "feeEn": "1,000 yen total (one drink included)",
+  "feeJa": "合計1,000円（1ドリンク込み）",
+  "venue": "Cafe Harmony（横浜・鶴見）",
+  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/317007201/",
+  "capacity": null,
+  "spotsLeft": null,
+  "full": false
+ },
+ {
+  "id": "event_316792675@meetup.com",
+  "title": "🏃‍♂️Morning Run in Yokohama☕️",
+  "type": "run",
+  "start": "2026-11-14T23:00:00.000Z",
+  "end": "2026-11-15T01:00:00.000Z",
+  "feeEn": "500 yen + One Drink Order (500 yen)",
+  "feeJa": "500円 + 1ドリンクオーダー（500円）",
+  "venue": "Cafe Harmony（横浜・鶴見）",
+  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316792675/",
   "capacity": null,
   "spotsLeft": null,
   "full": false
@@ -1005,6 +991,7 @@ const TYPES = {
   karaoke:  { ja: "カラオケイベント", en: "Karaoke", tagJa: "カラオケ交流", tagEn: "Karaoke & chat" },
   run:      { ja: "ラン＆コーヒーイベント", en: "Run & Coffee", tagJa: "鶴見川沿い3〜5km・雨天はカフェ交流", tagEn: "3–5 km by the river · café if it rains" },
   sake:     { ja: "日本酒イベント", en: "Sake Tasting", tagJa: "日本酒テイスティングと交流・20歳以上", tagEn: "Sake tasting & chat · 20+ only" },
+  boardgame:{ ja: "ボードゲームイベント", en: "Board Games", tagJa: "ボードゲームで交流", tagEn: "Board games & chat" },
   matcha:   { ja: "抹茶ミートアップ", en: "Matcha Meetup", tagJa: "抹茶体験", tagEn: "Matcha experience" }
 };
 
@@ -1059,7 +1046,8 @@ const timeRange = e => e.timeTBA ? (lang === "ja" ? "時間は近日公開" : "T
 
 /* 料金の合計（例：「500 yen + One Drink Order (500 yen)」→ 1000） */
 function totalYen(e) {
-  if (e.type === "karaoke") return 1500; /* カラオケは合計1,500円（ドリンク込み）で固定 */
+  if (e.type === "karaoke") return 1500;
+  if (e.type === "boardgame") return 1000; /* ボードゲームは合計1,000円（ドリンク込み） */ /* カラオケは合計1,500円（ドリンク込み）で固定 */
   const s = (e.feeEn || "") + " " + (e.feeJa || "");
   const total = s.match(/([\d,]+)\s*yen\s*total/i) || s.match(/合計\s*([\d,]+)\s*円/);
   if (total) return Number(total[1].replace(/,/g, ""));
@@ -1148,8 +1136,13 @@ function updateEventNote() {
   $("#event-note").textContent = e ? [y ? "¥" + y.toLocaleString("en-US") + (lang === "ja" ? "（" + inclLabel(e) + "）" : " (" + inclLabel(e) + ")") : "", e.venue].filter(Boolean).join(" · ") : "";
 }
 
+function fixType(e) {
+  /* Meetupのタイトルからボードゲーム回を見分ける（スプレッドシート側では言語交換として入るため） */
+  if (/board\s*games?|ボードゲーム/i.test(e.title || "")) return Object.assign({}, e, { type: "boardgame" });
+  return e;
+}
 function applyWindow() {
-  events = events.filter(inWindow);
+  events = events.filter(inWindow).map(fixType);
 }
 
 async function loadEvents() {
