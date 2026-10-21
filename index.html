@@ -1221,5 +1221,19 @@ loadEvents();
 
 (function(){var t=document.getElementById('contact-toggle'),f=document.getElementById('contact-form');if(!t||!f)return;
 t.addEventListener('click',function(){f.hidden=false;t.setAttribute('aria-expanded','true');f.closest('.contact').classList.add('is-open');var i=f.querySelector('input,textarea');if(i)i.focus();});})();
+
+/* 2026-10-21: ?from=ig などのリンクで「何で知りましたか？」を自動選択 */
+(function(){
+  var MAP = { ig: "Instagram", instagram: "Instagram", threads: "Threads", th: "Threads", meetup: "Meetup", google: "Google" };
+  var from = "";
+  try { from = (new URLSearchParams(location.search).get("from") || "").toLowerCase(); } catch (e) {}
+  var val = MAP[from];
+  var sel = document.getElementById("f-source");
+  if (!val || !sel) return;
+  function apply(){ sel.value = val; }
+  apply();
+  var form = sel.form;
+  if (form) form.addEventListener("reset", function(){ setTimeout(apply, 0); });
+})();
 </script>
 </body></html>
