@@ -1049,7 +1049,9 @@ function render() {
   updateEventNote();
 }
 
+const drinkSeparate = e => /at the café|カフェで/.test((e.feeEn || "") + (e.feeJa || "")); /* ドリンク代をお店で別払いする会場（roku cafeなど） */
 function inclLabel(e) {
+  if (drinkSeparate(e)) return lang === "ja" ? "＋ドリンク代" : "+ drink";
   if (e.type === "sake") return lang === "ja" ? "日本酒込み" : "sake incl.";
   return lang === "ja" ? "ドリンク込み" : "drink incl.";
 }
@@ -1064,7 +1066,7 @@ function itemHTML(e) {
   return `
     <div class="item">
       <div class="item-row"><span class="item-name">${esc(t[lang])}${SPECIAL.includes(e.type) ? `<span class="sp-tag">${lang === "ja" ? "特別イベント" : "Special"}</span>` : ""}</span><span class="leader" aria-hidden="true"></span><span class="price">${yen ? "¥" + yen.toLocaleString("en-US") : ""}${yen ? `<small>${esc(inclLabel(e))}</small>` : ""}</span></div>
-      <div class="item-meta"><span class="time">${esc(timeRange(e))}</span><span class="tag">${esc(lang === "ja" ? t.tagJa : t.tagEn)}</span>${spots}</div>
+      <div class="item-meta"><span class="time">${esc(timeRange(e))}</span><span class="tag">${esc(lang === "ja" ? t.tagJa : t.tagEn)}</span>${e.venue && !/Cafe Harmony/.test(e.venue) ? `<span class="tag">📍${esc(e.venue)}</span>` : ""}${spots}</div>
       <div class="item-actions">
         ${isFull ? `<button type="button" class="join-btn is-full" disabled>${esc(m.full)}</button>` : `<button type="button" class="join-btn" data-join="${esc(e.id)}">${esc(m.join)}</button>`}
         ${e.meetupUrl ? `<a href="${esc(e.meetupUrl)}" target="_blank" rel="noopener">${esc(m.meetup)}</a>` : ""}
