@@ -393,7 +393,8 @@ h3.minor{font-size:1.3rem;border-bottom:3px solid var(--matcha);padding-bottom:.
 @media (max-width:560px){.kinds{grid-template-columns:1fr}}
 .kind-body>p.badge.new{background:var(--shu)}
 .kind-body>p.badge.paused{background:#8a8178}
-.kind:has(.badge.paused) img{filter:grayscale(.35) opacity(.85)}
+.kind:has(.paused) img{filter:grayscale(.35) opacity(.85)}
+.thumb-wrap > .thumb-badge.paused{background:#8a8178}
 /* 開催予定：曜日と時間を見やすく */
 .date .dow{font-size:1.02rem;font-weight:700;letter-spacing:.06em;text-transform:none;margin-top:.3rem}
 .item-meta .time{font-size:1.12rem;font-weight:700;color:var(--board-ink);font-variant-numeric:tabular-nums;letter-spacing:.02em}
@@ -531,7 +532,7 @@ h3.minor{font-size:1.3rem;border-bottom:3px solid var(--matcha);padding-bottom:.
           <img src="assets/thumb-sake.jpg?v=2" alt="Sake &amp; Language Exchange" loading="lazy">
           <div class="kind-body">
             <h3 class="ja">日本酒イベント</h3><h3 class="en"><span class="display">Sake Tasting</span></h3>
-            <ul class="tags ja"><li>#日本酒飲み比べ</li><li>#10月25日</li></ul><ul class="tags en"><li>#SakeTasting</li><li>#Oct25</li></ul>
+            <ul class="tags ja"><li>#日本酒飲み比べ</li></ul><ul class="tags en"><li>#SakeTasting</li></ul>
             <details class="more">
               <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
               <div class="more-body">
@@ -568,9 +569,8 @@ h3.minor{font-size:1.3rem;border-bottom:3px solid var(--matcha);padding-bottom:.
           </div>
         </article>
         <article class="kind">
-          <img src="assets/thumb-karaoke.jpg" alt="Karaoke Meetup" loading="lazy">
+          <div class="thumb-wrap"><img src="assets/thumb-karaoke.jpg" alt="Karaoke Meetup" loading="lazy"><p class="thumb-badge paused"><span class="ja">休止中</span><span class="en">On break</span></p></div>
           <div class="kind-body">
-            <p class="badge paused"><span class="ja">休止中</span><span class="en">On break</span></p>
             <h3 class="ja">カラオケイベント</h3><h3 class="en"><span class="display">Karaoke</span></h3>
             <ul class="tags ja"><li>#交流のあとカラオケ</li><li>#土曜14時</li></ul><ul class="tags en"><li>#ChatThenSing</li><li>#Saturdays2pm</li></ul>
             <details class="more">
