@@ -236,8 +236,8 @@ section { padding-block: clamp(3.5rem, 8vw, 6rem); }
 .kind .spec { grid-template-columns: 3.6rem 1fr; font-size: .86rem; }
 .kind { display: grid; grid-template-rows: auto auto; background: var(--paper-2); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
 .kind img { aspect-ratio: 16/9; object-fit: cover; width: 100%; }
-.kind { position: relative; }
-.kind > .thumb-badge { position: absolute; top: .7rem; left: .7rem; z-index: 1; margin: 0; font-size: .78rem; font-weight: 700; color: var(--paper); background: var(--shu); padding: .3em .8em; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,.25); }
+.thumb-wrap { position: relative; }
+.thumb-wrap > .thumb-badge { position: absolute; right: .7rem; bottom: .7rem; z-index: 1; margin: 0; font-size: .78rem; font-weight: 700; color: var(--paper); background: var(--shu); padding: .3em .8em; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,.25); }
 .kind-body { display: grid; gap: .7rem; align-content: start; padding: clamp(1rem, 2.5vw, 1.5rem); min-width: 0; }
 .kind h3 { font-size: 1.08rem; }
 .kind h3 .display { font-family: var(--f-display); font-weight: 600; }
@@ -547,8 +547,7 @@ h3.minor{font-size:1.3rem;border-bottom:3px solid var(--matcha);padding-bottom:.
           </div>
         </article>
         <article class="kind">
-          <p class="thumb-badge"><span class="ja">NEW</span><span class="en">NEW</span></p>
-          <img src="assets/thumb-boardgame.jpg" alt="Board Games: ボードゲームで国際交流" loading="lazy">
+          <div class="thumb-wrap"><img src="assets/thumb-boardgame.jpg" alt="Board Games: ボードゲームで国際交流" loading="lazy"><p class="thumb-badge"><span class="ja">NEW</span><span class="en">NEW</span></p></div>
           <div class="kind-body">
             <h3 class="ja">ボードゲームイベント</h3><h3 class="en"><span class="display">Board Games</span></h3>
             <ul class="tags ja"><li>#ボードゲームで交流</li><li>#ゲーム経験なしでOK</li></ul><ul class="tags en"><li>#BoardGames</li><li>#NoExperienceNeeded</li></ul>
