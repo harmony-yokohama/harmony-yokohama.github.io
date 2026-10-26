@@ -236,6 +236,8 @@ section { padding-block: clamp(3.5rem, 8vw, 6rem); }
 .kind .spec { grid-template-columns: 3.6rem 1fr; font-size: .86rem; }
 .kind { display: grid; grid-template-rows: auto auto; background: var(--paper-2); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
 .kind img { aspect-ratio: 16/9; object-fit: cover; width: 100%; }
+.kind { position: relative; }
+.kind > .thumb-badge { position: absolute; top: .7rem; left: .7rem; z-index: 1; margin: 0; font-size: .78rem; font-weight: 700; color: var(--paper); background: var(--shu); padding: .3em .8em; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,.25); }
 .kind-body { display: grid; gap: .7rem; align-content: start; padding: clamp(1rem, 2.5vw, 1.5rem); min-width: 0; }
 .kind h3 { font-size: 1.08rem; }
 .kind h3 .display { font-family: var(--f-display); font-weight: 600; }
@@ -528,9 +530,8 @@ h3.minor{font-size:1.3rem;border-bottom:3px solid var(--matcha);padding-bottom:.
         <article class="kind">
           <img src="assets/thumb-sake.jpg?v=2" alt="Sake &amp; Language Exchange" loading="lazy">
           <div class="kind-body">
-            <p class="badge"><span class="ja">20歳以上</span><span class="en">20+ only</span></p>
             <h3 class="ja">日本酒イベント</h3><h3 class="en"><span class="display">Sake Tasting</span></h3>
-            <ul class="tags ja"><li>#日本酒飲み比べ</li><li>#10月25日</li><li>#20歳以上</li></ul><ul class="tags en"><li>#SakeTasting</li><li>#Oct25</li><li>#Ages20plus</li></ul>
+            <ul class="tags ja"><li>#日本酒飲み比べ</li><li>#10月25日</li></ul><ul class="tags en"><li>#SakeTasting</li><li>#Oct25</li></ul>
             <details class="more">
               <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
               <div class="more-body">
@@ -546,11 +547,11 @@ h3.minor{font-size:1.3rem;border-bottom:3px solid var(--matcha);padding-bottom:.
           </div>
         </article>
         <article class="kind">
+          <p class="thumb-badge"><span class="ja">NEW</span><span class="en">NEW</span></p>
           <img src="assets/thumb-boardgame.jpg" alt="Board Games: ボードゲームで国際交流" loading="lazy">
           <div class="kind-body">
-            <p class="badge new"><span class="ja">NEW</span><span class="en">NEW</span></p>
             <h3 class="ja">ボードゲームイベント</h3><h3 class="en"><span class="display">Board Games</span></h3>
-            <ul class="tags ja"><li>#ボードゲームで交流</li><li>#ゲーム経験なしでOK</li><li>#ルールは日英で説明</li></ul><ul class="tags en"><li>#BoardGames</li><li>#NoExperienceNeeded</li><li>#RulesInJPandEN</li></ul>
+            <ul class="tags ja"><li>#ボードゲームで交流</li><li>#ゲーム経験なしでOK</li></ul><ul class="tags en"><li>#BoardGames</li><li>#NoExperienceNeeded</li></ul>
             <details class="more">
               <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
               <div class="more-body">
@@ -779,8 +780,8 @@ h3.minor{font-size:1.3rem;border-bottom:3px solid var(--matcha);padding-bottom:.
           <div>
             <p class="host-role"><span class="ja">主催</span><span class="en">Your host</span></p>
             <p class="host-name">Kosei</p>
-            <p class="ja">大阪生まれ・横浜在住、10か国以上を旅してきました。鶴見の喫茶店Cafe Harmonyのマスターです。</p>
-            <p class="en">Born in Osaka, living in Yokohama, traveled to 10+ countries, and the owner of Cafe Harmony in Tsurumi.</p>
+            <p class="ja">大阪生まれ・横浜在住。オーストラリアに7年住み、10か国以上を旅してきました。鶴見の喫茶店Cafe Harmonyのマスターです。</p>
+            <p class="en">Born in Osaka and living in Yokohama. Lived in Australia for 7 years, traveled to 10+ countries, and runs Cafe Harmony in Tsurumi.</p>
           </div>
         </div>
         <div class="insta-block">
