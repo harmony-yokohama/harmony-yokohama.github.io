@@ -390,6 +390,8 @@ h3.minor{font-size:1.3rem;border-bottom:3px solid var(--matcha);padding-bottom:.
 @media (max-width:1100px){.kinds{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.kinds{grid-template-columns:1fr}}
 .kind-body>p.badge.new{background:var(--shu)}
+.kind-body>p.badge.paused{background:#8a8178}
+.kind:has(.badge.paused) img{filter:grayscale(.35) opacity(.85)}
 /* 開催予定：曜日と時間を見やすく */
 .date .dow{font-size:1.02rem;font-weight:700;letter-spacing:.06em;text-transform:none;margin-top:.3rem}
 .item-meta .time{font-size:1.12rem;font-weight:700;color:var(--board-ink);font-variant-numeric:tabular-nums;letter-spacing:.02em}
@@ -434,10 +436,10 @@ h3.minor{font-size:1.3rem;border-bottom:3px solid var(--matcha);padding-bottom:.
     <div class="wrap">
       <p class="rec-lead" id="record-title"><span class="ja">2026年6月のスタートから</span><span class="en">Since we started in June 2026</span></p>
       <dl class="rec-grid">
-        <div><dt><span class="ja">開催したイベント</span><span class="en">Events held</span></dt><dd><b>29</b><small><span class="ja">回</span><span class="en">events</span></small></dd></div>
-        <div><dt><span class="ja">延べ参加者</span><span class="en">Total attendance</span></dt><dd><b>304</b><small><span class="ja">人</span><span class="en">guests</span></small></dd></div>
+        <div><dt><span class="ja">開催したイベント</span><span class="en">Events held</span></dt><dd><b>32</b><small><span class="ja">回</span><span class="en">events</span></small></dd></div>
+        <div><dt><span class="ja">延べ参加者</span><span class="en">Total attendance</span></dt><dd><b>334</b><small><span class="ja">人</span><span class="en">guests</span></small></dd></div>
       </dl>
-      <p class="rec-note"><span class="ja">2026年10月17日時点</span><span class="en">As of Oct 17, 2026</span></p>
+      <p class="rec-note"><span class="ja">2026年10月25日時点</span><span class="en">As of Oct 25, 2026</span></p>
     </div>
   </section>
 
@@ -524,26 +526,7 @@ h3.minor{font-size:1.3rem;border-bottom:3px solid var(--matcha);padding-bottom:.
           </div>
         </article>
         <article class="kind">
-          <img src="assets/thumb-karaoke.jpg" alt="Karaoke Meetup" loading="lazy">
-          <div class="kind-body">
-            <h3 class="ja">カラオケイベント</h3><h3 class="en"><span class="display">Karaoke</span></h3>
-            <ul class="tags ja"><li>#交流のあとカラオケ</li><li>#土曜14時</li></ul><ul class="tags en"><li>#ChatThenSing</li><li>#Saturdays2pm</li></ul>
-            <details class="more">
-              <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
-              <div class="more-body">
-            <p class="ja">前半は少人数グループで言語交流、後半はみんなでカラオケ。J-POP、洋楽、アニソン、母国の歌、なんでもOKです。歌わずに聴くだけ・盛り上げるだけでも大歓迎。</p>
-            <p class="en">Small-group conversation first, then karaoke together. J-pop, English hits, anime songs, songs from home: anything goes. Listening and cheering count too.</p>
-            <dl class="spec">
-              <dt><span class="ja">時間</span><span class="en">When</span></dt><dd><span class="ja">主に土曜 14:00〜（回によって終了時間が異なります）</span><span class="en">Mostly Saturdays from 14:00 (end time varies)</span></dd>
-              <dt><span class="ja">流れ</span><span class="en">Flow</span></dt><dd><span class="ja">言語交流（席替えあり） → カラオケタイム → 集合写真</span><span class="en">Language exchange with seat changes → karaoke time → group photo</span></dd>
-              <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">1,500円（1ドリンク込み）</span><span class="en">¥1,500 (one drink included)</span></dd>
-            </dl>
-              </div>
-            </details>
-          </div>
-        </article>
-        <article class="kind">
-          <img src="assets/thumb-sake.jpg" alt="Sake &amp; Language Exchange" loading="lazy">
+          <img src="assets/thumb-sake.jpg?v=2" alt="Sake &amp; Language Exchange" loading="lazy">
           <div class="kind-body">
             <p class="badge"><span class="ja">20歳以上</span><span class="en">20+ only</span></p>
             <h3 class="ja">日本酒イベント</h3><h3 class="en"><span class="display">Sake Tasting</span></h3>
@@ -579,6 +562,26 @@ h3.minor{font-size:1.3rem;border-bottom:3px solid var(--matcha);padding-bottom:.
               <dt><span class="ja">ゲーム</span><span class="en">Games</span></dt><dd><span class="ja">ナンジャモンジャ、ito、ジャスト・ワン、ディクシット、インサイダー、コードネーム、ドブル など（変わることがあります）</span><span class="en">Nanja Monja, ito, Just One, Dixit, Insider, Codenames, Spot It! and more (lineup may change)</span></dd>
               <dt><span class="ja">定員</span><span class="en">Seats</span></dt><dd><span class="ja">24名（要申し込み）</span><span class="en">24 (sign-up required)</span></dd>
               <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">1,000円（1ドリンク込み）</span><span class="en">¥1,000 (one drink included)</span></dd>
+            </dl>
+              </div>
+            </details>
+          </div>
+        </article>
+        <article class="kind">
+          <img src="assets/thumb-karaoke.jpg" alt="Karaoke Meetup" loading="lazy">
+          <div class="kind-body">
+            <p class="badge paused"><span class="ja">休止中</span><span class="en">On break</span></p>
+            <h3 class="ja">カラオケイベント</h3><h3 class="en"><span class="display">Karaoke</span></h3>
+            <ul class="tags ja"><li>#交流のあとカラオケ</li><li>#土曜14時</li></ul><ul class="tags en"><li>#ChatThenSing</li><li>#Saturdays2pm</li></ul>
+            <details class="more">
+              <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
+              <div class="more-body">
+            <p class="ja">前半は少人数グループで言語交流、後半はみんなでカラオケ。J-POP、洋楽、アニソン、母国の歌、なんでもOKです。歌わずに聴くだけ・盛り上げるだけでも大歓迎。</p>
+            <p class="en">Small-group conversation first, then karaoke together. J-pop, English hits, anime songs, songs from home: anything goes. Listening and cheering count too.</p>
+            <dl class="spec">
+              <dt><span class="ja">時間</span><span class="en">When</span></dt><dd><span class="ja">主に土曜 14:00〜（回によって終了時間が異なります）</span><span class="en">Mostly Saturdays from 14:00 (end time varies)</span></dd>
+              <dt><span class="ja">流れ</span><span class="en">Flow</span></dt><dd><span class="ja">言語交流（席替えあり） → カラオケタイム → 集合写真</span><span class="en">Language exchange with seat changes → karaoke time → group photo</span></dd>
+              <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">1,500円（1ドリンク込み）</span><span class="en">¥1,500 (one drink included)</span></dd>
             </dl>
               </div>
             </details>
