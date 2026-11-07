@@ -569,6 +569,25 @@ h3.minor{font-size:1.3rem;border-bottom:3px solid var(--matcha);padding-bottom:.
           </div>
         </article>
         <article class="kind">
+          <div class="thumb-wrap"><img src="assets/thumb-matcha.jpg?v=1" alt="Matcha: 抹茶・和菓子・書道で日本文化体験" loading="lazy"><p class="thumb-badge"><span class="ja">NEW</span><span class="en">NEW</span></p></div>
+          <div class="kind-body">
+            <h3 class="ja">抹茶・和菓子・書道イベント</h3><h3 class="en"><span class="display">Matcha, Wagashi &amp; Calligraphy</span></h3>
+            <ul class="tags ja"><li>#日本文化体験</li><li>#経験なしでOK</li></ul><ul class="tags en"><li>#JapaneseCulture</li><li>#NoExperienceNeeded</li></ul>
+            <details class="more">
+              <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
+              <div class="more-body">
+            <p class="ja">港の見える丘公園の神奈川近代文学館・和室で、自分で抹茶を点て、季節の和菓子を作り、筆で名前を漢字で書きます。先生が英語と日本語で教えてくれます。</p>
+            <p class="en">In a tatami room at the Kanagawa Museum of Modern Literature, whisk your own matcha, shape a seasonal Japanese sweet, and write your name in kanji. The instructor guides you in English and Japanese.</p>
+            <dl class="spec">
+              <dt><span class="ja">日時</span><span class="en">When</span></dt><dd><span class="ja">11月28日（土）14:30–16:30（受付14:20〜）</span><span class="en">Sat, Nov 28, 14:30–16:30 (check-in from 14:20)</span></dd>
+              <dt><span class="ja">会場</span><span class="en">Where</span></dt><dd><span class="ja">神奈川近代文学館 和室（横浜市中区山手町110／元町・中華街駅から徒歩10分）</span><span class="en">Kanagawa Museum of Modern Literature (10 min walk from Motomachi-Chukagai Sta.)</span></dd>
+              <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">3,000円（抹茶・和菓子・書道の材料込み）</span><span class="en">¥3,000 (matcha, sweets &amp; calligraphy materials included)</span></dd>
+            </dl>
+              </div>
+            </details>
+          </div>
+        </article>
+        <article class="kind">
           <div class="thumb-wrap"><img src="assets/thumb-karaoke.jpg" alt="Karaoke Meetup" loading="lazy"><p class="thumb-badge paused"><span class="ja">休止中</span><span class="en">On break</span></p></div>
           <div class="kind-body">
             <h3 class="ja">カラオケイベント</h3><h3 class="en"><span class="display">Karaoke</span></h3>
@@ -588,8 +607,8 @@ h3.minor{font-size:1.3rem;border-bottom:3px solid var(--matcha);padding-bottom:.
           </div>
         </article>
       </div>
-      <p class="soon ja"><b>準備中</b><span>抹茶のイベント</span><span>韓国語交流イベント</span></p>
-      <p class="soon en"><b>Coming soon</b><span>Matcha meetup</span><span>Korean language exchange</span></p>
+      <p class="soon ja"><b>準備中</b><span>韓国語交流イベント</span></p>
+      <p class="soon en"><b>Coming soon</b><span>Korean language exchange</span></p>
     </div>
   </section>
 
@@ -925,7 +944,7 @@ const TYPES = {
   run:      { ja: "ラン＆コーヒーイベント", en: "Run & Coffee", tagJa: "鶴見川沿い3〜5km・雨天はカフェ交流", tagEn: "3–5 km by the river · café if it rains" },
   sake:     { ja: "日本酒イベント", en: "Sake Tasting", tagJa: "日本酒テイスティングと交流・20歳以上", tagEn: "Sake tasting & chat · 20+ only" },
   boardgame:{ ja: "ボードゲームイベント", en: "Board Games", tagJa: "ボードゲームで交流", tagEn: "Board games & chat" },
-  matcha:   { ja: "抹茶ミートアップ", en: "Matcha Meetup", tagJa: "抹茶体験", tagEn: "Matcha experience" }
+  matcha:   { ja: "抹茶・和菓子・書道イベント", en: "Matcha & Wagashi", tagJa: "抹茶・和菓子・書道体験（山手）", tagEn: "Matcha, sweets & calligraphy · Yamate" }
 };
 
 const MSG = {
@@ -1046,6 +1065,7 @@ const drinkSeparate = e => /at the café|カフェで/.test((e.feeEn || "") + (e
 function inclLabel(e) {
   if (drinkSeparate(e)) return lang === "ja" ? "＋ドリンク代" : "+ drink";
   if (e.type === "sake") return lang === "ja" ? "日本酒込み" : "sake incl.";
+  if (e.type === "matcha") return lang === "ja" ? "材料込み" : "materials incl.";
   return lang === "ja" ? "ドリンク込み" : "drink incl.";
 }
 
