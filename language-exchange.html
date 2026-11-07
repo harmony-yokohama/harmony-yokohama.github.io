@@ -103,6 +103,15 @@ body{margin:0}
 .xsec[data-x=le] .xp-le a,.xsec[data-x=bg] .xp-bg a,.xsec[data-x=sk] .xp-sk a,.xsec[data-x=mc] .xp-mc a,.xsec[data-x=mc] .xp-mc .xsoon{color:#FFFFFF!important}
 .xsec[data-x] .xbg-def{opacity:0!important}
 .xsec[data-x=le] .xbg-le,.xsec[data-x=bg] .xbg-bg,.xsec[data-x=sk] .xbg-sk,.xsec[data-x=mc] .xbg-mc{opacity:1!important}
+.xsec .xp{transition:font-size .35s ease}
+.v-pc .xsec[data-x] .xp{font-size:64px!important}
+.v-pc .xsec[data-x=le] .xp-le,.v-pc .xsec[data-x=bg] .xp-bg,.v-pc .xsec[data-x=sk] .xp-sk,.v-pc .xsec[data-x=mc] .xp-mc{font-size:96px!important}
+.v-sp .xsec[data-x] .xp{font-size:40.5px!important}
+.v-sp .xsec[data-x=le] .xp-le,.v-sp .xsec[data-x=bg] .xp-bg,.v-sp .xsec[data-x=sk] .xp-sk,.v-sp .xsec[data-x=mc] .xp-mc{font-size:54.5px!important}
+@media (prefers-reduced-motion:reduce){.xsec .xp{transition:none}}
+h1,h2{text-wrap:balance}
+[data-fit-line]{white-space:nowrap}
+html[lang=ja] h1,html[lang=ja] h2,html[lang=ja] h3,html[lang=ja] p,html[lang=ja] b,html[lang=ja] blockquote,html[lang=ja] li{word-break:auto-phrase}
 .xsec .xds{display:grid}
 .xsec .xd{grid-area:1/1;display:flex;flex-direction:column;align-items:center;gap:8px;color:#FFFFFF;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .35s ease,transform .35s ease,visibility 0s linear .35s}
 .xsec[data-x=le] .xd-le,.xsec[data-x=bg] .xd-bg,.xsec[data-x=sk] .xd-sk,.xsec[data-x=mc] .xd-mc{opacity:1;visibility:visible;transform:none;transition:opacity .35s ease,transform .35s ease,visibility 0s}

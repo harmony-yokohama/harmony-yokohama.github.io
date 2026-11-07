@@ -199,13 +199,14 @@
     applyTitle();
     paintToggles();
     renderAll();
+    if (typeof fitText === 'function') fitText();
   }
 
   /* ------------------------------------------------------------ top page */
   function fillCard(tpl, e, i) {
     var t = TYPES[e.type], node = tpl.content.firstElementChild.cloneNode(true);
     var f = function (k) { return $('[data-f="' + k + '"]', node); };
-    var link = t.page + '?event=' + encodeURIComponent(e.id) + '#join';
+    var link = t.page + '?event=' + encodeURIComponent(e.id);
     if (f('img') && t.photos.length) {
       var ph = t.photos[i % t.photos.length];
       f('img').src = ph[0]; f('img').style.objectPosition = ph[1]; f('img').alt = t.alt;
@@ -534,6 +535,30 @@
       sec.addEventListener('mouseleave', function () { sec.removeAttribute('data-x'); });
     });
   }
+
+  /* Hero catch: size each line group so the longest line spans the full width. */
+  function fitText() {
+    $$('[data-fit-group]').forEach(function (g) {
+      if (!g.getClientRects().length) return;
+      var lines = $$('[data-fit-line]', g), max = +g.getAttribute('data-fit-group') || 200;
+      var avail = g.clientWidth;
+      if (!avail || !lines.length) return;
+      var scale = Infinity;
+      lines.forEach(function (l) {
+        l.style.fontSize = '100px';
+        var r = document.createRange(); r.selectNodeContents(l);
+        var w = r.getBoundingClientRect().width;
+        if (w) scale = Math.min(scale, avail / w);
+      });
+      if (!isFinite(scale)) return;
+      var size = Math.min(max, Math.floor(100 * scale * 0.985));
+      lines.forEach(function (l) { l.style.fontSize = size + 'px'; });
+    });
+  }
+  var fitTimer;
+  window.addEventListener('resize', function () { clearTimeout(fitTimer); fitTimer = setTimeout(fitText, 80); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitText);
+  window.addEventListener('load', fitText);
 
   /* ------------------------------------------------------------------ go */
   toggleGroups = initToggles();
