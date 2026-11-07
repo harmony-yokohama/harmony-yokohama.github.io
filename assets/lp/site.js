@@ -246,8 +246,9 @@
       var more = $('[data-see-all]', sec);
       if (more) {
         var expanded = box.__expanded;
-        Array.prototype.forEach.call(box.children, function (c, i) { c.hidden = !expanded && i >= TOP_SP_FIRST; });
-        more.hidden = expanded || box.children.length <= TOP_SP_FIRST;
+        var first = box.closest('.v-pc') ? 8 : TOP_SP_FIRST;
+        Array.prototype.forEach.call(box.children, function (c, i) { c.hidden = !expanded && i >= first; });
+        more.hidden = expanded || box.children.length <= first;
       }
     });
   }
@@ -518,6 +519,22 @@
     vids.forEach(function (v) { io.observe(v); });
   }
 
+  /* Choose Your Experience: hovering (or first tap on phones) shows the details and photo. */
+  function initExperiences() {
+    var touch = window.matchMedia && matchMedia('(hover: none)').matches;
+    $$('.xsec').forEach(function (sec) {
+      $$('.xp', sec).forEach(function (li) {
+        var k = li.getAttribute('data-x'), a = li.querySelector('a');
+        li.addEventListener('mouseenter', function () { sec.setAttribute('data-x', k); });
+        li.addEventListener('focusin', function () { sec.setAttribute('data-x', k); });
+        if (a) a.addEventListener('click', function (ev) {
+          if (touch && sec.getAttribute('data-x') !== k) { ev.preventDefault(); sec.setAttribute('data-x', k); }
+        });
+      });
+      sec.addEventListener('mouseleave', function () { sec.removeAttribute('data-x'); });
+    });
+  }
+
   /* ------------------------------------------------------------------ go */
   toggleGroups = initToggles();
   shuffleMarquee();
@@ -528,6 +545,7 @@
   if (preselect) pickEvent(preselect);
   propagateFrom();
   initVideos();
+  initExperiences();
   if (location.hash) {
     var go = function () { var t = visibleTarget(location.hash); if (t) t.scrollIntoView(); };
     if (document.readyState === 'complete') setTimeout(go, 50); else window.addEventListener('load', function () { setTimeout(go, 50); });

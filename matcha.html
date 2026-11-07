@@ -15,6 +15,7 @@
 <meta property="og:image" content="https://harmony-yokohama.github.io/assets/thumbs/20261128_matcha_v1.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.ico">
+<link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&amp;family=Noto+Sans+JP:wght@400;500;700&amp;family=Shippori+Mincho:wght@700&amp;display=swap">
@@ -95,6 +96,26 @@ body{margin:0}
 .hf .hf-msg.err{background:#FBEDE8;color:#9A3412;border:1px solid #F1C9BC}
 .hf button[type=submit]:disabled{opacity:.6;cursor:wait}
 
+.xsec .eb,.xsec .xhint{color:#FFFFFF!important}
+.xsec .xp a{color:rgba(255,255,255,.9)!important;transition:color .3s ease}
+.xsec .xsoon{color:rgba(255,255,255,.75)!important}
+.xsec[data-x] .xp a,.xsec[data-x] .xsoon{color:rgba(255,255,255,.38)!important}
+.xsec[data-x=le] .xp-le a,.xsec[data-x=bg] .xp-bg a,.xsec[data-x=sk] .xp-sk a,.xsec[data-x=mc] .xp-mc a,.xsec[data-x=mc] .xp-mc .xsoon{color:#FFFFFF!important}
+.xsec[data-x] .xbg-def{opacity:0!important}
+.xsec[data-x=le] .xbg-le,.xsec[data-x=bg] .xbg-bg,.xsec[data-x=sk] .xbg-sk,.xsec[data-x=mc] .xbg-mc{opacity:1!important}
+.xsec .xds{display:grid}
+.xsec .xd{grid-area:1/1;display:flex;flex-direction:column;align-items:center;gap:8px;color:#FFFFFF;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .35s ease,transform .35s ease,visibility 0s linear .35s}
+.xsec[data-x=le] .xd-le,.xsec[data-x=bg] .xd-bg,.xsec[data-x=sk] .xd-sk,.xsec[data-x=mc] .xd-mc{opacity:1;visibility:visible;transform:none;transition:opacity .35s ease,transform .35s ease,visibility 0s}
+.xsec .xd-t{font-size:17px;letter-spacing:.01em}
+.xsec .xd-p{font-size:15px;line-height:1.75;color:rgba(255,255,255,.88);max-width:34em}
+.xsec .xd-m{color:rgba(255,255,255,.75)!important;font-size:13px}
+.xsec .xd-a{margin-top:4px;color:#FFFFFF!important;font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:4px}
+.v-sp .xsec .xd-p{font-size:14px}
+html:not([data-lang=en]) [data-lang-only=en],html:not([data-lang=ja]) [data-lang-only=ja]{display:none!important}
+html[data-lang=en] [data-lang-only=en],html[data-lang=ja] [data-lang-only=ja]{display:block!important}
+.v-pc [data-top-events]{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 24px!important;overflow:visible!important;padding-right:56px}
+.v-pc [data-top-events]>article{flex:none!important;width:auto!important;min-width:0}
+
 .hscroll{scrollbar-width:none;-ms-overflow-style:none}
 .hscroll::-webkit-scrollbar{display:none}
 .hscroll>article{scroll-snap-align:start}
@@ -144,7 +165,7 @@ html.menu-open{overflow:hidden}
 <rect x="30" y="122" width="16" height="16" rx="2" fill="#B4432F"/>
 <g transform="rotate(38 120 60)"><rect x="112" y="-10" width="12" height="96" rx="5" fill="#8A5A3B"/><rect x="112" y="60" width="12" height="8" fill="#C9A96E"/><path d="M112 68 Q 118 104, 118 112 Q 118 104, 124 68 Z" fill="#2A2622"/></g></svg></div>
     <header style="position: relative; max-width: 1280px; margin: 0 auto; padding: 28px 56px; display: flex; align-items: center; justify-content: space-between; box-sizing: border-box; max-width: 1392px;">
-      <a href="index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #202D40;"><svg width="36" height="26" viewBox="0 0 40 28" aria-hidden="true"><circle cx="12" cy="14" r="10" fill="#202D40" fill-opacity=".9"></circle><circle cx="20" cy="14" r="10" fill="#D58B5D" fill-opacity=".9"></circle><circle cx="28" cy="14" r="10" fill="#8FA27A" fill-opacity=".85"></circle></svg><span class="en" style="font-weight: 800; font-size: 22px; letter-spacing: .04em;">HARMONY</span></a>
+      <a href="index.html" style="display: flex; align-items: center; text-decoration: none;" aria-label="Harmony"><img decoding="async" fetchpriority="high" src="assets/logo/harmony-logo.svg" alt="Harmony" width="133" height="38" style="display: block; height: 38px; width: auto;"></a>
       <span style="display: flex; align-items: center; gap: 28px; font-size: 14px;"><a href="index.html#events" style="color: #202D40; text-decoration: none; font-family: Manrope, sans-serif; font-weight: 700;">← All events</a><a href="#culture-pc" style="color: #202D40; text-decoration: none;">体験の内容</a><a href="#info-pc" style="color: #202D40; text-decoration: none;">開催情報</a><span style="display: flex; border: 1px solid #202D40; border-radius: 999px; overflow: hidden; font-size: 12px;"><button type="button" data-set-lang="en" style="border: 0; background: transparent; color: #202D40; padding: 0 12px; height: 40px; font: inherit;">EN</button><button type="button" data-set-lang="ja" style="border: 0; background: #202D40; color: #FFFFFF; padding: 0 12px; height: 40px; font: inherit; font-weight: 700;">日本語</button></span></span>
     </header>
     <div style="position: relative; max-width: 1280px; margin: 0 auto; padding: 110px 56px 0; box-sizing: border-box; max-width: 1392px;">
@@ -382,7 +403,7 @@ html.menu-open{overflow:hidden}
       <p class="en" style="margin: 28px 0 0; font-size: 15px; font-style: italic; color: #6B7280;">HARMONY — Connect Beyond Borders.</p>
     </div>
     <div style="position: relative; max-width: 1280px; margin: 0 auto; margin-top: 140px; padding-top: 28px; border-top: 1px solid #E9E2D7; display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: #6B7280;">
-      <a href="index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #202D40;"><svg width="32" height="22" viewBox="0 0 40 28" aria-hidden="true"><circle cx="12" cy="14" r="10" fill="#202D40" fill-opacity=".9"></circle><circle cx="20" cy="14" r="10" fill="#D58B5D" fill-opacity=".9"></circle><circle cx="28" cy="14" r="10" fill="#8FA27A" fill-opacity=".85"></circle></svg><span class="en" style="font-weight: 800; font-size: 18px; letter-spacing: .04em;">HARMONY</span></a>
+      <a href="index.html" style="display: flex; align-items: center; text-decoration: none;" aria-label="Harmony"><img loading="lazy" decoding="async" src="assets/logo/harmony-logo.svg" alt="Harmony" width="112" height="32" style="display: block; height: 32px; width: auto;"></a>
       <span style="display: flex; gap: 28px;"><a href="index.html#events" style="color: #202D40; text-decoration: none;">All events</a><a href="https://www.instagram.com/harmony_community_/" target="_blank" rel="noopener" style="color: #202D40; text-decoration: none;">Instagram</a><a href="https://www.meetup.com/yokohama-meetup-group-harmony/" target="_blank" rel="noopener" style="color: #202D40; text-decoration: none;">Meetup</a></span>
       <span>© 2026 Harmony</span>
     </div>
@@ -393,7 +414,7 @@ html.menu-open{overflow:hidden}
 
 
   <section style="position: relative; min-height: 840px; overflow: hidden; background-color: #FBF8F1; background-image: linear-gradient(rgba(91,58,110,.09) 1.5px, transparent 1.5px), linear-gradient(90deg, rgba(91,58,110,.09) 1.5px, transparent 1.5px); background-size: 72px 96px; color: #202D40; display: flex; flex-direction: column;">
-    <header style="position: relative; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between;"><a href="index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #202D40;"><svg width="32" height="22" viewBox="0 0 40 28" aria-hidden="true"><circle cx="12" cy="14" r="10" fill="#202D40" fill-opacity=".9"></circle><circle cx="20" cy="14" r="10" fill="#D58B5D" fill-opacity=".9"></circle><circle cx="28" cy="14" r="10" fill="#8FA27A" fill-opacity=".85"></circle></svg><span class="en" style="font-weight: 800; font-size: 18px; letter-spacing: .04em;">HARMONY</span></a><span style="display: flex; gap: 8px; align-items: center;"><span style="display: flex; border: 1px solid #202D40; border-radius: 999px; overflow: hidden; font-size: 12px;"><button type="button" data-set-lang="en" style="border: 0; background: transparent; color: #202D40; padding: 0 12px; height: 36px; font: inherit;">EN</button><button type="button" data-set-lang="ja" style="border: 0; background: #202D40; color: #FFFFFF; padding: 0 12px; height: 36px; font: inherit; font-weight: 700;">日本語</button></span><button type="button" aria-label="Menu" data-menu style="width: 44px; height: 44px; border-radius: 999px; border: 0; background: #202D40; color: #FFFFFF; font-size: 16px;">≡</button></span></header>
+    <header style="position: relative; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between;"><a href="index.html" style="display: flex; align-items: center; text-decoration: none;" aria-label="Harmony"><img decoding="async" fetchpriority="high" src="assets/logo/harmony-logo.svg" alt="Harmony" width="112" height="32" style="display: block; height: 32px; width: auto;"></a><span style="display: flex; gap: 8px; align-items: center;"><span style="display: flex; border: 1px solid #202D40; border-radius: 999px; overflow: hidden; font-size: 12px;"><button type="button" data-set-lang="en" style="border: 0; background: transparent; color: #202D40; padding: 0 12px; height: 36px; font: inherit;">EN</button><button type="button" data-set-lang="ja" style="border: 0; background: #202D40; color: #FFFFFF; padding: 0 12px; height: 36px; font: inherit; font-weight: 700;">日本語</button></span><button type="button" aria-label="Menu" data-menu style="width: 44px; height: 44px; border-radius: 999px; border: 0; background: #202D40; color: #FFFFFF; font-size: 16px;">≡</button></span></header>
     <a href="index.html#events" class="en" style="position: relative; margin: 4px 16px 0; font-size: 13px; font-weight: 700; color: #202D40; text-decoration: none;">← All events</a>
     <div style="position: relative; margin: 14px 16px 0; height: 300px; border-radius: 20px; background-color: #D9CFA8; background-image: repeating-linear-gradient(90deg, rgba(120,104,60,.10) 0 2px, transparent 2px 7px); border-left: 10px solid #5B3A6E; overflow: hidden;">
       <span style="position: absolute; right: 10px; top: 6px;"><svg width="250" height="250" viewBox="0 0 200 200" aria-hidden="true" style="flex: 0 0 auto; opacity: .8;"><path d="M150 46 C 118 18, 60 22, 36 64 C 12 106, 36 168, 96 176 C 150 184, 186 140, 178 96 C 174 76, 166 62, 156 54" fill="none" stroke="#2A2622" stroke-width="13" stroke-linecap="round" opacity=".9"/><path d="M152 50 C 124 28, 72 30, 46 66" fill="none" stroke="#2A2622" stroke-width="5" stroke-linecap="round" opacity=".5"/></svg></span>
@@ -591,7 +612,7 @@ html.menu-open{overflow:hidden}
       <p style="margin: 12px 0 0; font-size: 14px; line-height: 1.9; color: #333333;">日本文化に触れる特別な午後を、世界中の人たちと一緒に楽しみませんか？</p>
       <a href="#join" class="cta" style="margin-top: 26px; width: 100%; font-size: 14px;">JOIN OUR MATCHA EXPERIENCE <i>→</i></a>
       <p class="en" style="margin: 16px 0 0; font-size: 13px; font-style: italic; color: #6B7280;">HARMONY — Connect Beyond Borders.</p>
-      <div style="margin-top: 56px; padding-top: 20px; border-top: 1px solid #E9E2D7; display: flex; flex-direction: column; align-items: center; gap: 12px; font-size: 12px; color: #6B7280;"><a href="index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #202D40;"><svg width="30" height="20" viewBox="0 0 40 28" aria-hidden="true"><circle cx="12" cy="14" r="10" fill="#202D40" fill-opacity=".9"></circle><circle cx="20" cy="14" r="10" fill="#D58B5D" fill-opacity=".9"></circle><circle cx="28" cy="14" r="10" fill="#8FA27A" fill-opacity=".85"></circle></svg><span class="en" style="font-weight: 800; font-size: 16px; letter-spacing: .04em;">HARMONY</span></a><span style="display: flex; gap: 20px; font-size: 13px;"><a href="index.html#events" style="color: #202D40;">All events</a><a href="https://www.instagram.com/harmony_community_/" target="_blank" rel="noopener" style="color: #202D40;">Instagram</a><a href="https://www.meetup.com/yokohama-meetup-group-harmony/" target="_blank" rel="noopener" style="color: #202D40;">Meetup</a></span><span>© 2026 Harmony</span></div>
+      <div style="margin-top: 56px; padding-top: 20px; border-top: 1px solid #E9E2D7; display: flex; flex-direction: column; align-items: center; gap: 12px; font-size: 12px; color: #6B7280;"><a href="index.html" style="display: flex; align-items: center; text-decoration: none;" aria-label="Harmony"><img loading="lazy" decoding="async" src="assets/logo/harmony-logo.svg" alt="Harmony" width="98" height="28" style="display: block; height: 28px; width: auto;"></a><span style="display: flex; gap: 20px; font-size: 13px;"><a href="index.html#events" style="color: #202D40;">All events</a><a href="https://www.instagram.com/harmony_community_/" target="_blank" rel="noopener" style="color: #202D40;">Instagram</a><a href="https://www.meetup.com/yokohama-meetup-group-harmony/" target="_blank" rel="noopener" style="color: #202D40;">Meetup</a></span><span>© 2026 Harmony</span></div>
     </div>
   </footer>
 
@@ -599,7 +620,7 @@ html.menu-open{overflow:hidden}
 </div>
 <div class="site-menu" id="site-menu" hidden role="dialog" aria-modal="true" aria-label="Menu">
   <div class="site-menu__panel">
-    <div class="site-menu__top"><a href="index.html" class="site-menu__logo"><svg width="36" height="26" viewBox="0 0 40 28" aria-hidden="true"><circle cx="12" cy="14" r="10" fill="#1E3A5F" fill-opacity=".9"></circle><circle cx="20" cy="14" r="10" fill="#C8432A" fill-opacity=".85"></circle><circle cx="28" cy="14" r="10" fill="#5F7F45" fill-opacity=".85"></circle></svg>Harmony</a><button type="button" class="site-menu__close" data-menu-close aria-label="Close">×</button></div>
+    <div class="site-menu__top"><a href="index.html" class="site-menu__logo"><img src="assets/logo/harmony-logo.svg" alt="Harmony" width="155" height="44" style="display:block;height:44px;width:auto"></a><button type="button" class="site-menu__close" data-menu-close aria-label="Close">×</button></div>
     <ul><li><a href="index.html#events"><span class="m-en">Upcoming Events</span><span class="m-ja">開催予定のイベント</span></a></li><li><a href="language-exchange.html"><span class="m-en">Language Exchange</span><span class="m-ja">言語交換</span></a></li><li><a href="board-games.html"><span class="m-en">Board Games</span><span class="m-ja">ボードゲーム</span></a></li><li><a href="sake.html"><span class="m-en">Sake Tasting</span><span class="m-ja">日本酒テイスティング</span></a></li><li><a href="matcha.html"><span class="m-en">Matcha &amp; Calligraphy</span><span class="m-ja">抹茶・和菓子・書道</span></a></li><li><a href="index.html#about"><span class="m-en">About HARMONY</span><span class="m-ja">HARMONYについて</span></a></li><li><a href="index.html#faq"><span class="m-en">FAQ</span><span class="m-ja">よくある質問</span></a></li></ul>
     <div class="site-menu__foot"><span class="site-menu__lang"><button type="button" data-set-lang="en">EN</button><button type="button" data-set-lang="ja">日本語</button></span><a href="https://www.instagram.com/harmony_community_/" target="_blank" rel="noopener">Instagram</a><a href="https://www.meetup.com/yokohama-meetup-group-harmony/" target="_blank" rel="noopener">Meetup</a></div>
   </div>
