@@ -5,10 +5,15 @@
 (function () {
   'use strict';
 
+  /* Moving between pages (links or the back button) always starts at the top. */
+  try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
+  function toTop() { if (!location.hash) window.scrollTo(0, 0); }
+  window.addEventListener('pageshow', toTop);
+
   var API_URL = 'https://script.google.com/macros/s/AKfycbzJaz5SpcfpzhapigC04ESz-leYx9uOM_rkGx_CYesB_Tg-JcPsuA7dlnKF1fX362Kq/exec';
   var WINDOW_DAYS = 62;          // how far ahead to show events
   var TOP_MAX = 10;              // max cards on the top page carousel
-  var TOP_SP_FIRST = 3;          // cards shown on phones before "See all"
+  var TOP_SP_FIRST = 3;          // cards shown first; "Show more" adds 3 each time
 
   /* Shown instantly while the live list loads (and if it can't load). */
   var SNAPSHOT = [
@@ -253,10 +258,9 @@
       });
       var more = $('[data-see-all]', sec);
       if (more) {
-        var expanded = box.__expanded;
-        var first = box.closest('.v-pc') ? 8 : TOP_SP_FIRST;
-        Array.prototype.forEach.call(box.children, function (c, i) { c.hidden = !expanded && i >= first; });
-        more.hidden = expanded || box.children.length <= first;
+        var shown = box.__shown || TOP_SP_FIRST;
+        Array.prototype.forEach.call(box.children, function (c, i) { c.hidden = i >= shown; });
+        more.hidden = box.children.length <= shown;
       }
     });
   }
@@ -507,7 +511,7 @@
     var more = t.closest('[data-see-all]');
     if (more) {
       var box = $('[data-top-events]', more.closest('section'));
-      box.__expanded = true; renderTop(); return;
+      box.__shown = (box.__shown || TOP_SP_FIRST) + 3; renderTop(); return;
     }
     var nav = t.closest('[data-carousel-prev],[data-carousel-next]');
     if (nav) {
@@ -609,6 +613,28 @@
   loadEvents();
   if (preselect) pickEvent(preselect);
   propagateFrom();
+
+  /* Guest counter in the top first view counts up from 0. */
+  (function () {
+    var els = $$('[data-count]');
+    if (!els.length) return;
+    var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    els.forEach(function (el) {
+      var to = +el.getAttribute('data-count') || 0;
+      if (reduce) { el.textContent = to; return; }
+      el.textContent = '0';
+      setTimeout(function () {
+        var t0 = null, dur = 1800;
+        function step(t) {
+          if (t0 == null) t0 = t;
+          var k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+          el.textContent = Math.round(to * e);
+          if (k < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }, 350);
+    });
+  })();
   initVideos();
   initExperiences();
   if (location.hash) {
