@@ -22,7 +22,7 @@
 
   var TYPES = {
     language: { page: 'language-exchange.html', ja: '言語交換', en: 'Language Exchange',
-      priceJa: '1,000円（1ドリンク込み）', priceEn: '¥1,000 · one drink included',
+      priceJa: 'ドリンク込み ¥1,000', priceEn: '¥1,000 incl. one drink',
       photos: [['assets/lp/20db2baf04.jpg', '50% 40%'], ['assets/lp/f44f46e51d.jpg', '60% 40%'], ['assets/lp/13f392bb9e.jpg', '50% 45%']],
       alt: 'Participants chatting at a language exchange' },
     boardgame: { page: 'board-games.html', ja: 'ボードゲーム', en: 'Board Games',
