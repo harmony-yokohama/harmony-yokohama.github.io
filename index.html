@@ -1,1254 +1,524 @@
-<!doctype html><html lang="ja" data-lang="ja"><head><meta charset="utf-8">
+<!doctype html>
+<html lang="ja" data-lang="ja">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light">
-<meta property="og:title" content="Harmony — 日本にいながら世界とつながれる「居場所」">
-<meta property="og:image" content="https://harmony-yokohama.github.io/assets/hero.jpg">
-<title>Harmony Yokohama</title>
-<meta name="description" content="日本にいながら、世界とつながれる「居場所」。横浜・鶴見のレトロ喫茶を拠点にした国際交流コミュニティ Harmony。言語交換・カラオケ・ボードゲーム・日本酒の会。">
+<title>Harmony｜横浜・鶴見の国際交流コミュニティ</title>
+<meta name="description" content="言語交換、ボードゲーム、日本酒、抹茶。横浜・鶴見のCafe Harmonyを拠点に、日本人と在日外国人が週末に気軽に集まる国際交流コミュニティ。ひとり参加歓迎。">
+<link rel="canonical" href="https://harmony-yokohama.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Harmony">
+<meta property="og:title" content="Harmony｜横浜・鶴見の国際交流コミュニティ">
+<meta property="og:description" content="言語交換、ボードゲーム、日本酒、抹茶。横浜・鶴見のCafe Harmonyを拠点に、日本人と在日外国人が週末に気軽に集まる国際交流コミュニティ。ひとり参加歓迎。">
+<meta property="og:url" content="https://harmony-yokohama.github.io/">
+<meta property="og:image" content="https://harmony-yokohama.github.io/assets/lp/715c589b80.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.ico">
+<link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho:wght@600;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=DM+Mono:wght@500&amp;family=Shippori+Mincho:wght@600&amp;family=Zen+Kaku+Gothic+New:wght@400;700&amp;display=swap">
 <style>
-/* Layout: one calm reading column on ivory paper; the single bold moment is the
-   events section, set like a kissaten menu board (navy, dotted price leaders). */
-:root {
-  --paper: #FAF7F0;      /* アイボリー */
-  --paper-2: #F2ECE0;
-  --ink: #1C1C1A;        /* 墨 */
-  --ink-soft: #55524B;
-  --ai: #1F3A5F;         /* 藍 */
-  --shu: #D2553A;        /* 朱 */
-  --shu-ink: #B4452D;
-  --matcha: #6E8C45;     /* 抹茶 */
-  --board: #1F2A44;      /* ネイビー：メニューボード */
-  --board-ink: #F3EEE3;
-  --board-soft: #B9B6AE;
-  --line: #DDD5C6;
-  --on-photo: #FAF7F0;
-  --gold: #F0C987;
-  --rose: #F2A48E;
-  --shade: rgba(20, 16, 12, .62);
-  --field: #FFFFFF;
-  --ok: #4F7A33;
-  --err: #B4452D;
 
-  --f-display: "Fraunces", "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
-  --f-body: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:#FFFFFF}
+[hidden]{display:none!important}
+.v-pc,.v-sp{overflow-x:hidden;overflow-x:clip}
+.v-sp{display:none}
+@media (max-width:999px){.v-pc{display:none}.v-sp{display:block}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+.v-pc a,.v-sp a,button{-webkit-tap-highlight-color:transparent}
+button{cursor:pointer}
+input,select,textarea,button{font:inherit}
+:focus-visible{outline:2px solid #C8432A;outline-offset:2px}
+.sticky-cta a{width:100%}
 
-  --s-1: clamp(2.3rem, 6vw, 4rem);
-  --s-2: clamp(1.6rem, 3.6vw, 2.4rem);
-  --s-3: 1.25rem;
-  --s-body: 1rem;
-  --s-small: .85rem;
-  --wrap: 68rem;
-  --radius: 6px;
-}
+body{margin:0}
+.v-pc a{color:#141414}
+.v-pc a:hover{color:#1E3A5F}
+.v-pc .sf{font-family:'Instrument Serif',serif;font-weight:400;letter-spacing:-0.01em}
+.v-pc .mc{font-family:'Shippori Mincho',serif;font-weight:600}
+.v-pc .mono{font-family:'DM Mono',monospace;font-size:13px;color:#1E3A5F;letter-spacing:.02em}
+.v-pc .eb{display:inline-block;font-family:'DM Mono',monospace;font-weight:500;font-size:24px;line-height:1.3;color:#1E3A5F;letter-spacing:.02em;text-decoration:underline;text-decoration-color:#C8432A;text-decoration-thickness:3px;text-underline-offset:10px}
+.v-pc .img{display:block;width:100%;height:100%;object-fit:cover}
+.v-pc .pill{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 8px 0 24px;border-radius:999px;background:#141414;color:#FFFFFF;font-size:15px;font-weight:700;text-decoration:none;box-sizing:border-box;white-space:nowrap;flex-shrink:0}
+.v-pc .pill i{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:999px;background:#C8432A;color:#FFFFFF;font-style:normal}
+.v-pc .ghost{display:inline-flex;align-items:center;height:52px;padding:0 24px;border-radius:999px;border:1px solid #E4DED3;background:#FFFFFF;color:#141414;font-size:15px;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0}
+.v-pc .chip{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 12px;border-radius:999px;background:#F7F3EC;font-size:12px;font-weight:700}
+.v-pc .slides{position:absolute;inset:0;overflow:hidden}
+.v-pc .slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:hx 24s infinite;will-change:opacity,transform}
+@keyframes hx{0%{opacity:0;transform:scale(1.08)}4%{opacity:1}25%{opacity:1}29%{opacity:0;transform:scale(1)}100%{opacity:0;transform:scale(1)}}
+.v-pc .bars span i{display:block;height:100%;width:0;background:#FFFFFF;animation:bx 24s infinite}
+@keyframes bx{0%{width:0}25%{width:100%}25.01%{width:0}100%{width:0}}
+@media (prefers-reduced-motion: reduce){.v-pc .slides img,.v-pc .bars span i{animation:none}
+.v-pc .slides img:first-child{opacity:1}
+.v-pc .bars span:first-child i{width:100%}}
+.v-pc .det{border-bottom:1px solid #E4DED3;padding:22px 0}
+.v-pc .det summary{font-size:19px;font-weight:700;cursor:pointer;line-height:1.5}
+.v-pc .det p{margin:10px 0 0;font-size:16px;line-height:1.8;color:#5B6470;max-width:640px}
+.v-pc .xbg{position:absolute;inset:0;opacity:0;transition:opacity .5s ease;pointer-events:none}
+.v-pc .xbg img{display:block;width:100%;height:100%;object-fit:cover}
+.v-pc .xshade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,20,20,.55),rgba(20,20,20,.7));opacity:0;transition:opacity .5s ease;pointer-events:none}
+.v-pc #experiences-pc:has(.xp:hover,.v-pc .xp:focus-within) .xshade{opacity:1}
+.v-pc #experiences-pc:has(.xp-le:hover,.v-pc .xp-le:focus-within) .xbg-le,.v-pc #experiences-pc:has(.xp-bg:hover,.v-pc .xp-bg:focus-within) .xbg-bg,.v-pc #experiences-pc:has(.xp-sk:hover,.v-pc .xp-sk:focus-within) .xbg-sk,.v-pc #experiences-pc:has(.xp-mc:hover,.v-pc .xp-mc:focus-within) .xbg-mc{opacity:1}
+.v-pc #experiences-pc:has(.xp:hover,.v-pc .xp:focus-within) .xp:hover a,.v-pc #experiences-pc:has(.xp:hover,.v-pc .xp:focus-within) .xp:focus-within a{color:#FFFFFF!important}
+.v-pc #experiences-pc:has(.xp:hover,.v-pc .xp:focus-within) .xko{color:rgba(255,255,255,.28)!important}
+.v-pc .marq{overflow:hidden}
+.v-pc .marq-track{display:flex;width:max-content;animation:mq 50s linear infinite}
+.v-pc .marq:hover .marq-track{animation-play-state:paused}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.v-pc .marq-track{animation:none}}
+.v-pc .evlab{position:absolute;left:0;right:0;bottom:0;padding:56px 20px 18px;background:linear-gradient(to top,rgba(20,20,20,.82),rgba(20,20,20,0));color:#FFFFFF;border-radius:0 0 28px 28px;pointer-events:none}
+.v-pc .xbg-def{opacity:1}
+.v-pc #experiences-pc .xshade{opacity:1}
+.v-pc #experiences-pc:has(.xp:hover,.v-pc .xp:focus-within) .xbg-def{opacity:0}
+.v-pc #experiences-pc:has(.xp:hover,.v-pc .xp:focus-within) .xp:hover a,.v-pc #experiences-pc:has(.xp:hover,.v-pc .xp:focus-within) .xp:focus-within a{color:#FFFFFF!important}
+body{margin:0}
+.v-pc a{color:#141414}
+.v-pc a:hover{color:#1E3A5F}
+.v-pc .sf{font-family:'Instrument Serif',serif;font-weight:400;letter-spacing:-0.01em}
+.v-pc .mc{font-family:'Shippori Mincho',serif;font-weight:600}
+.v-pc .mono{font-family:'DM Mono',monospace;font-size:13px;color:#1E3A5F;letter-spacing:.02em}
+.v-pc .eb{display:inline-block;font-family:'DM Mono',monospace;font-weight:500;font-size:24px;line-height:1.3;color:#1E3A5F;letter-spacing:.02em;text-decoration:underline;text-decoration-color:#C8432A;text-decoration-thickness:3px;text-underline-offset:10px}
+.v-pc .img{display:block;width:100%;height:100%;object-fit:cover}
+.v-pc .pill{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 8px 0 24px;border-radius:999px;background:#141414;color:#FFFFFF;font-size:15px;font-weight:700;text-decoration:none;box-sizing:border-box;white-space:nowrap;flex-shrink:0}
+.v-pc .pill i{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:999px;background:#C8432A;color:#FFFFFF;font-style:normal}
+.v-pc .ghost{display:inline-flex;align-items:center;height:52px;padding:0 24px;border-radius:999px;border:1px solid #E4DED3;background:#FFFFFF;color:#141414;font-size:15px;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0}
+.v-pc .chip{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 12px;border-radius:999px;background:#F7F3EC;font-size:12px;font-weight:700}
+.v-pc .det{border-bottom:1px solid #E4DED3;padding:22px 0}
+.v-pc .det summary{font-size:19px;font-weight:700;cursor:pointer;line-height:1.5}
+.v-pc .det p{margin:10px 0 0;font-size:16px;line-height:1.8;color:#5B6470;max-width:640px}
+body{margin:0}
+.v-sp a{color:#141414}
+.v-sp a:hover{color:#1E3A5F}
+.v-sp .sf{font-family:'Instrument Serif',serif;font-weight:400;letter-spacing:-0.01em}
+.v-sp .mc{font-family:'Shippori Mincho',serif;font-weight:600}
+.v-sp .mono{font-family:'DM Mono',monospace;font-size:13px;color:#1E3A5F;letter-spacing:.02em}
+.v-sp .eb{display:inline-block;font-family:'DM Mono',monospace;font-weight:500;font-size:19px;line-height:1.3;color:#1E3A5F;letter-spacing:.02em;text-decoration:underline;text-decoration-color:#C8432A;text-decoration-thickness:3px;text-underline-offset:8px}
+.v-sp .img{display:block;width:100%;height:100%;object-fit:cover}
+.v-sp .pill{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 8px 0 24px;border-radius:999px;background:#141414;color:#FFFFFF;font-size:15px;font-weight:700;text-decoration:none;box-sizing:border-box;white-space:nowrap;flex-shrink:0}
+.v-sp .pill i{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:999px;background:#C8432A;color:#FFFFFF;font-style:normal}
+.v-sp .ghost{display:inline-flex;align-items:center;height:52px;padding:0 24px;border-radius:999px;border:1px solid #E4DED3;background:#FFFFFF;color:#141414;font-size:15px;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0}
+.v-sp .chip{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 12px;border-radius:999px;background:#F7F3EC;font-size:12px;font-weight:700}
+.v-sp .slides{position:absolute;inset:0;overflow:hidden}
+.v-sp .slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:hx 24s infinite;will-change:opacity,transform}
+@keyframes hx{0%{opacity:0;transform:scale(1.08)}4%{opacity:1}25%{opacity:1}29%{opacity:0;transform:scale(1)}100%{opacity:0;transform:scale(1)}}
+.v-sp .bars span i{display:block;height:100%;width:0;background:#FFFFFF;animation:bx 24s infinite}
+@keyframes bx{0%{width:0}25%{width:100%}25.01%{width:0}100%{width:0}}
+@media (prefers-reduced-motion: reduce){.v-sp .slides img,.v-sp .bars span i{animation:none}
+.v-sp .slides img:first-child{opacity:1}
+.v-sp .bars span:first-child i{width:100%}}
+.v-sp .det{border-bottom:1px solid #E4DED3;padding:16px 0}
+.v-sp .det summary{font-size:16px;font-weight:700;cursor:pointer;line-height:1.5}
+.v-sp .det p{margin:10px 0 0;font-size:16px;line-height:1.8;color:#5B6470;max-width:640px}
+.v-sp .marq{overflow:hidden}
+.v-sp .marq-track{display:flex;width:max-content;animation:mq 50s linear infinite}
+.v-sp .marq:hover .marq-track{animation-play-state:paused}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.v-sp .marq-track{animation:none}}
+.v-sp .evlab{position:absolute;left:0;right:0;bottom:0;padding:56px 20px 18px;background:linear-gradient(to top,rgba(20,20,20,.82),rgba(20,20,20,0));color:#FFFFFF;border-radius:0 0 28px 28px;pointer-events:none}
+body{margin:0}
+.v-sp a{color:#141414}
+.v-sp a:hover{color:#1E3A5F}
+.v-sp .sf{font-family:'Instrument Serif',serif;font-weight:400;letter-spacing:-0.01em}
+.v-sp .mc{font-family:'Shippori Mincho',serif;font-weight:600}
+.v-sp .mono{font-family:'DM Mono',monospace;font-size:13px;color:#1E3A5F;letter-spacing:.02em}
+.v-sp .eb{display:inline-block;font-family:'DM Mono',monospace;font-weight:500;font-size:19px;line-height:1.3;color:#1E3A5F;letter-spacing:.02em;text-decoration:underline;text-decoration-color:#C8432A;text-decoration-thickness:3px;text-underline-offset:8px}
+.v-sp .img{display:block;width:100%;height:100%;object-fit:cover}
+.v-sp .pill{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 8px 0 24px;border-radius:999px;background:#141414;color:#FFFFFF;font-size:15px;font-weight:700;text-decoration:none;box-sizing:border-box;white-space:nowrap;flex-shrink:0}
+.v-sp .pill i{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:999px;background:#C8432A;color:#FFFFFF;font-style:normal}
+.v-sp .ghost{display:inline-flex;align-items:center;height:52px;padding:0 24px;border-radius:999px;border:1px solid #E4DED3;background:#FFFFFF;color:#141414;font-size:15px;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0}
+.v-sp .chip{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 12px;border-radius:999px;background:#F7F3EC;font-size:12px;font-weight:700}
+.v-sp .det{border-bottom:1px solid #E4DED3;padding:16px 0}
+.v-sp .det summary{font-size:16px;font-weight:700;cursor:pointer;line-height:1.5}
+.v-sp .det p{margin:10px 0 0;font-size:16px;line-height:1.8;color:#5B6470;max-width:640px}
+.v-sp .xbg{position:absolute;inset:0;opacity:0;transition:opacity .5s ease;pointer-events:none}
+.v-sp .xbg img{display:block;width:100%;height:100%;object-fit:cover}
+.v-sp .xshade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,20,20,.55),rgba(20,20,20,.7));opacity:0;transition:opacity .5s ease;pointer-events:none}
+.v-sp #experiences:has(.xp:hover,.v-sp .xp:focus-within) .xshade{opacity:1}
+.v-sp #experiences:has(.xp-le:hover,.v-sp .xp-le:focus-within) .xbg-le,.v-sp #experiences:has(.xp-bg:hover,.v-sp .xp-bg:focus-within) .xbg-bg,.v-sp #experiences:has(.xp-sk:hover,.v-sp .xp-sk:focus-within) .xbg-sk,.v-sp #experiences:has(.xp-mc:hover,.v-sp .xp-mc:focus-within) .xbg-mc{opacity:1}
+.v-sp #experiences:has(.xp:hover,.v-sp .xp:focus-within) .xp:hover a,.v-sp #experiences:has(.xp:hover,.v-sp .xp:focus-within) .xp:focus-within a{color:#FFFFFF!important}
+.v-sp .xbg-def{opacity:1}
+.v-sp #experiences .xshade{opacity:1}
+.v-sp #experiences:has(.xp:hover,.v-sp .xp:focus-within) .xbg-def{opacity:0}
+.v-sp #experiences:has(.xp:hover,.v-sp .xp:focus-within) .xp:hover a,.v-sp #experiences:has(.xp:hover,.v-sp .xp:focus-within) .xp:focus-within a{color:#FFFFFF!important}
 
-* { box-sizing: border-box; }
-[hidden] { display: none !important; }
-.nb { display: inline-block; }
-#about .sec-head { text-align: center; justify-items: center; margin-inline: auto; }
-#about .note-line { text-align: center; border-left: 0; border-top: 3px solid var(--matcha); }
-/* 一文字だけの改行を避ける：文節で折り返し、行の長さをそろえる */
-body { word-break: auto-phrase; line-break: strict; overflow-wrap: anywhere; }
-p, li, dd, dt, summary, label, legend, h1, h2, h3, .item-name, .when { text-wrap: balance; }
-@media (max-width: 560px) {
-  body { font-size: .95rem; }
-  .hero .lead { font-size: .88rem; }
-  .sec-head h2 { font-size: 1.5rem; }
-  .kind-body { padding: 1rem; }
-  .spec { grid-template-columns: 3.2rem 1fr; }
-  .item-row { gap: .45rem; }
-  .item-name { font-size: 1rem; white-space: nowrap; }
-  .leader { min-width: .5rem; }
-  .price { font-size: 1.1rem; text-align: right; line-height: 1.15; }
-  .price small { display: block; margin-left: 0; }
-  .sp-tag { margin-left: .4em; padding: .2em .55em; }
-  .board-frame { padding: 1rem .9rem; }
-}
-@media (max-width: 350px) { .item-name { white-space: normal; } }
-html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body {
-  margin: 0; background: var(--paper); color: var(--ink);
-  font-family: var(--f-body); font-size: var(--s-body); line-height: 1.8;
-  -webkit-font-smoothing: antialiased;
-}
-html[data-lang="ja"] .en, html[data-lang="en"] .ja { display: none !important; }
-img { max-width: 100%; display: block; }
-a { color: var(--ai); }
-h1, h2, h3 { line-height: 1.25; text-wrap: balance; margin: 0; }
-p { margin: 0; }
-.wrap { max-width: var(--wrap); margin: 0 auto; padding-inline: 20px; }
-:focus-visible { outline: 3px solid var(--shu); outline-offset: 2px; }
+.hf .hf-label{display:block;font-size:14px;font-weight:700;color:#202D40;line-height:1.6}
+.hf .hf-field{display:block}
+.hf input[type=text],.hf input[type=email],.hf select,.hf textarea{display:block;width:100%;box-sizing:border-box;height:52px;margin-top:8px;padding:0 16px;border:1px solid #E9E2D7;border-radius:14px;background:#FFFFFF;font-size:16px;color:#202D40;font-family:inherit;-webkit-appearance:none;appearance:none}
+.hf select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%236B7280' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+.hf textarea{height:auto;min-height:110px;padding:14px 16px;line-height:1.7;resize:vertical}
+.hf input:focus,.hf select:focus,.hf textarea:focus{outline:none;border-color:#202D40;box-shadow:0 0 0 3px rgba(32,45,64,.12)}
+.hf .hf-set{border:0;margin:0;padding:0;min-width:0}
+.hf .hf-set legend{padding:0}
+.hf .hf-pills{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
+.hf .hf-pill{position:relative;display:inline-flex}
+.hf .hf-pill input,.hf .hf-check input,.hf .hf-date input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.hf .hf-pill span{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid #E9E2D7;background:#FFFFFF;font-size:14px;color:#202D40;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.hf .hf-pill input[type=checkbox]+span::before{content:"";flex:0 0 14px;height:14px;border-radius:4px;border:1.5px solid #202D40;box-sizing:border-box}
+.hf .hf-pill input:checked+span{background:#202D40;border-color:#202D40;color:#FFFFFF}
+.hf .hf-pill input[type=checkbox]:checked+span::before{border-color:#FFFFFF;background:#FFFFFF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l3 3 5-6' fill='none' stroke='%23202D40' stroke-width='1.8'/%3E%3C/svg%3E") center/9px no-repeat}
+.hf .hf-pill input:focus-visible+span,.hf .hf-check input:focus-visible+.hf-box,.hf .hf-date input:focus-visible+.hf-date__in{outline:2px solid #D58B5D;outline-offset:2px}
+.hf .hf-check{position:relative;display:flex;gap:12px;align-items:flex-start;font-size:14px;line-height:1.7;color:#333333;cursor:pointer}
+.hf .hf-box{flex:0 0 20px;height:20px;margin-top:2px;border-radius:6px;border:1.5px solid #202D40;box-sizing:border-box;background:#FFFFFF}
+.hf .hf-check input:checked+.hf-box{background:#202D40 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10' viewBox='0 0 12 10'%3E%3Cpath d='M1 5l3.5 3.5L11 1' fill='none' stroke='%23FFFFFF' stroke-width='2'/%3E%3C/svg%3E") center/11px no-repeat}
+.hf .hf-date{position:relative;display:block;cursor:pointer}
+.hf .hf-date__in{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid #E9E2D7;background:#F7F5F0;box-sizing:border-box;height:100%;transition:border-color .15s,background .15s}
+.hf .hf-date__dot{flex:0 0 22px;height:22px;border-radius:6px;border:2px solid #202D40;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center}
+.hf .hf-date input:checked+.hf-date__in{border:2px solid #202D40;background:#FFFFFF;padding:15px 17px}
+.hf .hf-date input:checked+.hf-date__in .hf-date__dot{background:#202D40}
+.hf .hf-date input:checked+.hf-date__in .hf-date__dot::after{content:"";width:6px;height:11px;margin-top:-3px;border:solid #FFFFFF;border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+.hf .hf-date input:disabled+.hf-date__in{opacity:.5;cursor:not-allowed}
+.hf .hf-date__md{font-family:'Manrope',sans-serif;font-size:22px;font-weight:800;color:#202D40;line-height:1.1;letter-spacing:-.02em}
+.hf .hf-date__md small{font-family:'Noto Sans JP',sans-serif;font-size:14px;letter-spacing:0}
+.hf .hf-date__time{display:block;font-size:13px;color:#6B7280}
+.hf .hf-date__left{display:block;font-size:12px;font-weight:700;color:#A35F35}
+.hf .hf-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.hf .hf-msg{white-space:pre-line;padding:14px 16px;border-radius:14px;font-size:14px;line-height:1.7}
+.hf .hf-msg.ok{background:#EEF3E8;color:#3E5A2C;border:1px solid #CFDDBF}
+.hf .hf-msg.err{background:#FBEDE8;color:#9A3412;border:1px solid #F1C9BC}
+.hf button[type=submit]:disabled{opacity:.6;cursor:wait}
 
-.eyebrow {
-  font-family: var(--f-display); font-size: .78rem; letter-spacing: .22em; text-transform: uppercase;
-  color: var(--shu-ink); font-weight: 600;
-}
-.btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: .5em;
-  font: 700 1rem/1 var(--f-body); padding: .95em 1.5em; border-radius: 999px;
-  border: 2px solid transparent; cursor: pointer; text-decoration: none; transition: transform .15s, background .15s;
-}
-.btn:hover { transform: translateY(-1px); }
-.btn-primary { background: var(--shu); color: var(--on-photo); }
-.btn-primary:hover { background: var(--shu-ink); }
-.btn-ghost { border-color: currentColor; color: inherit; background: transparent; }
+.xsec .eb,.xsec .xhint{color:#FFFFFF!important}
+.xsec .xp a{color:rgba(255,255,255,.9)!important;transition:color .3s ease}
+.xsec .xsoon{color:rgba(255,255,255,.75)!important}
+.xsec[data-x] .xp a,.xsec[data-x] .xsoon{color:rgba(255,255,255,.38)!important}
+.xsec[data-x=le] .xp-le a,.xsec[data-x=bg] .xp-bg a,.xsec[data-x=sk] .xp-sk a,.xsec[data-x=mc] .xp-mc a,.xsec[data-x=mc] .xp-mc .xsoon{color:#FFFFFF!important}
+.xsec[data-x] .xbg-def{opacity:0!important}
+.xsec[data-x=le] .xbg-le,.xsec[data-x=bg] .xbg-bg,.xsec[data-x=sk] .xbg-sk,.xsec[data-x=mc] .xbg-mc{opacity:1!important}
+.xsec .xp{transition:font-size .35s ease}
+.v-pc .xsec[data-x] .xp{font-size:64px!important}
+.v-pc .xsec[data-x=le] .xp-le,.v-pc .xsec[data-x=bg] .xp-bg,.v-pc .xsec[data-x=sk] .xp-sk,.v-pc .xsec[data-x=mc] .xp-mc{font-size:96px!important}
+.v-sp .xsec[data-x] .xp{font-size:40.5px!important}
+.v-sp .xsec[data-x=le] .xp-le,.v-sp .xsec[data-x=bg] .xp-bg,.v-sp .xsec[data-x=sk] .xp-sk,.v-sp .xsec[data-x=mc] .xp-mc{font-size:54.5px!important}
+@media (prefers-reduced-motion:reduce){.xsec .xp{transition:none}}
+h1,h2{text-wrap:balance}
+[data-fit-line]{white-space:nowrap}
+html[lang=ja] body{word-break:auto-phrase}
+.xsec .xds{display:grid}
+.xsec .xd{grid-area:1/1;display:flex;flex-direction:column;align-items:center;gap:8px;color:#FFFFFF;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .35s ease,transform .35s ease,visibility 0s linear .35s}
+.xsec[data-x=le] .xd-le,.xsec[data-x=bg] .xd-bg,.xsec[data-x=sk] .xd-sk,.xsec[data-x=mc] .xd-mc{opacity:1;visibility:visible;transform:none;transition:opacity .35s ease,transform .35s ease,visibility 0s}
+.xsec .xd-t{font-size:17px;letter-spacing:.01em}
+.xsec .xd-p{font-size:15px;line-height:1.75;color:rgba(255,255,255,.88);max-width:34em}
+.xsec .xd-m{color:rgba(255,255,255,.75)!important;font-size:13px}
+.xsec .xd-a{margin-top:4px;color:#FFFFFF!important;font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:4px}
+.v-sp .xsec .xd-p{font-size:14px}
+html:not([data-lang=en]) [data-lang-only=en],html:not([data-lang=ja]) [data-lang-only=ja]{display:none!important}
+html[data-lang=en] [data-lang-only=en],html[data-lang=ja] [data-lang-only=ja]{display:block!important}
+.v-pc [data-top-events]{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 24px!important;overflow:visible!important;padding-right:56px}
+.v-pc [data-top-events]>article{flex:none!important;width:auto!important;min-width:0}
 
-/* header */
-.top {
-  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
-  background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--line);
-}
-.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 10px; }
-.logo { height: 34px; width: auto; }
-.logo-dark { display: none; }
-.top-actions { display: flex; align-items: center; gap: 10px; }
-.lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
-.lang button {
-  font: 500 .8rem/1 var(--f-body); padding: .55em .9em; border: 0; background: transparent; color: var(--ink-soft); cursor: pointer;
-}
-.lang button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
-.top .btn { padding: .65em 1.1em; font-size: .88rem; }
-@media (max-width: 480px) { .top .btn { display: none; } }
+.fvs{position:absolute;inset:0}
+.fvs .fvs-i{opacity:0;animation:fvs 24s infinite}
+.fvs .fvs-i:nth-child(1){animation-delay:-1s}
+.fvs .fvs-i:nth-child(2){animation-delay:5s}
+.fvs .fvs-i:nth-child(3){animation-delay:11s}
+.fvs .fvs-i:nth-child(4){animation-delay:17s}
+@keyframes fvs{0%{opacity:0}4%{opacity:1}25%{opacity:1}29%{opacity:0}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.fvs .fvs-i{animation:none}.fvs .fvs-i:not(:first-child){display:none}}
+.lev video{object-fit:cover;display:block;width:100%;height:100%}
+.lev-g{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,26,38,.72) 0%,rgba(20,26,38,.25) 45%,rgba(20,26,38,.05) 70%);pointer-events:none}
+.lev-t{position:absolute;left:0;right:0;bottom:0;margin:0;padding:0 40px 44px;color:#FFFFFF;font-weight:800;font-size:46px;line-height:1.3;letter-spacing:.01em;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.v-sp .lev-t{padding:0 22px 28px;font-size:30px}
+html[data-lang=en] .lev-t{font-family:'Manrope','Noto Sans JP',sans-serif;letter-spacing:-.01em}
 
-/* hero */
-.hero { position: relative; color: var(--on-photo); overflow: hidden; }
-.hero img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
-.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,16,12,.45), var(--shade) 45%, rgba(20,16,12,.88)); }
-.hero .wrap { position: relative; z-index: 1; padding-block: clamp(3rem, 7vw, 5rem) clamp(4rem, 9vw, 6.5rem); display: grid; gap: 1.1rem; }
-.hero .eyebrow { color: var(--gold); }
-.hero h1 { font-family: var(--f-display); font-size: var(--s-1); font-weight: 700; letter-spacing: -.01em; max-width: 16ch; }
-.hero h1 em { font-style: italic; font-weight: 500; color: var(--gold); }
-.hero h1.ja { font-family: var(--f-body); font-weight: 700; letter-spacing: .02em; max-width: 20ch; font-size: clamp(1.9rem, 5vw, 3.4rem); }
-.hero h1 .q { color: var(--gold); }
-.hero h1.catch {
-  font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif; font-weight: 800;
-  display: grid; justify-items: center; gap: .12em; line-height: 1.2; max-width: none; letter-spacing: .06em;
-  font-size: clamp(2rem, 5.6vw, 3.7rem); text-shadow: 0 2px 18px rgba(20,16,12,.55);
-}
-.catch .c1 { font-size: .46em; font-weight: 600; letter-spacing: .34em; display: flex; align-items: center; gap: 1em; margin-bottom: .5em; padding-left: .34em; }
-.catch .c1::before, .catch .c1::after { content: ""; width: 2.6em; height: 1px; background: currentColor; opacity: .7; }
-.catch .c3 {
-  font-size: 1.5em; color: var(--gold); letter-spacing: .08em; padding-bottom: .22em; margin-top: .05em;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 14' preserveAspectRatio='none'%3E%3Cpath d='M4 9 C 60 2, 110 12, 160 6 S 250 4, 296 8' fill='none' stroke='%23D2553A' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center bottom / 78% .2em;
-}
-.hero-logo { width: clamp(120px, 15vw, 180px); height: auto; margin-bottom: 1.2rem; }
-.hero .lead { max-width: 38rem; font-size: 1.05rem; opacity: .95; }
-.hero .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: .4rem; justify-content: center; }
-.hero .wrap { text-align: center; justify-items: center; }
-.hero h1, .hero .lead { margin-inline: auto; }
-.stamp {
-  position: absolute; right: clamp(16px, 5vw, 64px); top: clamp(24px, 6vw, 56px); z-index: 1;
-  width: 112px; aspect-ratio: 1; border-radius: 50%; background: var(--shu); color: var(--on-photo);
-  display: grid; place-content: center; text-align: center; line-height: 1.05; transform: rotate(-8deg);
-  box-shadow: 0 0 0 4px rgba(250,247,240,.25);
-}
-.stamp b { font-family: var(--f-body); font-size: 1.55rem; letter-spacing: .05em; }
-.stamp small { font-family: var(--f-display); font-style: italic; font-size: .78rem; }
-@media (max-width: 480px) { .stamp { width: 84px; } .stamp b { font-size: 1.15rem; } }
+.hscroll{scrollbar-width:none;-ms-overflow-style:none}
+.hscroll::-webkit-scrollbar{display:none}
+.hscroll>article{scroll-snap-align:start}
+.site-menu{position:fixed;inset:0;z-index:100;background:rgba(20,20,20,.45);display:flex;justify-content:flex-end}
+.site-menu__panel{width:min(420px,100%);height:100%;overflow-y:auto;background:#FFFFFF;color:#141414;box-sizing:border-box;padding:20px 24px calc(28px + env(safe-area-inset-bottom));display:flex;flex-direction:column;font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;animation:menuin .25s ease}
+@keyframes menuin{from{transform:translateX(24px);opacity:0}to{transform:none;opacity:1}}
+.site-menu__top{display:flex;align-items:center;justify-content:space-between}
+.site-menu__logo{display:flex;align-items:center;gap:10px;font-family:'Instrument Serif','Manrope',serif;font-size:26px;color:#141414;text-decoration:none}
+.site-menu__close{width:44px;height:44px;border-radius:999px;border:1px solid #E4DED3;background:#FFFFFF;font-size:24px;line-height:1;color:#141414}
+.site-menu ul{list-style:none;margin:28px 0 0;padding:0}
+.site-menu li a{display:flex;flex-direction:column;gap:2px;padding:14px 0;border-bottom:1px solid #EEE9E0;color:#141414;text-decoration:none}
+.site-menu .m-en{font-family:'Instrument Serif','Manrope',serif;font-size:26px;line-height:1.1}
+.site-menu .m-ja{font-size:13px;color:#5B6470}
+.site-menu__foot{margin-top:auto;padding-top:28px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;font-size:14px}
+.site-menu__foot a{color:#141414}
+.site-menu__lang{display:inline-flex;border:1px solid #141414;border-radius:999px;overflow:hidden}
+.site-menu__lang button{border:0;background:transparent;color:#141414;height:38px;padding:0 14px;font-size:13px}
+.site-menu__lang button[aria-pressed=true]{background:#141414;color:#FFFFFF;font-weight:700}
+html.menu-open{overflow:hidden}
 
-/* sections */
-section { padding-block: clamp(3.5rem, 8vw, 6rem); }
-.sec-head { display: grid; gap: .6rem; margin-bottom: 2rem; max-width: 42rem; }
-.sec-head h2 { font-size: var(--s-2); font-weight: 700; }
-.sec-head h2 .display { font-family: var(--f-display); }
-.sec-head p { color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="v-pc" style="width: 100%; position: relative; background: #FFFFFF; font-family: 'Zen Kaku Gothic New', sans-serif; color: #141414;">
 
-/* about */
-.about-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(1.5rem, 5vw, 4.5rem); align-items: start; }
-.strip { overflow: hidden; margin-bottom: clamp(2.5rem, 6vw, 4rem); -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
-.strip-track { display: flex; width: max-content; animation: flow 60s linear infinite; }
-.strip:hover .strip-track { animation-play-state: paused; }
-.strip-track img { width: clamp(170px, 20vw, 250px); aspect-ratio: 3/2; object-fit: cover; border-radius: var(--radius); margin-right: 12px; }
-@keyframes flow { to { transform: translateX(-50%); } }
-@media (prefers-reduced-motion: reduce) { .strip-track { animation: none; } .strip { overflow-x: auto; } }
-@media (max-width: 800px) { .about-grid { grid-template-columns: 1fr; } }
-.points { display: grid; gap: 1.4rem; margin: 0; padding: 0; list-style: none; }
-.points li { display: grid; grid-template-columns: 1.1rem 1fr; gap: 1rem; align-items: start; }
-.points .dot { width: 1.1rem; height: 1.1rem; border-radius: 50%; margin-top: .45rem; opacity: .9; }
-.points h3 { font-size: 1.05rem; margin-bottom: .2rem; }
-.points p { color: var(--ink-soft); font-size: .95rem; }
-.note-line {
-  margin-top: 2rem; padding: 1rem 1.2rem; border-left: 3px solid var(--matcha); background: var(--paper-2);
-  font-size: .95rem;
-}
 
-/* menu board */
-.board { background: var(--board); color: var(--board-ink); }
-.board .sec-head p { color: var(--board-soft); }
-.board .eyebrow { color: var(--gold); }
-.board-frame { border: 1px solid rgba(243,238,227,.25); border-radius: 4px; padding: clamp(1.2rem, 3vw, 2.4rem); position: relative; }
-.board-frame::before { content: ""; position: absolute; inset: 6px; border: 1px solid rgba(243,238,227,.12); border-radius: 2px; pointer-events: none; }
-.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.6rem; position: relative; }
-.filters button {
-  font: 500 .85rem/1 var(--f-body); color: var(--board-ink); background: transparent;
-  border: 1px solid rgba(243,238,227,.35); border-radius: 999px; padding: .6em 1em; cursor: pointer;
-}
-.filters button[aria-pressed="true"] { background: var(--board-ink); color: var(--board); border-color: var(--board-ink); }
-.day { position: relative; padding-block: 1.1rem; border-top: 1px dashed rgba(243,238,227,.22); display: grid; grid-template-columns: 6.2rem 1fr; gap: 1.2rem; }
-.day:first-of-type { border-top: 0; }
-@media (max-width: 560px) { .day { grid-template-columns: 1fr; gap: .4rem; } }
-.date { font-family: var(--f-display); line-height: 1.1; font-variant-numeric: tabular-nums; }
-.date .md { font-size: 1.7rem; font-weight: 700; }
-.date .dow { font-size: .8rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
-@media (max-width: 560px) { .date { display: flex; align-items: baseline; gap: .6rem; } }
-.items { display: grid; gap: 1rem; min-width: 0; }
-.item { display: grid; gap: .25rem; }
-.item-row { display: flex; align-items: baseline; gap: .6rem; min-width: 0; }
-.item-name { font-weight: 700; font-size: 1.08rem; min-width: 0; }
-.leader { flex: 1; border-bottom: 2px dotted rgba(243,238,227,.4); transform: translateY(-.3em); min-width: 1.5rem; }
-.price { font-family: var(--f-display); font-weight: 700; font-size: 1.2rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.price small { font-family: var(--f-body); font-weight: 500; font-size: .72rem; color: var(--gold); margin-left: .5em; letter-spacing: .02em; }
-.item-meta { color: var(--board-soft); font-size: .88rem; display: flex; flex-wrap: wrap; gap: .3rem 1rem; align-items: center; }
-.item-meta .tag { color: var(--gold); }
-.item-meta .full { color: var(--rose); font-weight: 700; }
-.item-actions { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; margin-top: .35rem; }
-.join-btn {
-  font: 700 .88rem/1 var(--f-body); background: var(--shu); color: var(--on-photo); border: 0; border-radius: 999px;
-  padding: .7em 1.2em; cursor: pointer;
-}
-.join-btn:hover { background: var(--shu-ink); }
-.join-btn.is-full, .join-btn.is-full:hover { background: transparent; color: var(--board-soft); border: 1px solid var(--board-soft); cursor: not-allowed; }
-.item-actions a { color: var(--board-soft); font-size: .82rem; }
-.sp-tag { display: inline-block; margin-left: .6em; vertical-align: middle; color: var(--board); background: var(--gold); font-weight: 700; font-size: .68rem; letter-spacing: .08em; padding: .25em .7em; border-radius: 999px; }
-.more-events { position: relative; display: flex; justify-content: center; padding-top: 1.4rem; margin-top: .4rem; border-top: 1px dashed rgba(243,238,227,.22); }
-.more-btn { font: 700 .95rem/1 var(--f-body); color: var(--board-ink); background: transparent; border: 1.5px solid var(--board-ink); border-radius: 999px; padding: .85em 1.8em; cursor: pointer; }
-.more-btn:hover { background: var(--board-ink); color: var(--board); }
-.board-foot { margin-top: 1.4rem; font-size: .85rem; color: var(--board-soft); position: relative; }
-.preview-flag { display: inline-block; margin-bottom: 1rem; font-size: .8rem; padding: .35em .8em; border-radius: 999px; background: rgba(240,201,135,.15); color: var(--gold); position: relative; }
-.board-empty { color: var(--board-soft); padding: 1rem 0; }
-
-/* event types */
-.kinds { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 1.4rem); align-items: start; }
-@media (max-width: 1100px) { .kinds { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 560px) { .kinds { grid-template-columns: 1fr; } }
-.kind .lede { color: var(--ink); font-size: .8rem; }
-@media (max-width: 1100px) { .kind .lede { font-size: .9rem; } }
-.kind details.more { border: 0; padding: 0; }
-.kind details.more summary { display: inline-flex; justify-content: flex-start; gap: .4em; align-items: center; font-size: .88rem; font-weight: 700; color: var(--paper); background: var(--ai); padding: .6em 1.1em; border-radius: 999px; }
-.kind details.more summary::after { font-size: 1rem; color: inherit; }
-.kind .more-body { display: grid; gap: .7rem; margin-top: .9rem; }
-.kind .more-body > p { color: var(--ink-soft); font-size: .92rem; margin: 0; }
-.kind .spec { grid-template-columns: 3.6rem 1fr; font-size: .86rem; }
-.kind { display: grid; grid-template-rows: auto auto; background: var(--paper-2); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
-.kind img { aspect-ratio: 16/9; object-fit: cover; width: 100%; }
-.thumb-wrap { position: relative; }
-.thumb-wrap > .thumb-badge { position: absolute; right: .7rem; bottom: .7rem; z-index: 1; margin: 0; font-size: .78rem; font-weight: 700; color: var(--paper); background: var(--shu); padding: .3em .8em; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,.25); }
-.kind-body { display: grid; gap: .7rem; align-content: start; padding: clamp(1rem, 2.5vw, 1.5rem); min-width: 0; }
-.kind h3 { font-size: 1.08rem; }
-.kind h3 .display { font-family: var(--f-display); font-weight: 600; }
-.kind-body > p { color: var(--ink-soft); font-size: .95rem; }
-.spec { display: grid; grid-template-columns: 4.6rem 1fr; gap: .45rem .8rem; margin: .3rem 0 0; padding-top: .9rem; border-top: 1px dashed var(--line); font-size: .9rem; }
-.spec dt { color: var(--shu-ink); font-weight: 700; }
-.spec dd { margin: 0; min-width: 0; }
-.kind-body > p.badge { justify-self: start; font-size: .78rem; font-weight: 700; color: var(--paper); background: var(--ai); padding: .3em .8em; border-radius: 999px; }
-.soon { margin-top: 1.4rem; font-size: .9rem; color: var(--matcha); font-weight: 700; }
-
-/* form */
-.form-wrap { display: grid; grid-template-columns: 1fr 1.3fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
-@media (max-width: 860px) { .form-wrap { grid-template-columns: 1fr; } }
-.form-side { display: grid; gap: 1.2rem; }
-.flow { margin: 0; padding: 0; list-style: none; display: grid; gap: .9rem; counter-reset: f; }
-.flow li { counter-increment: f; display: grid; grid-template-columns: 2rem 1fr; gap: .8rem; font-size: .95rem; }
-.flow li::before { content: counter(f); font-family: var(--f-display); font-weight: 700; width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center; border: 1.5px solid var(--ai); color: var(--ai); line-height: 1; }
-form { display: grid; gap: 1.1rem; background: var(--paper-2); padding: clamp(1.2rem, 3vw, 2rem); border-radius: var(--radius); border: 1px solid var(--line); }
-.field { display: grid; gap: .35rem; min-width: 0; }
-.field label, .field legend { font-weight: 700; font-size: .9rem; }
-.req { color: var(--shu-ink); font-size: .75rem; margin-left: .3em; font-weight: 500; }
-.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
-@media (max-width: 520px) { .row2 { grid-template-columns: 1fr; } }
-input[type="text"], input[type="email"], select, textarea {
-  width: 100%; font: 400 1rem/1.5 var(--f-body); color: var(--ink); background: var(--field);
-  border: 1px solid var(--line); border-radius: 4px; padding: .7em .8em;
-}
-textarea { min-height: 5.5rem; resize: vertical; }
-fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: .35rem; }
-.choices { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; }
-.choices label, .check { font-weight: 400; display: inline-flex; gap: .5em; align-items: flex-start; font-size: .95rem; }
-.check input, .choices input { margin-top: .35em; accent-color: var(--shu); }
-.event-pick { font-size: .9rem; color: var(--ink-soft); }
-.check, .check span { text-wrap: wrap; }
-.reasons { display: grid; grid-template-columns: 1fr 1fr; gap: .45rem 1rem; }
-@media (max-width: 520px) { .reasons { grid-template-columns: 1fr; } }
-.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-.form-msg { font-size: .95rem; padding: .9rem 1rem; border-radius: 4px; }
-.form-msg.ok { border: 1px solid var(--ok); color: var(--ok); }
-.form-msg.err { border: 1px solid var(--err); color: var(--err); }
-.small { font-size: var(--s-small); color: var(--ink-soft); }
-form .btn { justify-self: start; }
-form .btn[disabled] { opacity: .6; cursor: wait; }
-
-/* rules / faq */
-.two { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 4vw, 3.5rem); }
-@media (max-width: 800px) { .two { grid-template-columns: 1fr; } }
-.rules { margin: 0; padding-left: 1.2rem; display: grid; gap: .5rem; color: var(--ink-soft); }
-details { border-bottom: 1px solid var(--line); padding-block: .9rem; }
-details summary { cursor: pointer; font-weight: 700; list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
-details summary::-webkit-details-marker { display: none; }
-details summary::after { content: "+"; font-family: var(--f-display); color: var(--shu); font-size: 1.3rem; line-height: 1; }
-details[open] summary::after { content: "–"; }
-details p { margin-top: .6rem; color: var(--ink-soft); font-size: .95rem; }
-h3.minor { font-size: 1.15rem; margin-bottom: 1rem; }
-
-/* access */
-.access { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
-@media (max-width: 800px) { .access { grid-template-columns: 1fr; } }
-.access img { border-radius: var(--radius); aspect-ratio: 4/3; object-fit: cover; width: 100%; }
-.access dl { display: grid; grid-template-columns: 6rem 1fr; gap: .6rem 1rem; margin: 1.2rem 0; }
-.access dt { color: var(--ink-soft); font-size: .88rem; }
-.access dd { margin: 0; }
-.host { display: flex; gap: 1rem; align-items: center; margin-top: 1.6rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
-.host img { width: 56px; height: 56px; }
-.host p { font-size: .92rem; color: var(--ink-soft); }
-
-/* instagram */
-.insta { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; margin-top: 1.2rem; }
-@media (max-width: 420px) { .insta { grid-template-columns: 1fr; } }
-.insta a { display: grid; gap: .1rem; padding: .8rem 1rem; border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; color: var(--ink); min-width: 0; }
-.insta a:hover { border-color: var(--shu); }
-.insta .lbl { font-size: .78rem; color: var(--ink-soft); letter-spacing: .04em; }
-.insta .handle { font-weight: 700; overflow-wrap: anywhere; }
-.contact { display: grid; grid-template-columns: 1fr 1.6fr; gap: clamp(1.2rem, 4vw, 3rem); align-items: start; max-width: 52rem; margin-inline: auto; padding-top: clamp(2rem, 5vw, 3rem); border-top: 1px solid var(--line); }
-@media (max-width: 700px) { .contact { grid-template-columns: 1fr; } }
-.contact-head { display: grid; gap: .5rem; }
-.contact-head h2 { font-size: 1.4rem; }
-#contact-form { padding: 1.2rem; gap: .9rem; }
-#contact-form textarea { min-height: 6rem; }
-#contact-form .btn { padding: .75em 1.4em; font-size: .92rem; }
-footer { border-top: 1px solid var(--line); padding-block: 2rem; font-size: .85rem; color: var(--ink-soft); }
-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; align-items: center; }
-footer img { height: 28px; }
-
-/* ===== 2026-10-06: 文字の強弱・ハッシュタグ・主催・Instagram・問い合わせボタン ===== */
-strong{font-weight:700;color:var(--ink)}
-.board strong{color:inherit}
-.mk{background:linear-gradient(transparent 62%,rgba(240,201,135,.75) 62%);padding-inline:.1em}
-.sec-head h2{font-size:clamp(1.75rem,4vw,2.7rem);letter-spacing:.01em;padding-bottom:.45em;position:relative}
-.sec-head h2::after{content:"";position:absolute;left:0;bottom:0;width:2.6em;height:4px;border-radius:2px;background:var(--shu)}
-#about .sec-head h2{padding-bottom:0}
-#about .sec-head h2::after{display:none}
-.brush{display:inline-block;padding-bottom:.22em;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 14' preserveAspectRatio='none'%3E%3Cpath d='M4 9 C 60 2, 110 12, 160 6 S 250 4, 296 8' fill='none' stroke='%23D2553A' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center bottom / 100% .22em}
-.board .sec-head h2::after{background:var(--gold)}
-#about .sec-head p{font-size:1rem}
-.quote{display:block;font-size:1.22em;line-height:1.6;color:var(--ai);margin-bottom:.5em}
-.note-line .big{display:block;font-size:1.12em;color:var(--matcha);margin-bottom:.2em}
-.points h3{font-size:1.22rem;margin-bottom:.35rem;color:var(--ai)}
-.points .dot{width:1.3rem;height:1.3rem;margin-top:.35rem}
-.points li{grid-template-columns:1.3rem 1fr}
-.kind h3{font-size:1.25rem}
-.tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.35rem .5rem}
-.tags li{font-size:.84rem;font-weight:700;color:var(--ai);background:rgba(31,58,95,.08);padding:.25em .7em;border-radius:999px;white-space:nowrap}
-.soon{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .6rem;margin-top:1.6rem;font-size:.95rem;color:var(--ink)}
-.soon b{font-size:.8rem;letter-spacing:.08em;color:#fff;background:var(--matcha);padding:.3em .8em;border-radius:4px}
-.soon span{font-weight:700;border:1.5px dashed var(--matcha);border-radius:999px;padding:.25em .9em}
-.item-name{font-size:1.15rem}
-.price{font-size:1.35rem}
-.date .md{font-size:1.9rem}
-.flow li{font-weight:700}
-details summary{font-size:1.02rem}
-h3.minor{font-size:1.3rem;border-bottom:3px solid var(--matcha);padding-bottom:.4rem;display:inline-block}
-.access .station{font-size:1.05rem}
-.access .station strong{font-size:1.5em;color:var(--shu-ink);margin-inline:.1em}
-.host{align-items:flex-start}
-.host img{width:64px;height:64px}
-.host .host-role{font-size:.8rem;font-weight:700;letter-spacing:.1em;color:var(--shu-ink)}
-.host .host-name{font-family:var(--f-display);font-weight:700;font-size:2rem;line-height:1.1;color:var(--ink);margin-bottom:.35rem}
-.insta-block{margin-top:1.6rem}
-.insta-title{font-size:1.05rem;margin-bottom:.7rem}
-.insta{grid-template-columns:1fr;margin-top:0;gap:.6rem}
-.insta a{display:flex;align-items:center;gap:.9rem;padding:.85rem 1rem;border:1.5px solid var(--line);border-radius:12px;background:var(--field)}
-.insta a:hover{border-color:var(--shu)}
-.insta .ig{width:34px;height:34px;flex:none;color:#fff;background:linear-gradient(45deg,#F5A623,#D2553A 45%,#B03A8C);border-radius:10px;padding:6px;box-sizing:border-box}
-.insta .who{display:grid;gap:.1rem;min-width:0;flex:1}
-.insta .handle{font-size:1.08rem;font-weight:700}
-.insta .lbl{font-size:.8rem;color:var(--ink-soft);letter-spacing:0}
-.insta .go{flex:none;font-size:.82rem;font-weight:700;color:#fff;background:var(--ai);padding:.5em 1em;border-radius:999px}
-.contact-open{align-self:center}
-.contact.is-open .contact-open{display:none}
-@media (max-width:700px){.contact-open .btn{width:100%}}
-@media (max-width:480px){.insta a{gap:.6rem;padding:.8rem}.insta .handle{font-size:.92rem;white-space:nowrap}.insta .go{padding:.45em .8em}}
-
-/* ===== 実績 ===== */
-.record{padding-block:clamp(2.2rem,5vw,3.4rem);border-bottom:1px solid var(--line)}
-.record .wrap{display:grid;justify-items:center;gap:1.3rem;text-align:center}
-.rec-lead{font-weight:700;font-size:1.05rem;color:var(--ai);display:flex;align-items:center;gap:.9em}
-.rec-lead::before,.rec-lead::after{content:"";width:2.4em;height:2px;background:var(--shu)}
-.rec-grid{margin:0;width:100%;max-width:40rem;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
-.rec-grid>div{display:grid;gap:.35rem;align-content:start;padding:.4rem .6rem}
-.rec-grid>div+div{border-left:1px dashed var(--line)}
-.rec-grid dt{font-size:.88rem;font-weight:700;color:var(--ink-soft)}
-.rec-grid dd{margin:0;line-height:1;color:var(--ink);display:flex;align-items:baseline;justify-content:center;gap:.15em}
-.rec-grid dd b{font-family:var(--f-display);font-weight:700;font-size:clamp(2.6rem,6.4vw,4.2rem);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-.rec-grid>div:nth-child(1) b{color:var(--ai)}.rec-grid>div:nth-child(2) b{color:var(--shu-ink)}.rec-grid>div:nth-child(3) b{color:var(--matcha)}
-.rec-grid dd small{font-size:1rem;font-weight:700}
-.rec-note{font-size:.78rem;color:var(--ink-soft)}
-
-/* イベント紹介は4枚を4列に */
-.kinds{grid-template-columns:repeat(4,minmax(0,1fr))}
-@media (max-width:1100px){.kinds{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:560px){.kinds{grid-template-columns:1fr}}
-.kind-body>p.badge.new{background:var(--shu)}
-.kind-body>p.badge.paused{background:#8a8178}
-.kind:has(.paused) img{filter:grayscale(.35) opacity(.85)}
-.thumb-wrap > .thumb-badge.paused{background:#4a4440}
-/* 開催予定：曜日と時間を見やすく */
-.date .dow{font-size:1.02rem;font-weight:700;letter-spacing:.06em;text-transform:none;margin-top:.3rem}
-.item-meta .time{font-size:1.12rem;font-weight:700;color:var(--board-ink);font-variant-numeric:tabular-nums;letter-spacing:.02em}
-@media (max-width:560px){.date .dow{margin-top:0}}
-.date .hol{display:inline-block;margin-left:.45em;padding:.1em .55em;border-radius:999px;background:var(--gold);color:var(--board);font-size:.74rem;font-weight:700;letter-spacing:.04em;vertical-align:middle}
-@media (min-width:1101px){.kind h3{font-size:clamp(1rem,1.5vw,1.25rem);white-space:nowrap}}
-</style></head><body>
-
-<header class="top">
-  <div class="wrap">
-    <a href="#top" aria-label="Harmony">
-      <img class="logo logo-light" src="assets/logo.svg" alt="Harmony">
-      <img class="logo logo-dark" src="assets/logo-dark.svg" alt="Harmony">
-    </a>
-    <div class="top-actions">
-      <div class="lang" role="group" aria-label="Language">
-        <button type="button" id="lang-ja" data-set-lang="ja">日本語</button>
-        <button type="button" id="lang-en" data-set-lang="en">EN</button>
+  <!-- HERO with rotating background photos -->
+  <section style="position: relative; min-height: 940px; overflow: hidden; background: #141414; color: #FFFFFF; display: flex; flex-direction: column;">
+    <div class="slides"><img decoding="async" fetchpriority="high" src="assets/lp/715c589b80.jpg" alt="Group photo of HARMONY participants making peace signs" style="object-position: 50% 45%; animation-delay: -1s;"><img decoding="async" src="assets/lp/p1109-bg.jpg" alt="Players at two tables playing Splendor and Catan" style="object-position: 50% 45%; animation-delay: 5s;"><img decoding="async" src="assets/lp/p1109-le.jpg" alt="Self-introduction sheets and markers on the table" style="object-position: 50% 50%; animation-delay: 11s;"><img decoding="async" src="assets/lp/p1109-snack.jpg" alt="Snacks, sake glasses and self-introduction sheets" style="object-position: 50% 50%; animation-delay: 17s;"></div><span style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(20,20,20,.55) 0%, rgba(20,20,20,.25) 40%, rgba(20,20,20,.6) 100%);"></span>
+    <header style="position: relative; padding: 24px 56px; display: flex; align-items: center; justify-content: space-between;">
+      <a href="index.html" style="display: flex; align-items: center; text-decoration: none;" aria-label="Harmony"><img decoding="async" src="assets/logo/harmony-logo-light.svg" alt="Harmony" width="172" height="49" style="display: block; height: 49px; width: auto;"></a>
+      <nav style="display: flex; align-items: center; gap: 32px; font-size: 14px;"><a href="#events-pc" style="text-decoration: none; color: #FFFFFF;">Events</a><a href="#experiences-pc" style="text-decoration: none; color: #FFFFFF;">Experiences</a><a href="#about-pc" style="text-decoration: none; color: #FFFFFF;">About</a><a href="#faq-pc" style="text-decoration: none; color: #FFFFFF;">FAQ</a></nav>
+      <span style="display: flex; align-items: center; gap: 12px;"><span style="display: flex; border: 1px solid rgba(255,255,255,.5); border-radius: 999px; overflow: hidden; font-size: 12px;"><button type="button" data-set-lang="en" style="border: 0; background: #FFFFFF; color: #141414; padding: 0 14px; height: 40px; font: inherit; font-weight: 700;">EN</button><button type="button" data-set-lang="ja" style="border: 0; background: transparent; color: #FFFFFF; padding: 0 14px; height: 40px; font: inherit;">日本語</button></span><button type="button" data-menu style="display: inline-flex; align-items: center; height: 40px; padding: 0 18px; border-radius: 999px; background: #FFFFFF; color: #141414; font-size: 14px; font-weight: 700; text-decoration: none;">Menu ≡</button></span>
+    </header>
+    <div style="position: relative; padding: 40px 56px 0; text-align: center;">
+      <div style="display: inline-flex; align-items: center; gap: 14px; padding: 12px 28px; border-radius: 999px; background: #FFFFFF; color: #141414;">
+        
+        <b class="sf" data-noi18n style="font-size: 84px; line-height: .9; color: #1E3A5F; font-variant-numeric: tabular-nums; min-width: 2.1ch; text-align: right;"><span data-count="385">385</span></b><span style="text-align: left; line-height: 1.3;"><span style="display: block; font-size: 16px; font-weight: 700; color: #141414;">guests have joined</span><span style="display: block; font-size: 12px; color: #5B6470;">35 events so far</span></span>
       </div>
-      <a class="btn btn-primary" href="#events"><span class="ja">イベントを見る</span><span class="en">See events</span></a>
+      <p style="margin: 28px auto 0; max-width: 520px; font-size: 17px; line-height: 1.7; text-shadow: 0 1px 12px rgba(0,0,0,.35);">We bring Japanese locals and international residents together — <br>over many kinds of events.</p>
     </div>
+    <div style="position: relative; width: 100%; max-width: 1328px; margin: 0 auto; box-sizing: border-box; padding: 40px 56px 0; text-shadow: 0 2px 28px rgba(0,0,0,.3);">
+      <div data-lang-only="en" data-noi18n data-fit-group="220">
+        <h1 class="sf" data-fit-line style="margin: 0; font-size: clamp(112px, 12.2vw, 210px); line-height: .9; letter-spacing: -0.02em;">Make Japanese</h1>
+        <div class="sf" data-fit-line style="margin-top: 4px; font-size: clamp(112px, 12.2vw, 210px); line-height: .9; letter-spacing: -0.02em; text-align: right;"><i>friends</i> in Yokohama.</div>
+        <p class="mc" style="margin: 18px 0 0; font-size: clamp(20px, 1.9vw, 32px); text-align: right; opacity: .92;">横浜で、日本人の友達ができる場所。</p>
+      </div>
+      <div data-lang-only="ja" data-noi18n data-fit-group="150" style="display: none;">
+        <h1 class="mc" data-fit-line style="margin: 0; font-size: clamp(76px, 8.1vw, 140px); line-height: 1.12; letter-spacing: -0.01em;">週末を、もっと</h1>
+        <div class="mc" data-fit-line style="font-size: clamp(76px, 8.1vw, 140px); line-height: 1.12; letter-spacing: -0.01em; text-align: right;">インターナショナルに。</div>
+        <p class="sf" style="margin: 16px 0 0; font-size: clamp(26px, 2.4vw, 40px); text-align: right; opacity: .92;">Make your weekends <i>more</i> international.</p>
+      </div>
+    </div>
+    <div style="position: relative; width: 100%; max-width: 1328px; margin: auto auto 0; box-sizing: border-box; padding: 40px 56px 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+      <span style="display: flex; align-items: center; gap: 12px;"><a href="#events-pc" class="pill" style="background: #FFFFFF; color: #141414;">Explore Upcoming Events <i>→</i></a><a href="#about-pc" class="ghost" style="background: transparent; border-color: rgba(255,255,255,.6); color: #FFFFFF;">Discover HARMONY</a></span>
+      <span style="display: flex; flex-direction: column; align-items: flex-end; gap: 14px;"><div class="bars" style="display: flex; gap: 8px;"><span style="display: block; width: 64px; height: 3px; background: rgba(255,255,255,.35); overflow: hidden;"><i style="animation-delay: 0s;"></i></span><span style="display: block; width: 64px; height: 3px; background: rgba(255,255,255,.35); overflow: hidden;"><i style="animation-delay: 6s;"></i></span><span style="display: block; width: 64px; height: 3px; background: rgba(255,255,255,.35); overflow: hidden;"><i style="animation-delay: 12s;"></i></span><span style="display: block; width: 64px; height: 3px; background: rgba(255,255,255,.35); overflow: hidden;"><i style="animation-delay: 18s;"></i></span></div></span>
+    </div>
+  </section>
+  <section class="marq" style="margin-top: 56px; padding-bottom: 8px;" aria-label="Moments from HARMONY events"><div class="marq-track"><div style="flex: 0 0 236px; height: 320px; margin-right: 16px; border-radius: 28px; overflow: hidden; margin-top: 0px;"><img decoding="async" class="img" src="assets/lp/p1109-bg.jpg" alt="Players at two tables playing Splendor and Catan" style="object-fit: cover; object-position: 70% 55%;"></div><div style="flex: 0 0 236px; height: 320px; margin-right: 16px; border-radius: 28px; overflow: hidden; margin-top: 24px;"><img decoding="async" class="img" src="assets/lp/menu-1109.jpg" alt="The HARMONY drinks menu" style="object-fit: cover; object-position: 50% 40%;"></div><div style="flex: 0 0 236px; height: 320px; margin-right: 16px; border-radius: 28px; overflow: hidden; margin-top: 0px;"><img decoding="async" class="img" src="assets/lp/e425d1353a.jpg" alt="Participants concentrating on a card game" style="object-fit: cover; object-position: 49.0829% 53.6757%; object-view-box: inset(13.9493% 9.2023% 12.0388% 8.8708%)"></div><div style="flex: 0 0 236px; height: 320px; margin-right: 16px; border-radius: 28px; overflow: hidden; margin-top: 24px;"><img decoding="async" class="img" src="assets/lp/42df131056.jpg" alt="Pour-over coffee at Cafe Harmony" style="object-fit: cover; object-position: 40.8545% 50%"></div><div style="flex: 0 0 236px; height: 320px; margin-right: 16px; border-radius: 28px; overflow: hidden; margin-top: 0px;"><img decoding="async" class="img" src="assets/lp/f744eb3697.jpg" alt="An iced drink and self-introduction sheets" style="object-fit: cover; object-position: 50.6466% 47.2801%; object-view-box: inset(10.3895% 30.432% 11.5848% 31.2293%)"></div><div style="flex: 0 0 236px; height: 320px; margin-right: 16px; border-radius: 28px; overflow: hidden; margin-top: 24px;"><img decoding="async" class="img" src="assets/lp/4b05963994.jpg" alt="Participants talking across the tables at the sake night"></div><div style="flex: 0 0 236px; height: 320px; margin-right: 16px; border-radius: 28px; overflow: hidden; margin-top: 0px;"><img decoding="async" class="img" src="assets/lp/p1109-bg.jpg" alt="Players at two tables playing Splendor and Catan" style="object-fit: cover; object-position: 70% 55%;"></div><div style="flex: 0 0 236px; height: 320px; margin-right: 16px; border-radius: 28px; overflow: hidden; margin-top: 24px;"><img decoding="async" class="img" src="assets/lp/menu-1109.jpg" alt="The HARMONY drinks menu" style="object-fit: cover; object-position: 50% 40%;"></div><div style="flex: 0 0 236px; height: 320px; margin-right: 16px; border-radius: 28px; overflow: hidden; margin-top: 0px;"><img decoding="async" class="img" src="assets/lp/453c28212d.jpg" alt=""></div><div style="flex: 0 0 236px; height: 320px; margin-right: 16px; border-radius: 28px; overflow: hidden; margin-top: 24px;"><img decoding="async" class="img" src="assets/lp/42df131056.jpg" alt="" style="object-fit: cover; object-position: 40.8545% 50%"></div><div style="flex: 0 0 236px; height: 320px; margin-right: 16px; border-radius: 28px; overflow: hidden; margin-top: 0px;"><img decoding="async" class="img" src="assets/lp/f744eb3697.jpg" alt=""></div><div style="flex: 0 0 236px; height: 320px; margin-right: 16px; border-radius: 28px; overflow: hidden; margin-top: 24px;"><img decoding="async" class="img" src="assets/lp/4b05963994.jpg" alt=""></div></div></section>
+
+  <!-- EVENTS -->
+  <section id="events-pc" style="padding: 96px 0 128px 56px;">
+    <div style="display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-end; padding-right: 56px;">
+      <div style="flex: 1 1 520px;">
+        <span class="eb">Upcoming Events</span>
+        <h2 class="sf" style="margin: 16px 0 0; font-size: 84px; line-height: 1;">Find Your Next <i>Experience.</i></h2>
+        <p class="mc" style="margin: 16px 0 0; font-size: 22px; color: #1E3A5F;">次の週末の予定を、ここから。</p>
+      </div>
+    </div>
+    <div data-top-events class="hscroll" data-carousel style="margin-top: 56px; display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: 0; padding-right: 56px; padding-bottom: 6px;"></div><template data-tpl="boardgame"><article style="flex: 0 0 300px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="position: relative; height: 360px;"><img loading="lazy" decoding="async" class="img" data-f="img" src="" alt="" style="border-radius: 28px; object-position: 50% 60%;"><span class="evlab" style="border-radius: 0 0 28px 28px;"><span style="display:block;width:32px;height:4px;background:#5B3A6E;margin-bottom:10px;"></span><span class="sf" style="display:block;font-size:52px;line-height:.95;">Board<br>Games</span><span class="mc" style="display:block;margin-top:6px;font-size:13px;opacity:.9;">ボードゲーム</span></span></div>
+          <span class="sf" data-f="date" style="font-size: 34px; line-height: 1;"></span>
+          <span style="display: flex; flex-direction: column; gap: 4px; font-size: 14px; line-height: 1.5; color: #5B6470;"><span data-f="time"></span><span data-f="place"></span><span data-f="price" style="color: #141414; font-weight: 700;"></span></span>
+          <a data-f="link" href="#" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 999px; background: #C8432A; color: #FFFFFF; font-size: 14px; font-weight: 700; text-decoration: none;">See Details &amp; Join →</a>
+        </article></template><template data-tpl="language"><article style="flex: 0 0 300px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="position: relative; height: 360px;"><img loading="lazy" decoding="async" class="img" data-f="img" src="" alt="" style="border-radius: 28px; object-position: 50% 40%;"><span class="evlab" style="border-radius: 0 0 28px 28px;"><span style="display:block;width:32px;height:4px;background:#C8432A;margin-bottom:10px;"></span><span class="sf" style="display:block;font-size:52px;line-height:.95;">Language<br>Exchange</span><span class="mc" style="display:block;margin-top:6px;font-size:13px;opacity:.9;">言語交換</span></span></div>
+          <span class="sf" data-f="date" style="font-size: 34px; line-height: 1;"></span>
+          <span style="display: flex; flex-direction: column; gap: 4px; font-size: 14px; line-height: 1.5; color: #5B6470;"><span data-f="time"></span><span data-f="place"></span><span data-f="price" style="color: #141414; font-weight: 700;"></span></span>
+          <a data-f="link" href="#" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 999px; background: #C8432A; color: #FFFFFF; font-size: 14px; font-weight: 700; text-decoration: none;">See Details &amp; Join →</a>
+        </article></template><template data-tpl="sake"><article style="flex: 0 0 300px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="position: relative; height: 360px;"><img loading="lazy" decoding="async" class="img" data-f="img" src="" alt="" style="border-radius: 28px; object-position: 50% 50%;"><span class="evlab" style="border-radius: 0 0 28px 28px;"><span style="display:block;width:32px;height:4px;background:#1E3A5F;margin-bottom:10px;"></span><span class="sf" style="display:block;font-size:52px;line-height:.95;">Sake<br>Night</span><span class="mc" style="display:block;margin-top:6px;font-size:13px;opacity:.9;">日本酒テイスティング</span></span></div>
+          <span class="sf" data-f="date" style="font-size: 34px; line-height: 1;"></span>
+          <span style="display: flex; flex-direction: column; gap: 4px; font-size: 14px; line-height: 1.5; color: #5B6470;"><span data-f="time"></span><span data-f="place"></span><span data-f="price" style="color: #141414; font-weight: 700;"></span></span>
+          <a data-f="link" href="#" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 999px; background: #C8432A; color: #FFFFFF; font-size: 14px; font-weight: 700; text-decoration: none;">See Details &amp; Join →</a>
+        </article></template><template data-tpl="matcha"><article style="flex: 0 0 300px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="position: relative; height: 360px;"><span style="display:block;width:100%;height:100%;border-radius:28px;background-color:#5F7F45;background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.06) 0 2px,transparent 2px 7px);"></span><span class="evlab" style="border-radius: 0 0 28px 28px;"><span style="display:block;width:32px;height:4px;background:#5F7F45;margin-bottom:10px;"></span><span class="sf" style="display:block;font-size:52px;line-height:.95;">Matcha &amp;<br>Calligraphy</span><span class="mc" style="display:block;margin-top:6px;font-size:13px;opacity:.9;">抹茶・和菓子・書道</span></span></div>
+          <span class="sf" data-f="date" style="font-size: 34px; line-height: 1;"></span>
+          <span style="display: flex; flex-direction: column; gap: 4px; font-size: 14px; line-height: 1.5; color: #5B6470;"><span data-f="time"></span><span data-f="place"></span><span data-f="price" style="color: #141414; font-weight: 700;"></span></span>
+          <a data-f="link" href="#" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 999px; background: #C8432A; color: #FFFFFF; font-size: 14px; font-weight: 700; text-decoration: none;">See Details &amp; Join →</a>
+        </article></template><div style="margin-top: 40px; padding-right: 56px;"><button type="button" data-see-all class="ghost" style="cursor: pointer;">Show More ↓</button></div>
+  </section>
+
+  <!-- EXPERIENCES (big type list) -->
+  <section id="experiences-pc" class="xsec" style="position: relative; padding: 120px 56px 140px; background: #F7F3EC; text-align: center; overflow: hidden;">
+    <div class="xbg xbg-def"><img loading="lazy" decoding="async" src="assets/lp/715c589b80.jpg" alt="" style="object-position: 50% 45%;"></div><div class="xbg xbg-le"><img loading="lazy" decoding="async" src="assets/lp/p1109-le.jpg" alt=""></div><div class="xbg xbg-bg"><img loading="lazy" decoding="async" src="assets/lp/p1109-3.jpg" alt="" style="object-position: 50% 50%;"></div><div class="xbg xbg-sk"><img loading="lazy" decoding="async" src="assets/lp/7ffa638afb.jpg" alt=""></div><div class="xbg xbg-mc"><span style="display:block;width:100%;height:100%;background-color:#5F7F45;background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.06) 0 2px,transparent 2px 7px);"></span></div><div class="xshade"></div><span class="eb" style="position: relative;">Choose Your Experience</span>
+    <p class="mono xhint" style="position: relative; margin: 14px 0 0; color: #5B6470;">Hover over an experience to see what it’s like</p>
+    
+    
+    <ul style="position: relative; z-index: 1; margin: 36px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 2px;"><li class="sf xp xp-le" data-x="le" style="font-size: 72px; line-height: 1.1;"><a href="language-exchange.html" style="text-decoration: none;">Language Exchange</a></li><li class="sf xp xp-bg" data-x="bg" style="font-size: 72px; line-height: 1.1;"><a href="board-games.html" style="text-decoration: none;">Board Games</a></li><li class="sf xp xp-sk" data-x="sk" style="font-size: 72px; line-height: 1.1;"><a href="sake.html" style="text-decoration: none;">Sake Tasting</a></li><li class="sf xp xp-mc" data-x="mc" style="font-size: 72px; line-height: 1.1;"><a href="matcha.html" style="text-decoration: none;">Matcha &amp; Calligraphy</a> <span class="mono xsoon" style="vertical-align: middle;">11/28 new</span></li></ul><div class="xds" style="position: relative; z-index: 1; margin: 28px auto 0; max-width: 600px; min-height: 150px;"><div class="xd xd-le"><b class="xd-t">Speak. Share. Connect.</b><span class="xd-p">Half Japanese, half English, in small groups of 4–5. Lunch nearby afterwards if you like.</span><span class="xd-m mono">Every weekend · 11:00–13:00 · ¥1,000 incl. one drink</span><a class="xd-a" href="language-exchange.html">See details &amp; dates →</a></div><div class="xd xd-bg"><b class="xd-t">Play. Laugh. Connect.</b><span class="xd-p">Party and strategy games where nobody needs a shared language to laugh. Rules explained at the table.</span><span class="xd-m mono">14:30–17:00 · ¥1,000 incl. one drink</span><a class="xd-a" href="board-games.html">See details &amp; dates →</a></div><div class="xd xd-sk"><b class="xd-t">Taste. Talk. Connect.</b><span class="xd-p">A guided tasting of 3–4 sake with a sake sommelier, introduced in Japanese and English.</span><span class="xd-m mono">18:00–20:30 · ¥3,000 · 20+</span><a class="xd-a" href="sake.html">See details &amp; dates →</a></div><div class="xd xd-mc"><b class="xd-t">Whisk. Shape. Write.</b><span class="xd-p">Whisk matcha, shape a nerikiri sweet and write your name in kanji, in a tatami room in Yamate.</span><span class="xd-m mono">Sat, Nov 28 · 14:30–16:30 · ¥3,000</span><a class="xd-a" href="matcha.html">See details &amp; dates →</a></div></div>
+  </section>
+
+
+
+  <!-- ABOUT (Your story, our stage) -->
+  <section id="about-pc" style="padding: 140px 56px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center; max-width: 1328px; margin: 0 auto;">
+    <div style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 18px; align-items: flex-start;">
+      <span class="eb">About HARMONY</span>
+      <h2 class="sf" style="margin: 0; font-size: 64px; line-height: 1;">The event is<br><i>just where it starts.</i></h2>
+      <p class="mc" style="margin: 0; font-size: 22px; color: #1E3A5F;">イベントは、友達づくりの入口。</p>
+      <p style="margin: 0; max-width: 420px; font-size: 16px; line-height: 1.8; color: #5B6470;">HARMONY creates opportunities for people from different cultures to meet through enjoyable events. Every gathering is a chance to discover something new, share experiences, and make connections that can continue beyond the event.</p>
+      <span style="font-size: 13px; color: #5B6470;">Home base: Cafe Harmony, Tsurumi, Yokohama</span>
+    </div>
+    <div style="flex: 1.4 1 620px; position: relative; height: 560px;">
+      <div style="position: absolute; left: 0; top: 40px; width: 52%; height: 500px; border-radius: 28px; overflow: hidden;"><img loading="lazy" decoding="async" class="img" src="assets/lp/d7c1380ce5.jpg" alt="Participants smiling together on the sofa" style="object-fit: cover; object-position: 69.9868% 65.0674%; object-view-box: inset(11.6934% 16.7217% 6.2778% 38.9929%)"></div>
+      <div style="position: absolute; left: 56%; top: 0; width: 26%; height: 230px; border-radius: 28px; overflow: hidden;"><img loading="lazy" decoding="async" class="img" src="assets/lp/6b99ce2f6f.jpg" alt="Sake and snacks on the table" style="object-fit: cover; object-position: 59.9612% 31.3841%; object-view-box: inset(5.6826% 20.7914% 12.4239% 31.1368%)"></div>
+      <div style="position: absolute; left: 56%; top: 256px; width: 44%; height: 284px; border-radius: 28px; overflow: hidden;"><img loading="lazy" decoding="async" class="img" src="assets/lp/p1109-3.jpg" alt="Players at two tables playing Splendor and Catan" style="object-fit: cover; object-position: 50% 50%; object-view-box: inset(0% 22.5437% 13.3712% 7.8101%)"></div>
+      <div style="position: absolute; left: 86%; top: 60px; width: 88px; height: 88px; border-radius: 999px; background: #1E3A5F; display: flex; align-items: center; justify-content: center;"><svg width="42" height="30" viewBox="0 0 40 28" aria-hidden="true"><circle cx="12" cy="14" r="10" fill="#F7F3EC" fill-opacity=".9"></circle><circle cx="20" cy="14" r="10" fill="#C8432A" fill-opacity=".9"></circle><circle cx="28" cy="14" r="10" fill="#5B3A6E" fill-opacity=".9"></circle></svg></div>
+      <span class="sf" style="position: absolute; left: 14px; bottom: 12px; font-size: 120px; line-height: 1; color: #FFFFFF; text-shadow: 0 2px 24px rgba(20,20,20,.25);"><i>together</i></span>
+    </div>
+  </section>
+
+  <!-- WHY (bento) -->
+  <section style="padding: 120px 56px; background: #F7F3EC;">
+    <div style="max-width: 1328px; margin: 0 auto; text-align: center;">
+      <span class="eb">Why HARMONY</span>
+      <h2 class="sf" style="margin: 16px 0 0; font-size: 72px; line-height: 1;">More Than Just<br><i>a Weekend Activity.</i></h2>
+      <p class="mc" style="margin: 16px 0 0; font-size: 22px; color: #1E3A5F;">ただの週末の予定で、終わらない。</p>
+    </div>
+    <div style="max-width: 1328px; margin: 56px auto 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px;">
+      <div style="grid-column: span 4; background: #FFFFFF; border-radius: 28px; padding: 36px 40px; display: flex; flex-direction: column; gap: 28px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;"><b class="sf" style="font-size: 34px; font-weight: 400;">So far at HARMONY</b><span style="display: flex; align-items: center; gap: 12px;"><span style="font-size: 14px; color: #5B6470;">Japanese locals &amp; international residents</span><span class="chip">as of Nov 9, 2026</span></span></div>
+        <div style="display: flex; align-items: flex-end; margin-left: -32px;"><span style="flex: 1; padding-left: 32px; border-left: 1px solid #E4DED3;"><span class="sf" style="display: block; font-size: 120px; line-height: .9; color: #1E3A5F;">385</span><span style="font-size: 15px; color: #5B6470;">guests have joined</span></span><span style="flex: 1; padding-left: 32px; border-left: 1px solid #E4DED3;"><span class="sf" style="display: block; font-size: 120px; line-height: .9; color: #C8432A;">35</span><span style="font-size: 15px; color: #5B6470;">events held</span></span><span style="flex: 1; padding-left: 32px; border-left: 1px solid #E4DED3;"><span class="sf" style="display: block; font-size: 120px; line-height: .9; color: #5B3A6E;">20+</span><span style="font-size: 15px; color: #5B6470;">countries represented</span></span></div>
+      </div>
+      <div style="position: relative; min-height: 440px; border-radius: 28px; overflow: hidden; color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; padding: 28px; background: #141414;"><img loading="lazy" decoding="async" src="assets/lp/p1109-5.jpg" alt="Participants talking over a card game" style="object-position: 18% 40%; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"><span style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,20,20,.88) 0%, rgba(20,20,20,.45) 55%, rgba(20,20,20,.15) 100%);"></span><span class="mono" style="position: relative; color: #FFFFFF;">01</span><span style="position: relative; display: flex; flex-direction: column; gap: 14px;"><span class="sf" style="font-size: 32px; line-height: 1.08;">Meet People from Around the World</span><span style="position: relative; display: block; height: 1px; background: rgba(255,255,255,.45);"><span style="position: absolute; left: 0; top: -1px; width: 40px; height: 3px; background: #C8432A;"></span></span><span style="font-size: 15px; line-height: 1.7; color: rgba(255,255,255,.88);">Connect with Japanese locals and international participants.</span></span></div><div style="position: relative; min-height: 440px; border-radius: 28px; overflow: hidden; color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; padding: 28px; background: #141414;"><img loading="lazy" decoding="async" src="assets/lp/1b0d90bf35.jpg" alt="Japanese sake bottles" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"><span style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,20,20,.88) 0%, rgba(20,20,20,.45) 55%, rgba(20,20,20,.15) 100%);"></span><span class="mono" style="position: relative; color: #FFFFFF;">02</span><span style="position: relative; display: flex; flex-direction: column; gap: 14px;"><span class="sf" style="font-size: 32px; line-height: 1.08;">Experience Different Cultures</span><span style="position: relative; display: block; height: 1px; background: rgba(255,255,255,.45);"><span style="position: absolute; left: 0; top: -1px; width: 40px; height: 3px; background: #C8432A;"></span></span><span style="font-size: 15px; line-height: 1.7; color: rgba(255,255,255,.88);">Discover new perspectives through conversations and shared experiences.</span></span></div><div style="position: relative; min-height: 440px; border-radius: 28px; overflow: hidden; color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; padding: 28px; background: #141414;"><img loading="lazy" decoding="async" src="assets/lp/p1109-6.jpg" alt="Participants smiling over a game of Splendor" style="object-position: 20% 45%; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"><span style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,20,20,.88) 0%, rgba(20,20,20,.45) 55%, rgba(20,20,20,.15) 100%);"></span><span class="mono" style="position: relative; color: #FFFFFF;">03</span><span style="position: relative; display: flex; flex-direction: column; gap: 14px;"><span class="sf" style="font-size: 32px; line-height: 1.08;">Enjoy Something Different</span><span style="position: relative; display: block; height: 1px; background: rgba(255,255,255,.45);"><span style="position: absolute; left: 0; top: -1px; width: 40px; height: 3px; background: #C8432A;"></span></span><span style="font-size: 15px; line-height: 1.7; color: rgba(255,255,255,.88);">Make your weekends more exciting with fun and unique activities.</span></span></div><div style="position: relative; min-height: 440px; border-radius: 28px; overflow: hidden; color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; padding: 28px; background: #141414;"><img loading="lazy" decoding="async" src="assets/lp/d5719c0a43.jpg" alt="A participant smiling at a language exchange" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"><span style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,20,20,.88) 0%, rgba(20,20,20,.45) 55%, rgba(20,20,20,.15) 100%);"></span><span class="mono" style="position: relative; color: #FFFFFF;">04</span><span style="position: relative; display: flex; flex-direction: column; gap: 14px;"><span class="sf" style="font-size: 32px; line-height: 1.08;">Feel Welcome, Even Alone</span><span style="position: relative; display: block; height: 1px; background: rgba(255,255,255,.45);"><span style="position: absolute; left: 0; top: -1px; width: 40px; height: 3px; background: #C8432A;"></span></span><span style="font-size: 15px; line-height: 1.7; color: rgba(255,255,255,.88);">Come by yourself or with friends. Meeting people feels natural here.</span></span></div>
+    </div>
+  </section>
+
+  <!-- HOW TO JOIN -->
+  <section style="padding: 120px 56px; background: #1E3A5F; color: #FFFFFF; position: relative; overflow: hidden;">
+    <span aria-hidden="true" class="sf" style="position: absolute; right: -40px; top: -60px; font-size: 420px; line-height: 1; color: rgba(255,255,255,.04);"><i>1·2·3</i></span>
+    <div style="position: relative; max-width: 1328px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px;">
+      <div><span class="eb" style="color: #FFFFFF;">How to Join</span><h2 class="sf" style="margin: 16px 0 0; font-size: 72px; line-height: 1;">Joining Is <i>Easy.</i></h2><p class="mc" style="margin: 16px 0 0; font-size: 22px; color: #D9D4CA;">参加は、かんたん3ステップ。</p>
+        <div style="margin-top: 22px; display: flex; gap: 10px; flex-wrap: wrap;"><span class="chip" style="background: rgba(255,255,255,.12); color: #FFFFFF;">⏱ About 1 minute</span><span class="chip" style="background: rgba(255,255,255,.12); color: #FFFFFF;">No Meetup account needed</span><span class="chip" style="background: rgba(255,255,255,.12); color: #FFFFFF;">Solo welcome</span></div></div>
+      <a href="#events-pc" class="pill" style="background: #FFFFFF; color: #141414;">Explore Upcoming Events <i>→</i></a>
+    </div>
+    <div style="position: relative; max-width: 1328px; margin: 56px auto 0; display: flex; gap: 14px; align-items: stretch;"><div style="flex: 1; position: relative; background: #FFFFFF; color: #141414; border-radius: 28px; overflow: hidden; display: flex; flex-direction: column;"><div style="height: 260px; position: relative;"><img loading="lazy" decoding="async" style="object-fit: cover; object-position: 22% 50%;" class="img" src="assets/lp/p1109-7.jpg" alt="Participants chatting at Cafe Harmony"><span class="sf" style="position: absolute; left: 22px; top: 10px; font-size: 96px; line-height: 1; color: #FFFFFF; text-shadow: 0 2px 20px rgba(0,0,0,.35);"><i>01</i></span></div><div style="padding: 26px 28px 30px; display: flex; flex-direction: column; gap: 10px;"><b style="font-size: 22px;">Find Your Event</b><span style="font-size: 15px; line-height: 1.7; color: #5B6470;">Browse upcoming events and choose the experience you like.</span><span class="chip" style="align-self: flex-start; margin-top: 6px;">See all events</span></div></div><span aria-hidden="true" style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:999px;background:#C8432A;color:#FFFFFF;font-size:22px;flex:0 0 auto;align-self:center;">→</span><div style="flex: 1; position: relative; background: #FFFFFF; color: #141414; border-radius: 28px; overflow: hidden; display: flex; flex-direction: column;"><div style="height: 260px; position: relative;"><div style="position:relative;height:100%;background:#F7F3EC;display:flex;align-items:flex-end;justify-content:flex-end;padding-right:40px;box-sizing:border-box;overflow:hidden;"><div style="position:relative;width:178px;height:232px;margin-top:14px;background:#FFFFFF;border:5px solid #141414;border-bottom:0;border-radius:24px 24px 0 0;padding:12px 12px 0;box-sizing:border-box;display:flex;flex-direction:column;gap:7px;box-shadow:0 14px 30px rgba(20,20,20,.15);"><span style="position:absolute;left:50%;top:4px;transform:translateX(-50%);width:44px;height:5px;border-radius:9px;background:#141414;"></span><b style="margin-top:4px;font-size:13px;">Sign up</b><span style="display:flex;gap:5px;"><span style="flex:1;padding:5px 0;border-radius:8px;background:#141414;color:#FFFFFF;font-size:11px;font-weight:700;text-align:center;">Nov 8</span><span style="flex:1;padding:5px 0;border-radius:8px;border:1px solid #E4DED3;font-size:11px;text-align:center;color:#5B6470;">Nov 15</span></span><span style="display:flex;flex-direction:column;gap:3px;"><span style="font-size:10px;font-weight:700;color:#5B6470;">Name</span><span style="display:block;padding:6px 9px;border:1px solid #E4DED3;border-radius:8px;font-size:12px;color:#141414;">Yuki</span></span><span style="display:flex;flex-direction:column;gap:3px;"><span style="font-size:10px;font-weight:700;color:#5B6470;">Email</span><span style="display:block;padding:6px 9px;border:1px solid #E4DED3;border-radius:8px;font-size:12px;color:#141414;">yuki@mail.com</span></span><span style="display:flex;align-items:center;justify-content:center;height:30px;border-radius:999px;background:#C8432A;color:#FFFFFF;font-size:12px;font-weight:700;">Join →</span></div><span style="position:absolute;left:14px;bottom:14px;display:flex;align-items:center;gap:6px;padding:7px 10px;border-radius:12px;background:#5B3A6E;color:#FFFFFF;font-size:11px;font-weight:700;box-shadow:0 8px 18px rgba(20,20,20,.18);transform:rotate(3deg);"><span style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:999px;background:#FFFFFF;color:#5B3A6E;font-size:11px;">✓</span>Confirmation<br>email sent</span></div><span class="sf" style="position: absolute; left: 22px; top: 10px; font-size: 96px; line-height: 1; color: #FFFFFF; text-shadow: 0 2px 20px rgba(0,0,0,.35); color:#1E3A5F; text-shadow:none;"><i>02</i></span></div><div style="padding: 26px 28px 30px; display: flex; flex-direction: column; gap: 10px;"><b style="font-size: 22px;">Register Online</b><span style="font-size: 15px; line-height: 1.7; color: #5B6470;">Check the details and reserve your spot. No Meetup account needed.</span><span class="chip" style="align-self: flex-start; margin-top: 6px;">About 1 minute</span></div></div><span aria-hidden="true" style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:999px;background:#C8432A;color:#FFFFFF;font-size:22px;flex:0 0 auto;align-self:center;">→</span><div style="flex: 1; position: relative; background: #FFFFFF; color: #141414; border-radius: 28px; overflow: hidden; display: flex; flex-direction: column;"><div style="height: 260px; position: relative;"><img loading="lazy" decoding="async" class="img" src="assets/lp/715c589b80.jpg" alt="Group photo of HARMONY participants" style="object-position: 50% 40%;"><span class="sf" style="position: absolute; left: 22px; top: 10px; font-size: 96px; line-height: 1; color: #FFFFFF; text-shadow: 0 2px 20px rgba(0,0,0,.35);"><i>03</i></span></div><div style="padding: 26px 28px 30px; display: flex; flex-direction: column; gap: 10px;"><b style="font-size: 22px;">Show Up &amp; Enjoy</b><span style="font-size: 15px; line-height: 1.7; color: #5B6470;">Come along, meet new people, and enjoy the event.</span><span class="chip" style="align-self: flex-start; margin-top: 6px;">Pay on the day · Cash / PayPay</span></div></div></div>
+  </section>
+
+  <!-- FIRST TIME / FAQ -->
+  <section id="faq-pc" style="padding: 120px 56px; background: #F7F3EC;">
+    <div style="max-width: 1328px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 64px;">
+      <div style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 20px;">
+        <span class="eb">First Time?</span>
+        <h2 class="sf" style="margin: 0; font-size: 72px; line-height: 1;">Your First Event?<br><i>We've Got You.</i></h2>
+        <p class="mc" style="margin: 0; font-size: 22px; color: #1E3A5F;">はじめてでも、大丈夫。</p>
+        <div style="margin-top: 12px; height: 300px; border-radius: 28px; overflow: hidden;"><img loading="lazy" decoding="async" class="img" src="assets/lp/1c04f3eca0.jpg" alt="HARMONY self-introduction sheet"></div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #5B6470;">HARMONY is for friendship — not dating or pick-ups. No sales or recruiting, and no one gets judged on their language level.</p>
+      </div>
+      <div style="flex: 999 1 640px; min-width: 0; border-top: 1px solid #E4DED3;"><details class="det" open=""><summary>Can I come alone?</summary><p>Yes. We arrange the seating, so it's easy to join in even if you come on your own.</p></details><details class="det"><summary>Do I need to speak English?</summary><p>No. Language exchange is half Japanese, half English, and your level doesn't matter.</p></details><details class="det"><summary>Do I need to speak Japanese?</summary><p>No. Half of each language exchange is in English, and plenty of people speak slowly.</p></details><details class="det"><summary>Is it OK for beginners?</summary><p>Yes. Your language level doesn't matter, and the events are made for first-timers too.</p></details><details class="det"><summary>How do I register?</summary><p>Pick an event and tap “See Details &amp; Join”. No Meetup account needed.</p></details><details class="det"><summary>How do I pay?</summary><p>Cash or PayPay on the day. We can't take credit cards.</p></details><details class="det"><summary>What if I'm late?</summary><p>No problem — we'll seat you at the next rotation.</p></details></div>
+    </div>
+  </section>
+
+  <!-- FINAL + FOOTER -->
+  <footer style="position: relative; background: #141414; color: #FFFFFF; padding: 120px 56px 48px; overflow: hidden;">
+    <img loading="lazy" decoding="async" src="assets/lp/edae275731.jpg" alt="Group photo of HARMONY participants" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%;">
+    <span style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(20,20,20,.55) 0%, rgba(20,20,20,.7) 45%, rgba(20,20,20,.9) 100%);"></span>
+    <div style="position: relative; max-width: 1328px; margin: 0 auto;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px;">
+        <div><h2 class="sf" style="margin: 0; font-size: 96px; line-height: .95;">Make Your<br><i>Next Weekend Count.</i></h2><p class="mc" style="margin: 20px 0 0; font-size: 22px; color: #D9D4CA;">次の週末を、特別な一日に。</p><p style="margin: 12px 0 0; font-size: 16px; color: #BDB8AE;">Find an event, meet new people, and experience something different.</p></div>
+        <span style="display: flex; gap: 12px; flex-wrap: wrap;"><a href="#events-pc" class="pill" style="background: #FFFFFF; color: #141414;">Explore Upcoming Events <i>→</i></a><a href="https://www.instagram.com/harmony_community_/" target="_blank" rel="noopener" class="ghost" style="background: transparent; border-color: #4A4A4A; color: #FFFFFF;">Follow HARMONY on Instagram</a></span>
+      </div>
+      <div style="margin-top: 96px; display: flex; justify-content: space-between; gap: 32px; flex-wrap: wrap; font-size: 14px; color: #BDB8AE;">
+        <span>International exchange events · Home base: Cafe Harmony, Tsurumi, Yokohama</span>
+        <span style="display: flex; gap: 28px;"><a href="#events-pc" style="color: #FFFFFF; text-decoration: none;">Events</a><a href="#about-pc" style="color: #FFFFFF; text-decoration: none;">About</a><a href="https://www.instagram.com/harmony_community_/" target="_blank" rel="noopener" style="color: #FFFFFF; text-decoration: none;">Instagram</a><a href="https://www.meetup.com/yokohama-meetup-group-harmony/" target="_blank" rel="noopener" style="color: #FFFFFF; text-decoration: none;">Meetup</a></span>
+      </div>
+      <div style="margin-top: 24px; display: flex; justify-content: center;"><img src="assets/logo/harmony-logo-light.svg" alt="Harmony" width="1100" height="313" loading="lazy" style="display: block; width: min(1100px, 82vw); height: auto;"></div>
+      <div style="margin-top: 32px; font-size: 12px; color: #8E8A82;">© 2026 Harmony</div>
+    </div>
+  </footer>
+
+</div>
+<div class="v-sp" style="width: 100%; padding-bottom: 104px; box-sizing: border-box; position: relative; background: #FFFFFF; font-family: 'Zen Kaku Gothic New', sans-serif; color: #141414;">
+
+
+  <section style="position: relative; min-height: 780px; overflow: hidden; background: #141414; color: #FFFFFF; display: flex; flex-direction: column;">
+    <div class="slides"><img decoding="async" fetchpriority="high" src="assets/lp/715c589b80.jpg" alt="Group photo of HARMONY participants making peace signs" style="object-position: 50% 45%; animation-delay: -1s;"><img decoding="async" src="assets/lp/p1109-bg.jpg" alt="Players at two tables playing Splendor and Catan" style="object-position: 20% 45%; animation-delay: 5s;"><img decoding="async" src="assets/lp/p1109-le.jpg" alt="Self-introduction sheets and markers on the table" style="object-position: 50% 50%; animation-delay: 11s;"><img decoding="async" src="assets/lp/p1109-snack.jpg" alt="Snacks, sake glasses and self-introduction sheets" style="object-position: 50% 50%; animation-delay: 17s;"></div><span style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(20,20,20,.55) 0%, rgba(20,20,20,.25) 40%, rgba(20,20,20,.6) 100%);"></span>
+    <header style="position: relative; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between;"><a href="index.html" style="display: flex; align-items: center; text-decoration: none;" aria-label="Harmony"><img decoding="async" src="assets/logo/harmony-logo-light.svg" alt="Harmony" width="172" height="49" style="display: block; height: 49px; width: auto;"></a><span style="display: flex; gap: 8px; align-items: center;"><span style="display: flex; border: 1px solid rgba(255,255,255,.5); border-radius: 999px; overflow: hidden; font-size: 12px;"><button type="button" data-set-lang="en" style="border: 0; background: #FFFFFF; color: #141414; padding: 0 12px; height: 40px; font: inherit; font-weight: 700;">EN</button><button type="button" data-set-lang="ja" style="border: 0; background: transparent; color: #FFFFFF; padding: 0 12px; height: 40px; font: inherit;">日本語</button></span><button type="button" aria-label="Menu" data-menu style="width: 44px; height: 44px; border-radius: 999px; border: 0; background: #FFFFFF; color: #141414; font-size: 16px;">≡</button></span></header>
+    <div style="position: relative; padding: 24px 16px 0; text-align: center;">
+      <div style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 22px; border-radius: 999px; background: #FFFFFF; color: #141414;"><b class="sf" data-noi18n style="font-size: 60px; line-height: .9; color: #1E3A5F; font-variant-numeric: tabular-nums; min-width: 2.1ch; text-align: right;"><span data-count="385">385</span></b><span style="text-align: left; line-height: 1.3;"><span style="display: block; font-size: 14px; font-weight: 700; color: #141414;">guests have joined</span><span style="display: block; font-size: 11px; color: #5B6470;">35 events so far</span></span></div>
+    </div>
+    <div style="position: relative; margin-top: auto; padding: 0 16px 32px; text-align: center; text-shadow: 0 2px 20px rgba(0,0,0,.35);">
+      <div data-lang-only="en" data-noi18n>
+        <h1 class="sf" style="margin: 0; font-size: min(68px, 17.5vw); line-height: .92;">Make Japanese <i>friends</i> in Yokohama.</h1>
+        <p class="mc" style="margin: 14px 0 0; font-size: 16px; opacity: .92;">横浜で、日本人の友達ができる場所。</p>
+      </div>
+      <div data-lang-only="ja" data-noi18n style="display: none;">
+        <h1 class="mc" style="margin: 0; line-height: 1.3;" data-fit-group="60"><span data-fit-line style="display: block; font-size: min(36px, 8vw);">週末を、もっと</span><span data-fit-line style="display: block; font-size: min(36px, 8vw);">インターナショナルに。</span></h1>
+        <p class="sf" style="margin: 12px 0 0; font-size: 21px; opacity: .92;">Make your weekends <i>more</i> international.</p>
+      </div>
+      <p style="margin: 12px auto 0; font-size: 15px; line-height: 1.7;">Meet new people. Discover new cultures. Have fun. Everyone is welcome, even if you're coming alone.</p>
+      <a href="#about" class="ghost" style="margin-top: 16px; height: 44px; background: transparent; border-color: rgba(255,255,255,.6); color: #FFFFFF; text-shadow: none;">Discover HARMONY</a>
+      <div style="margin-top: 24px; display: flex; justify-content: center;"><div class="bars" style="display: flex; gap: 8px;"><span style="display: block; width: 40px; height: 3px; background: rgba(255,255,255,.35); overflow: hidden;"><i style="animation-delay: 0s;"></i></span><span style="display: block; width: 40px; height: 3px; background: rgba(255,255,255,.35); overflow: hidden;"><i style="animation-delay: 6s;"></i></span><span style="display: block; width: 40px; height: 3px; background: rgba(255,255,255,.35); overflow: hidden;"><i style="animation-delay: 12s;"></i></span><span style="display: block; width: 40px; height: 3px; background: rgba(255,255,255,.35); overflow: hidden;"><i style="animation-delay: 18s;"></i></span></div></div>
+    </div>
+  </section>
+  <section class="marq" style="margin-top: 32px; padding-bottom: 8px;" aria-label="Moments from HARMONY events"><div class="marq-track"><div style="flex: 0 0 150px; height: 210px; margin-right: 10px; border-radius: 24px; overflow: hidden; margin-top: 0px;"><img decoding="async" class="img" src="assets/lp/453c28212d.jpg" alt="Participants playing a card game"></div><div style="flex: 0 0 150px; height: 210px; margin-right: 10px; border-radius: 24px; overflow: hidden; margin-top: 24px;"><img decoding="async" class="img" src="assets/lp/42df131056.jpg" alt="Pour-over coffee at Cafe Harmony"></div><div style="flex: 0 0 150px; height: 210px; margin-right: 10px; border-radius: 24px; overflow: hidden; margin-top: 0px;"><img decoding="async" class="img" src="assets/lp/menu-1109.jpg" alt="The HARMONY drinks menu" style="object-fit: cover; object-position: 50% 40%;"></div><div style="flex: 0 0 150px; height: 210px; margin-right: 10px; border-radius: 24px; overflow: hidden; margin-top: 24px;"><img decoding="async" class="img" src="assets/lp/f744eb3697.jpg" alt="An iced drink and self-introduction sheets"></div><div style="flex: 0 0 150px; height: 210px; margin-right: 10px; border-radius: 24px; overflow: hidden; margin-top: 0px;"><img decoding="async" class="img" src="assets/lp/4b05963994.jpg" alt="Participants talking across the tables at the sake night"></div><div style="flex: 0 0 150px; height: 210px; margin-right: 10px; border-radius: 24px; overflow: hidden; margin-top: 24px;"><img decoding="async" class="img" src="assets/lp/p1109-bg.jpg" alt="Players at two tables playing Splendor and Catan"></div><div style="flex: 0 0 150px; height: 210px; margin-right: 10px; border-radius: 24px; overflow: hidden; margin-top: 0px;"><img decoding="async" class="img" src="assets/lp/453c28212d.jpg" alt=""></div><div style="flex: 0 0 150px; height: 210px; margin-right: 10px; border-radius: 24px; overflow: hidden; margin-top: 24px;"><img decoding="async" class="img" src="assets/lp/42df131056.jpg" alt=""></div><div style="flex: 0 0 150px; height: 210px; margin-right: 10px; border-radius: 24px; overflow: hidden; margin-top: 0px;"><img decoding="async" class="img" src="assets/lp/menu-1109.jpg" alt="The HARMONY drinks menu" style="object-fit: cover; object-position: 50% 40%;"></div><div style="flex: 0 0 150px; height: 210px; margin-right: 10px; border-radius: 24px; overflow: hidden; margin-top: 24px;"><img decoding="async" class="img" src="assets/lp/f744eb3697.jpg" alt=""></div><div style="flex: 0 0 150px; height: 210px; margin-right: 10px; border-radius: 24px; overflow: hidden; margin-top: 0px;"><img decoding="async" class="img" src="assets/lp/4b05963994.jpg" alt=""></div><div style="flex: 0 0 150px; height: 210px; margin-right: 10px; border-radius: 24px; overflow: hidden; margin-top: 24px;"><img decoding="async" class="img" src="assets/lp/p1109-bg.jpg" alt="Players at two tables playing Splendor and Catan"></div></div></section>
+  <section id="events" style="padding: 64px 16px 64px;">
+    <span class="eb">Upcoming Events</span>
+    <h2 class="sf" style="margin: 12px 0 0; font-size: 52px; line-height: 1;">Find Your Next <i>Experience.</i></h2>
+    <p class="mc" style="margin: 12px 0 0; font-size: 17px; color: #1E3A5F;">次の週末の予定を、ここから。</p>
+    <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 40px;"><div data-top-events style="display: flex; flex-direction: column; gap: 40px;"></div><template data-tpl="boardgame"><article style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="position: relative; height: 240px;"><img loading="lazy" decoding="async" class="img" data-f="img" src="" alt="" style="border-radius: 24px; object-position: 50% 60%;"><span class="evlab" style="border-radius: 0 0 24px 24px;"><span style="display:block;width:32px;height:4px;background:#5B3A6E;margin-bottom:10px;"></span><span class="sf" style="display:block;font-size:38px;line-height:.95;">Board<br>Games</span><span class="mc" style="display:block;margin-top:6px;font-size:13px;opacity:.9;">ボードゲーム</span></span></div>
+        <span class="sf" data-f="date" style="font-size: 32px; line-height: 1;"></span>
+        <span style="display: flex; flex-direction: column; gap: 4px; font-size: 14px; line-height: 1.5; color: #5B6470;"><span data-f="time"></span><span data-f="place"></span><span data-f="price" style="color: #141414; font-weight: 700;"></span></span>
+        <a data-f="link" href="#" style="display: flex; align-items: center; justify-content: center; height: 48px; border-radius: 999px; background: #C8432A; color: #FFFFFF; font-size: 15px; font-weight: 700; text-decoration: none;">See Details &amp; Join</a>
+      </article></template><template data-tpl="language"><article style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="position: relative; height: 240px;"><img loading="lazy" decoding="async" class="img" data-f="img" src="" alt="" style="border-radius: 24px; object-position: 50% 40%;"><span class="evlab" style="border-radius: 0 0 24px 24px;"><span style="display:block;width:32px;height:4px;background:#C8432A;margin-bottom:10px;"></span><span class="sf" style="display:block;font-size:38px;line-height:.95;">Language<br>Exchange</span><span class="mc" style="display:block;margin-top:6px;font-size:13px;opacity:.9;">言語交換</span></span></div>
+        <span class="sf" data-f="date" style="font-size: 32px; line-height: 1;"></span>
+        <span style="display: flex; flex-direction: column; gap: 4px; font-size: 14px; line-height: 1.5; color: #5B6470;"><span data-f="time"></span><span data-f="place"></span><span data-f="price" style="color: #141414; font-weight: 700;"></span></span>
+        <a data-f="link" href="#" style="display: flex; align-items: center; justify-content: center; height: 48px; border-radius: 999px; background: #C8432A; color: #FFFFFF; font-size: 15px; font-weight: 700; text-decoration: none;">See Details &amp; Join</a>
+      </article></template><template data-tpl="sake"><article style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="position: relative; height: 240px;"><img loading="lazy" decoding="async" class="img" data-f="img" src="" alt="" style="border-radius: 24px; object-position: 50% 60%;"><span class="evlab" style="border-radius: 0 0 24px 24px;"><span style="display:block;width:32px;height:4px;background:#1E3A5F;margin-bottom:10px;"></span><span class="sf" style="display:block;font-size:38px;line-height:.95;">Sake<br>Night</span><span class="mc" style="display:block;margin-top:6px;font-size:13px;opacity:.9;">日本酒テイスティング</span></span></div>
+        <span class="sf" data-f="date" style="font-size: 32px; line-height: 1;"></span>
+        <span style="display: flex; flex-direction: column; gap: 4px; font-size: 14px; line-height: 1.5; color: #5B6470;"><span data-f="time"></span><span data-f="place"></span><span data-f="price" style="color: #141414; font-weight: 700;"></span></span>
+        <a data-f="link" href="#" style="display: flex; align-items: center; justify-content: center; height: 48px; border-radius: 999px; background: #C8432A; color: #FFFFFF; font-size: 15px; font-weight: 700; text-decoration: none;">See Details &amp; Join</a>
+      </article></template><template data-tpl="matcha"><article style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="position: relative; height: 240px;"><span style="display:block;width:100%;height:100%;border-radius:24px;background-color:#5F7F45;background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.06) 0 2px,transparent 2px 7px);"></span><span class="evlab" style="border-radius: 0 0 24px 24px;"><span style="display:block;width:32px;height:4px;background:#5F7F45;margin-bottom:10px;"></span><span class="sf" style="display:block;font-size:38px;line-height:.95;">Matcha &amp;<br>Calligraphy</span><span class="mc" style="display:block;margin-top:6px;font-size:13px;opacity:.9;">抹茶・和菓子・書道</span></span></div>
+        <span class="sf" data-f="date" style="font-size: 32px; line-height: 1;"></span>
+        <span style="display: flex; flex-direction: column; gap: 4px; font-size: 14px; line-height: 1.5; color: #5B6470;"><span data-f="time"></span><span data-f="place"></span><span data-f="price" style="color: #141414; font-weight: 700;"></span></span>
+        <a data-f="link" href="#" style="display: flex; align-items: center; justify-content: center; height: 48px; border-radius: 999px; background: #C8432A; color: #FFFFFF; font-size: 15px; font-weight: 700; text-decoration: none;">See Details &amp; Join</a>
+      </article></template><button type="button" data-see-all class="ghost" style="width: 100%; border-style: solid; justify-content: center; height: 48px;">Show More ↓</button></div>
+  </section>
+
+
+
+  <section id="experiences" class="xsec" style="position: relative; padding: 64px 16px 72px; background: #F7F3EC; text-align: center; overflow: hidden;">
+    <div class="xbg xbg-def"><img loading="lazy" decoding="async" src="assets/lp/715c589b80.jpg" alt="" style="object-position: 50% 45%;"></div><div class="xbg xbg-le"><img loading="lazy" decoding="async" src="assets/lp/p1109-le.jpg" alt=""></div><div class="xbg xbg-bg"><img loading="lazy" decoding="async" src="assets/lp/p1109-3.jpg" alt="" style="object-position: 50% 50%;"></div><div class="xbg xbg-sk"><img loading="lazy" decoding="async" src="assets/lp/7ffa638afb.jpg" alt=""></div><div class="xbg xbg-mc"><span style="display:block;width:100%;height:100%;background-color:#5F7F45;background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.06) 0 2px,transparent 2px 7px);"></span></div><div class="xshade"></div><span class="eb" style="position: relative;">Choose Your Experience</span>
+    <p class="mono xhint" style="position: relative; margin: 14px 0 0; color: #5B6470;">Tap an experience to see what it’s like</p>
+    
+    <ul style="position: relative; z-index: 1; margin: 24px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px;"><li class="sf xp xp-le" data-x="le" style="font-size: 44px; line-height: 1.08;"><a href="language-exchange.html" style="text-decoration: none;">Language Exchange</a></li><li class="sf xp xp-bg" data-x="bg" style="font-size: 44px; line-height: 1.08;"><a href="board-games.html" style="text-decoration: none;">Board Games</a></li><li class="sf xp xp-sk" data-x="sk" style="font-size: 44px; line-height: 1.08;"><a href="sake.html" style="text-decoration: none;">Sake Tasting</a></li><li class="sf xp xp-mc" data-x="mc" style="font-size: 44px; line-height: 1.08;"><a href="matcha.html" style="text-decoration: none;">Matcha &amp; Calligraphy</a> <span class="mono xsoon" style="vertical-align: middle;">11/28</span></li></ul><div class="xds" style="position: relative; z-index: 1; margin: 20px auto 0; max-width: 600px; min-height: 190px;"><div class="xd xd-le"><b class="xd-t">Speak. Share. Connect.</b><span class="xd-p">Half Japanese, half English, in small groups of 4–5. Lunch nearby afterwards if you like.</span><span class="xd-m mono">Every weekend · 11:00–13:00 · ¥1,000 incl. one drink</span><a class="xd-a" href="language-exchange.html">See details &amp; dates →</a></div><div class="xd xd-bg"><b class="xd-t">Play. Laugh. Connect.</b><span class="xd-p">Party and strategy games where nobody needs a shared language to laugh. Rules explained at the table.</span><span class="xd-m mono">14:30–17:00 · ¥1,000 incl. one drink</span><a class="xd-a" href="board-games.html">See details &amp; dates →</a></div><div class="xd xd-sk"><b class="xd-t">Taste. Talk. Connect.</b><span class="xd-p">A guided tasting of 3–4 sake with a sake sommelier, introduced in Japanese and English.</span><span class="xd-m mono">18:00–20:30 · ¥3,000 · 20+</span><a class="xd-a" href="sake.html">See details &amp; dates →</a></div><div class="xd xd-mc"><b class="xd-t">Whisk. Shape. Write.</b><span class="xd-p">Whisk matcha, shape a nerikiri sweet and write your name in kanji, in a tatami room in Yamate.</span><span class="xd-m mono">Sat, Nov 28 · 14:30–16:30 · ¥3,000</span><a class="xd-a" href="matcha.html">See details &amp; dates →</a></div></div>
+  </section>
+  <section id="about" style="padding: 72px 16px;">
+    <span class="eb">About HARMONY</span>
+    <h2 class="sf" style="margin: 12px 0 0; font-size: 48px; line-height: 1;">The event is just <i>where it starts.</i></h2>
+    <p class="mc" style="margin: 12px 0 0; font-size: 17px; color: #1E3A5F;">イベントは、友達づくりの入口。</p>
+    <div style="position: relative; margin-top: 24px; height: 380px;">
+      <div style="position: absolute; left: 0; top: 0; width: 62%; height: 380px; border-radius: 24px; overflow: hidden;"><img loading="lazy" decoding="async" class="img" src="assets/lp/d7c1380ce5.jpg" alt="Participants smiling together on the sofa" style="object-fit: cover; object-position: 70% 50%;"></div>
+      <div style="position: absolute; right: 0; top: 0; width: 34%; height: 180px; border-radius: 24px; overflow: hidden;"><img loading="lazy" decoding="async" class="img" src="assets/lp/6b99ce2f6f.jpg" alt="Sake and snacks on the table"></div>
+      <div style="position: absolute; right: 0; top: 196px; width: 34%; height: 184px; border-radius: 24px; overflow: hidden;"><img loading="lazy" decoding="async" class="img" src="assets/lp/p1109-3.jpg" alt="Players at two tables playing Splendor and Catan" style="object-fit: cover; object-position: 50% 50%;"></div>
+      <span class="sf" style="position: absolute; left: 10px; bottom: 6px; font-size: 64px; line-height: 1; color: #FFFFFF; text-shadow: 0 2px 18px rgba(20,20,20,.3);"><i>together</i></span>
+    </div>
+    <p style="margin: 20px 0 0; font-size: 15px; line-height: 1.8; color: #5B6470;">HARMONY creates opportunities for people from different cultures to meet through enjoyable events — and make connections that can continue beyond the event.</p>
+  </section>
+  <section style="padding: 64px 16px; background: #F7F3EC;">
+    <span class="eb">Why HARMONY</span>
+    <h2 class="sf" style="margin: 12px 0 0; font-size: 48px; line-height: 1;">More Than Just a <i>Weekend Activity.</i></h2>
+    <p class="mc" style="margin: 12px 0 0; font-size: 17px; color: #1E3A5F;">ただの週末の予定で、終わらない。</p>
+<div style="margin-top: 24px; background: #FFFFFF; border-radius: 24px; padding: 20px;"><div style="display: flex; justify-content: space-between; align-items: flex-end;"><span><span class="sf" style="display: block; font-size: 60px; line-height: .9; color: #1E3A5F;">385</span><span style="font-size: 13px; color: #5B6470;">guests</span></span><span><span class="sf" style="display: block; font-size: 60px; line-height: .9; color: #C8432A;">35</span><span style="font-size: 13px; color: #5B6470;">events</span></span><span><span class="sf" style="display: block; font-size: 60px; line-height: .9; color: #5B3A6E;">20+</span><span style="font-size: 13px; color: #5B6470;">countries</span></span></div><p style="margin: 14px 0 0; font-size: 12px; color: #5B6470;">Guests from more than 20 countries so far · as of Nov 9, 2026</p></div>
+    <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 12px;"><div style="position: relative; min-height: 360px; border-radius: 24px; overflow: hidden; color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; padding: 20px; background: #141414;"><img loading="lazy" decoding="async" src="assets/lp/p1109-5.jpg" alt="Participants talking over a card game" style="object-position: 18% 40%; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"><span style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,20,20,.88) 0%, rgba(20,20,20,.45) 55%, rgba(20,20,20,.15) 100%);"></span><span class="mono" style="position: relative; color: #FFFFFF;">01</span><span style="position: relative; display: flex; flex-direction: column; gap: 14px;"><span class="sf" style="font-size: 28px; line-height: 1.08;">Meet People from Around the World</span><span style="position: relative; display: block; height: 1px; background: rgba(255,255,255,.45);"><span style="position: absolute; left: 0; top: -1px; width: 40px; height: 3px; background: #C8432A;"></span></span><span style="font-size: 14px; line-height: 1.7; color: rgba(255,255,255,.88);">Connect with Japanese locals and international participants.</span></span></div><div style="position: relative; min-height: 360px; border-radius: 24px; overflow: hidden; color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; padding: 20px; background: #141414;"><img loading="lazy" decoding="async" src="assets/lp/1b0d90bf35.jpg" alt="Japanese sake bottles" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"><span style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,20,20,.88) 0%, rgba(20,20,20,.45) 55%, rgba(20,20,20,.15) 100%);"></span><span class="mono" style="position: relative; color: #FFFFFF;">02</span><span style="position: relative; display: flex; flex-direction: column; gap: 14px;"><span class="sf" style="font-size: 28px; line-height: 1.08;">Experience Different Cultures</span><span style="position: relative; display: block; height: 1px; background: rgba(255,255,255,.45);"><span style="position: absolute; left: 0; top: -1px; width: 40px; height: 3px; background: #C8432A;"></span></span><span style="font-size: 14px; line-height: 1.7; color: rgba(255,255,255,.88);">Discover new perspectives through conversations and shared experiences.</span></span></div><div style="position: relative; min-height: 360px; border-radius: 24px; overflow: hidden; color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; padding: 20px; background: #141414;"><img loading="lazy" decoding="async" src="assets/lp/p1109-6.jpg" alt="Participants smiling over a game of Splendor" style="object-position: 20% 45%; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"><span style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,20,20,.88) 0%, rgba(20,20,20,.45) 55%, rgba(20,20,20,.15) 100%);"></span><span class="mono" style="position: relative; color: #FFFFFF;">03</span><span style="position: relative; display: flex; flex-direction: column; gap: 14px;"><span class="sf" style="font-size: 28px; line-height: 1.08;">Enjoy Something Different</span><span style="position: relative; display: block; height: 1px; background: rgba(255,255,255,.45);"><span style="position: absolute; left: 0; top: -1px; width: 40px; height: 3px; background: #C8432A;"></span></span><span style="font-size: 14px; line-height: 1.7; color: rgba(255,255,255,.88);">Make your weekends more exciting with fun and unique activities.</span></span></div><div style="position: relative; min-height: 360px; border-radius: 24px; overflow: hidden; color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; padding: 20px; background: #141414;"><img loading="lazy" decoding="async" src="assets/lp/d5719c0a43.jpg" alt="A participant smiling at a language exchange" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"><span style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,20,20,.88) 0%, rgba(20,20,20,.45) 55%, rgba(20,20,20,.15) 100%);"></span><span class="mono" style="position: relative; color: #FFFFFF;">04</span><span style="position: relative; display: flex; flex-direction: column; gap: 14px;"><span class="sf" style="font-size: 28px; line-height: 1.08;">Feel Welcome, Even Alone</span><span style="position: relative; display: block; height: 1px; background: rgba(255,255,255,.45);"><span style="position: absolute; left: 0; top: -1px; width: 40px; height: 3px; background: #C8432A;"></span></span><span style="font-size: 14px; line-height: 1.7; color: rgba(255,255,255,.88);">Come by yourself or with friends. Meeting people feels natural here.</span></span></div></div>
+  </section>
+  <section style="padding: 64px 16px; background: #1E3A5F; color: #FFFFFF;">
+    <span class="eb" style="color: #FFFFFF;">How to Join</span>
+    <h2 class="sf" style="margin: 12px 0 0; font-size: 48px; line-height: 1;">Joining Is <i>Easy.</i></h2>
+    <p class="mc" style="margin: 12px 0 0; font-size: 17px; color: #D9D4CA;">参加は、かんたん3ステップ。</p>
+    <div style="margin-top: 18px; display: flex; gap: 8px; flex-wrap: wrap;"><span class="chip" style="background: rgba(255,255,255,.12); color: #FFFFFF;">⏱ 1 minute</span><span class="chip" style="background: rgba(255,255,255,.12); color: #FFFFFF;">No Meetup account</span><span class="chip" style="background: rgba(255,255,255,.12); color: #FFFFFF;">Solo welcome</span></div>
+    <div style="margin-top: 24px; display: flex; flex-direction: column;"><div style="position: relative; background: #FFFFFF; color: #141414; border-radius: 24px; overflow: hidden;"><div style="height: 170px; position: relative;"><img loading="lazy" decoding="async" style="object-fit: cover; object-position: 22% 50%;" class="img" src="assets/lp/p1109-7.jpg" alt="Participants chatting at Cafe Harmony"><span class="sf" style="position: absolute; left: 14px; top: 6px; font-size: 64px; line-height: 1; color: #FFFFFF; text-shadow: 0 2px 16px rgba(0,0,0,.35);"><i>01</i></span></div><div style="padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 6px;"><b style="font-size: 18px;">Find Your Event</b><span style="font-size: 14px; line-height: 1.7; color: #5B6470;">Browse upcoming events and choose the experience you like.</span><span class="chip" style="align-self: flex-start; margin-top: 4px;">See all events</span></div></div><span aria-hidden="true" style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;margin:-6px auto;position:relative;z-index:1;border-radius:999px;background:#C8432A;color:#FFFFFF;font-size:18px;">↓</span><div style="position: relative; background: #FFFFFF; color: #141414; border-radius: 24px; overflow: hidden;"><div style="height: 170px; position: relative;"><div style="position:relative;height:100%;background:#F7F3EC;display:flex;align-items:flex-end;justify-content:flex-end;padding-right:25px;box-sizing:border-box;overflow:hidden;"><div style="position:relative;width:128px;height:167px;margin-top:10px;background:#FFFFFF;border:4px solid #141414;border-bottom:0;border-radius:18px 18px 0 0;padding:9px 9px 0;box-sizing:border-box;display:flex;flex-direction:column;gap:5px;box-shadow:0 12px 26px rgba(20,20,20,.15);"><span style="position:absolute;left:50%;top:3px;transform:translateX(-50%);width:32px;height:4px;border-radius:8px;background:#141414;"></span><b style="margin-top:3px;font-size:10px;">Sign up</b><span style="display:flex;gap:4px;"><span style="flex:1;padding:4px 0;border-radius:6px;background:#141414;color:#FFFFFF;font-size:8px;font-weight:700;text-align:center;">Nov 8</span><span style="flex:1;padding:4px 0;border-radius:6px;border:1px solid #E4DED3;font-size:8px;text-align:center;color:#5B6470;">Nov 15</span></span><span style="display:flex;flex-direction:column;gap:3px;"><span style="font-size:7px;font-weight:700;color:#5B6470;">Name</span><span style="display:block;padding:4px 6px;border:1px solid #E4DED3;border-radius:6px;font-size:9px;color:#141414;">Yuki</span></span><span style="display:flex;flex-direction:column;gap:3px;"><span style="font-size:7px;font-weight:700;color:#5B6470;">Email</span><span style="display:block;padding:4px 6px;border:1px solid #E4DED3;border-radius:6px;font-size:9px;color:#141414;">yuki@mail.com</span></span><span style="display:flex;align-items:center;justify-content:center;height:22px;border-radius:877px;background:#C8432A;color:#FFFFFF;font-size:9px;font-weight:700;">Join →</span></div><span style="position:absolute;left:11px;bottom:11px;display:flex;align-items:center;gap:5px;padding:6px 8px;border-radius:10px;background:#5B3A6E;color:#FFFFFF;font-size:9px;font-weight:700;box-shadow:0 8px 18px rgba(20,20,20,.18);transform:rotate(3deg);"><span style="display:inline-flex;align-items:center;justify-content:center;width:13px;height:13px;border-radius:999px;background:#FFFFFF;color:#5B3A6E;font-size:9px;">✓</span>Confirmation<br>email sent</span></div><span class="sf" style="position: absolute; left: 14px; top: 6px; font-size: 64px; line-height: 1; color: #FFFFFF; text-shadow: 0 2px 16px rgba(0,0,0,.35); color:#1E3A5F; text-shadow:none;"><i>02</i></span></div><div style="padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 6px;"><b style="font-size: 18px;">Register Online</b><span style="font-size: 14px; line-height: 1.7; color: #5B6470;">Check the details and reserve your spot. No Meetup account needed.</span><span class="chip" style="align-self: flex-start; margin-top: 4px;">About 1 minute</span></div></div><span aria-hidden="true" style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;margin:-6px auto;position:relative;z-index:1;border-radius:999px;background:#C8432A;color:#FFFFFF;font-size:18px;">↓</span><div style="position: relative; background: #FFFFFF; color: #141414; border-radius: 24px; overflow: hidden;"><div style="height: 170px; position: relative;"><img loading="lazy" decoding="async" class="img" src="assets/lp/715c589b80.jpg" alt="Group photo of HARMONY participants" style="object-position: 50% 40%;"><span class="sf" style="position: absolute; left: 14px; top: 6px; font-size: 64px; line-height: 1; color: #FFFFFF; text-shadow: 0 2px 16px rgba(0,0,0,.35);"><i>03</i></span></div><div style="padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 6px;"><b style="font-size: 18px;">Show Up &amp; Enjoy</b><span style="font-size: 14px; line-height: 1.7; color: #5B6470;">Come along, meet new people, and enjoy the event.</span><span class="chip" style="align-self: flex-start; margin-top: 4px;">Pay on the day · Cash / PayPay</span></div></div></div>
+    <a href="language-exchange.html" class="pill" style="margin-top: 24px; width: 100%; justify-content: space-between; background: #FFFFFF; color: #141414;">Explore Upcoming Events <i>→</i></a>
+  </section>
+  <section id="faq" style="padding: 64px 16px; background: #F7F3EC;">
+    <span class="eb">First Time?</span>
+    <h2 class="sf" style="margin: 12px 0 0; font-size: 48px; line-height: 1;">Your First Event? <i>We've Got You.</i></h2>
+    <p class="mc" style="margin: 12px 0 0; font-size: 17px; color: #1E3A5F;">はじめてでも、大丈夫。</p>
+    <div style="margin-top: 20px; border-top: 1px solid #E4DED3;"><details class="det" open=""><summary>Can I come alone?</summary><p>Yes. We arrange the seating, so it's easy to join in even if you come on your own.</p></details><details class="det"><summary>Do I need to speak English?</summary><p>No. Language exchange is half Japanese, half English, and your level doesn't matter.</p></details><details class="det"><summary>Do I need to speak Japanese?</summary><p>No. Half of each language exchange is in English, and plenty of people speak slowly.</p></details><details class="det"><summary>Is it OK for beginners?</summary><p>Yes. Your language level doesn't matter, and the events are made for first-timers too.</p></details><details class="det"><summary>How do I register?</summary><p>Pick an event and tap “See Details &amp; Join”. No Meetup account needed.</p></details><details class="det"><summary>How do I pay?</summary><p>Cash or PayPay on the day. We can't take credit cards.</p></details><details class="det"><summary>What if I'm late?</summary><p>No problem — we'll seat you at the next rotation.</p></details></div>
+  </section>
+  <footer style="position: relative; background: #141414; color: #FFFFFF; padding: 72px 16px 40px; overflow: hidden;">
+    <img loading="lazy" decoding="async" src="assets/lp/edae275731.jpg" alt="Group photo of HARMONY participants" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%;">
+    <span style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(20,20,20,.55) 0%, rgba(20,20,20,.75) 50%, rgba(20,20,20,.9) 100%);"></span>
+    <div style="position: relative;">
+    <h2 class="sf" style="margin: 0; font-size: 56px; line-height: .95;">Make Your Next <i>Weekend Count.</i></h2>
+    <p class="mc" style="margin: 16px 0 0; font-size: 17px; color: #D9D4CA;">次の週末を、特別な一日に。</p>
+    <a href="https://www.instagram.com/harmony_community_/" target="_blank" rel="noopener" class="ghost" style="margin-top: 24px; background: transparent; border-color: #4A4A4A; color: #FFFFFF; height: 48px;">Follow HARMONY on Instagram</a>
+    <div style="margin-top: 48px;"><img src="assets/logo/harmony-logo-light.svg" alt="Harmony" width="360" height="102" loading="lazy" style="display: block; width: min(360px, 88%); height: auto; margin-left: -8px;"></div>
+    <div style="margin-top: 16px; font-size: 12px; color: #BDB8AE;">© 2026 Harmony · Home base: Cafe Harmony, Tsurumi</div>
+    </div>
+  </footer>
+
+<div class="sticky-cta" style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; box-sizing: border-box; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: rgba(255,255,255,.96); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-top: 1px solid #E4DED3;"><a href="#events" class="pill" style="width: 100%; justify-content: space-between;">Explore Upcoming Events <i>→</i></a></div>
+</div>
+<div class="site-menu" id="site-menu" hidden role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="site-menu__panel">
+    <div class="site-menu__top"><a href="index.html" class="site-menu__logo"><img src="assets/logo/harmony-logo.svg" alt="Harmony" width="155" height="44" style="display:block;height:44px;width:auto"></a><button type="button" class="site-menu__close" data-menu-close aria-label="Close">×</button></div>
+    <ul><li><a href="index.html#events"><span class="m-en">Upcoming Events</span><span class="m-ja">開催予定のイベント</span></a></li><li><a href="language-exchange.html"><span class="m-en">Language Exchange</span><span class="m-ja">言語交換</span></a></li><li><a href="board-games.html"><span class="m-en">Board Games</span><span class="m-ja">ボードゲーム</span></a></li><li><a href="sake.html"><span class="m-en">Sake Tasting</span><span class="m-ja">日本酒テイスティング</span></a></li><li><a href="matcha.html"><span class="m-en">Matcha &amp; Calligraphy</span><span class="m-ja">抹茶・和菓子・書道</span></a></li><li><a href="index.html#about"><span class="m-en">About HARMONY</span><span class="m-ja">HARMONYについて</span></a></li><li><a href="index.html#faq"><span class="m-en">FAQ</span><span class="m-ja">よくある質問</span></a></li></ul>
+    <div class="site-menu__foot"><span class="site-menu__lang"><button type="button" data-set-lang="en">EN</button><button type="button" data-set-lang="ja">日本語</button></span><a href="https://www.instagram.com/harmony_community_/" target="_blank" rel="noopener">Instagram</a><a href="https://www.meetup.com/yokohama-meetup-group-harmony/" target="_blank" rel="noopener">Meetup</a></div>
   </div>
-</header>
-
-<main id="top">
-  <section class="hero" style="padding:0">
-    <img class="bg" src="assets/hero.jpg" alt="">
-    <div class="wrap">
-      <img class="hero-logo" src="assets/logo-vertical-dark.svg" alt="Harmony">
-      <h1 class="ja catch"><span class="c1">日本にいながら</span><span class="c2">世界とつながれる</span><span class="c3">「居場所」</span></h1>
-      <h1 class="en">A place in Japan where you <em>connect with the world</em></h1>
-      <p class="lead ja"><span class="nb">横浜・鶴見のレトロ喫茶から広がる</span><span class="nb">国際交流コミュニティ</span></p>
-      <p class="lead en">An international community based at a retro café in Tsurumi, Yokohama</p>
-      <div class="cta">
-        <a class="btn btn-primary" href="#events"><span class="ja">開催予定のイベント</span><span class="en">Upcoming events</span></a>
-        <a class="btn btn-ghost" href="#about"><span class="ja">Harmonyについて</span><span class="en">About Harmony</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section id="record" class="record" aria-labelledby="record-title">
-    <div class="wrap">
-      <p class="rec-lead" id="record-title"><span class="ja">2026年6月のスタートから</span><span class="en">Since we started in June 2026</span></p>
-      <dl class="rec-grid">
-        <div><dt><span class="ja">開催したイベント</span><span class="en">Events held</span></dt><dd><b>33</b><small><span class="ja">回</span><span class="en">events</span></small></dd></div>
-        <div><dt><span class="ja">延べ参加者</span><span class="en">Total attendance</span></dt><dd><b>352</b><small><span class="ja">人</span><span class="en">guests</span></small></dd></div>
-      </dl>
-      <p class="rec-note"><span class="ja">2026年11月3日時点</span><span class="en">As of Nov 3, 2026</span></p>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="strip" aria-label="Harmonyのイベントの様子">
-      <div class="strip-track">
-          <img src="assets/strip-1.jpg" alt="" loading="eager">
-          <img src="assets/strip-2.jpg" alt="" loading="eager">
-          <img src="assets/strip-3.jpg" alt="" loading="eager">
-          <img src="assets/strip-4.jpg" alt="" loading="eager">
-          <img src="assets/strip-5.jpg" alt="" loading="eager">
-          <img src="assets/strip-6.jpg" alt="" loading="eager">
-          <img src="assets/strip-7.jpg" alt="" loading="eager">
-          <img src="assets/strip-1.jpg" alt="" aria-hidden="true" loading="eager">
-          <img src="assets/strip-2.jpg" alt="" aria-hidden="true" loading="eager">
-          <img src="assets/strip-3.jpg" alt="" aria-hidden="true" loading="eager">
-          <img src="assets/strip-4.jpg" alt="" aria-hidden="true" loading="eager">
-          <img src="assets/strip-5.jpg" alt="" aria-hidden="true" loading="eager">
-          <img src="assets/strip-6.jpg" alt="" aria-hidden="true" loading="eager">
-          <img src="assets/strip-7.jpg" alt="" aria-hidden="true" loading="eager">
-      </div>
-    </div>
-    <div class="wrap">
-      <div class="about-grid">
-        <div>
-          <div class="sec-head">
-            <p class="eyebrow">About Harmony</p>
-            <h2 class="ja">国籍も言葉も越えて、<br><span class="brush">つながれる場所。</span></h2>
-            <h2 class="en"><span class="display">A place to connect</span> across countries and languages.</h2>
-            <p class="ja"><strong class="quote">「海外の友達ができる場所を、もっと増やしたい」</strong>そんな思いで、日本に住む人と世界中から来た人が自然に出会えるコミュニティをつくっています。</p>
-            <p class="en">We started Harmony to give more people a place to make friends from other countries. It's where people living in Japan and people from all over the world meet naturally.</p>
-          </div>
-          <p class="note-line ja"><strong class="big">国籍・年齢・語学力は問いません。</strong>英会話教室ではないので、「新しい人と話してみたい」気持ちがあれば十分です。</p>
-<p class="note-line en"><strong class="big">Any nationality, any age, any language level.</strong> This isn't a language class: wanting to meet new people is all you need.</p>
-        </div>
-        <ul class="points">
-            <li><span class="dot" style="background:var(--ai)"></span><div>
-              <h3 class="ja">いろんな入口がある</h3><h3 class="en">Many ways in</h3>
-              <p class="ja">話すのが好きなら<strong>言語交換</strong>、歌うなら<strong>カラオケ</strong>、ゲーム好きなら<strong>ボードゲーム</strong>、お酒好きなら<strong>日本酒の会</strong>。自分に合う形で参加できます。</p>
-              <p class="en">Love talking? Join a language exchange. Love music? Karaoke. Into games? Board game days. Into sake? Our sake nights. Pick what suits you.</p>
-            </div></li>
-            <li><span class="dot" style="background:var(--shu)"></span><div>
-              <h3 class="ja">一人で来ても、輪に入れる</h3><h3 class="en">Come alone, fit right in</h3>
-              <p class="ja"><strong class="mk">参加者の多くが初参加・おひとり参加</strong>です。席は主催者が決め、トークテーマも用意しているので、初対面でも自然に話せます。</p>
-              <p class="en">Most guests come alone the first time. The host arranges the seating and brings conversation topics, so talking with strangers comes easily.</p>
-            </div></li>
-            <li><span class="dot" style="background:var(--matcha)"></span><div>
-              <h3 class="ja">その場限りで終わらない</h3><h3 class="en">Friends, not just small talk</h3>
-              <p class="ja">何度も顔を合わせるうちに、イベントの外でも会える仲間ができていきます。目指しているのは、<strong class="mk">本当の友達づくり</strong>です。</p>
-              <p class="en">Keep coming and you'll see familiar faces, and soon friends you meet outside the events too. That's what Harmony is for.</p>
-            </div></li>
-          </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="kinds">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="eyebrow">What we do</p>
-        <h2 class="ja">Harmonyのイベント</h2>
-        <h2 class="en"><span class="display">Our events</span></h2>
-        <p class="ja">会場はすべてCafe Harmony（鶴見）。参加費は当日、<strong>現金かPayPay</strong>でお支払いください。</p>
-        <p class="en">All events are held at Cafe Harmony in Tsurumi. Pay on the day in cash or PayPay.</p>
-      </div>
-      <div class="kinds">
-        <article class="kind">
-          <img src="assets/thumb-language.jpg?v=2" alt="Language Exchange: English ⇄ 日本語" loading="lazy">
-          <div class="kind-body">
-            <h3 class="ja">言語交換イベント</h3><h3 class="en"><span class="display">Language Exchange</span></h3>
-            <ul class="tags ja"><li>#日本語と英語</li><li>#席替えあり</li><li>#土日11時</li></ul><ul class="tags en"><li>#JapaneseEnglish</li><li>#SwitchTables</li><li>#Weekends11am</li></ul>
-            <details class="more">
-              <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
-              <div class="more-body">
-            <p class="ja">Harmonyの定番イベント。4〜5人のテーブルで、日本語と英語を15分ずつ切り替えながら話します。30分ごとの席替えで、1回に9〜10人と話せます。</p>
-            <p class="en">Our signature event. Tables of 4–5, switching between Japanese and English every 15 minutes. Seats change every 30 minutes, so you'll meet 9–10 people.</p>
-            <dl class="spec">
-              <dt><span class="ja">時間</span><span class="en">When</span></dt><dd><span class="ja">主に土日 11:00–13:00（受付10:45〜）</span><span class="en">Mostly weekends, 11:00–13:00 (check-in from 10:45)</span></dd>
-              <dt><span class="ja">流れ</span><span class="en">Flow</span></dt><dd><span class="ja">受付・自己紹介シート → 3ラウンドの交流 → 終了後はみんなでご飯（任意）</span><span class="en">Check-in &amp; intro sheet → 3 rounds of tables → lunch together afterwards (optional)</span></dd>
-              <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">1,000円（1ドリンク込み）</span><span class="en">¥1,000 (one drink included)</span></dd>
-            </dl>
-              </div>
-            </details>
-          </div>
-        </article>
-        <article class="kind">
-          <img src="assets/thumb-sake.jpg?v=2" alt="Sake &amp; Language Exchange" loading="lazy">
-          <div class="kind-body">
-            <h3 class="ja">日本酒イベント</h3><h3 class="en"><span class="display">Sake Tasting</span></h3>
-            <ul class="tags ja"><li>#日本酒飲み比べ</li></ul><ul class="tags en"><li>#SakeTasting</li></ul>
-            <details class="more">
-              <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
-              <div class="more-body">
-            <p class="ja">日本酒を飲み比べながら、英語と日本語で交流する会。日本酒に詳しくなくても大丈夫、一人参加も歓迎です。</p>
-            <p class="en">Taste Japanese sake while chatting in English and Japanese. No sake knowledge needed, and solo guests are welcome.</p>
-            <dl class="spec">
-                            <dt><span class="ja">日時</span><span class="en">When</span></dt><dd><span class="ja">11月15日（日）18:00–20:30</span><span class="en">Sunday, Nov 15, 18:00–20:30</span></dd>
-              <dt><span class="ja">内容</span><span class="en">What</span></dt><dd><span class="ja">日本酒テイスティングと交流</span><span class="en">Sake tasting and conversation</span></dd>
-              <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">3,000円（日本酒テイスティング込み）</span><span class="en">¥3,000 (sake tasting included)</span></dd>
-            </dl>
-              </div>
-            </details>
-          </div>
-        </article>
-        <article class="kind">
-          <div class="thumb-wrap"><img src="assets/thumb-boardgame.jpg?v=2" alt="Board Games: ボードゲームで国際交流" loading="lazy"><p class="thumb-badge"><span class="ja">NEW</span><span class="en">NEW</span></p></div>
-          <div class="kind-body">
-            <h3 class="ja">ボードゲームイベント</h3><h3 class="en"><span class="display">Board Games</span></h3>
-            <ul class="tags ja"><li>#ボードゲームで交流</li><li>#ゲーム経験なしでOK</li></ul><ul class="tags en"><li>#BoardGames</li><li>#NoExperienceNeeded</li></ul>
-            <details class="more">
-              <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
-              <div class="more-body">
-            <p class="ja">英語に自信がなくても、ゲームなら自然に笑って話せます。すぐ遊べる軽いゲームから、じっくり楽しめる本格的なゲームまでいろいろあるので、初めての方もボードゲーム好きの方も楽しめます。みんなと遊びたいボードゲームがあれば、ぜひ持ってきてください。</p>
-            <p class="en">Not confident in English? Games make talking easy. We have all kinds of games, from quick and easy ones to deeper strategy games, so beginners and board game fans alike can enjoy. Have a game you’d love to play with everyone? Feel free to bring it!</p>
-            <dl class="spec">
-              <dt><span class="ja">日時</span><span class="en">When</span></dt><dd><span class="ja">11月8日（日）・11月15日（日）14:30–17:00（受付14:20〜）</span><span class="en">Sun, Nov 8 &amp; Sun, Nov 15, 14:30–17:00 (check-in from 14:20)</span></dd>
-              <dt><span class="ja">流れ</span><span class="en">Flow</span></dt><dd><span class="ja">受付 → テーブルごとにゲーム（席替えあり） → 最後に全員でゲーム → 集合写真 → 終了後はみんなでご飯（任意）</span><span class="en">Check-in → games at small tables (with table changes) → one big group game → group photo → dinner together afterwards (optional)</span></dd>
-              <dt><span class="ja">ゲーム</span><span class="en">Games</span></dt><dd><span class="ja">ito、お化けキャッチ、ゴキブリポーカー、スプレンダー（宝石の煌き）、モノポリー、カタン など（変わることがあります）</span><span class="en">ito, Ghost Blitz, Cockroach Poker, Splendor, Monopoly, Catan and more (lineup may change)</span></dd>
-              <dt><span class="ja">定員</span><span class="en">Seats</span></dt><dd><span class="ja">25名（要申し込み）</span><span class="en">25 (sign-up required)</span></dd>
-              <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">1,000円（1ドリンク込み）</span><span class="en">¥1,000 (one drink included)</span></dd>
-            </dl>
-              </div>
-            </details>
-          </div>
-        </article>
-        <article class="kind">
-          <div class="thumb-wrap"><img src="assets/thumb-matcha.jpg?v=1" alt="Matcha: 抹茶・和菓子・書道で日本文化体験" loading="lazy"><p class="thumb-badge"><span class="ja">NEW</span><span class="en">NEW</span></p></div>
-          <div class="kind-body">
-            <h3 class="ja">抹茶・和菓子・書道イベント</h3><h3 class="en"><span class="display">Matcha, Wagashi &amp; Calligraphy</span></h3>
-            <ul class="tags ja"><li>#日本文化体験</li><li>#経験なしでOK</li></ul><ul class="tags en"><li>#JapaneseCulture</li><li>#NoExperienceNeeded</li></ul>
-            <details class="more">
-              <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
-              <div class="more-body">
-            <p class="ja">港の見える丘公園の神奈川近代文学館・和室で、自分で抹茶を点て、季節の和菓子を作り、筆で名前を漢字で書きます。先生が英語と日本語で教えてくれます。</p>
-            <p class="en">In a tatami room at the Kanagawa Museum of Modern Literature, whisk your own matcha, shape a seasonal Japanese sweet, and write your name in kanji. The instructor guides you in English and Japanese.</p>
-            <dl class="spec">
-              <dt><span class="ja">日時</span><span class="en">When</span></dt><dd><span class="ja">11月28日（土）14:30–16:30（受付14:20〜）</span><span class="en">Sat, Nov 28, 14:30–16:30 (check-in from 14:20)</span></dd>
-              <dt><span class="ja">会場</span><span class="en">Where</span></dt><dd><span class="ja">神奈川近代文学館 和室（横浜市中区山手町110／元町・中華街駅から徒歩10分）</span><span class="en">Kanagawa Museum of Modern Literature (10 min walk from Motomachi-Chukagai Sta.)</span></dd>
-              <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">3,000円（抹茶・和菓子・書道の材料込み）</span><span class="en">¥3,000 (matcha, sweets &amp; calligraphy materials included)</span></dd>
-            </dl>
-              </div>
-            </details>
-          </div>
-        </article>
-        <article class="kind">
-          <div class="thumb-wrap"><img src="assets/thumb-karaoke.jpg" alt="Karaoke Meetup" loading="lazy"><p class="thumb-badge paused"><span class="ja">休止中</span><span class="en">On break</span></p></div>
-          <div class="kind-body">
-            <h3 class="ja">カラオケイベント</h3><h3 class="en"><span class="display">Karaoke</span></h3>
-            <ul class="tags ja"><li>#交流のあとカラオケ</li><li>#土曜14時</li></ul><ul class="tags en"><li>#ChatThenSing</li><li>#Saturdays2pm</li></ul>
-            <details class="more">
-              <summary><span class="ja">詳細はこちら</span><span class="en">See details</span></summary>
-              <div class="more-body">
-            <p class="ja">前半は少人数グループで言語交流、後半はみんなでカラオケ。J-POP、洋楽、アニソン、母国の歌、なんでもOKです。歌わずに聴くだけ・盛り上げるだけでも大歓迎。</p>
-            <p class="en">Small-group conversation first, then karaoke together. J-pop, English hits, anime songs, songs from home: anything goes. Listening and cheering count too.</p>
-            <dl class="spec">
-              <dt><span class="ja">時間</span><span class="en">When</span></dt><dd><span class="ja">主に土曜 14:00〜（回によって終了時間が異なります）</span><span class="en">Mostly Saturdays from 14:00 (end time varies)</span></dd>
-              <dt><span class="ja">流れ</span><span class="en">Flow</span></dt><dd><span class="ja">言語交流（席替えあり） → カラオケタイム → 集合写真</span><span class="en">Language exchange with seat changes → karaoke time → group photo</span></dd>
-              <dt><span class="ja">料金</span><span class="en">Fee</span></dt><dd><span class="ja">1,500円（1ドリンク込み）</span><span class="en">¥1,500 (one drink included)</span></dd>
-            </dl>
-              </div>
-            </details>
-          </div>
-        </article>
-      </div>
-      <p class="soon ja"><b>準備中</b><span>韓国語交流イベント</span></p>
-      <p class="soon en"><b>Coming soon</b><span>Korean language exchange</span></p>
-    </div>
-  </section>
-
-  <section id="events" class="board">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="eyebrow">Menu · 本日のおしながき</p>
-        <h2 class="ja">開催予定のイベント</h2>
-        <h2 class="en"><span class="display">Upcoming events</span></h2>
-        <p class="ja">これから1か月のイベントです。参加したい回の「申し込む」を押してください。</p>
-        <p class="en">Events for the next month. Tap "Join" on the one you'd like to attend.</p>
-      </div>
-      <div class="board-frame">
-        <div class="filters" id="filters" role="group" aria-label="Filter"></div>
-        <div id="event-list"><p class="board-empty"><span class="ja">読み込み中…</span><span class="en">Loading…</span></p></div>
-        <p class="board-foot ja">表示価格は、参加費と1ドリンクを合わせた合計額です（ドリンク込み）。お支払いは当日、現金またはPayPayで（クレジットカード不可）。</p>
-        <p class="board-foot en">Prices are the total including one drink. Pay on the day in cash or PayPay (no credit cards).</p>
-      </div>
-    </div>
-  </section>
-
-
-  <section id="join" style="background: var(--paper-2); border-block: 1px solid var(--line);">
-    <div class="wrap">
-      <div class="form-wrap">
-        <div class="form-side">
-          <div class="sec-head" style="margin-bottom:0">
-            <p class="eyebrow">Sign up</p>
-            <h2 class="ja">申し込みフォーム</h2>
-            <h2 class="en"><span class="display">Sign up</span></h2>
-            <p class="ja"><strong class="mk">1分で終わります。</strong>Meetupのアカウントは不要です。</p>
-            <p class="en">Takes about a minute. No Meetup account needed.</p>
-          </div>
-          <ol class="flow">
-            <li><span class="ja">このフォームから申し込む</span><span class="en">Send this form</span></li>
-            <li><span class="ja">確認メールが届く</span><span class="en">Get a confirmation email</span></li>
-            <li><span class="ja">当日、受付でお名前を伝える</span><span class="en">Tell us your name at the reception</span></li>
-            <li><span class="ja">参加費をお支払い</span><span class="en">Pay the fee</span></li>
-          </ol>
-          <p class="small ja">キャンセルは前日22時までに、確認メールへの返信でお知らせください。</p>
-          <p class="small en">If you can't come, reply to the confirmation email by 10 pm the day before.</p>
-        </div>
-
-        <form id="signup" novalidate>
-          <div class="field">
-            <label for="f-event"><span class="ja">参加するイベント<span class="req">*</span></span><span class="en">Event<span class="req">*</span></span></label>
-            <select id="f-event" name="eventId" required></select>
-            <p class="event-pick" id="event-note"></p>
-          </div>
-          <div class="row2">
-            <div class="field">
-              <label for="f-name"><span class="ja">お名前（ニックネーム可）<span class="req">*</span></span><span class="en">Name (nickname OK)<span class="req">*</span></span></label>
-              <input type="text" id="f-name" name="name" autocomplete="name" required>
-            </div>
-            <div class="field">
-              <label for="f-email"><span class="ja">メールアドレス<span class="req">*</span></span><span class="en">Email<span class="req">*</span></span></label>
-              <input type="email" id="f-email" name="email" autocomplete="email" required>
-            </div>
-          </div>
-          <div class="row2">
-            <div class="field">
-              <label for="f-country"><span class="ja">出身国・地域</span><span class="en">Where are you from?</span></label>
-              <input type="text" id="f-country" name="country" autocomplete="country-name">
-            </div>
-            <div class="field">
-              <label for="f-age"><span class="ja">年代</span><span class="en">Age range</span></label>
-              <select id="f-age" name="ageRange">
-                <option value="">—</option>
-                <option value="18-24">18–24</option>
-                <option value="25-29">25–29</option>
-                <option value="30-39">30–39</option>
-                <option value="40-49">40–49</option>
-                <option value="50+">50+</option>
-              </select>
-            </div>
-          </div>
-          <fieldset>
-            <legend><span class="ja">参加理由（複数選択可）</span><span class="en">Why are you joining? (choose any)</span></legend>
-            <div class="choices reasons">
-              <label><input type="checkbox" name="reason" id="f-r-en" value="英語を話したい"><span class="ja">英語を話したい</span><span class="en">Practice English</span></label>
-              <label><input type="checkbox" name="reason" id="f-r-ja" value="日本語を話したい"><span class="ja">日本語を話したい</span><span class="en">Practice Japanese</span></label>
-              <label><input type="checkbox" name="reason" id="f-r-intl" value="海外の友達を作りたい"><span class="ja">海外の友達を作りたい</span><span class="en">Make international friends</span></label>
-              <label><input type="checkbox" name="reason" id="f-r-jp" value="日本人の友達を作りたい"><span class="ja">日本人の友達を作りたい</span><span class="en">Make Japanese friends</span></label>
-              <label><input type="checkbox" name="reason" id="f-r-meet" value="新しい出会いを楽しみたい"><span class="ja">新しい出会いを楽しみたい</span><span class="en">Meet new people</span></label>
-              <label><input type="checkbox" name="reason" id="f-r-event" value="イベントの内容に興味がある"><span class="ja">イベントの内容に興味がある</span><span class="en">Interested in the activity</span></label>
-            </div>
-          </fieldset>
-          <div class="row2">
-            <fieldset>
-              <legend><span class="ja">Harmonyは初めてですか？</span><span class="en">First time at Harmony?</span></legend>
-              <div class="choices">
-                <label><input type="radio" name="firstTime" id="f-first-y" value="yes"><span class="ja">はい</span><span class="en">Yes</span></label>
-                <label><input type="radio" name="firstTime" id="f-first-n" value="no"><span class="ja">2回目以上</span><span class="en">I've been before</span></label>
-              </div>
-            </fieldset>
-            <div class="field">
-              <label for="f-source"><span class="ja">何で知りましたか？</span><span class="en">How did you hear about us?</span></label>
-              <select id="f-source" name="source">
-                <option value="">—</option>
-                <option value="Meetup">Meetup</option>
-                <option value="Instagram">Instagram</option>
-                <option value="Threads">Threads</option>
-                <option value="Friend" data-ja="友達の紹介" data-en="A friend">友達の紹介</option>
-                <option value="Google" data-ja="Google検索・マップ" data-en="Google search / Maps">Google検索・マップ</option>
-                                <option value="Other" data-ja="その他" data-en="Other">その他</option>
-              </select>
-            </div>
-          </div>
-          <div class="field">
-            <label for="f-msg"><span class="ja">メッセージ（任意）</span><span class="en">Message (optional)</span></label>
-            <textarea id="f-msg" name="message"></textarea>
-          </div>
-          <label class="check" id="over20-wrap" hidden><input type="checkbox" id="f-over20" name="over20"><span><span class="ja">20歳以上です<span class="nb">（お酒の出るイベントのため）<span class="req">*</span></span></span><span class="en">I am 20 or older (this event serves <span class="nb">alcohol)<span class="req">*</span></span></span></span></label>
-          <label class="check"><input type="checkbox" id="f-consent" name="consent"><span><span class="ja">入力した情報を、イベントの運営と連絡のためにHarmonyが使うことに<span class="nb">同意します<span class="req">*</span></span></span><span class="en">I agree that Harmony may use this information to run the event and <span class="nb">contact me<span class="req">*</span></span></span></span></label>
-          <div class="hp" aria-hidden="true"><label for="f-website">Website</label><input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off"></div>
-          <div id="form-msg" class="form-msg" role="status" hidden></div>
-          <button class="btn btn-primary" type="submit" id="f-submit"><span class="ja">申し込む</span><span class="en">Sign up</span></button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="wrap two">
-      <div>
-        <div class="sec-head">
-          <p class="eyebrow">FAQ</p>
-          <h2 class="ja">よくある質問</h2>
-          <h2 class="en"><span class="display">Questions</span></h2>
-        </div>
-        <details><summary><span class="ja">英語（日本語）が話せなくても大丈夫？</span><span class="en">My English / Japanese isn't good. Is that OK?</span></summary>
-          <p class="ja">大丈夫です。初心者の方や、日本語しか話せない方もたくさん参加しています。</p>
-          <p class="en">Yes. Many guests are beginners, and some only speak Japanese.</p></details>
-        <details><summary><span class="ja">一人で参加しても浮きませんか？</span><span class="en">Can I come alone?</span></summary>
-          <p class="ja">参加者の大半がおひとりです。席は主催者が決めるので、自然に話の輪に入れます。</p>
-          <p class="en">Most people do. The host arranges the seating, so you'll be in a conversation from the start.</p></details>
-        <details><summary><span class="ja">支払い方法は？</span><span class="en">How do I pay?</span></summary>
-          <p class="ja">当日、受付で現金かPayPayでお支払いください。クレジットカードは使えません。</p>
-          <p class="en">At the reception, in cash or PayPay. Credit cards aren't accepted.</p></details>
-        <details><summary><span class="ja">Meetupから申し込むのと違いはありますか？</span><span class="en">Is this different from signing up on Meetup?</span></summary>
-          <p class="ja">同じイベントです。どちらから申し込んでも大丈夫です（二重に申し込まないようご注意ください）。</p>
-          <p class="en">It's the same event. Either way works, just don't sign up twice.</p></details>
-        <details><summary><span class="ja">遅れそう・行けなくなったときは？</span><span class="en">What if I'm late or can't come?</span></summary>
-          <p class="ja">行けなくなった場合は前日22時までに確認メールへ返信してください。遅れても参加できます。着いたら受付に声をかけてください。席替えのタイミングでテーブルにご案内します。</p>
-          <p class="en">Reply to your confirmation email by 10 pm the day before. You can still join if you're late: just come to the reception, and we'll seat you at the next table change.</p></details>
-      </div>
-      <div>
-        <h3 class="minor ja">みんなで守ること</h3>
-        <h3 class="minor en">House rules</h3>
-        <ul class="rules ja">
-          <li>営業・勧誘・MLM活動は禁止です</li>
-          <li>宗教・政治活動への勧誘は禁止です</li>
-          <li>ハラスメントや、他の参加者が不快に感じる行為は禁止です</li>
-          <li>連絡先の交換は任意です。席替えの前か、終了後にどうぞ</li>
-        </ul>
-        <ul class="rules en">
-          <li>No business, sales or MLM recruiting</li>
-          <li>No religious or political solicitation</li>
-          <li>No harassment or behavior that makes others uncomfortable</li>
-          <li>Swapping contacts is optional: before a seat change or after the event</li>
-        </ul>
-        <p class="small ja" style="margin-top:1rem">ルールを守っていただけない場合、次回以降の参加をお断りすることがあります。</p>
-        <p class="small en" style="margin-top:1rem">Guests who don't follow these rules may not be accepted at future events.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="access" style="padding-top:0">
-    <div class="wrap access">
-      <img src="assets/exterior.jpg?v=3" alt="Cafe Harmonyの外観" loading="lazy">
-      <div>
-        <div class="sec-head" style="margin-bottom:0">
-          <p class="eyebrow">Access</p>
-          <h2><span class="display" style="font-family:var(--f-display)">Cafe Harmony</span></h2>
-        </div>
-        <dl>
-          <dt><span class="ja">住所</span><span class="en">Address</span></dt>
-          <dd><span class="ja">〒230-0051 神奈川県横浜市鶴見区鶴見中央4-6-11</span><span class="en">4-6-11 Tsurumi-chuo, Tsurumi-ku, Yokohama 230-0051</span></dd>
-          <dt><span class="ja">最寄り駅</span><span class="en">Station</span></dt>
-          <dd class="station"><span class="ja">JR鶴見駅から<strong>徒歩5分</strong></span><span class="en"><strong>5 min walk</strong> from JR Tsurumi Station</span></dd>
-          <dt><span class="ja">お支払い</span><span class="en">Payment</span></dt>
-          <dd><span class="ja">現金・PayPay</span><span class="en">Cash, PayPay</span></dd>
-        </dl>
-        <a class="btn btn-ghost" href="https://maps.app.goo.gl/UaUessisnF11j4iT9" target="_blank" rel="noopener"><span class="ja">Googleマップで開く</span><span class="en">Open in Google Maps</span></a>
-        <div class="host">
-          <img src="assets/mark.svg" alt="">
-          <div>
-            <p class="host-role"><span class="ja">主催</span><span class="en">Your host</span></p>
-            <p class="host-name">Kosei</p>
-            <p class="ja">大阪生まれ・横浜在住。オーストラリアに7年住み、10か国以上を旅してきました。鶴見の喫茶店Cafe Harmonyのマスターです。</p>
-            <p class="en">Born in Osaka and living in Yokohama. Lived in Australia for 7 years, traveled to 10+ countries, and runs Cafe Harmony in Tsurumi.</p>
-          </div>
-        </div>
-        <div class="insta-block">
-          <h3 class="insta-title"><span class="ja">Instagramで最新情報を見る</span><span class="en">Follow us on Instagram</span></h3>
-          <div class="insta">
-            <a href="https://www.instagram.com/harmony_community_/" target="_blank" rel="noopener"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor"/></svg><span class="who"><span class="handle">@harmony_community_</span><span class="lbl"><span class="ja">Harmony公式：イベントの様子とお知らせ</span><span class="en">Harmony official: event photos and news</span></span></span><span class="go"><span class="ja">見る</span><span class="en">Open</span></span></a>
-            <a href="https://www.instagram.com/kos_n5/" target="_blank" rel="noopener"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor"/></svg><span class="who"><span class="handle">@kos_n5</span><span class="lbl"><span class="ja">主催 Kosei</span><span class="en">Host Kosei</span></span></span><span class="go"><span class="ja">見る</span><span class="en">Open</span></span></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="contact" style="padding-top:0">
-    <div class="wrap">
-      <div class="contact">
-        <div class="contact-head">
-          <p class="eyebrow">Contact</p>
-          <h2 class="ja">お問い合わせ</h2>
-          <h2 class="en"><span class="display">Contact</span></h2>
-          <p class="small ja">ご質問やご相談はこちらからどうぞ。メールでお返事します。</p>
-          <p class="small en">Questions? Send us a message and we'll reply by email.</p>
-        </div>
-        <div class="contact-open">
-          <button class="btn btn-primary" type="button" id="contact-toggle" aria-expanded="false" aria-controls="contact-form"><span class="ja">問い合わせる</span><span class="en">Contact us</span></button>
-        </div>
-        <form id="contact-form" novalidate hidden>
-          <div class="row2">
-            <div class="field">
-              <label for="c-name"><span class="ja">お名前</span><span class="en">Name</span></label>
-              <input type="text" id="c-name" name="cname" autocomplete="name">
-            </div>
-            <div class="field">
-              <label for="c-email"><span class="ja">メールアドレス<span class="req">*</span></span><span class="en">Email<span class="req">*</span></span></label>
-              <input type="email" id="c-email" name="cemail" autocomplete="email" required>
-            </div>
-          </div>
-          <div class="field">
-            <label for="c-msg"><span class="ja">内容<span class="req">*</span></span><span class="en">Message<span class="req">*</span></span></label>
-            <textarea id="c-msg" name="cmessage" required></textarea>
-          </div>
-          <div class="hp" aria-hidden="true"><label for="c-website">Website</label><input type="text" id="c-website" name="cwebsite" tabindex="-1" autocomplete="off"></div>
-          <div id="contact-msg" class="form-msg" role="status" hidden></div>
-          <button class="btn btn-primary" type="submit" id="c-submit"><span class="ja">送信する</span><span class="en">Send</span></button>
-        </form>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <img class="logo-light" src="assets/logo.svg" alt="Harmony">
-    <img class="logo-dark" src="assets/logo-dark.svg" alt="Harmony">
-    <span><a href="https://www.instagram.com/harmony_community_/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.meetup.com/yokohama-meetup-group-harmony/" target="_blank" rel="noopener">Meetup</a> · © Harmony</span>
-  </div>
-</footer>
-
-<script>
-/* ================================================================
-   設定：Apps Scriptを「ウェブアプリ」として公開したURLをここに貼る
-   ================================================================ */
-const API_URL = "https://script.google.com/macros/s/AKfycbzJaz5SpcfpzhapigC04ESz-leYx9uOM_rkGx_CYesB_Tg-JcPsuA7dlnKF1fX362Kq/exec";
-
-/* 公開時点のイベント一覧。ページを開いた瞬間はこれを表示し、裏でスプシの最新データに差し替える */
-const WINDOW_DAYS = 31; // 何日先までのイベントを表示するか
-const SNAPSHOT = [
- {
-  "id": "event_316937630@meetup.com",
-  "title": "☕ Japanese & International Language Exchange at a Retro Japanese Café 🇯🇵🌏",
-  "type": "language",
-  "start": "2026-10-25T02:00:00.000Z",
-  "end": "2026-10-25T04:00:00.000Z",
-  "feeEn": "500 yen + One Drink Order (500 yen)",
-  "feeJa": "500円 + 1ドリンクオーダー（500円）",
-  "venue": "Cafe Harmony（横浜・鶴見）",
-  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316937630/",
-  "capacity": null,
-  "spotsLeft": null,
-  "full": false
- },
- {
-  "id": "event_316790242@meetup.com",
-  "title": "🍶Japanese Sake Tasting Night – Meet Locals & Internationals 🌏",
-  "type": "sake",
-  "start": "2026-10-25T09:00:00.000Z",
-  "end": "2026-10-25T11:30:00.000Z",
-  "feeEn": "3,000 yen total (sake tasting included)",
-  "feeJa": "合計3,000円（日本酒テイスティング込み）",
-  "venue": "Cafe Harmony（横浜・鶴見）",
-  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316790242/",
-  "capacity": 20,
-  "spotsLeft": 20,
-  "full": false
- },
- {
-  "id": "event_316937648@meetup.com",
-  "title": "☕ Japanese & International Language Exchange at a Retro Japanese Café 🇯🇵🌏",
-  "type": "language",
-  "start": "2026-10-31T02:00:00.000Z",
-  "end": "2026-10-31T04:00:00.000Z",
-  "feeEn": "500 yen + One Drink Order (500 yen)",
-  "feeJa": "500円 + 1ドリンクオーダー（500円）",
-  "venue": "Cafe Harmony（横浜・鶴見）",
-  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316937648/",
-  "capacity": null,
-  "spotsLeft": null,
-  "full": false
- },
- {
-  "id": "event_316995010@meetup.com",
-  "title": "☕ Japanese & International Language Exchange at a Retro Japanese Café 🇯🇵🌏",
-  "type": "language",
-  "start": "2026-11-08T02:00:00.000Z",
-  "end": "2026-11-08T04:00:00.000Z",
-  "feeEn": "500 yen + One Drink Order (500 yen)",
-  "feeJa": "500円 + 1ドリンクオーダー（500円）",
-  "venue": "Cafe Harmony（横浜・鶴見）",
-  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/316995010/",
-  "capacity": null,
-  "spotsLeft": null,
-  "full": false
- },
- {
-  "id": "event_317007201@meetup.com",
-  "title": "🎲 Board Games & International Exchange at a Retro Japanese Café 🇯🇵🌏",
-  "type": "boardgame",
-  "start": "2026-11-08T05:30:00.000Z",
-  "end": "2026-11-08T08:00:00.000Z",
-  "feeEn": "1,000 yen total (one drink included)",
-  "feeJa": "合計1,000円（1ドリンク込み）",
-  "venue": "Cafe Harmony（横浜・鶴見）",
-  "meetupUrl": "https://www.meetup.com/yokohama-meetup-group-harmony/events/317007201/",
-  "capacity": null,
-  "spotsLeft": null,
-  "full": false
- }
-];
-
-const TYPES = {
-  language: { ja: "言語交換イベント", en: "Language Exchange", tagJa: "日本語＆英語で交流", tagEn: "Chat in Japanese & English" },
-  karaoke:  { ja: "カラオケイベント", en: "Karaoke", tagJa: "カラオケ交流", tagEn: "Karaoke & chat" },
-  run:      { ja: "ラン＆コーヒーイベント", en: "Run & Coffee", tagJa: "鶴見川沿い3〜5km・雨天はカフェ交流", tagEn: "3–5 km by the river · café if it rains" },
-  sake:     { ja: "日本酒イベント", en: "Sake Tasting", tagJa: "日本酒テイスティングと交流・20歳以上", tagEn: "Sake tasting & chat · 20+ only" },
-  boardgame:{ ja: "ボードゲームイベント", en: "Board Games", tagJa: "ボードゲームで交流", tagEn: "Board games & chat" },
-  matcha:   { ja: "抹茶・和菓子・書道イベント", en: "Matcha & Wagashi", tagJa: "抹茶・和菓子・書道体験（山手）", tagEn: "Matcha, sweets & calligraphy · Yamate" }
-};
-
-const MSG = {
-  ja: {
-    pick: "イベントを選んでください", name_required: "お名前を入力してください。", email_invalid: "メールアドレスの形式を確認してください。",
-    consent_required: "同意のチェックを入れてください。", over20_required: "このイベントは20歳以上の方のみ参加できます。",
-    event_not_found: "このイベントは受付を終了しました。別の日程を選んでください。", network: "送信できませんでした。通信状況を確認して、もう一度お試しください。",
-    sending: "送信中…", ok: "お申し込みありがとうございます！確認メールをお送りしました。届かない場合は迷惑メールフォルダもご確認ください。",
-    waitlist: "満席のため、キャンセル待ちで受け付けました。空きが出たらメールでご連絡します。",
-    duplicate: "このイベントにはすでにお申し込み済みです。", preview: "プレビューのため実際には送信していません（スプレッドシート接続後に有効になります）。",
-    event_full: "このイベントは満席になりました。別の日程を選んでください。", full: "満席", left: n => `残り${n}席`, none: "現在、受付中のイベントはありません。Meetupもご確認ください。",
-    message_required: "お問い合わせ内容を入力してください。", contact_ok: "送信しました。メールでお返事します。", all: "すべて", meetup: "Meetupで見る", join: "申し込む", selected: "選択中"
-  },
-  en: {
-    pick: "Choose an event", name_required: "Please enter your name.", email_invalid: "Please check your email address.",
-    consent_required: "Please tick the consent box.", over20_required: "This event is for guests aged 20 and over.",
-    event_not_found: "Sign-ups for this event have closed. Please choose another date.", network: "We couldn't send your form. Check your connection and try again.",
-    sending: "Sending…", ok: "You're signed up! We've sent a confirmation email. If you don't see it, check your spam folder.",
-    waitlist: "The event is full, so you're on the waitlist. We'll email you if a spot opens.",
-    duplicate: "You've already signed up for this event.", preview: "Preview only: nothing was sent (this starts working once the spreadsheet is connected).",
-    event_full: "This event is now full. Please choose another date.", full: "Full", left: n => `${n} spots left`, none: "No events are open right now. Please check our Meetup page.",
-    message_required: "Please write your message.", contact_ok: "Sent. We'll reply by email.", all: "All", meetup: "View on Meetup", join: "Join", selected: "Selected"
-  }
-};
-
-const SPECIAL = ["sake", "matcha"];
-let lang = "ja";
-let events = [];
-let filter = "all";
-let expanded = false;      // 「さらに表示」を押したか
-const FIRST_COUNT = 10;    // 最初に見せる件数
-const $ = s => document.querySelector(s);
-
-function detectLang() {
-  try { const saved = localStorage.getItem("harmony-lang"); if (saved === "ja" || saved === "en") return saved; } catch (e) {}
-  return (navigator.language || "ja").toLowerCase().startsWith("ja") ? "ja" : "en";
-}
-function setLang(l) {
-  lang = l;
-  document.documentElement.dataset.lang = l;
-  document.documentElement.lang = l;
-  document.querySelectorAll("[data-set-lang]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.setLang === l)));
-  document.querySelectorAll("option[data-ja]").forEach(o => { o.textContent = o.dataset[l]; });
-  try { localStorage.setItem("harmony-lang", l); } catch (e) {}
-  render();
-}
-
-const fmt = (iso, opts) => new Intl.DateTimeFormat(lang === "ja" ? "ja-JP" : "en-US", { timeZone: "Asia/Tokyo", ...opts }).format(new Date(iso));
-const dayKey = iso => fmt(iso, { year: "numeric", month: "2-digit", day: "2-digit" });
-const timeRange = e => e.timeTBA ? (lang === "ja" ? "時間は近日公開" : "Time TBA") : fmt(e.start, { hour: "2-digit", minute: "2-digit", hour12: false }) + (e.end ? "–" + fmt(e.end, { hour: "2-digit", minute: "2-digit", hour12: false }) : "");
-
-/* 料金の合計（例：「500 yen + One Drink Order (500 yen)」→ 1000） */
-function totalYen(e) {
-  if (e.type === "karaoke") return 1500;
-  if (e.type === "boardgame") return 1000; /* ボードゲームは合計1,000円（ドリンク込み） */ /* カラオケは合計1,500円（ドリンク込み）で固定 */
-  const s = (e.feeEn || "") + " " + (e.feeJa || "");
-  const total = s.match(/([\d,]+)\s*yen\s*total/i) || s.match(/合計\s*([\d,]+)\s*円/);
-  if (total) return Number(total[1].replace(/,/g, ""));
-  const nums = (e.feeEn || "").match(/[\d,]+(?=\s*yen)/gi) || (e.feeJa || "").match(/[\d,]+(?=\s*円)/g) || [];
-  if (!nums.length) return null;
-  return nums.slice(0, 2).reduce((a, n) => a + Number(n.replace(/,/g, "")), 0);
-}
-function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
-
-/* 祝日（日付ごとの見出しに小さく「祝日」と出す）。キーは "YYYY/MM/DD" */
-const HOLIDAYS = ["2026/11/03", "2026/11/23", "2027/01/01", "2027/01/11"];
-const dayKeyJa = iso => new Intl.DateTimeFormat("ja-JP", { timeZone: "Asia/Tokyo", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(iso));
-function inWindow(e) {
-  const t = new Date(e.start).getTime(), now = Date.now();
-  return t >= now - 12 * 3600e3 && t <= now + WINDOW_DAYS * 86400e3;
-}
-
-function render() {
-  const m = MSG[lang];
-  // filters
-  const regular = events;
-  const kinds = [...new Set(regular.map(e => e.type))];
-  $("#filters").innerHTML = kinds.length > 1
-    ? [["all", m.all], ...kinds.map(k => [k, (TYPES[k] || TYPES.language)[lang]])]
-        .map(([k, label]) => `<button type="button" data-filter="${k}" aria-pressed="${filter === k}">${esc(label)}</button>`).join("")
-    : "";
-  // list
-  const list = regular.filter(e => filter === "all" || e.type === filter);
-  if (!list.length) {
-    $("#event-list").innerHTML = `<p class="board-empty">${esc(m.none)}</p>`;
-  } else {
-    const groups = [];
-    const shown = expanded ? list : list.slice(0, FIRST_COUNT);
-    const rest = list.length - shown.length;
-    shown.forEach(e => {
-      const k = dayKey(e.start);
-      let g = groups.find(x => x.k === k);
-      if (!g) groups.push(g = { k, start: e.start, items: [] });
-      g.items.push(e);
-    });
-    $("#event-list").innerHTML = groups.map(g => `
-      <div class="day">
-        <div class="date"><div class="md">${esc(fmt(g.start, { month: "numeric", day: "numeric" }))}</div><div class="dow">${esc(fmt(g.start, { weekday: "long" }))}${HOLIDAYS.includes(dayKeyJa(g.start)) ? `<span class="hol">${lang === "ja" ? "祝日" : "Holiday"}</span>` : ""}</div></div>
-        <div class="items">${g.items.map(itemHTML).join("")}</div>
-      </div>`).join("") + (rest > 0
-        ? `<div class="more-events"><button type="button" class="more-btn" data-more="1">${lang === "ja" ? `さらに表示（あと${rest}件）` : `Show more (${rest} more)`}</button></div>`
-        : "");
-  }
-  // select
-  const sel = $("#f-event");
-  const cur = sel.value;
-  sel.innerHTML = `<option value="">${esc(m.pick)}</option>` + events.map(e => {
-    const t = TYPES[e.type] || TYPES.language;
-    const isFull = e.full || e.spotsLeft === 0;
-    const full = isFull ? ` (${m.full})` : "";
-    return `<option value="${esc(e.id)}"${isFull ? " disabled" : ""}>${esc(fmt(e.start, { month: "numeric", day: "numeric", weekday: "short" }))} ${esc(timeRange(e))}  ${esc(t[lang])}${esc(full)}</option>`;
-  }).join("");
-  if (events.some(e => e.id === cur)) sel.value = cur;
-  updateEventNote();
-}
-
-const drinkSeparate = e => /at the café|カフェで/.test((e.feeEn || "") + (e.feeJa || "")); /* ドリンク代をお店で別払いする会場（roku cafeなど） */
-function inclLabel(e) {
-  if (drinkSeparate(e)) return lang === "ja" ? "＋ドリンク代" : "+ drink";
-  if (e.type === "sake") return lang === "ja" ? "日本酒込み" : "sake incl.";
-  if (e.type === "matcha") return lang === "ja" ? "材料込み" : "materials incl.";
-  return lang === "ja" ? "ドリンク込み" : "drink incl.";
-}
-
-function itemHTML(e) {
-  const m = MSG[lang];
-  const t = TYPES[e.type] || TYPES.language;
-  const yen = totalYen(e);
-  const isFull = e.full || e.spotsLeft === 0;
-  const spots = isFull ? `<span class="full">${esc(m.full)}</span>`
-    : (e.spotsLeft != null ? `<span>${esc(m.left(e.spotsLeft))}</span>` : "");
-  return `
-    <div class="item">
-      <div class="item-row"><span class="item-name">${esc(t[lang])}${SPECIAL.includes(e.type) ? `<span class="sp-tag">${lang === "ja" ? "特別イベント" : "Special"}</span>` : ""}</span><span class="leader" aria-hidden="true"></span><span class="price">${yen ? "¥" + yen.toLocaleString("en-US") : ""}${yen ? `<small>${esc(inclLabel(e))}</small>` : ""}</span></div>
-      <div class="item-meta"><span class="time">${esc(timeRange(e))}</span><span class="tag">${esc(lang === "ja" ? t.tagJa : t.tagEn)}</span>${e.venue && !/Cafe Harmony/.test(e.venue) ? `<span class="tag">📍${esc(e.venue)}</span>` : ""}${spots}</div>
-      <div class="item-actions">
-        ${isFull ? `<button type="button" class="join-btn is-full" disabled>${esc(m.full)}</button>` : `<button type="button" class="join-btn" data-join="${esc(e.id)}">${esc(m.join)}</button>`}
-        ${e.meetupUrl ? `<a href="${esc(e.meetupUrl)}" target="_blank" rel="noopener">${esc(m.meetup)}</a>` : ""}
-      </div>
-    </div>`;
-}
-
-function updateEventNote() {
-  const e = events.find(x => x.id === $("#f-event").value);
-  $("#over20-wrap").hidden = !(e && e.type === "sake");
-  const y = e ? totalYen(e) : null;
-  $("#event-note").textContent = e ? [y ? "¥" + y.toLocaleString("en-US") + (lang === "ja" ? "（" + inclLabel(e) + "）" : " (" + inclLabel(e) + ")") : "", e.venue].filter(Boolean).join(" · ") : "";
-}
-
-function fixType(e) {
-  /* Meetupのタイトルからボードゲーム回を見分ける（スプレッドシート側では言語交換として入るため） */
-  if (/board\s*games?|ボードゲーム/i.test(e.title || "")) return Object.assign({}, e, { type: "boardgame" });
-  return e;
-}
-function applyWindow() {
-  /* ランイベントは終了したので表示しない */
-  events = events.filter(inWindow).map(fixType).filter(e => e.type !== "run");
-}
-
-async function loadEvents() {
-  // 1) まず手元のデータ（前回の読み込み結果、なければ公開時点の一覧）をすぐ表示
-  let cached = null;
-  try { cached = JSON.parse(localStorage.getItem("harmony-events") || "null"); } catch (e) {}
-  events = (cached && cached.length ? cached : SNAPSHOT);
-  applyWindow();
-  render();
-  if (!API_URL) return;
-  // 2) 裏で最新を取りにいき、届いたら差し替える
-  try {
-    const res = await fetch(API_URL + "?action=events");
-    const data = await res.json();
-    if (data && data.ok) {
-      const picked = $("#f-event").value;
-      events = data.events || [];
-      try { localStorage.setItem("harmony-events", JSON.stringify(events)); } catch (e) {}
-      applyWindow();
-      render();
-      if (events.some(e => e.id === picked)) { $("#f-event").value = picked; updateEventNote(); }
-    }
-  } catch (err) { /* 通信できないときは手元の一覧のまま */ }
-}
-
-function showMsg(kind, text) {
-  const el = $("#form-msg");
-  el.className = "form-msg " + kind;
-  el.textContent = text;
-  el.hidden = false;
-}
-
-async function submitForm(ev) {
-  ev.preventDefault();
-  const m = MSG[lang];
-  const f = ev.target;
-  const data = {
-    eventId: f.eventId.value, name: f.name.value.trim(), email: f.email.value.trim(), country: f.country.value.trim(),
-    ageRange: f.ageRange.value, practice: [...f.querySelectorAll('input[name="reason"]:checked')].map(i => i.value).join(" / "),
-    firstTime: (f.querySelector('input[name="firstTime"]:checked') || {}).value || "", source: f.source.value,
-    message: f.message.value.trim(), over20: f.over20.checked, consent: f.consent.checked, website: f.website.value, lang
-  };
-  const e = events.find(x => x.id === data.eventId);
-  let err = null;
-  if (!data.eventId) err = m.pick;
-  else if (!data.name) err = m.name_required;
-  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) err = m.email_invalid;
-  else if (e && (e.full || e.spotsLeft === 0)) err = m.event_full;
-  else if (e && e.type === "sake" && !data.over20) err = m.over20_required;
-  else if (!data.consent) err = m.consent_required;
-  if (err) { showMsg("err", err); return; }
-
-  const btn = $("#f-submit");
-  btn.disabled = true;
-  showMsg("ok", m.sending);
-  try {
-    const res = await fetch(API_URL, { method: "POST", body: JSON.stringify(data) });
-    const out = await res.json();
-    if (!out.ok) { showMsg("err", m[out.error] || m.network); if (out.error === "event_full") loadEvents(); return; }
-    showMsg("ok", out.status === "waitlist" ? m.waitlist : out.status === "duplicate" ? m.duplicate : m.ok);
-    f.reset();
-    updateEventNote();
-  } catch (x) {
-    showMsg("err", m.network);
-  } finally {
-    btn.disabled = false;
-  }
-}
-
-document.addEventListener("click", ev => {
-  const l = ev.target.closest("[data-set-lang]");
-  if (l) setLang(l.dataset.setLang);
-  const fb = ev.target.closest("[data-filter]");
-  if (fb) { filter = fb.dataset.filter; expanded = false; render(); }
-  if (ev.target.closest("[data-more]")) { expanded = true; render(); }
-  const jb = ev.target.closest("[data-join]");
-  if (jb) {
-    $("#f-event").value = jb.dataset.join;
-    updateEventNote();
-    $("#join").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
-    setTimeout(() => $("#f-name").focus({ preventScroll: true }), 400);
-  }
-});
-$("#f-event").addEventListener("change", updateEventNote);
-$("#signup").addEventListener("submit", submitForm);
-
-async function submitContact(ev) {
-  ev.preventDefault();
-  const m = MSG[lang];
-  const f = ev.target;
-  const box = $("#contact-msg");
-  const say = (kind, text) => { box.className = "form-msg " + kind; box.textContent = text; box.hidden = false; };
-  const data = { action: "contact", name: f.cname.value.trim(), email: f.cemail.value.trim(), message: f.cmessage.value.trim(), website: f.cwebsite.value, lang };
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) { say("err", m.email_invalid); return; }
-  if (!data.message) { say("err", m.message_required); return; }
-  const btn = $("#c-submit");
-  btn.disabled = true;
-  say("ok", m.sending);
-  try {
-    const res = await fetch(API_URL, { method: "POST", body: JSON.stringify(data) });
-    const out = await res.json();
-    if (!out.ok) { say("err", m[out.error] || m.network); return; }
-    say("ok", m.contact_ok);
-    f.reset();
-  } catch (x) {
-    say("err", m.network);
-  } finally {
-    btn.disabled = false;
-  }
-}
-$("#contact-form").addEventListener("submit", submitContact);
-
-/* 日本語の文を「、」「。」で区切って、区切りごとにまとまって折り返すようにする */
-function chunkJa() {
-  const sel = "p.ja, h2.ja, h3.ja, span.ja, summary span.ja, .lede.ja, .note-line.ja, li.ja, .points p.ja";
-  document.querySelectorAll(sel).forEach(el => {
-    if (el.dataset.chunked || el.closest("select, button, .flow") ) return;
-    [...el.childNodes].forEach(n => {
-      if (n.nodeType !== 3 || !/[、。]/.test(n.nodeValue)) return;
-      const parts = n.nodeValue.split(/(?<=[、。！？])/);
-      if (parts.length < 2) return;
-      const frag = document.createDocumentFragment();
-      parts.forEach(t => { if (!t) return; const sp = document.createElement("span"); sp.className = "nb"; sp.textContent = t; frag.appendChild(sp); });
-      el.replaceChild(frag, n);
-    });
-    el.dataset.chunked = "1";
-  });
-}
-chunkJa();
-setLang(detectLang());
-loadEvents();
-
-(function(){var t=document.getElementById('contact-toggle'),f=document.getElementById('contact-form');if(!t||!f)return;
-t.addEventListener('click',function(){f.hidden=false;t.setAttribute('aria-expanded','true');f.closest('.contact').classList.add('is-open');var i=f.querySelector('input,textarea');if(i)i.focus();});})();
-
-/* 2026-10-21: ?from=ig などのリンクで「何で知りましたか？」を自動選択 */
-(function(){
-  var MAP = { ig: "Instagram", instagram: "Instagram", threads: "Threads", th: "Threads", meetup: "Meetup", google: "Google" };
-  var from = "";
-  try { from = (new URLSearchParams(location.search).get("from") || "").toLowerCase(); } catch (e) {}
-  var val = MAP[from];
-  var sel = document.getElementById("f-source");
-  if (!val || !sel) return;
-  function apply(){ sel.value = val; }
-  apply();
-  var form = sel.form;
-  if (form) form.addEventListener("reset", function(){ setTimeout(apply, 0); });
-})();
-</script>
-</body></html>
+</div>
+<script>window.HARMONY_PAGE={"slug": "index", "type": null};</script>
+<script>window.HARMONY_I18N={"Events":"イベント","Experiences":"体験","About":"Harmonyについて","FAQ":"よくある質問","Menu ≡":"メニュー ≡","guests have joined":"人が参加","35 events so far":"これまで35回開催","We bring Japanese locals and international residents together —":"日本人と在日外国人が、","over many kinds of events.":"いろいろなイベントで出会う場所です。","Explore Upcoming Events":"開催予定のイベントを見る","Discover HARMONY":"Harmonyについて","See Details & Join →":"詳細・申し込み →","Show More ↓":"さらに表示 ↓","Hover over an experience to see what it’s like":"イベント名にマウスを当てると、内容が見られます","11/28 new":"11/28 初開催","Speak. Share. Connect.":"話して、分かち合って、つながる。","Half Japanese, half English, in small groups of 4–5. Lunch nearby afterwards if you like.":"日本語と英語を半分ずつ、4〜5人の少人数で。終わったら希望者で近くのランチへ。","Every weekend · 11:00–13:00 · ¥1,000 incl. one drink":"毎週末 · 11:00–13:00 · ドリンク込み ¥1,000","See details & dates →":"詳細と日程を見る →","Play. Laugh. Connect.":"遊んで、笑って、つながる。","Party and strategy games where nobody needs a shared language to laugh. Rules explained at the table.":"言葉が通じなくても笑えるパーティーゲームから戦略ゲームまで。ルールはその場で説明します。","14:30–17:00 · ¥1,000 incl. one drink":"14:30–17:00 · 1,000円（1ドリンク込み）","Taste. Talk. Connect.":"味わって、語って、つながる。","A guided tasting of 3–4 sake with a sake sommelier, introduced in Japanese and English.":"日本酒ソムリエの解説で、3〜4種類を飲み比べ。紹介は日本語と英語で。","Whisk. Shape. Write.":"点てて、作って、書いてみる。","Whisk matcha, shape a nerikiri sweet and write your name in kanji, in a tatami room in Yamate.":"山手の和室で、抹茶を点て、練り切りを作り、自分の名前を漢字で書きます。","Sat, Nov 28 · 14:30–16:30 · ¥3,000":"11/28（土）· 14:30–16:30 · 3,000円","HARMONY creates opportunities for people from different cultures to meet through enjoyable events. Every gathering is a chance to discover something new, share experiences, and make connections that can continue beyond the event.":"HARMONYは、楽しいイベントを通して、文化の違う人どうしが出会うきっかけをつくっています。毎回の集まりが、新しい発見をして、体験を分かち合い、イベントのあとも続くつながりを生むチャンスです。","Home base: Cafe Harmony, Tsurumi, Yokohama":"拠点：横浜・鶴見のCafe Harmony","So far at HARMONY":"これまでのHARMONY","Japanese locals & international residents":"日本人と在日外国人","as of Nov 9, 2026":"2026年11月9日時点","events held":"回開催","countries represented":"の国と地域から","Meet People from Around the World":"世界中の人と出会える","Connect with Japanese locals and international participants.":"日本人とも、海外から来た人とも知り合えます。","Experience Different Cultures":"いろいろな文化にふれる","Discover new perspectives through conversations and shared experiences.":"会話や体験を通して、新しい見方に出会えます。","Enjoy Something Different":"いつもと違う週末を","Make your weekends more exciting with fun and unique activities.":"楽しくてちょっと変わった体験で、週末がもっとおもしろくなります。","Feel Welcome, Even Alone":"ひとりでも、大丈夫","Come by yourself or with friends. Meeting people feels natural here.":"ひとりでも、友達とでも。ここでは自然に人と知り合えます。","⏱ About 1 minute":"⏱ 約1分","No Meetup account needed":"Meetupのアカウント不要","Solo welcome":"ひとり参加歓迎","Find Your Event":"イベントを選ぶ","Browse upcoming events and choose the experience you like.":"開催予定のイベントから、気になるものを選びます。","See all events":"イベント一覧へ","Sign up":"申し込み","Nov 8":"11/8","Nov 15":"11/15","Name":"お名前","Email":"メール","Join →":"申し込む →","Confirmation":"確認メールを","email sent":"送りました","Register Online":"オンラインで申し込む","Check the details and reserve your spot. No Meetup account needed.":"内容を確認して、席を予約します。Meetupのアカウントは不要です。","About 1 minute":"約1分","Show Up & Enjoy":"当日、来るだけ","Come along, meet new people, and enjoy the event.":"会場に来て、新しい人と出会い、イベントを楽しみましょう。","Pay on the day · Cash / PayPay":"当日払い · 現金／PayPay","HARMONY is for friendship — not dating or pick-ups. No sales or recruiting, and no one gets judged on their language level.":"HARMONYは友達づくりの場です。出会い目的・ナンパ、営業・勧誘はお断り。語学レベルで判断されることもありません。","Can I come alone?":"ひとりで参加しても大丈夫？","Yes. We arrange the seating, so it's easy to join in even if you come on your own.":"大丈夫です。席はこちらで決めるので、ひとりで来ても自然に会話に入れます。","Do I need to speak English?":"英語が話せないとダメ？","No. Language exchange is half Japanese, half English, and your level doesn't matter.":"大丈夫です。言語交換は日本語と英語が半分ずつで、レベルは問いません。","Do I need to speak Japanese?":"日本語が話せないとダメ？","No. Half of each language exchange is in English, and plenty of people speak slowly.":"大丈夫です。言語交換の半分は英語の時間で、ゆっくり話す人もたくさんいます。","Is it OK for beginners?":"初心者でも大丈夫？","Yes. Your language level doesn't matter, and the events are made for first-timers too.":"大丈夫です。語学レベルは関係なく、はじめての方も楽しめるように作っています。","How do I register?":"申し込み方法は？","Pick an event and tap “See Details & Join”. No Meetup account needed.":"イベントを選んで「詳細・申し込み」を押してください。Meetupのアカウントは不要です。","How do I pay?":"支払い方法は？","Cash or PayPay on the day. We can't take credit cards.":"当日、現金かPayPayでお支払いください。クレジットカードは使えません。","What if I'm late?":"遅れそうなときは？","No problem — we'll seat you at the next rotation.":"大丈夫です。次の席替えのタイミングで席にご案内します。","Find an event, meet new people, and experience something different.":"イベントを選んで、新しい人と出会い、いつもと違う体験をしよう。","Follow HARMONY on Instagram":"InstagramでHARMONYをフォロー","International exchange events · Home base: Cafe Harmony, Tsurumi, Yokohama":"国際交流イベント · 拠点：横浜・鶴見のCafe Harmony","Meet new people. Discover new cultures. Have fun. Everyone is welcome, even if you're coming alone.":"新しい人に出会い、新しい文化にふれて、思いきり楽しむ。ひとりでの参加も大歓迎です。","See Details & Join":"詳細・申し込み","Tap an experience to see what it’s like":"イベント名をタップすると内容が出ます。もう一度タップでページへ","HARMONY creates opportunities for people from different cultures to meet through enjoyable events — and make connections that can continue beyond the event.":"HARMONYは、楽しいイベントを通して文化の違う人どうしが出会い、イベントのあとも続くつながりが生まれるきっかけをつくっています。","guests":"参加者","events":"開催回数","countries":"国と地域","Guests from more than 20 countries so far · as of Nov 9, 2026":"これまでに20以上の国と地域から参加 · 2026年11月9日時点","⏱ 1 minute":"⏱ 約1分","No Meetup account":"Meetupアカウント不要","© 2026 Harmony · Home base: Cafe Harmony, Tsurumi":"© 2026 Harmony · 拠点：横浜・鶴見のCafe Harmony","__title":"Harmony | International community in Tsurumi, Yokohama"};</script>
+<script src="assets/lp/site.js?v=495af6d7" defer></script>
+</body>
+</html>
