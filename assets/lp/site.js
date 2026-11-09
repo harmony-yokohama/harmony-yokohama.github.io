@@ -16,6 +16,7 @@
     { id: 'event_317007201@meetup.com', type: 'boardgame', start: '2026-11-08T05:30:00.000Z', end: '2026-11-08T08:00:00.000Z', venue: 'Cafe Harmony（横浜・鶴見）', meetupUrl: 'https://www.meetup.com/yokohama-meetup-group-harmony/events/317007201/', capacity: 25, spotsLeft: null, full: false },
     { id: 'event_317145742@meetup.com', type: 'language', start: '2026-11-15T02:00:00.000Z', end: '2026-11-15T04:00:00.000Z', venue: 'Cafe Harmony（横浜・鶴見）', meetupUrl: 'https://www.meetup.com/yokohama-meetup-group-harmony/events/317145742/', capacity: null, spotsLeft: null, full: false },
     { id: 'event_317283571@meetup.com', type: 'boardgame', start: '2026-11-15T05:30:00.000Z', end: '2026-11-15T08:00:00.000Z', venue: 'Cafe Harmony（横浜・鶴見）', meetupUrl: 'https://www.meetup.com/yokohama-meetup-group-harmony/events/317283571/', capacity: 25, spotsLeft: null, full: false },
+    { id: 'sake-2026-11-15', type: 'sake', start: '2026-11-15T09:00:00.000Z', end: '2026-11-15T11:30:00.000Z', venue: 'Cafe Harmony（横浜・鶴見）', meetupUrl: 'https://www.meetup.com/yokohama-meetup-group-harmony/', capacity: null, spotsLeft: null, full: false },
     { id: 'event_317321741@meetup.com', type: 'matcha', start: '2026-11-28T05:30:00.000Z', end: '2026-11-28T07:30:00.000Z', venue: '神奈川近代文学館 和室（山手）', meetupUrl: 'https://www.meetup.com/yokohama-meetup-group-harmony/events/317321741/', capacity: 16, spotsLeft: null, full: false },
     { id: 'event_317250367@meetup.com', type: 'language', start: '2026-11-29T02:00:00.000Z', end: '2026-11-29T04:00:00.000Z', venue: 'Cafe Harmony（横浜・鶴見）', meetupUrl: 'https://www.meetup.com/yokohama-meetup-group-harmony/events/317250367/', capacity: null, spotsLeft: null, full: false }
   ];
@@ -23,15 +24,15 @@
   var TYPES = {
     language: { page: 'language-exchange.html', ja: '言語交換', en: 'Language Exchange',
       priceJa: 'ドリンク込み ¥1,000', priceEn: '¥1,000 incl. one drink',
-      photos: [['assets/lp/20db2baf04.jpg', '50% 40%'], ['assets/lp/f44f46e51d.jpg', '60% 40%'], ['assets/lp/13f392bb9e.jpg', '50% 45%']],
-      alt: 'Participants chatting at a language exchange' },
+      photos: [['assets/lp/266c9bb51b.jpg', '45% 50%']],
+      alt: 'Group photo from a HARMONY language exchange' },
     boardgame: { page: 'board-games.html', ja: 'ボードゲーム', en: 'Board Games',
       priceJa: '1,000円（1ドリンク込み）', priceEn: '¥1,000 · one drink included',
-      photos: [['assets/lp/702c9a0c63.jpg', '50% 60%'], ['assets/lp/e45b80f59a.jpg', '50% 45%'], ['assets/lp/5672ab8e17.jpg', '50% 50%']],
-      alt: 'Participants playing a board game' },
+      photos: [['assets/lp/p1109-4.jpg', '50% 45%']],
+      alt: 'Group photo from a HARMONY board game night' },
     sake: { page: 'sake.html', ja: '日本酒テイスティング', en: 'Sake Tasting',
       priceJa: '3,000円（日本酒テイスティング込み）', priceEn: '¥3,000 · sake tasting included',
-      photos: [['assets/lp/0b401dc971.jpg', '50% 50%']], alt: 'Sake glasses on the table at the sake night' },
+      photos: [['assets/lp/04bfd46b33.jpg', '35% 50%']], alt: 'Participants raising their glasses at the sake night' },
     matcha: { page: 'matcha.html', ja: '抹茶・和菓子・書道', en: 'Matcha, Sweets & Calligraphy',
       priceJa: '3,000円（材料込み）', priceEn: '¥3,000 · materials included', photos: [], alt: '' }
   };
