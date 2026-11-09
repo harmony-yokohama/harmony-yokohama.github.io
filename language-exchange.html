@@ -126,6 +126,20 @@ html[data-lang=en] [data-lang-only=en],html[data-lang=ja] [data-lang-only=ja]{di
 .v-pc [data-top-events]{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 24px!important;overflow:visible!important;padding-right:56px}
 .v-pc [data-top-events]>article{flex:none!important;width:auto!important;min-width:0}
 
+.fvs{position:absolute;inset:0}
+.fvs .fvs-i{opacity:0;animation:fvs 24s infinite}
+.fvs .fvs-i:nth-child(1){animation-delay:-1s}
+.fvs .fvs-i:nth-child(2){animation-delay:5s}
+.fvs .fvs-i:nth-child(3){animation-delay:11s}
+.fvs .fvs-i:nth-child(4){animation-delay:17s}
+@keyframes fvs{0%{opacity:0}4%{opacity:1}25%{opacity:1}29%{opacity:0}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.fvs .fvs-i{animation:none}.fvs .fvs-i:not(:first-child){display:none}}
+.lev video{object-fit:cover;display:block;width:100%;height:100%}
+.lev-g{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,26,38,.72) 0%,rgba(20,26,38,.25) 45%,rgba(20,26,38,.05) 70%);pointer-events:none}
+.lev-t{position:absolute;left:0;right:0;bottom:0;margin:0;padding:0 40px 44px;color:#FFFFFF;font-weight:800;font-size:46px;line-height:1.3;letter-spacing:.01em;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.v-sp .lev-t{padding:0 22px 28px;font-size:30px}
+html[data-lang=en] .lev-t{font-family:'Manrope','Noto Sans JP',sans-serif;letter-spacing:-.01em}
+
 .hscroll{scrollbar-width:none;-ms-overflow-style:none}
 .hscroll::-webkit-scrollbar{display:none}
 .hscroll>article{scroll-snap-align:start}
@@ -154,7 +168,7 @@ html.menu-open{overflow:hidden}
 
   <!-- HERO -->
   <section style="position: relative; height: 920px; overflow: hidden; background: #202D40; color: #FFFFFF;">
-    <img decoding="async" fetchpriority="high" class="img" src="assets/lp/0936f78446.jpg" alt="Japanese and international participants talking at Cafe Harmony" style="position: absolute; inset: 0; object-position: 50% 30%;">
+    <div class="fvs"><img decoding="async" fetchpriority="high" class="img fvs-i" src="assets/lp/0936f78446.jpg" alt="Japanese and international participants talking at Cafe Harmony" style="position: absolute; inset: 0; object-position: 50% 30%;"><img decoding="async" class="img fvs-i" src="assets/lp/le-fv-1.jpg" alt="Participants laughing at a language exchange table" style="position: absolute; inset: 0; object-position: 50% 35%;"><img decoding="async" class="img fvs-i" src="assets/lp/le-fv-2.jpg" alt="A full room at Cafe Harmony" style="position: absolute; inset: 0; object-position: 62% 40%;"><img decoding="async" class="img fvs-i" src="assets/lp/le-fv-3.jpg" alt="Hands and worksheets on the table during conversation" style="position: absolute; inset: 0; object-position: 72% 30%;"></div>
     <span style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(32,45,64,.82) 0%, rgba(32,45,64,.55) 42%, rgba(32,45,64,.05) 75%);"></span>
     <header style="position: relative; max-width: 1280px; margin: 0 auto; padding: 28px 56px; display: flex; align-items: center; justify-content: space-between; box-sizing: border-box; max-width: 1392px;">
       <a href="index.html" style="display: flex; align-items: center; text-decoration: none;" aria-label="Harmony"><img decoding="async" src="assets/logo/harmony-logo-light.svg" alt="Harmony" width="133" height="38" style="display: block; height: 38px; width: auto;"></a>
@@ -177,10 +191,10 @@ html.menu-open{overflow:hidden}
   <!-- EMOTIONAL -->
   <section style="padding: 160px 56px; background: #F7F5F0;">
     <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: center;">
-      <div style="height: 680px; border-radius: 24px; overflow: hidden;"><img loading="lazy" decoding="async" class="img" src="assets/lp/6d27c3bc04.jpg" alt="A participant laughing in conversation" style="object-fit: cover; object-position: 28.357% 50%"></div>
+      <div class="lev" style="height: 680px; border-radius: 24px; overflow: hidden; position: relative;"><video class="img" src="assets/lp/le-world.mp4" poster="assets/lp/le-world-poster.jpg" data-autoplay muted loop playsinline preload="none" aria-label="Language exchange at Cafe Harmony"></video><span class="lev-g"></span><p class="lev-t">いつもの日常に、<br>世界との出会いを。</p></div>
       <div>
         <span class="eb">A WORLD OF CONNECTIONS STARTS WITH ONE CONVERSATION.</span>
-        <h2 class="h2">いつもの日常に、<br>世界との出会いを。</h2>
+        
         <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 14px; padding-left: 20px; border-left: 2px solid #D58B5D;">
           <p class="p" style="color: #202D40; font-weight: 500;">英語を勉強しているけれど、実際に話す機会がない。</p>
           <p class="p" style="color: #202D40; font-weight: 500;">日本にいながら、海外の友達を作ってみたい。</p>
@@ -334,7 +348,7 @@ html.menu-open{overflow:hidden}
 
 
   <section style="position: relative; height: 760px; overflow: hidden; background: #202D40; color: #FFFFFF; display: flex; flex-direction: column;">
-    <img decoding="async" fetchpriority="high" class="img" src="assets/lp/0936f78446.jpg" alt="Japanese and international participants talking at Cafe Harmony" style="position: absolute; inset: 0; object-position: 66% 30%;">
+    <div class="fvs"><img decoding="async" fetchpriority="high" class="img fvs-i" src="assets/lp/0936f78446.jpg" alt="Japanese and international participants talking at Cafe Harmony" style="position: absolute; inset: 0; object-position: 66% 30%;"><img decoding="async" class="img fvs-i" src="assets/lp/le-fv-1.jpg" alt="Participants laughing at a language exchange table" style="position: absolute; inset: 0; object-position: 50% 35%;"><img decoding="async" class="img fvs-i" src="assets/lp/le-fv-2.jpg" alt="A full room at Cafe Harmony" style="position: absolute; inset: 0; object-position: 60% 40%;"><img decoding="async" class="img fvs-i" src="assets/lp/le-fv-3.jpg" alt="Hands and worksheets on the table during conversation" style="position: absolute; inset: 0; object-position: 74% 30%;"></div>
     <span style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(32,45,64,.55) 0%, rgba(32,45,64,.15) 35%, rgba(32,45,64,.92) 78%);"></span>
     <header style="position: relative; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between;"><a href="index.html" style="display: flex; align-items: center; text-decoration: none;" aria-label="Harmony"><img decoding="async" src="assets/logo/harmony-logo-light.svg" alt="Harmony" width="112" height="32" style="display: block; height: 32px; width: auto;"></a><span style="display: flex; gap: 8px; align-items: center;"><span style="display: flex; border: 1px solid rgba(255,255,255,.55); border-radius: 999px; overflow: hidden; font-size: 12px;"><button type="button" data-set-lang="en" style="border: 0; background: transparent; color: #FFFFFF; padding: 0 12px; height: 36px; font: inherit;">EN</button><button type="button" data-set-lang="ja" style="border: 0; background: #FFFFFF; color: #202D40; padding: 0 12px; height: 36px; font: inherit; font-weight: 700;">日本語</button></span><button type="button" aria-label="Menu" data-menu style="width: 44px; height: 44px; border-radius: 999px; border: 0; background: #FFFFFF; color: #202D40; font-size: 16px;">≡</button></span></header>
     <a href="index.html#events" class="en" style="position: relative; margin: 4px 16px 0; font-size: 13px; font-weight: 700; color: #FFFFFF; text-decoration: none;">← All events</a>
@@ -355,8 +369,8 @@ html.menu-open{overflow:hidden}
   </section>
   <section style="padding: 72px 16px; background: #F7F5F0;">
     <span class="eb" style="font-size: 13px;">A WORLD OF CONNECTIONS STARTS<br>WITH ONE CONVERSATION.</span>
-    <h2 class="h2">いつもの日常に、<br>世界との出会いを。</h2>
-    <div style="margin-top: 28px; height: 300px; border-radius: 20px; overflow: hidden;"><img loading="lazy" decoding="async" class="img" src="assets/lp/6d27c3bc04.jpg" alt="A participant laughing in conversation"></div>
+    
+    <div class="lev" style="margin-top: 28px; height: 520px; border-radius: 20px; overflow: hidden; position: relative;"><video class="img" src="assets/lp/le-world.mp4" poster="assets/lp/le-world-poster.jpg" data-autoplay muted loop playsinline preload="none" aria-label="Language exchange at Cafe Harmony"></video><span class="lev-g"></span><p class="lev-t">いつもの日常に、<br>世界との出会いを。</p></div>
     <div style="margin-top: 28px; display: flex; flex-direction: column; gap: 10px; padding-left: 16px; border-left: 2px solid #D58B5D;">
       <p class="p" style="color: #202D40; font-weight: 500;">英語を勉強しているけれど、実際に話す機会がない。</p>
       <p class="p" style="color: #202D40; font-weight: 500;">日本にいながら、海外の友達を作ってみたい。</p>

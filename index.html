@@ -209,6 +209,20 @@ html[data-lang=en] [data-lang-only=en],html[data-lang=ja] [data-lang-only=ja]{di
 .v-pc [data-top-events]{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 24px!important;overflow:visible!important;padding-right:56px}
 .v-pc [data-top-events]>article{flex:none!important;width:auto!important;min-width:0}
 
+.fvs{position:absolute;inset:0}
+.fvs .fvs-i{opacity:0;animation:fvs 24s infinite}
+.fvs .fvs-i:nth-child(1){animation-delay:-1s}
+.fvs .fvs-i:nth-child(2){animation-delay:5s}
+.fvs .fvs-i:nth-child(3){animation-delay:11s}
+.fvs .fvs-i:nth-child(4){animation-delay:17s}
+@keyframes fvs{0%{opacity:0}4%{opacity:1}25%{opacity:1}29%{opacity:0}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.fvs .fvs-i{animation:none}.fvs .fvs-i:not(:first-child){display:none}}
+.lev video{object-fit:cover;display:block;width:100%;height:100%}
+.lev-g{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,26,38,.72) 0%,rgba(20,26,38,.25) 45%,rgba(20,26,38,.05) 70%);pointer-events:none}
+.lev-t{position:absolute;left:0;right:0;bottom:0;margin:0;padding:0 40px 44px;color:#FFFFFF;font-weight:800;font-size:46px;line-height:1.3;letter-spacing:.01em;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.v-sp .lev-t{padding:0 22px 28px;font-size:30px}
+html[data-lang=en] .lev-t{font-family:'Manrope','Noto Sans JP',sans-serif;letter-spacing:-.01em}
+
 .hscroll{scrollbar-width:none;-ms-overflow-style:none}
 .hscroll::-webkit-scrollbar{display:none}
 .hscroll>article{scroll-snap-align:start}
