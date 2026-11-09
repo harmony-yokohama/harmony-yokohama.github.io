@@ -22,7 +22,7 @@
 
   var TYPES = {
     language: { page: 'language-exchange.html', ja: '言語交換', en: 'Language Exchange',
-      priceJa: '500円＋1ドリンク（500円）', priceEn: '¥500 + one drink (¥500)',
+      priceJa: '1,000円（1ドリンク込み）', priceEn: '¥1,000 · one drink included',
       photos: [['assets/lp/20db2baf04.jpg', '50% 40%'], ['assets/lp/f44f46e51d.jpg', '60% 40%'], ['assets/lp/13f392bb9e.jpg', '50% 45%']],
       alt: 'Participants chatting at a language exchange' },
     boardgame: { page: 'board-games.html', ja: 'ボードゲーム', en: 'Board Games',
@@ -38,7 +38,7 @@
 
   var MSG = {
     ja: {
-      pick: '参加する日を選んでください。', name_required: 'お名前を入力してください。', email_invalid: 'メールアドレスの形式を確認してください。',
+      pick: '参加する日を1つ以上選んでください。', name_required: 'お名前を入力してください。', email_invalid: 'メールアドレスの形式を確認してください。',
       consent_required: '同意のチェックを入れてください。', over20_required: 'このイベントは20歳以上の方のみ参加できます。',
       event_not_found: 'このイベントは受付を終了しました。別の日程を選んでください。', network: '送信できませんでした。通信状況を確認して、もう一度お試しください。',
       sending: '送信中…', ok: 'お申し込みありがとうございます！確認メールをお送りしました。届かない場合は迷惑メールフォルダもご確認ください。',
@@ -46,10 +46,13 @@
       duplicate: 'このイベントにはすでにお申し込み済みです。', event_full: 'このイベントは満席になりました。別の日程を選んでください。',
       full: '満席', left: function (n) { return '残り' + n + '席'; }, soon: '近日公開', soonSub: '決まりしだいInstagramでお知らせします',
       igCta: 'Instagramで日程を受け取る', applyDay: 'この日に申し込む', noEvents: '現在、受付中のイベントはありません。最新情報はInstagramでお知らせします。',
-      skOpen: 'NOW BOOKING', skFee: '参加費3,000円（日本酒テイスティング込み）'
+      skOpen: 'NOW BOOKING', skFee: '参加費3,000円（日本酒テイスティング込み）',
+      multiOk: function (d) { return d.length + '日程のお申し込みを受け付けました（' + d.join('・') + '）。日程ごとに確認メールをお送りします。'; },
+      multiWait: function (d) { return '満席のため、キャンセル待ちで受け付けました：' + d.join('・'); },
+      multiDup: function (d) { return 'すでにお申し込み済みでした：' + d.join('・'); }
     },
     en: {
-      pick: 'Please choose a date.', name_required: 'Please enter your name.', email_invalid: 'Please check your email address.',
+      pick: 'Please choose at least one date.', name_required: 'Please enter your name.', email_invalid: 'Please check your email address.',
       consent_required: 'Please tick the consent box.', over20_required: 'This event is for guests aged 20 and over.',
       event_not_found: 'Sign-ups for this event have closed. Please choose another date.', network: "We couldn't send your form. Check your connection and try again.",
       sending: 'Sending…', ok: "You're signed up! We've sent a confirmation email. If you don't see it, check your spam folder.",
@@ -57,7 +60,10 @@
       duplicate: "You've already signed up for this event.", event_full: 'This event is now full. Please choose another date.',
       full: 'Full', left: function (n) { return n + (n === 1 ? ' spot left' : ' spots left'); }, soon: 'Coming soon', soonSub: "We'll announce the date on Instagram",
       igCta: 'Get the date on Instagram', applyDay: 'Sign up for this date', noEvents: 'No events are open right now. Follow us on Instagram for the next dates.',
-      skOpen: 'NOW BOOKING', skFee: '¥3,000 (sake tasting included)'
+      skOpen: 'NOW BOOKING', skFee: '¥3,000 (sake tasting included)',
+      multiOk: function (d) { return "You're signed up for " + d.length + ' dates (' + d.join(', ') + '). We\'ll send a confirmation email for each.'; },
+      multiWait: function (d) { return "These dates are full, so you're on the waitlist: " + d.join(', '); },
+      multiDup: function (d) { return "You'd already signed up for: " + d.join(', '); }
     }
   };
 
@@ -330,32 +336,42 @@
   var preselect = null;
   try { preselect = new URLSearchParams(location.search).get('event'); } catch (e) {}
 
+  /* Dates are checkboxes: guests can sign up for several dates at once. */
+  function checkedIds(form) { return $$('input[name="eventId"]:checked', form).map(function (i) { return i.value; }); }
+
   function renderForms() {
     $$('[data-form]').forEach(function (form) {
       var box = $('[data-date-options]', form), none = $('[data-no-dates]', form);
       var list = ofType(PAGE.type);
-      var cur = (form.querySelector('input[name="eventId"]:checked') || {}).value || form.__picked || preselect;
+      var cur = form.__picked || (preselect ? [preselect] : null);
       box.innerHTML = list.map(function (e) {
         var full = isFull(e), note = spotsNote(e);
         var small = lang === 'ja' ? '（' + dow(e) + '）' : ' ' + dow(e);
-        return '<label class="hf-date"><input type="radio" name="eventId" value="' + esc(e.id) + '"' + (full ? ' disabled' : '') + '>' +
+        return '<label class="hf-date"><input type="checkbox" name="eventId" value="' + esc(e.id) + '"' + (full ? ' disabled' : '') + '>' +
           '<span class="hf-date__in"><span class="hf-date__dot"></span><span><span class="hf-date__md">' + esc(md(e)) + '<small>' + esc(small) + '</small></span>' +
           '<span class="hf-date__time">' + esc(timeRange(e)) + '</span>' + (note ? '<span class="hf-date__left">' + esc(note) + '</span>' : '') + '</span></span></label>';
       }).join('');
       box.hidden = !list.length;
       if (none) none.hidden = !!list.length;
-      var radios = $$('input[name="eventId"]', form);
-      var target = radios.filter(function (r) { return r.value === cur && !r.disabled; })[0] || radios.filter(function (r) { return !r.disabled; })[0];
-      if (target) target.checked = true;
+      var boxes = $$('input[name="eventId"]', form).filter(function (r) { return !r.disabled; });
+      var any = false;
+      if (cur) boxes.forEach(function (r) { if (cur.indexOf(r.value) >= 0) { r.checked = true; any = true; } });
+      if (!any && !cur && boxes[0]) boxes[0].checked = true;
       var btn = $('button[type="submit"]', form);
       if (btn) btn.disabled = !list.some(function (e) { return !isFull(e); });
     });
   }
 
+  /* A "sign up for this date" card adds that date to the selection. */
   function pickEvent(id) {
     $$('[data-form]').forEach(function (form) {
-      form.__picked = id;
-      $$('input[name="eventId"]', form).forEach(function (r) { r.checked = r.value === id && !r.disabled; });
+      var all = $$('input[name="eventId"]', form);
+      var r = all.filter(function (x) { return x.value === id && !x.disabled; })[0];
+      if (!form.__picked) all.forEach(function (x) { x.checked = false; });
+      if (r) r.checked = true;
+      var cur = form.__picked ? form.__picked.slice() : [];  /* untouched form: replace the default pick */
+      if (cur.indexOf(id) < 0) cur.push(id);
+      form.__picked = cur;
     });
   }
 
@@ -370,9 +386,8 @@
     ev.preventDefault();
     var form = ev.target, m = MSG[lang];
     var g = function (n) { return form.elements[n]; };
-    var picked = form.querySelector('input[name="eventId"]:checked');
-    var data = {
-      eventId: picked ? picked.value : '',
+    var ids = checkedIds(form);
+    var base = {
       name: (g('name').value || '').trim(), email: (g('email').value || '').trim(), country: (g('country').value || '').trim(),
       ageRange: g('ageRange').value,
       practice: $$('input[name="reason"]:checked', form).map(function (i) { return i.value; }).join(' / '),
@@ -381,30 +396,54 @@
       over20: g('over20') ? g('over20').checked : false, consent: g('consent').checked,
       website: g('website').value, lang: lang
     };
-    var e = events.filter(function (x) { return x.id === data.eventId; })[0];
+    var evs = ids.map(function (id) { return events.filter(function (x) { return x.id === id; })[0]; });
     var err = null;
-    if (!data.eventId) err = m.pick;
-    else if (!data.name) err = m.name_required;
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) err = m.email_invalid;
-    else if (e && isFull(e)) err = m.event_full;
-    else if (e && e.type === 'sake' && !data.over20) err = m.over20_required;
-    else if (!data.consent) err = m.consent_required;
+    if (!ids.length) err = m.pick;
+    else if (!base.name) err = m.name_required;
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(base.email)) err = m.email_invalid;
+    else if (evs.some(function (e) { return e && isFull(e); })) err = m.event_full;
+    else if (evs.some(function (e) { return e && e.type === 'sake'; }) && !base.over20) err = m.over20_required;
+    else if (!base.consent) err = m.consent_required;
     if (err) { say(form, 'err', err); return; }
     var btn = $('button[type="submit"]', form);
     btn.disabled = true;
     say(form, 'ok', m.sending);
-    fetch(API_URL, { method: 'POST', body: JSON.stringify(data) })
-      .then(function (r) { return r.json(); })
-      .then(function (out) {
-        if (!out.ok) { say(form, 'err', m[out.error] || m.network); if (out.error === 'event_full') loadEvents(); return; }
-        say(form, 'ok', out.status === 'waitlist' ? m.waitlist : out.status === 'duplicate' ? m.duplicate : m.ok);
-        var keep = data.eventId;
+    var label = function (id) { var e = events.filter(function (x) { return x.id === id; })[0]; return e ? dateLabel(e) : ''; };
+    var results = [];
+    /* one request per date, in order, so each gets its own row and confirmation */
+    ids.reduce(function (chain, id) {
+      return chain.then(function () {
+        var data = {}; for (var k in base) data[k] = base[k]; data.eventId = id;
+        return fetch(API_URL, { method: 'POST', body: JSON.stringify(data) })
+          .then(function (r) { return r.json(); })
+          .then(function (out) { results.push({ id: id, out: out }); })
+          .catch(function () { results.push({ id: id, out: { ok: false, error: 'network' } }); });
+      });
+    }, Promise.resolve()).then(function () {
+      var good = results.filter(function (r) { return r.out.ok; });
+      var bad = results.filter(function (r) { return !r.out.ok; });
+      if (results.length === 1) {
+        var o = results[0].out;
+        if (!o.ok) { say(form, 'err', m[o.error] || m.network); if (o.error === 'event_full') loadEvents(); return; }
+        say(form, 'ok', o.status === 'waitlist' ? m.waitlist : o.status === 'duplicate' ? m.duplicate : m.ok);
+      } else {
+        var lines = [];
+        var by = function (st) { return good.filter(function (r) { return (r.out.status || 'ok') === st; }).map(function (r) { return label(r.id); }); };
+        if (by('ok').length) lines.push(m.multiOk(by('ok')));
+        if (by('waitlist').length) lines.push(m.multiWait(by('waitlist')));
+        if (by('duplicate').length) lines.push(m.multiDup(by('duplicate')));
+        bad.forEach(function (r) { lines.push(label(r.id) + '：' + (m[r.out.error] || m.network)); });
+        say(form, bad.length && !good.length ? 'err' : 'ok', lines.join('\n'));
+        if (bad.some(function (r) { return r.out.error === 'event_full'; })) loadEvents();
+      }
+      if (good.length) {
+        var keep = good.map(function (r) { return r.id; });
         form.reset();
         applySource();
-        pickEvent(keep);
-      })
-      .catch(function () { say(form, 'err', m.network); })
-      .then(function () { btn.disabled = false; });
+        $$('input[name="eventId"]', form).forEach(function (r) { r.checked = keep.indexOf(r.value) >= 0; });
+        form.__picked = keep;
+      }
+    }).then(function () { btn.disabled = false; });
   }
 
   /* ?from=ig etc. -> "How did you hear about us?" */
@@ -491,7 +530,7 @@
   document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') closeMenu(); });
   document.addEventListener('submit', function (ev) { if (ev.target.matches('[data-form]')) submitForm(ev); });
   document.addEventListener('change', function (ev) {
-    if (ev.target.name === 'eventId') pickEvent(ev.target.value);
+    if (ev.target.name === 'eventId') { var f = ev.target.closest('[data-form]'); if (f) f.__picked = checkedIds(f); }
   });
 
   /* Keep ?from=ig (etc.) when moving between our pages, so sign-ups are attributed. */
@@ -541,7 +580,7 @@
     $$('[data-fit-group]').forEach(function (g) {
       if (!g.getClientRects().length) return;
       var lines = $$('[data-fit-line]', g), max = +g.getAttribute('data-fit-group') || 200;
-      var avail = g.clientWidth;
+      var avail = Math.min(g.clientWidth, +g.getAttribute('data-fit-width') || Infinity);
       if (!avail || !lines.length) return;
       var scale = Infinity;
       lines.forEach(function (l) {
