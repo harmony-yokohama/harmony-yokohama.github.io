@@ -38,7 +38,8 @@
       priceJa: '3,000円（日本酒テイスティング込み）', priceEn: '¥3,000 · sake tasting included',
       photos: [['assets/lp/sake-group.jpg', '35% 50%']], alt: 'Participants raising their glasses at the sake night' },
     matcha: { page: 'matcha.html', ja: '抹茶・和菓子・書道', en: 'Matcha, Sweets & Calligraphy',
-      priceJa: '3,000円（材料込み）', priceEn: '¥3,000 · materials included', photos: [], alt: '' }
+      priceJa: '3,000円（材料込み）', priceEn: '¥3,000 · materials included',
+      photos: [['assets/lp/matcha-2493.jpg', '48% 50%']], alt: 'A bowl of freshly whisked matcha held over tatami' }
   };
 
   var MSG = {
