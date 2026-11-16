@@ -134,8 +134,16 @@
     if (!window.fetch) return;
     fetch(API_URL + '?action=events').then(function (r) { return r.json(); }).then(function (data) {
       if (!data || !data.ok) return;
-      try { localStorage.setItem('harmony-events', JSON.stringify(data.events || [])); } catch (e) {}
-      events = prepare(data.events || []);
+      var live = (data.events || []).slice();
+      // The live feed stops after its first few weeks; events further out that we know of
+      // (SNAPSHOT, mirrored from the Events sheet) are added after its last date.
+      if (live.length) {
+        var last = 0, ids = {};
+        live.forEach(function (e) { ids[e.id] = 1; last = Math.max(last, new Date(e.start).getTime()); });
+        SNAPSHOT.forEach(function (e) { if (!ids[e.id] && new Date(e.start).getTime() > last) live.push(e); });
+      }
+      try { localStorage.setItem('harmony-events', JSON.stringify(live)); } catch (e) {}
+      events = prepare(live);
       renderAll();
     }).catch(function () {});
   }
