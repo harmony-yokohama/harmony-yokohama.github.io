@@ -28,15 +28,15 @@
   var TYPES = {
     language: { page: 'language-exchange.html', ja: '言語交換', en: 'Language Exchange',
       priceJa: 'ドリンク込み ¥1,000', priceEn: '¥1,000 incl. one drink',
-      photos: [['assets/lp/le-world-wait.jpg', '45% 50%']],
+      photos: [['assets/lp/le-world-wait.jpg', '45% 50%'], ['assets/lp/266c9bb51b.jpg', '50% 45%'], ['assets/lp/39820e5d94.jpg', '50% 45%']],
       alt: 'Group photo from a HARMONY language exchange' },
     boardgame: { page: 'board-games.html', ja: 'ボードゲーム', en: 'Board Games',
       priceJa: '1,000円（1ドリンク込み）', priceEn: '¥1,000 · one drink included',
-      photos: [['assets/lp/bg-group-1116.jpg', '50% 60%']],
+      photos: [['assets/lp/bg-group-1116.jpg', '50% 60%'], ['assets/lp/p1109-4.jpg', '50% 45%']],
       alt: 'Group photo from a HARMONY board game night' },
     sake: { page: 'sake.html', ja: '日本酒テイスティング', en: 'Sake Tasting',
       priceJa: '4,000円（日本酒テイスティング込み）', priceEn: '¥4,000 · sake tasting included',
-      photos: [['assets/lp/sake-group.jpg', '35% 50%']], alt: 'Participants raising their glasses at the sake night' },
+      photos: [['assets/lp/sk-community.jpg', '50% 45%']], alt: 'Group photo from the sake night' },
     matcha: { page: 'matcha.html', ja: '抹茶・和菓子・書道', en: 'Matcha, Sweets & Calligraphy',
       priceJa: '3,000円（材料込み）', priceEn: '¥3,000 · materials included',
       photos: [['assets/lp/matcha-2493.jpg', '48% 50%']], alt: 'A bowl of freshly whisked matcha held over tatami' }
