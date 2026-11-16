@@ -17,12 +17,12 @@
 
   /* Shown instantly while the live list loads (and if it can't load). */
   var SNAPSHOT = [
-    { id: 'event_317145742@meetup.com', type: 'language', start: '2026-11-15T02:00:00.000Z', end: '2026-11-15T04:00:00.000Z', venue: 'Cafe Harmony（横浜・鶴見）', meetupUrl: 'https://www.meetup.com/yokohama-meetup-group-harmony/events/317145742/', capacity: 25, spotsLeft: null, full: false },
-    { id: 'event_317283571@meetup.com', type: 'boardgame', start: '2026-11-15T05:30:00.000Z', end: '2026-11-15T08:00:00.000Z', venue: 'Cafe Harmony（横浜・鶴見）', meetupUrl: 'https://www.meetup.com/yokohama-meetup-group-harmony/events/317283571/', capacity: 25, spotsLeft: null, full: false },
-    { id: 'event_317156257@meetup.com', type: 'sake', start: '2026-11-15T09:00:00.000Z', end: '2026-11-15T11:30:00.000Z', venue: 'Cafe Harmony（横浜・鶴見）', meetupUrl: 'https://www.meetup.com/yokohama-meetup-group-harmony/events/317156257/', capacity: 15, spotsLeft: null, full: false },
     { id: 'event_317321741@meetup.com', type: 'matcha', start: '2026-11-28T05:30:00.000Z', end: '2026-11-28T07:30:00.000Z', venue: '神奈川近代文学館 和室（横浜・山手）', meetupUrl: 'https://www.meetup.com/yokohama-meetup-group-harmony/events/317321741/', capacity: 15, spotsLeft: null, full: false },
     { id: 'event_317250367@meetup.com', type: 'language', start: '2026-11-29T02:00:00.000Z', end: '2026-11-29T04:00:00.000Z', venue: 'Cafe Harmony（横浜・鶴見）', meetupUrl: 'https://www.meetup.com/yokohama-meetup-group-harmony/events/317250367/', capacity: 25, spotsLeft: null, full: false },
-    { id: 'event_317355217@meetup.com', type: 'boardgame', start: '2026-11-29T05:30:00.000Z', end: '2026-11-29T08:00:00.000Z', venue: 'Cafe Harmony（横浜・鶴見）', meetupUrl: 'https://www.meetup.com/yokohama-meetup-group-harmony/events/317355217/', capacity: 25, spotsLeft: null, full: false }
+    { id: 'event_317355217@meetup.com', type: 'boardgame', start: '2026-11-29T05:30:00.000Z', end: '2026-11-29T08:00:00.000Z', venue: 'Cafe Harmony（横浜・鶴見）', meetupUrl: 'https://www.meetup.com/yokohama-meetup-group-harmony/events/317355217/', capacity: 25, spotsLeft: null, full: false },
+    { id: 'event_317428486@meetup.com', type: 'language', start: '2026-12-06T02:00:00.000Z', end: '2026-12-06T04:00:00.000Z', venue: 'Cafe Harmony（横浜・鶴見）', meetupUrl: 'https://www.meetup.com/yokohama-meetup-group-harmony/events/317428486/', capacity: 25, spotsLeft: null, full: false },
+    { id: 'event_317428491@meetup.com', type: 'boardgame', start: '2026-12-06T05:30:00.000Z', end: '2026-12-06T08:00:00.000Z', venue: 'Cafe Harmony（横浜・鶴見）', meetupUrl: 'https://www.meetup.com/yokohama-meetup-group-harmony/events/317428491/', capacity: 25, spotsLeft: null, full: false },
+    { id: 'event_317440006@meetup.com', type: 'sake', start: '2026-12-20T09:00:00.000Z', end: '2026-12-20T11:30:00.000Z', venue: 'Cafe Harmony（横浜・鶴見）', meetupUrl: 'https://www.meetup.com/yokohama-meetup-group-harmony/events/317440006/', capacity: 15, spotsLeft: null, full: false }
   ];
 
   var TYPES = {
@@ -35,7 +35,7 @@
       photos: [['assets/lp/p1109-4.jpg', '50% 45%']],
       alt: 'Group photo from a HARMONY board game night' },
     sake: { page: 'sake.html', ja: '日本酒テイスティング', en: 'Sake Tasting',
-      priceJa: '3,000円（日本酒テイスティング込み）', priceEn: '¥3,000 · sake tasting included',
+      priceJa: '4,000円（日本酒テイスティング込み）', priceEn: '¥4,000 · sake tasting included',
       photos: [['assets/lp/sake-group.jpg', '35% 50%']], alt: 'Participants raising their glasses at the sake night' },
     matcha: { page: 'matcha.html', ja: '抹茶・和菓子・書道', en: 'Matcha, Sweets & Calligraphy',
       priceJa: '3,000円（材料込み）', priceEn: '¥3,000 · materials included',
@@ -52,7 +52,7 @@
       duplicate: 'このイベントにはすでにお申し込み済みです。', event_full: 'このイベントは満席になりました。別の日程を選んでください。',
       full: '満席', left: function (n) { return '残り' + n + '席'; }, soon: '近日公開', soonSub: '決まりしだいInstagramでお知らせします',
       igCta: 'Instagramで日程を受け取る', applyDay: 'この日に申し込む', noEvents: '現在、受付中のイベントはありません。最新情報はInstagramでお知らせします。',
-      skOpen: 'NOW BOOKING', skFee: '参加費3,000円（日本酒テイスティング込み）',
+      skOpen: 'NOW BOOKING', skFee: '参加費4,000円（日本酒テイスティング込み）',
       multiOk: function (d) { return d.length + '日程のお申し込みを受け付けました（' + d.join('・') + '）。日程ごとに確認メールをお送りします。'; },
       multiWait: function (d) { return '満席のため、キャンセル待ちで受け付けました：' + d.join('・'); },
       multiDup: function (d) { return 'すでにお申し込み済みでした：' + d.join('・'); }
@@ -66,7 +66,7 @@
       duplicate: "You've already signed up for this event.", event_full: 'This event is now full. Please choose another date.',
       full: 'Full', left: function (n) { return n + (n === 1 ? ' spot left' : ' spots left'); }, soon: 'Coming soon', soonSub: "We'll announce the date on Instagram",
       igCta: 'Get the date on Instagram', applyDay: 'Sign up for this date', noEvents: 'No events are open right now. Follow us on Instagram for the next dates.',
-      skOpen: 'NOW BOOKING', skFee: '¥3,000 (sake tasting included)',
+      skOpen: 'NOW BOOKING', skFee: '¥4,000 (sake tasting included)',
       multiOk: function (d) { return "You're signed up for " + d.length + ' dates (' + d.join(', ') + '). We\'ll send a confirmation email for each.'; },
       multiWait: function (d) { return "These dates are full, so you're on the waitlist: " + d.join(', '); },
       multiDup: function (d) { return "You'd already signed up for: " + d.join(', '); }
