@@ -28,11 +28,11 @@
   var TYPES = {
     language: { page: 'language-exchange.html', ja: '言語交換', en: 'Language Exchange',
       priceJa: 'ドリンク込み ¥1,000', priceEn: '¥1,000 incl. one drink',
-      photos: [['assets/lp/266c9bb51b.jpg', '45% 50%']],
+      photos: [['assets/lp/le-world-wait.jpg', '45% 50%']],
       alt: 'Group photo from a HARMONY language exchange' },
     boardgame: { page: 'board-games.html', ja: 'ボードゲーム', en: 'Board Games',
       priceJa: '1,000円（1ドリンク込み）', priceEn: '¥1,000 · one drink included',
-      photos: [['assets/lp/p1109-4.jpg', '50% 45%']],
+      photos: [['assets/lp/bg-group-1116.jpg', '50% 60%']],
       alt: 'Group photo from a HARMONY board game night' },
     sake: { page: 'sake.html', ja: '日本酒テイスティング', en: 'Sake Tasting',
       priceJa: '4,000円（日本酒テイスティング込み）', priceEn: '¥4,000 · sake tasting included',
