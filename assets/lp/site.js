@@ -460,7 +460,7 @@
   }
 
   /* ?from=ig etc. -> "How did you hear about us?" */
-  var FROM = { ig: 'Instagram', instagram: 'Instagram', threads: 'Threads', th: 'Threads', meetup: 'Meetup', google: 'Google', friend: 'Friend' };
+  var FROM = { ig: 'Instagram', instagram: 'Instagram', igad: 'Instagram Ad', ig_ad: 'Instagram Ad', 'ig-ad': 'Instagram Ad', threads: 'Threads', th: 'Threads', meetup: 'Meetup', google: 'Google', friend: 'Friend' };
   function applySource() {
     var from = '';
     try { from = (new URLSearchParams(location.search).get('from') || '').toLowerCase(); } catch (e) {}
