@@ -450,6 +450,16 @@
         if (bad.some(function (r) { return r.out.error === 'event_full'; })) loadEvents();
       }
       if (good.length) {
+        /* Meta Pixel: one Lead per successful sign-up (value = typical price per person, JPY) */
+        try {
+          if (window.fbq) {
+            var PRICE = { language: 1000, boardgame: 1000, karaoke: 1500, sake: 3000, matcha: 3000, run: 1000 };
+            good.forEach(function (r) {
+              var e = events.filter(function (x) { return x.id === r.id; })[0] || {};
+              window.fbq('track', 'Lead', { content_name: e.title || r.id, content_category: e.type || '', value: PRICE[e.type] || 1000, currency: 'JPY' });
+            });
+          }
+        } catch (err) {}
         var keep = good.map(function (r) { return r.id; });
         form.reset();
         applySource();
